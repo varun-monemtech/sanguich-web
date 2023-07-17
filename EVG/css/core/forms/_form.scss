@@ -1,0 +1,23 @@
+/* ==========================================================================
+  Form
+========================================================================== */
+
+html {
+	form {
+		position: relative;
+		width: 100%;
+		height: auto;
+		display: table;
+
+		label {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: .5em;
+		}
+
+		.message {
+			margin-top: .75rem;
+		}
+	}
+}
+	

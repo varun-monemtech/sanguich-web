@@ -1,0 +1,54 @@
+/* ==========================================================================
+  Normalize
+========================================================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	margin: 0;
+	//overflow: hidden;
+}
+
+main {
+	min-height: calc(100svh - var(--nav-h) - var(--footer-h))
+}
+
+#gatsby-focus-wrapper {
+	width: 100%;
+	//overflow: hidden;
+}
+
+iframe {
+	width: 100%;
+}
+
+figure {
+	margin: auto;
+}
+
+// Kill weird blue inputs
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+	transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+/* ==========================================================================
+	Sections
+========================================================================== */
+
+main {
+	position: relative;
+	overflow: visible;
+}
+
+section {
+	position: relative;
+	z-index: 150;
+	overflow-x: clip;
+}

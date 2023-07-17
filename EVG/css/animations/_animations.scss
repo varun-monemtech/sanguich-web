@@ -1,0 +1,309 @@
+/* ==========================================================================
+  Animation Helpers
+========================================================================== */
+
+// Animated general class for reveals of content
+.animated {
+	transition: all .8s cubic-bezier(.5,.08,.54,.9) .1s;
+	opacity: 0;
+
+	&.from-left {
+		transition: all 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
+		transform: translate3d(-100%,0,0);
+	}
+
+	&.from-right {
+		transition: all 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
+		transform: translate3d(100%,0,0);
+	}
+
+	&.from-top {
+		transition: all 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
+		transform: translate3d(0,100%,0);
+	}
+
+	&.from-bottom {
+		transition: all 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
+		transform: translate3d(0,-100%,0);
+	}
+}
+
+.inview .animated {
+	opacity: 1;
+	transform: translate3d(0,0,0) rotate(0deg);
+}
+
+/* ==========================================================================
+  Text animations
+========================================================================== */
+
+// Text line-by-line reveal
+// .line {
+// 	display: block;
+// 	overflow: hidden;
+// }
+
+// .splittext-lines .word {
+// 	display: inline-block;
+// 	opacity: 0;
+// 	text-decoration: inherit;
+// }
+// .inview .splittext-lines .word {
+// 	animation: slide-up 1.25s cubic-bezier(0.17, 0.04, 0.03, 1);
+// 	animation-fill-mode: both;
+// 	animation-delay: calc( .15s + (.2s * var(--line-index)) );
+// }
+
+// .splittext-chars .char {
+// 	display: inline-block;
+// 	opacity: 0;
+// 	text-decoration: inherit;
+// }
+// .inview .splittext-chars .char {
+// 	animation: slide-left .5s cubic-bezier(0.17, 0.04, 0.03, 1);
+// 	animation-fill-mode: both;
+// 	animation-delay: calc( .15s + (.05s * var(--char-index)) );
+// }
+	
+@keyframes slide-up {
+	from { transform: translateY(.5em); opacity: 0; }
+	to { transfomr: translateY(0); opacity: 1; }
+}
+	
+@keyframes slide-left {
+	from { transform: translateX(.5em); opacity: 0; }
+	to { transfomr: translateX(0); opacity: 1; }
+}
+
+/* ==========================================================================
+  Spinner
+========================================================================== */
+
+@keyframes spinner {
+	from {
+		transform: rotate(0deg);
+	}
+	10% {
+		transform: rotate(36deg);
+	}
+	20% {
+		transform: rotate(72deg);
+	}
+	30% {
+		transform: rotate(108deg);
+	}
+	40% {
+		transform: rotate(144deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	60% {
+		transform: rotate(216deg);
+	}
+	70% {
+		transform: rotate(252deg);
+	}
+	80% {
+		transform: rotate(288deg);
+	}
+	90% {
+		transform: rotate(324deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spinnerY {
+	from {
+		transform: rotateX(0deg);
+	}
+	10% {
+		transform: rotateX(36deg);
+	}
+	20% {
+		transform: rotateX(72deg);
+	}
+	30% {
+		transform: rotateX(108deg);
+	}
+	40% {
+		transform: rotateX(144deg);
+	}
+	50% {
+		transform: rotateX(180deg);
+	}
+	60% {
+		transform: rotateX(216deg);
+	}
+	70% {
+		transform: rotateX(252deg);
+	}
+	80% {
+		transform: rotateX(288deg);
+	}
+	90% {
+		transform: rotateX(324deg);
+	}
+	to {
+		transform: rotateX(360deg);
+	}
+}
+
+@keyframes spinnerX {
+	from {
+		transform: rotateY(0deg);
+	}
+	10% {
+		transform: rotateY(36deg);
+	}
+	20% {
+		transform: rotateY(72deg);
+	}
+	30% {
+		transform: rotateY(108deg);
+	}
+	40% {
+		transform: rotateY(144deg);
+	}
+	50% {
+		transform: rotateY(180deg);
+	}
+	60% {
+		transform: rotateY(216deg);
+	}
+	70% {
+		transform: rotateY(252deg);
+	}
+	80% {
+		transform: rotateY(288deg);
+	}
+	90% {
+		transform: rotateY(324deg);
+	}
+	to {
+		transform: rotateY(360deg);
+	}
+} 
+
+
+@keyframes wiggle-one {
+  from {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  10% {
+    transform: translate(1px, -1px) rotate(-2deg);
+  }
+  20% {
+    transform: translate(0px, -2px) rotate(-3deg);
+  }
+  30% {
+    transform: translate(-1px, 2px) rotate(1deg);
+  }
+  40% {
+    transform: translate(-1px, 1px) rotate(2deg);
+  }
+  50% {
+    transform: translate(-1px, 0px) rotate(0deg);
+  }
+  60% {
+    transform: translate(0px, -1px) rotate(-3deg);
+  }
+  70% {
+    transform: translate(1px, -1px) rotate(-2deg);
+  }
+  80% {
+    transform: translate(2px, -1px) rotate(0deg);
+  }
+  90% {
+    transform: translate(1px, 0px) rotate(1deg);
+  }
+  to {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+
+@keyframes wiggle-two {
+  from {
+    transform: translate(0px, 0px) rotate(0deg);
+    transform-origin: bottom right;
+  }
+  10% {
+    transform: translate(1px, 2px) rotate(2deg);
+    transform-origin: bottom right;
+  }
+  20% {
+    transform: translate(2px, -1px) rotate(1deg);
+    transform-origin: bottom right;
+  }
+  30% {
+    transform: translate(-3px, 2px) rotate(0deg);
+    transform-origin: bottom right;
+  }
+  40% {
+    transform: translate(-2px, 3px) rotate(-1deg);
+    transform-origin: bottom right;
+  }
+  50% {
+    transform: translate(-3px, 0px) rotate(1deg);
+    transform-origin: bottom right;
+  }
+  60% {
+    transform: translate(1px, -2px) rotate(-1deg);
+    transform-origin: bottom right;
+  }
+  70% {
+    transform: translate(2px, -1px) rotate(0deg);
+    transform-origin: bottom right;
+  }
+  80% {
+    transform: translate(-3px, 3px) rotate(-1deg);
+    transform-origin: bottom right;
+  }
+  90% {
+    transform: translate(1px, 0px) rotate(1deg);
+    transform-origin: bottom right;
+  }
+  to {
+    transform: translate(0px, 0px) rotate(0deg);
+    transform-origin: bottom right;
+  }
+}
+
+@keyframes wiggle-three {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  10% {
+    transform: translate(0.1%, 0.2%) rotate(1.5deg);
+  }
+  20% {
+    transform: translate(0.21%, -0.1%) rotate(2deg);
+  }
+  30% {
+    transform: translate(-0.1%, 0.2%) rotate(0deg);
+  }
+  40% {
+    transform: translate(-0.04%, 0.1%) rotate(-1deg);
+  }
+  50% {
+    transform: translate(0.1%, 0) rotate(3deg);
+  }
+  60% {
+    transform: translate(0.15%, -0.12%) rotate(1deg);
+  }
+  70% {
+    transform: translate(0.1%, -0.1%) rotate(0deg);
+  }
+  80% {
+    transform: translate(-0.1%, 0.1%) rotate(4deg);
+  }
+  90% {
+    transform: translate(0.1%, 0.1%) rotate(6deg);
+  }
+  to {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}

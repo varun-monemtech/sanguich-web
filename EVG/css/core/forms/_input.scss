@@ -1,0 +1,133 @@
+/* ==========================================================================
+  Default
+========================================================================== */
+
+input,
+textarea,
+button[type="submit"] {
+	position: relative;
+	z-index: 100;
+	
+	display: block;
+	width: 100%;
+	padding: .75em 1.5em;
+  margin: .25em 0;
+
+	background: none;
+	outline: none;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 0;
+
+	font-family: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+
+	-webkit-appearance: none;
+	
+	font-size: 1em;
+  line-height: 1.5;
+	text-align: inherit;
+	
+	transition: all 0.3s ease-in-out;
+
+	&[type="submit"] {
+		font-weight: 500;
+		margin-top: .75em;
+		cursor: pointer;
+	}
+
+	@media screen and (max-width: 1024px) {
+		font-size: 16px;
+	}
+}
+
+button[type="submit"] {
+	font-weight: 500;
+	margin-top: .75em;
+	cursor: pointer;
+
+	&:active {
+		top: 1px;
+	}
+}
+
+input:active, input:focus {
+	outline: none;
+
+  &::-webkit-input-placeholder {
+  	opacity: 0;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+  	opacity: 0;
+  }
+  &::-moz-placeholder {  /* Firefox 19+ */
+  	opacity: 0;
+  }
+  &:-ms-input-placeholder {
+  	opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   Submit
+   ========================================================================== */
+
+input[type="submit"] {
+
+}	
+
+/* ==========================================================================
+  Number (with - / + )
+========================================================================== */
+
+.input-number {
+	display: flex;
+
+	.subtract {
+		flex: 0 0 2em;
+		width: 2em;
+		padding: .25em .5em;
+		border-right: 0;
+
+		&:hover {
+			transform: translate3d(0,0,0);
+		}
+		&:active {
+			transform: translate3d(0,1px,0);
+		}
+	}
+
+	.add {
+		flex: 0 0 2em;
+		width: 2em;
+		padding: .25em .5em;
+		border-left: 0;
+
+		&:hover {
+			transform: translate3d(0,0,0);
+		}
+		&:active {
+			transform: translate3d(0,1px,0);
+		}
+	}
+
+	input {
+		max-width: 6em;
+		text-align: center;
+	}
+	
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+		-moz-appearance: textfield;
+	}
+}

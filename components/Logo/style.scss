@@ -1,0 +1,20 @@
+.master-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
+	background: var(--clead) !important;
+	// background: linear-gradient(236deg, rgba(222,62,67,1) 0%, rgba(255,145,0,1) 31%, rgba(222,62,67,1) 66%, rgba(255,131,21,1) 100%);
+
+	font-size: 1.125em;
+	font-weight: 700;
+
+	span {
+		padding: .5em 3.5em .5em 1.25em;
+	}
+
+	&:hover {
+		color: var(--x1) !important;
+	}
+}

@@ -1,0 +1,197 @@
+.video-html-wrap {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56%;
+
+	&.interactive {
+		cursor: pointer;
+	}
+
+	video {
+		z-index: 200;
+		margin-top: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+	.switch-intro {
+		z-index: 200;
+	}
+
+	.mute-indicator {
+		position: absolute;
+		z-index: 505;
+		top: 1em;
+		right: 1em;
+		overflow: hidden;
+		cursor: pointer;
+		background: #fff;
+		color: #000;
+		border: 1px solid #000;
+
+		&:hover {
+			background: #000;
+			color: #fff;
+			border: 1px solid #fff;
+
+			svg {
+				fill: #fff;
+			}
+		}
+		
+		div {
+			position: relative;
+			display: flex;
+			align-items: center;
+			text-transform: uppercase;
+			padding: .5em .5em;
+			line-height: 1;
+			font-size: 1.5em;
+			vertical-align: middle;
+
+			svg {
+				width: 1em;
+				height: 1em;
+			}
+		}
+	}
+
+	.caption-video {
+		position: relative;
+		z-index: 350;
+		top: 0;
+		left: 0;
+		display: flex;
+		width: 100%;
+		height: 100%;
+	}
+
+	&.aspect-ratio {
+		.caption-video {
+			position: absolute;
+		}
+	}
+
+}
+
+
+.hero-and-sidebar {
+	.video-html-wrap {
+		z-index: 500;
+		cursor: default;
+	}
+}
+
+
+.cover {
+	z-index: 200;
+	.video-overlay-play {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url(play.png);
+		background-repeat: no-repeat;
+		background-size: 5% auto;
+		background-position: center center; 
+		background-color: transparent;
+		z-index: 1000;
+		transition: all .1s ease-in-out;
+		@media screen and (max-width: 768px) {
+				background-size: 30% auto;
+		}
+	}
+}
+
+.video-html-wrap {
+	overflow: hidden;
+
+	&:hover .video-overlay-play {
+		transform: scale(1.1);
+	}
+	&:active .video-overlay-play {
+		transform: scale(0.9);
+		transition: all 0s ease-in-out;
+	}
+}
+
+.video-html-wrap .animate-in-from-bottom {
+	opacity: 0;
+	//will-change: transform;
+}
+
+.inview .animate-in-from-bottom {
+	animation-duration: 1s;
+	animation-name: animate-in-from-bottom;
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
+
+
+// Blend overlay, change sanity overlay position and blend modes to experiment with the looks
+.blend-overlay {
+	.cover {
+		.video-overlay-play {
+			background-image: url(logo.png);
+			background-size: 50% auto;
+		}
+	}
+	.blend-multiply {
+		mix-blend-mode: multiply;
+	}
+	.blend-screen {
+		mix-blend-mode: screen;
+	}
+	.blend-soak {
+		background: #fff;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+@keyframes animate-in-from-bottom {
+	from {
+		opacity: 0;
+		transform: translate3d(0,2rem,0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+}
+
+@keyframes animate-in-from-top {
+	from {
+		opacity: 0;
+		transform: translate3d(0,-2rem,0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+}
+
+.video-html-wrap .animate-in-from-top {
+	opacity: 0;
+	//will-change: transform;
+}
+
+.inview .animate-in-from-top {
+	animation-duration: 1s;
+	animation-name: animate-in-from-top;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}

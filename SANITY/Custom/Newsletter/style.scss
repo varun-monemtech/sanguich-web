@@ -1,0 +1,15 @@
+section.section-newsletter {
+	.form-wrap {
+		width: 100% !important;
+		flex-wrap: nowrap;
+
+		label {
+			flex: 1 1 auto;
+		}
+
+		button {
+			flex: 0 1 auto;
+			width: auto;
+		}
+	}
+}

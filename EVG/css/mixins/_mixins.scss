@@ -1,0 +1,8 @@
+@mixin tcb ($values...) {
+	@each $var in $values {
+		transition: #{$var 0.4s cubic-bezier(0.17, 0.04, 0.03, 0.94), };
+    }
+}
+
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.25);
+$easeIt: cubic-bezier(0.19, 1, 0.22, 1);

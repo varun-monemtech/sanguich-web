@@ -1,0 +1,87 @@
+.image-wrap {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: auto;
+
+	&.aspect-ratio {
+		> .animation-intro-wrap {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.gatsby-image-wrapper {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&.aside {
+		position: relative !important;
+		align-self: stretch;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		transform: translate3d(0,0,0);
+
+		> div {
+			position: absolute;
+		}
+
+		.gatsby-image-wrapper {
+			height: 100% !important;
+		}
+	}
+
+	&.bg {
+		position: absolute !important;
+		height: 100% !important;
+	}
+
+	.animation-intro-wrap {
+		width: 100%;
+		height: 100%;
+	}
+
+	.children {
+		width: 100%;
+		height: 100%;
+	}
+	
+
+	// General rule
+
+	.has-parallax {
+		position: relative;
+		overflow: hidden;
+	}
+
+	//Extend Parallax a bit
+	.parallax {
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		.parallax-inner {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			transform: translate3d(-50%,-50%,0);
+		}
+	}
+
+
+	.caption-img {
+		position: absolute;
+		z-index: 350;
+		display: flex;
+		width: 100%;
+		height: 100%;
+	}
+}

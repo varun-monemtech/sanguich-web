@@ -1,0 +1,48 @@
+footer.master-footer {
+	position: relative;
+	margin-top: -1px;
+	min-height: var(--footer-h);
+
+	.copy-positioner {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+	.logo-positioner {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
+	
+	.logo {
+		max-width: 4em;
+		margin: 0;
+		opacity: 0.35;
+	}
+	
+	.copy {
+		font-size: 0.75em;
+		text-align: center;
+		opacity: 0.35;
+	}
+	
+
+	.contact {
+		position: relative;
+		z-index: 300;
+	}
+
+	.navi-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 50em;
+		gap: 1em 0;
+		font-size: .85em;
+		padding: 0 0 3em;
+	}
+	.fa-heart {
+		color: #ff4f22;
+		margin: 0 .1em .05em;
+		font-size: 85%;
+	}
+}

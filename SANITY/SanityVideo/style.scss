@@ -1,0 +1,81 @@
+.video-wrap {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: auto;
+
+	&.aspect-ratio {
+		> div {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.parallax {
+			position: relative;
+		}
+
+		.gatsby-image-wrapper {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.animation-intro-wrap {
+		width: 100%;
+		height: 100%;
+	}
+
+	.children {
+		width: 100%;
+		height: 100%;
+	}
+
+	&.aspect-ratio {
+		.caption-video {
+			position: absolute;
+		}
+	}
+	
+
+	// General rule
+
+	// .has-parallax {
+	// 	position: relative;
+	// 	overflow: hidden;
+	// }
+
+	//Extend Parallax a bit
+	.parallax {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		.parallax-inner {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			transform: translate3d(-50%,-50%,0);
+		}
+	}
+
+	.video-html-wrap {
+		z-index: 300;
+		height: 100%;
+		padding: 0;
+	}
+}
+
+.lightbox-video-wrap {
+	width: 100vw !important;
+	max-width: 85%;
+
+	video {
+		width: 100%;
+		height: auto;
+	}
+}

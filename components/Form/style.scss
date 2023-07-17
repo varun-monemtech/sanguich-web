@@ -1,0 +1,26 @@
+.forms form {
+	position: relative;
+	z-index: 200;
+
+	.form-wrap {
+		.padd-right {
+			padding-right: .55em;
+		}
+		.padd-left {
+			padding-left: .55em;
+		}
+	}
+
+	button[type="submit"] {
+		width: 100%;
+		text-align: center;
+
+		.loader-spinner {
+			margin-left: .5em;
+		}
+	}
+
+	input[type=submit], textarea[type=submit], button[type=submit][type=submit] {
+		margin-top: .25em;
+	}
+}

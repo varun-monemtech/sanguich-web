@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@types/node": "^20.4.1",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@types/react-slick": "^0.23.10",
+    "@vercel/og": "^0.5.8",
+    "class-variance-authority": "^0.6.1",
+    "classnames": "^2.3.2",
+    "date-fns": "^2.30.0",
+    "framer-motion": "^10.12.18",
+    "lambda-rate-limiter": "^3.0.1",
+    "next": "^13.4.9",
+    "postmark": "^3.0.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-intersection-observer": "^9.5.2",
+    "react-scroll-parallax": "^3.4.2",
+    "react-slick": "^0.29.0",
+    "resend": "^0.17.1",
+    "sass": "^1.63.6",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.25",
+    "tailwindcss": "^3.3.2"
+  }
+}

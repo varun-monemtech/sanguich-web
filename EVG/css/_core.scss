@@ -1,0 +1,135 @@
+/* ==========================================================================
+	Core
+========================================================================== */
+@import './_tailwind';
+
+:root {
+	--nav-h: 3.5rem;
+	--footer-h: 12rem;
+
+	// --clead: #de3e43;
+	// --clead: #da2340;
+	--clead: #ff6b53;
+	--clead4: #e2463f;
+	--clead2: #ff8315;
+	--clead3: #ef4d46;
+
+	// Color themes for sections (c0 is brightest, c5 darkest) c0 is the default body theme
+	--c0: #fbfbfb; // Background
+	--c0l: #ffffff; // Brighter
+	--c0d: #eeeeee; // Darker
+	--c0h: #585860; // Headers Text
+	--c0p: #666670  ; // Body Text
+	--c0a: var(--clead); // Links
+	--c0ah: #151515; // Links Hover
+
+
+	--c1: #f1f1f1; // Background
+	--c1l: #ffffff; // Brighter
+	--c1d: #e6e6e6; // Darker
+	--c1h: #0a0a0c; // Headers Text
+	--c1p: #0a0a0c; // Body Text
+	--c1a: var(--clead); // Links
+	--c1ah: #0a0a0c; // Links Hover
+
+
+	--c2: #777; // Background
+	--c2l: #828282; // Brighter
+	--c2d: #6a6a6a; // Darker
+	--c2h: #fff; // Headers Text
+	--c2p: #fff; // Body Text
+	--c2a: #fff; // Links
+	--c2ah: var(--clead); // Links Hover
+
+
+	--c3: var(--clead); // Background
+	--c3l: #fa7561; // Brighter
+	--c3d: #ea5e49; // Darker
+	--c3h: #FFFFFF; // Headers Text
+	--c3p: #FFFFFF; // Body Text
+	--c3a: #FFFFFF; // Links
+	--c3ah: #ffffff; // Links Hover
+
+
+	--c4: #242424; // Background
+	--c4l: #383838; // Brighter
+	--c4d: #171717; // Darker
+	--c4h: #ffffff; // Headers Text
+	--c4p: #ffffff; // Body Text
+	--c4a: #ffffff; // Links
+	--c4ah: var(--clead2); // Links Hover
+
+
+	--c5: #151515; // Background
+	--c5l: #1e1e1e; // Brighter
+	--c5d: #080808; // Darker
+	--c5h: #ffffff; // Headers Text
+	--c5p: #ffffff; // Body Text
+	--c5a: #ffffff; // Links
+	--c5ah: var(--clead); // Links Hover
+
+
+	// Black/White, usually used for dark or bright image backgrounds
+	--x0: #ffffff; // Background
+	--x0l: #ffffff; // Brighter
+	--x0d: #efefef; // Darker
+	--x0h: #0a0a0c; // Headers Text
+	--x0p: #0a0a0c; // Body Text
+	--x0a: #0a0a0c; // Links
+	--x0ah: var(--clead); // Links Hover
+
+
+	--x1: #1d1f20; // Background
+	--x1l: #26292a; // Brighter
+	--x1d: #0e0f10; // Darker
+	--x1h: #fbfdff; // Headers Text
+	--x1p: #fbfdff; // Body Text
+	--x1a: #fbfdff; // Links
+	--x1ah: var(--clead); // Links Hover
+
+
+	// Dominant color for bg, body, html background
+	--cdominant: var(--c5);
+	--cdominantp: var(--c5p);
+
+
+	// // Don't forget to delete unused styles! Font imports at components/layout.js
+	// --font1: var(--font-primary); // Headers
+	// --font2: var(--font-complimentary); // SubHeaders
+	// --font3: var(--font-secondary); // Body
+
+
+	--fs: clamp(10px, calc(7px + 0.52vh + 0.175vw), 20px); // Font Size
+	--flh: 1.62; // Font Line Height
+	--fwh: 400; // Font Weight (Headers)
+	--fwhs: 700; // Font Weight (Strong Headers)
+	--fwb: 400; // Font Weight (Body)
+	--fwbs: 500; // Font Weight (Strong Body)
+}
+
+
+@import 'mixins/_mixins.scss'; // Frequently used mixins
+@import 'animations/_animations.scss';
+@import 'plugins/_hint.scss'; // Hint bubble
+@import 'core/_normalize.scss'; // Normalize browsers
+@import 'core/_typo.scss'; // Typography
+@import 'core/_helpers.scss'; // Helpful classes
+@import 'core/_rainbow.scss'; // Color themes
+@import 'core/_grid.scss'; // Color themes
+
+@import 'core/forms/_form.scss';
+@import 'core/forms/_input.scss';
+@import 'core/_theme.scss'; // Themes
+// @import 'fonts/suisse/stylesheet.scss';
+// @import 'core/forms/_textarea.scss';
+// @import 'core/forms/_checkbox.scss';
+// @import 'core/forms/_radio.scss';
+// @import 'core/forms/_upload.scss';
+// @import 'core/forms/_select.scss';
+// @import 'core/forms/_timepicker.scss';
+// @import 'core/forms/_datepicker.scss';
+// @import 'core/forms/_submit.scss';
+
+/* ==========================================================================
+	End D.Ł. dss
+========================================================================== */

@@ -1,0 +1,904 @@
+/* ==========================================================================
+  Helpers
+========================================================================== */
+
+.form-container {
+
+	input {
+		text-align: left;
+		border: none;
+		background: transparent;
+		padding: 0;
+		font-size: 1.3em;
+	
+		&::placeholder {
+			text-transform: uppercase;
+			color: #000;
+		}
+	}
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+.cursor-auto {
+	cursor: auto;
+}
+
+.contain-paint {
+	contain: paint;
+}
+
+.hide {
+	display: none !important;
+}
+  
+html {
+	overflow-x: hidden;
+}
+
+.layer {
+	will-change: transform;
+}
+
+.position-sticky {
+	position: sticky;
+	top: 0;
+}
+
+.position-relative {
+	position: relative;
+}
+
+.overflow-hidden {
+	overflow: hidden !important;
+}
+.overflow-visible {
+	overflow: visible !important;
+}
+
+.bgless {
+	.bg {
+		display: none;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+	background-color: var(--c5);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--clead);
+}
+::-webkit-scrollbar-track {
+	background-color: var(--c5);
+}
+
+#logging-page {
+	.loading {
+		padding: 0;
+	}
+	p {
+		margin-top: .75rem;
+	}
+}
+
+#header-fold-breakpoint {
+	position: absolute;
+	bottom: 1vw;
+	bottom: 1vh;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+	// This 150vh means the target will come in view at 150 viewport height and start monitoring it from there, leaves some space before it starts spamming with direction output
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.w-100vw {
+	width: 100vw;
+}
+
+.h-100vh,
+.mh-100vh,
+.vh100 {
+	min-height: 100vh;
+}
+
+.p-100 {
+	p {
+		max-width: 100% !important;
+	}
+}
+
+.limit-width {
+	max-width: 50em !important;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.bg {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+	&.image-wrap {
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%,-50%,0);
+	}
+}
+
+.bg-hover {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #2C9BF4;
+	opacity: 0;
+	transition: opacity .2s ease-out 0s;
+}
+
+.shadow-bottom {
+  position: relative;
+  &::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    opacity: 0.8;
+    background-image: linear-gradient( 0,  rgba(0, 0, 0) 10%, rgb(0, 0, 0, 0) 60.5% );
+  }
+}
+
+.icon {
+	position: relative;
+	display: block;
+	width: 1em;
+	height: 1em;
+	margin: .25em .25em .25em 0;
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		transform: translate3d(-50%,-50%,0);
+		opacity: 1;
+		transition: transform 1s ease-out, opacity .5s ease-out;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		transform: translate3d(-50%,-150%,0);
+		opacity: 0;
+		transition: transform .75s ease-out, opacity 1s ease-out;
+	}
+}
+
+.draw {
+
+	svg {
+		path {
+			fill: none;
+			stroke: #000;
+			stroke-miterlimit: 10;
+		}
+	}
+}
+
+.hover-trigger {
+	cursor: pointer;
+
+	&:hover,
+	&.current {
+		.icon {
+			&:before {
+				transform: translate3d(-50%,200%,0);
+				opacity: 0;
+				transition: transform .3s ease-out, opacity .1s ease-out;
+			}
+			&:after {
+				transform: translate3d(-50%,-50%,0);
+				opacity: 1;
+				transition: transform .3s ease-out, opacity .1s ease-out;
+			}
+		}
+		.bg-hover {
+			opacity: 1;
+		}
+	}
+
+	.active-dip {
+		transform: translateY(0);
+	}
+	&:active .active-dip,
+	&.active-dip:active > * {
+		transform: translateY(1px);
+
+		&.bg-hover {
+			transform: translateY(0) !important;
+		}
+	}
+}
+
+br {
+	margin: 0 !important;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.margin-off {
+	margin: 0 !important;
+}
+.margin-auto {
+	margin: auto;
+}
+
+.glare {
+	position: absolute;
+	z-index: 250;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(165deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 45%, rgba(255,255,255,0) 70%, rgba(255,255,255,0) 100%); 
+	clip-path: polygon(69% 0, 100% 0%, 100% 100%, 87% 100%);
+	mix-blend-mode: lighten;
+}
+
+// .image-wrap {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// }
+
+.border-left-off,
+.border-left-off > .animation-intro-wrap {
+	> .border-left {
+		display: none;
+	}
+}
+
+.border-top-off,
+.border-top-off > .animation-intro-wrap {
+	> .border-top {
+		display: none;
+	}
+}
+
+.border-right-off,
+.border-right-off > .animation-intro-wrap {
+	> .border-right {
+		display: none;
+	}
+}
+
+.border-bottom-off,
+.border-bottom-off > .animation-intro-wrap {
+	> .border-bottom {
+		display: none;
+	}
+}
+
+.asset-link {
+	transition: opacity .3s ease-in-out;
+
+	&:hover {
+		opacity: .85;
+	}
+}
+
+.btn {
+	position: relative;
+	display: inline-block;
+	text-transform: uppercase;
+	outline: none;
+	cursor: pointer;
+
+	&.big {
+		width: 100%;
+		max-width: 20em;
+	}
+
+	span {
+		display: inline-block;
+		padding: .4em 1.25em .4em 1.25em;
+		width: 100%;
+		text-align: center;
+		border: 1px solid;
+		border-radius: 2em;
+		line-height: 1;
+	}
+
+	&.arrow {
+		span {
+			padding-right: 4em;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: .65em;
+			width: 1em;
+			height: 1em;
+			transform: translate3d(0,-50%,0);
+			background: url(../../images/btn-arrow-right.png) no-repeat scroll center transparent;
+			background-size: contain;
+		}
+	}
+
+	// &:focus {
+	// 	span {
+	// 		border-bottom: 2px dashed;
+	// 	}
+	// }
+
+	&:active {
+		span {
+			transform: translateY(1px);
+		}
+		&::after {
+			transform: translate3d(0,calc(-50% + 1px),0);
+		}
+	}
+}
+
+.c5 {
+	.btn {
+		&.arrow {
+			&::after {
+				background: url(../../images/btn-arrow-right-dark.png) no-repeat scroll center transparent;
+				background-size: contain;
+			}
+		}
+	}
+}
+
+// p:last-child {
+// 	.btn {
+// 		margin-top: 1.5em;
+// 	}
+// }
+
+.hint {
+	position: absolute !important;
+	top: 100%;
+	left: 50%;
+	transform: translate3d(-50%,1.5em,0);
+	visibility: hidden;
+	opacity: 0;
+	min-width: 11em;
+	max-width: 100%;
+	padding: .5em .75em;
+	text-align: center;
+	font-size: .75em;
+
+	background: var(--clead);
+	color: var(--c5);
+	border: 1px solid;
+	border-radius: 5px;
+
+	transition: all .3s ease-in-out;
+
+	h6 {
+		font-size: 1.2em;
+		color: var(--c5) !important;
+		margin: .35em 0;
+	}
+
+	p {
+		margin: .25em 0;
+	}
+}
+
+a:hover {
+	.hint {
+		visibility: visible;
+		opacity: 1;
+		transform: translate3d(-50%,.5em,0);
+	}
+}
+
+.subtitle {
+	border-bottom: 1px solid;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	margin-bottom: .75rem;
+	//margin-top: .75rem;
+}
+
+h2 + h5.subtitle {
+	margin-top: -1em;
+	line-height: 1;
+}
+
+.loading {
+	display: flex;
+	justify-content: center;
+	padding: calc(4em + 4vw);
+}
+
+/* ==========================================================================
+  MainFrame
+========================================================================== */
+
+#mainframe {
+	//will-change: transform;
+	// max-width: 135em;
+	margin: auto;
+}
+
+
+/* ==========================================================================
+  Loading Media Indicator
+========================================================================== */
+
+// Placeholder div
+
+.media-with-loading {
+	// transition: opacity 700ms ease-in-out 0s, filter 0s ease-in-out 0s;
+	transition: all 300ms ease-in-out 0s;
+}
+.loading-media {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../../images/loader-dark.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: rgba(0,0,0,0.03);
+	background-size: 3em;
+
+	transition: visibility 0s 1s, opacity 1s ease-in-out 0s;
+
+	&.loaded {
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.c3 &,
+	.c4 &,
+	.c5 &,
+	.x1 & {
+		background-image: url(../../images/loader-light.svg);
+		background-color: rgba(255,255,255,0.03);
+	}
+
+	.png & {
+		background-color: transparent !important;
+	}
+}
+
+.flashlight {
+	--pointer-x: 7px;
+	--pointer-y: 1px;
+	top: -100px;
+	left: -100px;
+	width: 200px;
+	height: 200px;
+	transform: translateX(var(--pointer-x)) translateY(var(--pointer-y));
+	mix-blend-mode: soft-light;
+	background-image: radial-gradient(100px, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+	transition-timing-function: cubic-bezier(0,0,.2,1);
+	transition-duration: .5s;
+}
+
+/* ==========================================================================
+  BG Overlay
+========================================================================== */
+
+.bg-overlay {
+	position: absolute;
+	z-index: 300;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--c5);
+
+	.bg-overlay-x {
+		position: absolute;
+		z-index: 300;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom, rgba(32, 32, 32, 0.3) 0, rgba(32, 32, 32, 0.3) 1%, rgba(32, 32, 32, 0.36) 10%, rgba(32, 32, 32, 0.45) 60%, rgba(32, 32, 32, 0.7) 100%);
+		opacity: 0.05;
+		mix-blend-mode: multiply;
+	}
+
+	.fatbar {
+		position: absolute;
+		z-index: 300;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 40%;
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.8+0,0+81,0+100 */
+		background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.15) 60%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0.15) 60%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+	}
+}
+
+/* ==========================================================================
+  Image Fade In
+========================================================================== */
+
+.gatsby-image-wrapper {
+	width: 100%;
+	max-height: 100%;
+
+	// Placeholder div
+	> div:nth-child(2) {
+		position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+		background-image: url(../../images/loader-dark.svg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-color: rgba(0,0,0,0.03);
+		background-size: 3em;
+
+		.c3 &,
+		.c4 &,
+		.c5 &,
+		.x1 & {
+			background-image: url(../../images/loader-light.svg);
+			background-color: rgba(255,255,255,0.03);
+		}
+
+		.png & {
+			background-color: transparent !important;
+		}
+	}
+
+	&.png {
+		> div:nth-child(2) {
+			background-color: transparent !important;
+		}
+	}
+
+	img {
+		&:first-of-type {
+			//filter: blur(2px);
+			transition: opacity 500ms ease-in-out 0s !important;
+			z-index: 100;
+		}
+		&:last-child {
+			z-index: 50;
+		}
+	}
+}
+
+/* ==========================================================================
+  Anchor Points
+========================================================================== */
+
+.anchor {
+	position: absolute;
+	top: calc(50% - 50vh);
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 0;
+	visibility: hidden;
+
+	&.topper {
+		top: calc(50vh - 3em);
+	}
+}
+
+/* ==========================================================================
+	Loaders
+========================================================================== */
+
+.loader-spinner {
+	display: inline-block;
+	margin: 0 .25em;
+	font-size: .8em;
+	animation-name: spinner;
+  animation-duration: .35s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-timing-function: linear;
+	transform-origin: 50% 49%;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #ccc;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+
+/* ==========================================================================
+  Map
+  ========================================================================== */
+	
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+	display:none;
+}
+.gmnoprint div {
+	background:none !important;
+}
+#GMapsID div div a div img{
+	display:none;
+}
+
+#map {
+	min-height: 42vw;
+
+	button, .gm-svpc {
+		background: #fff !important;
+	}
+	.gm-style-mtc {
+		display: none;
+	}
+
+	img {
+			max-width: none;
+			width: auto;
+	}
+}
+
+/* ==========================================================================
+	Aspect Ratios
+========================================================================== */
+
+.gatsby-image-wrapper {
+	width: 100% !important;
+	height: auto !important;
+}
+
+.aspect-ratio {
+	position: relative;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56%;
+
+	.gatsby-image-wrapper {
+		position: absolute !important;
+		top: 0;
+		left: 0;
+		width: 100% !important;
+		height: 100% !important;
+	}
+
+	.img {
+		object-fit: cover;
+	}
+}
+
+/* ==========================================================================
+	BGS
+========================================================================== */
+
+.bg-cover {
+	background-size: cover;
+	background-position: center;
+}
+
+.bg-contain {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.bg-fixed {
+	background-attachment: fixed;
+}
+
+/* ==========================================================================
+	Image Container Object Fit Cover
+========================================================================== */
+
+.img-cover {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  
+	object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+  
+.img-contain {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: translate3d(0,0,0);
+  
+	object-fit: contain;
+	font-family: 'object-fit: contain;';
+}
+
+.skip-link {
+	display: none;
+}
+  
+.bg-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 0;
+  
+	video {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -webkit-transform: translateX(-50%) translateY(-50%);
+	  transform: translateX(-50%) translateY(-50%);
+	  min-width: 100%;
+	  min-height: 100%;
+	  width: auto;
+	  height: auto;
+	  z-index: 0;
+	  overflow: hidden;
+	}
+}
+
+.video-embed-wrapper {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56%;
+	margin: 1.5rem 0;
+
+	> iframe {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+iframe {
+	video {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
+iframe.fslightbox-source {
+	width: 100vw !important;
+	height: 100vh !important;
+	max-width: 90%;
+	max-height: 84vh;
+}
+
+.fslightbox-source {
+	cursor: default;
+}
+
+.fslightbox-toolbar-button:nth-child(1) {
+	display: none;
+}
+.fslightbox-toolbar-button:nth-child(2) {
+	display: none;
+}
+.fslightbox-toolbar-button:nth-child(3) {
+	display: none;
+}
+.fslightbox-toolbar-button:nth-child(4) {
+	display: none;
+}
+.fslightbox-toolbar-button:nth-child(5) {
+	display: none;
+}
+
+/* ==========================================================================
+	Parallax
+========================================================================== */
+
+.parallax-outer {
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.parallax-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+	> div {
+		height: 100% !important;
+	}
+}

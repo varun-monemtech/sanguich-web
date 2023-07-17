@@ -1,0 +1,143 @@
+.animation-intro-wrap {
+	position: relative;
+	overflow: hidden;
+
+	> .bg {
+		z-index: 1;
+		width: 101%;
+		//opacity: 0;
+		//transform: translateX(-100%);
+		//transition: all 1s cubic-bezier(0.16, 1, 0.3, 1) 0s;
+	}
+
+	> .circle-positioner {
+		position: absolute;
+		z-index: 40;
+		top: 50%;
+		left: 50%;
+		display: block;
+		width: 100%;
+		height: 0;
+		padding-bottom: 100%;
+
+		transform: translate3d(-50%,-50%,0);
+
+		> .circle {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			transform: scale(0);
+		}
+	}
+
+	> .border-left {
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		width: 1px;
+		height: 100%;
+
+		transform: translateY(-100.1%);
+	}
+
+	> .border-top {
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+
+		transform: translateX(-100.1%);
+	}
+
+	> .border-right {
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		right: 0;
+		width: 1px;
+		height: 100%;
+
+		transform: translateY(-100.1%);
+	}
+
+	> .border-bottom {
+		position: absolute;
+		z-index: 100;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+
+		transform: translateX(-100.1%);
+	}
+
+	> .mask-positioner {
+		position: absolute;
+		z-index: 200;
+		top: 50%;
+		left: 50%;
+		width: 101%;
+		height: 101%;
+		transform: translate3d(-50%,-50%,0);
+
+		> .mask {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	
+	.children {
+		position: relative;
+		z-index: 50;
+	}
+}
+
+.has-intro {
+	position: relative;
+	overflow: hidden;
+
+	.animation-intro-wrap {
+		position: static;
+		overflow: visible;
+	}
+}
+
+.mark {
+	overflow: visible;
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		transform: translate3d(-50%,-50%,0);
+	}
+}
+
+.innerborder {
+	&.animation-intro-wrap {
+		> .border-left {
+			z-index: -1;
+			left: 0;
+		}
+		> .border-top {
+			z-index: -1;
+			top: 0;
+		}
+		> .border-right {
+			z-index: -1;
+			right: 0;
+		}
+		> .border-bottom {
+			z-index: -1;
+			bottom: 0;
+		}
+	}
+}
