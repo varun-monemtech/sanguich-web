@@ -5,7 +5,7 @@ import './style.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useInView } from 'react-intersection-observer'
-
+import Newsletter from '../Form/CF7/Newsletter'
 
 export const Footer = ({options}: {options: any}) => {
 	const [io, ioInView] = useInView({ triggerOnce: false })
@@ -63,7 +63,7 @@ export const Footer = ({options}: {options: any}) => {
 			: null }
 
 			<div id="contact" className="contact padd-2 fs-85">
-				{/* <Newsletter /> */}
+				<Newsletter />
 			</div>
 
 			<div className="footer-navi uppercase">
