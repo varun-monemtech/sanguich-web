@@ -77,7 +77,7 @@ export const Footer = ({options}: {options: any}) => {
 
 			<div className='copy'>
 				<h5 className="uppercase">Soñado en 2014. Establecido en 2015</h5>
-				<h6 className="uppercase">Copyright &copy; {year}. SITE BY <a href="https://www.deepsleepstudio.com" alt="DeepSleep Studio, a Design and Public Relations agency." target="_blank" style={{wordSpacing: '.5em'}}>ds/s</a>.</h6>
+				<h6 className="uppercase">Copyright &copy; {year}. SITE BY <a href="https://www.deepsleepstudio.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" style={{wordSpacing: '.5em'}}>ds/s</a>.</h6>
 			</div>
 
 		</footer>
