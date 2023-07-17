@@ -11,6 +11,7 @@ import { Loader } from "../components/Loader"
 import { LoadImage } from "../components/LoadImage"
 import ArtemisForm from "../components/Form"
 
+import Menu from '../components/ACF/Sanguich/Menu'
 
 async function getPage() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/pages/5',
@@ -27,9 +28,20 @@ async function getPage() {
 
 export default async function MainPage() {
 	const page = await getPage()
+
+  const Sections = page?.acf?.sections.map((section, i) => {
+   
+    if(section.acf_fc_layout === 'menu') {
+      return (
+        <Menu key={section.id} { ...section } />
+      )
+    }
+  })
 	
 	return (
 		<PageTransition>
+
+			{Sections ? Sections : null}
 
 			<Hero className="c5 items-center padd">
 				<div className="text-left">
