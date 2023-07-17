@@ -4,10 +4,12 @@ import './style.scss'
 import Image from 'next/image'
 
 import { Transition, SwitchTransition } from 'react-transition-group'
+import { useInView } from 'react-intersection-observer'
 import anime from 'animejs'
 import NaviContext from '../../../../context/NaviContext'
 
 function Menu(props) {
+	const [io, ioInView] = useInView({ triggerOnce: false })
 	const naviContext = useContext(NaviContext)
 	const content = props.wysiwyg
 	const anchor = props.anchor
@@ -204,7 +206,7 @@ function Menu(props) {
   return (
 		<>
 			{ anchor ? 
-				<section id={`section-${anchor}`} className={`content c5 grid-12 is-inview inview ${classes}`}>
+				<section ref={io} id={`section-${anchor}`} className={`content c5 grid-12 is-inview ${ioInView ? 'inview' : ''} ${classes}`}>
 					
 					{anchor ?
 						<div id={anchor} className="anchor"></div>
