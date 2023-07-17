@@ -107,7 +107,8 @@ function Menu(props) {
 
             <Image 
               src={image.url}
-              fill={true}	
+							width={1200}
+							height={1600}
               alt={image.alt}
               style={{objectFit: "cover"}}
               className="image"
