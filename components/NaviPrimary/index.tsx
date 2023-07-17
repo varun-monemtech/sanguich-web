@@ -38,16 +38,51 @@ export const NaviPrimary = ({ children, items, className: classes }: { children?
 			<ul>
 				<li>
 					<Link
-						href={`/`}
+						href={`/#menu`}
 					>
-						home
+						Menu
 					</Link>
 				</li>
 				<li>
 					<Link
-						href={`/blog/`}
+						href={`/#order-now`}
 					>
-						blog
+						Order Online
+					</Link>
+				</li>
+				<li>
+					<Link
+						href={`/#catering`}
+					>
+						Catering
+					</Link>
+				</li>
+				<li>
+					<Link
+						href={`/#address`}
+					>
+						Hours &amp; Locations
+					</Link>
+				</li>
+				<li>
+					<Link
+						href={`/#our-story`}
+					>
+						Our Story
+					</Link>
+				</li>
+				<li>
+					<Link
+						href={`/#news`}
+					>
+						News
+					</Link>
+				</li>
+				<li>
+					<Link
+						href={`/contact`}
+					>
+						Contact
 					</Link>
 				</li>
 				{/* {itemsLinks} */}

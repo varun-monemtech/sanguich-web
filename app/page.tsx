@@ -43,7 +43,7 @@ export default async function MainPage() {
 
 			{Sections ? Sections : null}
 
-			<Hero className="c5 items-center padd">
+			{/* <Hero className="c5 items-center padd">
 				<div className="text-left">
 					<HeroTitle>precision in <span className="fat">design</span>,<br/><span className="fat">beauty</span> in performance,<br/><span className="fat">power</span> in simplicity</HeroTitle>
 					<HeroSubTitle>we are a small team of skilled developers focused to provide excellently performing, elegantly built landing websites for your growing business</HeroSubTitle>
@@ -58,9 +58,9 @@ export default async function MainPage() {
 					// placeholder='blur'
 					priority
 				/>
-			</Hero>
+			</Hero> */}
 
-			<section className="c0 padd padd-top-2 padd-bottom-2">
+			{/* <section className="c0 padd padd-top-2 padd-bottom-2">
 
 				<Container>
 					<div className="flex-12">
@@ -120,13 +120,13 @@ export default async function MainPage() {
 					</div>
 				</Container>
 
-				{/* <pre>
-					<code>{JSON.stringify(options.acf?.logo, null, 2)}</code>
-				</pre> */}
+			</section> */}
 
-			</section>
+			{/* <pre>
+				<code>{JSON.stringify(options.acf?.logo, null, 2)}</code>
+			</pre> */}
 
-			<section className="above-all flex-12 c5">
+			{/* <section className="above-all flex-12 c5">
 				<Background>
 					<LoadImage src='/img/footer.jpg' width="2200" height="500" quality="90" alt=''/>
 				</Background>
@@ -136,9 +136,9 @@ export default async function MainPage() {
 					<h6 className="by">- Daniel, co-founder</h6>
 					<hr className="center"/>
 				</div>
-			</section>
+			</section> */}
 
-			<section className="awards c3 padd padd-bottom-1-5">
+			{/* <section className="awards c3 padd padd-bottom-1-5">
 				<Container>
 					<div className="flex-12">
 						<Image src='/img/backdrop-webby.svg' className="backdrop-award-1" width="2200" height="500" quality="90" alt=''/>
@@ -178,9 +178,9 @@ export default async function MainPage() {
 						</div>
 					</div>
 				</Container>
-			</section>
+			</section> */}
 
-			<section className="cta flex-12 c5 padd-2">
+			{/* <section className="cta flex-12 c5 padd-2">
 				<div className="span-12 ai-center text-center z-100">
 					<h2 className="uppercase fat h4">Interested?</h2>
 					<h6 className="by">Fill out the form and we will get back to you</h6>
@@ -192,9 +192,9 @@ export default async function MainPage() {
 				<Background>
 					<Image src='/img/waves.jpg' width="2560" height="900" quality="90" alt=''/>
 				</Background>
-			</section>
+			</section> */}
 
-			<section className="above-all flex-12 c0">
+			{/* <section className="above-all flex-12 c0">
 				<Background>
 					<Image src='/img/dune.jpg' width="2200" height="500" quality="90" alt=''/>
 				</Background>
@@ -203,12 +203,12 @@ export default async function MainPage() {
 					<h6 className="by">We are excited to work with you!</h6>
 					<hr className="center"/>
 				</div>
-			</section>
+			</section> */}
 
 
-			<pre>
+			{/* <pre>
 				<code>{JSON.stringify(page, null, 2)}</code>
-			</pre>
+			</pre> */}
 
 		</PageTransition>
 	)

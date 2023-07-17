@@ -30,7 +30,7 @@ export const Logo = () => {
 			// role="button"
 			// tabIndex={0}
 		>
-			<span>[microprism]</span>
+			<span>Sanguich</span>
 		</Link>
   )
 }
