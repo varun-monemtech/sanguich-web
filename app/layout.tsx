@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import { Header } from '../components/Header'
 
-import { Montserrat, Mulish, Roboto_Mono } from 'next/font/google'
 // import localFont from 'next/font/local'
 
 import '../EVG/css/_core.scss'
@@ -54,31 +53,6 @@ export const metadata: Metadata = {
   },
 }
 
-// Primary Font (Google)
-export const fontPrimary = Montserrat({
-  weight: ['400', '700'],
-	style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-	variable: '--font-primary'
-})
-
-// Secondary Font (Google)
-export const fontSecondary = Mulish({
-  weight: ['300', '400', '700'],
-	style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-	variable: '--font-secondary'
-})
-
-// Complimentary Font (Google)
-export const fontComplimentary = Roboto_Mono({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-	variable: '--font-complimentary'
-})
 
 // async function getPages() {
 // 	const res = await fetch('https://www.futuredocs.com/wp-json/better-rest-endpoints/v1/pages?content=false&acf=false&media=false&per_page=299',
@@ -104,6 +78,19 @@ export const fontComplimentary = Roboto_Mono({
 // 	return res.json()
 // }
 
+async function getOptions() {
+	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/options/options/',
+		{
+			// cache: 'no-store',
+			next: {
+				revalidate: 600
+			}
+		}
+	)
+	return res.json()
+}
+
+
 export default async function RootLayout({
 		children,
 	}: {
@@ -112,11 +99,12 @@ export default async function RootLayout({
 
 	// const pagesResponse = getPages()
 	// const postsResponse = getPosts()
+	const options = await getOptions()
 
 	// const [posts] = await Promise.all([postsResponse]) // this enable parallel fetching
 	
   return (
-    <html lang="en" className={`${fontPrimary.variable} ${fontSecondary.variable} ${fontComplimentary.variable} [color-scheme:dark]`}>
+    <html lang="en">
 			
       <meta charSet='utf-8' />
       <meta httpEquiv='x-ua-compatible' content='ie=edge' />
@@ -141,7 +129,7 @@ export default async function RootLayout({
 						
 				</main>
 
-        <Footer />
+        <Footer options={options} />
 
       </body>
     </html>

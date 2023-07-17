@@ -2,693 +2,362 @@
   Color Themes
 ========================================================================== */
 
-// darken ~ mix with black function
-@function mixb($variable, $opacity) {
-	@return unquote('linear-gradient(to top,rgba(0, 0, 0,'+ $opacity +'),rgba(0, 0, 0,' + $opacity + '))' + $variable);
-}
-// lighten ~ mix with white function
-@function mixw($variable, $opacity) {
-	@return unquote('linear-gradient(to top,rgba(255, 255, 255,'+ $opacity +'),rgba(255, 255, 255,' + $opacity + ')) ' + $variable);
-}
-
-.colored {
-	color: var(--clead) !important;
-}
-
-.gradient-purple-to-pink {
-  background-color: #572AA8;
-  background-image: linear-gradient(#572AA8, #FF9AA5);
-}
-
-.beige-stripes {
-  background-image: linear-gradient(90deg, #f5e4c9 27.87%, #f1dec1 27.87%, #f1dec1 50%, #f5e4c9 50%, #f5e4c9 77.87%, #f1dec1 77.87%, #f1dec1 100%);
-  background-size: 45% 100%;
-}
-
-.c0,
-.hover-c0:hover {
-	background-color: var(--c0);
-	color: var(--c0p);
-
-	&.t {
-		background-color: transparent;
-	}
+.c0 {
+	background-color: $c0;
+	color: $c0p;
 
 	input,
 	textarea {
-		background-color: var(--c0l);
-		border-color: var(--c0);
+		background-color: lighten($c0,3%);
+		border-color: $c0;
 
 		&[type="submit"] {
-			background-color: var(--clead);
+			background-color: $clead;
 		}
 	}
 
 	button[type="submit"] {
-		background-color: var(--clead);
-		border-color: var(--c0);
-	}
-
-	.preloader {
-		.layer-0,
-		.layer-1,
-		.layer-2,
-		.layer-3,
-		.layer-4,
-		.layer-5,
-		.layer-6 {
-			border-color: var(--c0) transparent transparent transparent;
-		}
+		background-color: $clead;
+		border-color: $c0;
 	}
 
 	.border {
-		border-color: var(--c0d);
-	}
-
-	> .bg {
-		background-color: var(--c0);
-	}
-
-	.mask-positioner {
-		> .mask {
-			background-color: var(--c0);
-		}
-	}
-
-	.btn {
-		span {
-			border-color: var(--c0p);
-			color: var(--c0p);
-		}
-		&:before {
-			background: var(--c0p);
-		}
-
-		&.colored, &.current {
-			span {
-				background: var(--clead);
-				color: var(--c0p);
-			}
-			&:before {
-				background: var(--c0p);
-			}
-		}
-	}
-
-	.contrast {
-		background-color: var(--c0p);
+		border-color: darken($c0, 4%);
 	}
 
 	a {
-		color: var(--c0a);
+		color: $c0a;
 		
 		&:hover {
-			color: var(--c0ah);
-		}
-
-		&:before {
-			background-color: var(--c0ah);
+			color: $c0ah;
 		}
 	}
 
 	h1,h2,h3,h4,h5,h6,
 	.h1,.h2,.h3,.h4,.h5,.h6 {
-		color: var(--c0h);
+		color: $c0h;
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--c0),-.03em 0 var(--c0),0 .03em var(--c0),0 -.03em var(--c0),.06em 0 var(--c0),-.06em 0 var(--c0),.09em 0 var(--c0),-.09em 0 var(--c0),.12em 0 var(--c0),-.12em 0 var(--c0),.15em 0 var(--c0),-.15em 0 var(--c0);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c0a) 1px, var(--c0a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $c0,-.03em 0 $c0,0 .03em $c0,0 -.03em $c0,.06em 0 $c0,-.06em 0 $c0,.09em 0 $c0,-.09em 0 $c0,.12em 0 $c0,-.12em 0 $c0,.15em 0 $c0,-.15em 0 $c0;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c0a 1px, $c0a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c0h) 1px, var(--c0h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c0h 1px, $c0h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
 	}
 
 	&.x0 {
-		background-color: var(--c0);
+		background-color: $c0;
 	}
 }
 
-.c1,
-.hover-c1:hover {
-	background-color: var(--c1);
-	color: var(--c1p);
-
-	&.darker {
-		background-color: #dedede;
-	}
-
-	&.t {
-		background-color: transparent;
-	}
+.c1 {
+	background-color: $c1;
+	color: $c1p;
 
 	input,
 	textarea {
-		background-color: var(--c1l);
-		border-color: var(--c1);
+		background-color: lighten($c1,3%);
+		border-color: $c1;
 
 		&[type="submit"] {
-			background-color: var(--clead);
+			background-color: $clead;
 		}
 	}
 
 	button[type="submit"] {
-		background-color: var(--clead);
-		border-color: var(--c1);
-	}
-
-	.preloader {
-		.layer-0,
-		.layer-1,
-		.layer-2,
-		.layer-3,
-		.layer-4,
-		.layer-5,
-		.layer-6 {
-			border-color: var(--c1) transparent transparent transparent;
-		}
+		background-color: $clead;
+		border-color: $c1;
 	}
 
 	.border {
-		border-color: var(--c1d);
-	}
-
-	> .bg {
-		background-color: var(--c1);
-	}
-
-	.mask-positioner {
-		> .mask {
-			background-color: var(--c1);
-		}
-	}
-
-	.btn {
-		span {
-			border-color: var(--c1p);
-			color: var(--c1p);
-		}
-	}
-
-	.contrast {
-		background-color: var(--c1p);
+		border-color: darken($c1, 4%);
 	}
 
 	a {
-		color: var(--c1a);
+		color: $c1a;
 		
 		&:hover {
-			color: var(--c1ah);
-		}
-
-		&:before {
-			background-color: var(--c1ah);
+			color: $c1ah;
 		}
 	}
 
 	h1,h2,h3,h4,h5,h6,
 	.h1,.h2,.h3,.h4,.h5,.h6 {
-		color: var(--c1h);
+		color: $c1h;
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--c1),-.03em 0 var(--c1),0 .03em var(--c1),0 -.03em var(--c1),.06em 0 var(--c1),-.06em 0 var(--c1),.09em 0 var(--c1),-.09em 0 var(--c1),.12em 0 var(--c1),-.12em 0 var(--c1),.15em 0 var(--c1),-.15em 0 var(--c1);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c1a) 1px, var(--c1a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $c1,-.03em 0 $c1,0 .03em $c1,0 -.03em $c1,.06em 0 $c1,-.06em 0 $c1,.09em 0 $c1,-.09em 0 $c1,.12em 0 $c1,-.12em 0 $c1,.15em 0 $c1,-.15em 0 $c1;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c1a 1px, $c1a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c1h) 1px, var(--c1h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c1h 1px, $c1h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
 	}
 }
 
-.c2,
-.hover-c2:hover {
-	background-color: var(--c2);
-	color: var(--c2p);
-
-	&.t {
-		background-color: transparent;
-	}
+.c2 {
+	background-color: $c2;
+	color: $c2p;
 
 	input,
 	textarea {
-		background-color: var(--c2l);
-		border-color: var(--c2);
+		background-color: lighten($c2,3%);
+		border-color: $c2;
 
 		&[type="submit"] {
-			background-color: var(--clead);
+			background-color: $clead;
 		}
 	}
 
 	button[type="submit"] {
-		background-color: var(--clead);
-		border-color: var(--c2);
-	}
-
-	.preloader {
-		.layer-0,
-		.layer-1,
-		.layer-2,
-		.layer-3,
-		.layer-4,
-		.layer-5,
-		.layer-6 {
-			border-color: var(--c2) transparent transparent transparent;
-		}
+		background-color: $clead;
+		border-color: $c2;
 	}
 
 	.border {
-		border-color: var(--c2d);
-	}
-
-	> .bg {
-		background-color: var(--c2);
-	}
-
-	.mask-positioner {
-		> .mask {
-			background-color: var(--c2);
-		}
-	}
-
-	.btn {
-		span {
-			border-color: var(--clead);
-			color: var(--clead);
-			//border: 1px solid var(--x1);
-		}
-
-		&::before {
-			background: var(--x1);
-		}
-	}
-
-	.contrast {
-		background-color: var(--c2p);
+		border-color: darken($c2, 4%);
 	}
 
 	a {
-		color: var(--c2a);
+		color: $c2a;
 		
 		&:hover {
-			color: var(--c2ah);
-		}
-
-		&:before {
-			background-color: var(--c2ah);
+			color: $c2ah;
 		}
 	}
 
 	h1,h2,h3,h4,h5,h6,
 	.h1,.h2,.h3,.h4,.h5,.h6 {
-		color: var(--c2h);
+		color: $c2h;
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--c2),-.03em 0 var(--c2),0 .03em var(--c2),0 -.03em var(--c2),.06em 0 var(--c2),-.06em 0 var(--c2),.09em 0 var(--c2),-.09em 0 var(--c2),.12em 0 var(--c2),-.12em 0 var(--c2),.15em 0 var(--c2),-.15em 0 var(--c2);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c2a) 1px, var(--c2a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $c2,-.03em 0 $c2,0 .03em $c2,0 -.03em $c2,.06em 0 $c2,-.06em 0 $c2,.09em 0 $c2,-.09em 0 $c2,.12em 0 $c2,-.12em 0 $c2,.15em 0 $c2,-.15em 0 $c2;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c2a 1px, $c2a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c2h) 1px, var(--c2h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c2h 1px, $c2h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
 	}
 }
 
-.c3,
-.hover-c3:hover {
-	background-color: var(--c3);
-	color: var(--c3p);
-
-	&.t {
-		background-color: transparent;
-	}
-
-	&.step-gradient > div > .bg {
-		background: linear-gradient(
-			to bottom,
-				var(--clead) 0%,
-				var(--clead) 20%,
-				hsl(var(--clead), h s calc(l - 9%)) 20%,
-				hsl(var(--clead), h s calc(l - 9%)) 40%,
-				hsl(var(--clead), h s calc(l - 18%)) 40%,
-				hsl(var(--clead), h s calc(l - 18%)) 60%,
-				hsl(var(--clead), h s calc(l - 27%)) 60%,
-				hsl(var(--clead), h s calc(l - 27%)) 80%,
-				hsl(var(--clead), h s calc(l - 36%)) 80%,
-				hsl(var(--clead), h s calc(l - 36%)) 100%,
-		);
-	}
+.c3 {
+	background-color: $c3;
+	color: $c3p;
 
 	input,
 	textarea {
-		background-color: var(--c3l);
-		border-color: var(--c3);
+		background-color: lighten($c3,3%);
+		border-color: $c3;
 
 		&[type="submit"] {
-			background-color: var(--clead);
+			background-color: $clead;
 		}
 	}
 
 	button[type="submit"] {
-		background-color: var(--clead);
-		border-color: var(--c3);
-	}
-
-	.preloader {
-		.layer-0,
-		.layer-1,
-		.layer-2,
-		.layer-3,
-		.layer-4,
-		.layer-5,
-		.layer-6 {
-			border-color: var(--c3) transparent transparent transparent;
-		}
+		background-color: $clead;
+		border-color: $c3;
 	}
 
 	.border {
-		border-color: var(--c3d);
-	}
-
-	> .bg {
-		background-color: var(--c3);
-	}
-
-	.mask-positioner {
-		> .mask {
-			background-color: var(--c3);
-		}
-	}
-
-	.btn {
-		span {
-			border-color: var(--c3p);
-			color: var(--c3p);
-		}
-	}
-
-	.contrast {
-		background-color: var(--c3p);
+		border-color: darken($c3, 4%);
 	}
 
 	a {
-		color: var(--c3a);
+		color: $c3a;
 		
 		&:hover {
-			color: var(--c3ah);
-		}
-
-		&:before {
-			background-color: var(--c3ah);
+			color: $c3ah;
 		}
 	}
 
 	h1,h2,h3,h4,h5,h6,
 	.h1,.h2,.h3,.h4,.h5,.h6 {
-		color: var(--c3h);
+		color: $c3h;
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--c3),-.03em 0 var(--c3),0 .03em var(--c3),0 -.03em var(--c3),.06em 0 var(--c3),-.06em 0 var(--c3),.09em 0 var(--c3),-.09em 0 var(--c3),.12em 0 var(--c3),-.12em 0 var(--c3),.15em 0 var(--c3),-.15em 0 var(--c3);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c3a) 1px, var(--c3a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $c3,-.03em 0 $c3,0 .03em $c3,0 -.03em $c3,.06em 0 $c3,-.06em 0 $c3,.09em 0 $c3,-.09em 0 $c3,.12em 0 $c3,-.12em 0 $c3,.15em 0 $c3,-.15em 0 $c3;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c3a 1px, $c3a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c3h) 1px, var(--c3h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c3h 1px, $c3h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
 	}
 }
 
-.c4,
-.hover-c4:hover {
-	background-color: var(--c4);
-	color: var(--c4p);
-
-	&.t {
-		background-color: transparent;
-	}
+.c4 {
+	background-color: $c4;
+	color: $c4p;
 
 	input,
 	textarea {
-		background-color: var(--c4l);
-		border-color: var(--c4);
+		background-color: lighten($c4,3%);
+		border-color: $c4;
 
 		&[type="submit"] {
-			background-color: var(--clead);
+			background-color: $clead;
 		}
 	}
 
 	button[type="submit"] {
-		background-color: var(--clead);
-		border-color: var(--c4);
-	}
-
-	.preloader {
-		.layer-0,
-		.layer-1,
-		.layer-2,
-		.layer-3,
-		.layer-4,
-		.layer-5,
-		.layer-6 {
-			border-color: var(--c4) transparent transparent transparent;
-		}
+		background-color: $clead;
+		border-color: $c4;
 	}
 
 	.border {
-		border-color: var(--c4d);
-	}
-
-	> .bg {
-		background-color: var(--c4);
-	}
-
-	.mask-positioner {
-		> .mask {
-			background-color: var(--c4);
-		}
-	}
-
-	.btn {
-		span {
-			border-color: var(--c4p);
-			color: var(--c4p);
-		}
-	}
-
-	.contrast {
-		background-color: var(--c4p);
+		border-color: darken($c4, 4%);
 	}
 
 	a {
-		color: var(--c4a);
+		color: $c4a;
 		
 		&:hover {
-			color: var(--c4ah);
-		}
-
-		&:before {
-			background-color: var(--c4ah);
+			color: $c4ah;
 		}
 	}
 
 	h1,h2,h3,h4,h5,h6,
 	.h1,.h2,.h3,.h4,.h5,.h6 {
-		color: var(--c4h);
+		color: $c4h;
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--c4),-.03em 0 var(--c4),0 .03em var(--c4),0 -.03em var(--c4),.06em 0 var(--c4),-.06em 0 var(--c4),.09em 0 var(--c4),-.09em 0 var(--c4),.12em 0 var(--c4),-.12em 0 var(--c4),.15em 0 var(--c4),-.15em 0 var(--c4);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c4a) 1px, var(--c4a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $c4,-.03em 0 $c4,0 .03em $c4,0 -.03em $c4,.06em 0 $c4,-.06em 0 $c4,.09em 0 $c4,-.09em 0 $c4,.12em 0 $c4,-.12em 0 $c4,.15em 0 $c4,-.15em 0 $c4;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c4a 1px, $c4a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c4h) 1px, var(--c4h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c4h 1px, $c4h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
 	}
 }
 
-.c5,
-.hover-c5:hover {
-	background-color: var(--c5);
-	color: var(--c5p);
-
-	&.t {
-		background-color: transparent;
-	}
-
-	table {
-		background-color: var(--c5);
-		color: var(--c5p);
-		tr:nth-child(even) {
-			background-color: #383838;
-		}
-	}
+.c5 {
+	background-color: $c5;
+	color: $c5p;
 
 	input,
 	textarea {
-		background-color: var(--c5l);
-		border-color: var(--c5);
+		background-color: $c5;
+		border-color: #DCBA7B;
+		border-top-color: transparent;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		padding-left: 0;
+		padding-right: 0;
+		text-transform: uppercase;
 
 		&[type="submit"] {
-			background-color: var(--clead);
+			background-color: $clead;
+		}
+	}
+	textarea {
+		border-left: 1px solid #DCBA7B;
+		border-top: 1px solid #DCBA7B;
+		border-right: 1px solid #DCBA7B;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.react-datepicker__input-container {
+		input {
+			border-left: 1px solid #DCBA7B;
+			border-top: 1px solid #DCBA7B;
+			border-right: 1px solid #DCBA7B;
+			padding-left: 1em;
+			padding-right: 1em;
+			text-align: center;
 		}
 	}
 
 	button[type="submit"] {
-		background-color: var(--clead);
-		border-color: var(--c5);
-	}
-
-	.preloader {
-		.layer-0,
-		.layer-1,
-		.layer-2,
-		.layer-3,
-		.layer-4,
-		.layer-5,
-		.layer-6 {
-			border-color: var(--c5) transparent transparent transparent;
-		}
+		background-color: $clead;
+		border-color: $c5;
 	}
 
 	.border {
-		border-color: var(--c5d);
-	}
-
-	> .bg {
-		background-color: var(--c5);
-	}
-
-	.mask-positioner {
-		> .mask {
-			background-color: var(--c5);
-		}
-	}
-
-	.btn {
-		span {
-			border-color: var(--c5p);
-			color: var(--c5p);
-		}
-
-		&::before {
-			background: var(--x1);
-		}
-	}
-
-	.contrast {
-		background-color: var(--c5p);
+		border-color: lighten($c5, 4%);
 	}
 
 	a {
-		color: var(--c5a);
+		color: $c5a;
 		
 		&:hover {
-			color: var(--c5ah);
-		}
-
-		&:before {
-			background-color: var(--c5ah);
+			color: $c5ah;
 		}
 	}
 
 	h1,h2,h3,h4,h5,h6,
 	.h1,.h2,.h3,.h4,.h5,.h6 {
-		color: var(--c5h);
+		color: $c5h;
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--c5),-.03em 0 var(--c5),0 .03em var(--c5),0 -.03em var(--c5),.06em 0 var(--c5),-.06em 0 var(--c5),.09em 0 var(--c5),-.09em 0 var(--c5),.12em 0 var(--c5),-.12em 0 var(--c5),.15em 0 var(--c5),-.15em 0 var(--c5);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c5a) 1px, var(--c5a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $c5,-.03em 0 $c5,0 .03em $c5,0 -.03em $c5,.06em 0 $c5,-.06em 0 $c5,.09em 0 $c5,-.09em 0 $c5,.12em 0 $c5,-.12em 0 $c5,.15em 0 $c5,-.15em 0 $c5;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c5a 1px, $c5a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--c5h) 1px, var(--c5h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $c5h 1px, $c5h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
 	}
 }
 
-.x0,
-.hover-x0:hover {
-	background-color: var(--x0);
-	color: var(--x0p);
+
+.x0 {
+	background-color: $x0;
+	color: $x0p;
 
 	&.t {
 		background-color: transparent;
 	}
 
 	.border {
-		border-color: var(--x0d);
-	}
-
-	.preloader {
-		.layer-0,
-		.layer-1,
-		.layer-2,
-		.layer-3,
-		.layer-4,
-		.layer-5,
-		.layer-6 {
-			border-color: var(--x0) transparent transparent transparent;
-		}
-	}
-
-	.bg {
-		background-color: var(--x0);
-	}
-
-	.mask-positioner {
-		> .mask {
-			background-color: var(--x0);
-		}
-	}
-
-	.contrast {
-		background-color: var(--x0p);
+		border-color: darken($x0, 4%);
 	}
 
 	a {
-		color: var(--x0a);
+		color: $x0a;
 		
 		&:hover {
-			color: var(--x0ah);
-		}
-
-		&:before {
-			background-color: var(--x0ah);
+			color: $x0ah;
 		}
 	}
 
 	h1,h2,h3,h4,h5,h6,
 	.h1,.h2,.h3,.h4,.h5,.h6 {
-		color: var(--x0h);
+		color: $x0h;
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--x0),-.03em 0 var(--x0),0 .03em var(--x0),0 -.03em var(--x0),.06em 0 var(--x0),-.06em 0 var(--x0),.09em 0 var(--x0),-.09em 0 var(--x0),.12em 0 var(--x0),-.12em 0 var(--x0),.15em 0 var(--x0),-.15em 0 var(--x0);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--x0a) 1px, var(--x0a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $x0,-.03em 0 $x0,0 .03em $x0,0 -.03em $x0,.06em 0 $x0,-.06em 0 $x0,.09em 0 $x0,-.09em 0 $x0,.12em 0 $x0,-.12em 0 $x0,.15em 0 $x0,-.15em 0 $x0;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $x0a 1px, $x0a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--x0h) 1px, var(--x0h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $x0h 1px, $x0h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
 	}
@@ -696,77 +365,46 @@
 	.splitting {
 		mark {
 			span {
-				background: var(--clead);
-				color: var(--c0);
+				background: $clead;
+				color: $c0;
 			}
 		}
 	}
 }
 
-.x1,
-.hover-x1:hover {
-	background-color: var(--x1);
-	color: var(--x1p);
+.x1 {
+	background-color: $x1;
+	color: $x1p;
 
 	&.t {
 		background-color: transparent;
 	}
 
 	.border {
-		border-color: var(--x1l);
-	}
-
-	.preloader {
-		.layer-0,
-		.layer-1,
-		.layer-2,
-		.layer-3,
-		.layer-4,
-		.layer-5,
-		.layer-6 {
-			border-color: var(--x1) transparent transparent transparent;
-		}
-	}
-
-	.bg {
-		background-color: var(--x1);
-	}
-
-	.mask-positioner {
-		> .mask {
-			background-color: var(--x1);
-		}
-	}
-
-	.contrast {
-		background-color: var(--x1p);
+		border-color: lighten($x1, 4%);
 	}
 
 	a {
-		color: var(--x1a);
+		color: $x1a;
 		
 		&:hover {
-			color: var(--x1ah);
-		}
-
-		&:before {
-			background-color: var(--x1ah);
+			color: $x1ah;
 		}
 	}
 
 	h1,h2,h3,h4,h5,h6,
 	.h1,.h2,.h3,.h4,.h5,.h6 {
-		color: var(--x1h);
+		color: $x1h;
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--x1),-.03em 0 var(--x1),0 .03em var(--x1),0 -.03em var(--x1),.06em 0 var(--x1),-.06em 0 var(--x1),.09em 0 var(--x1),-.09em 0 var(--x1),.12em 0 var(--x1),-.12em 0 var(--x1),.15em 0 var(--x1),-.15em 0 var(--x1);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--x1a) 1px, var(--x1a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $x1,-.03em 0 $x1,0 .03em $x1,0 -.03em $x1,.06em 0 $x1,-.06em 0 $x1,.09em 0 $x1,-.09em 0 $x1,.12em 0 $x1,-.12em 0 $x1,.15em 0 $x1,-.15em 0 $x1;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $x1a 1px, $x1a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--x1h) 1px, var(--x1h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $x1h 1px, $x1h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
 	}
@@ -774,98 +412,57 @@
 	.splitting {
 		mark {
 			span {
-				background: var(--clead);
-				color: var(--c0);
+				background: $clead;
+				color: $c0;
 			}
 		}
 	}
 }
 
 .clead.x0 {
-	background-color: var(--clead);
+	background-color: $clead;
 	
 	a:hover {
-		color: var(--x0a);
+		color: $x0a;
 	}
 
 	.border {
-		border-color: hsl(var(--clead), h s calc(l + 4%));
+		border-color: lighten($clead, 4%);
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--clead),-.03em 0 var(--clead),0 .03em var(--clead),0 -.03em var(--clead),.06em 0 var(--clead),-.06em 0 var(--clead),.09em 0 var(--clead),-.09em 0 var(--clead),.12em 0 var(--clead),-.12em 0 var(--clead),.15em 0 var(--clead),-.15em 0 var(--clead);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--x0a) 1px, var(--x0a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $clead,-.03em 0 $clead,0 .03em $clead,0 -.03em $clead,.06em 0 $clead,-.06em 0 $clead,.09em 0 $clead,-.09em 0 $clead,.12em 0 $clead,-.12em 0 $clead,.15em 0 $clead,-.15em 0 $clead;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $x0a 1px, $x0a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--x0h) 1px, var(--x0h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $x0h 1px, $x0h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
 	}
 }
 
 .clead.x1 {
-	background-color: var(--clead);
+	background-color: $clead;
 
 	a:hover {
-		color: var(--x1a);
+		color: $x1a;
 	}
 
 	.border {
-		border-color: hsl(var(--clead), h s calc(l + 4%));
+		border-color: lighten($clead, 4%);
 	}
 
 	.content-box {
 		a,
 		.underline {
-			text-shadow: .03em 0 var(--clead),-.03em 0 var(--clead),0 .03em var(--clead),0 -.03em var(--clead),.06em 0 var(--clead),-.06em 0 var(--clead),.09em 0 var(--clead),-.09em 0 var(--clead),.12em 0 var(--clead),-.12em 0 var(--clead),.15em 0 var(--clead),-.15em 0 var(--clead);
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--x1a) 1px, var(--x1a) 2px, rgba(0, 0, 0, 0) 2px);
+			text-shadow: .03em 0 $clead,-.03em 0 $clead,0 .03em $clead,0 -.03em $clead,.06em 0 $clead,-.06em 0 $clead,.09em 0 $clead,-.09em 0 $clead,.12em 0 $clead,-.12em 0 $clead,.15em 0 $clead,-.15em 0 $clead;
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $x1a 1px, $x1a 2px, rgba(0, 0, 0, 0) 2px);
 
 			&:hover {
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, var(--x1h) 1px, var(--x1h) 2px, rgba(0, 0, 0, 0) 2px);
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $x1h 1px, $x1h 2px, rgba(0, 0, 0, 0) 2px);
 			}
 		}
-	}
-}
-
-.border-c0 {
-	.contrast {
-		background-color: var(--c0);
-	}
-}
-.border-c3 {
-	.contrast {
-		background-color: var(--c3);
-	}
-}
-.border-c5 {
-	.contrast {
-		background-color: var(--c5);
-	}
-}
-.border-left-c0 {
-	.border-left {
-		background-color: var(--c0);
-	}
-}
-.border-right-c0 {
-	.border-right {
-		background-color: var(--c0);
-	}
-}
-.border-left-c5 {
-	.border-left {
-		background-color: var(--c5);
-	}
-}
-.border-right-c5 {
-	.border-right {
-		background-color: var(--c5);
-	}
-}
-.bg-c5 {
-	.bg {
-		background-color: var(--c5);
 	}
 }

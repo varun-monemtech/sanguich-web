@@ -33,37 +33,44 @@
 	transform: translate3d(0,0,0) rotate(0deg);
 }
 
+.delay-500 {
+	transition-delay: 500ms;
+}
+.delay-1000 {
+	transition-delay: 1000ms;
+}
+
 /* ==========================================================================
   Text animations
 ========================================================================== */
 
 // Text line-by-line reveal
-// .line {
-// 	display: block;
-// 	overflow: hidden;
-// }
+.line {
+	display: block;
+	overflow: hidden;
+}
 
-// .splittext-lines .word {
-// 	display: inline-block;
-// 	opacity: 0;
-// 	text-decoration: inherit;
-// }
-// .inview .splittext-lines .word {
-// 	animation: slide-up 1.25s cubic-bezier(0.17, 0.04, 0.03, 1);
-// 	animation-fill-mode: both;
-// 	animation-delay: calc( .15s + (.2s * var(--line-index)) );
-// }
+.splittext-lines .word {
+	display: inline-block;
+	opacity: 0;
+	text-decoration: inherit;
+}
+.inview .splittext-lines .word {
+	animation: slide-up 1.25s cubic-bezier(0.17, 0.04, 0.03, 1);
+	animation-fill-mode: both;
+	animation-delay: calc( .15s + (.2s * var(--line-index)) );
+}
 
-// .splittext-chars .char {
-// 	display: inline-block;
-// 	opacity: 0;
-// 	text-decoration: inherit;
-// }
-// .inview .splittext-chars .char {
-// 	animation: slide-left .5s cubic-bezier(0.17, 0.04, 0.03, 1);
-// 	animation-fill-mode: both;
-// 	animation-delay: calc( .15s + (.05s * var(--char-index)) );
-// }
+.splittext-chars .char {
+	display: inline-block;
+	opacity: 0;
+	text-decoration: inherit;
+}
+.inview .splittext-chars .char {
+	animation: slide-left .5s cubic-bezier(0.17, 0.04, 0.03, 1);
+	animation-fill-mode: both;
+	animation-delay: calc( .15s + (.05s * var(--char-index)) );
+}
 	
 @keyframes slide-up {
 	from { transform: translateY(.5em); opacity: 0; }

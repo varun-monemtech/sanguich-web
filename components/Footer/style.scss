@@ -1,45 +1,116 @@
-footer.master-footer {
+footer#master-footer {
 	position: relative;
+	padding: 6vw 2em 6vw;
 	margin-top: -1px;
-	min-height: var(--footer-h);
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	
+	text-align: center;
 
-	.copy-positioner {
-		position: absolute;
-		right: 0;
-		bottom: 0;
+	.footer-logo {
+		position: relative;
+		grid-column: 5 / 9;
+		grid-row: 1 / 2;
+		margin: 2em 20% 1.5em;
+
+		@media screen and (max-width: 1024px) {
+			grid-column: 4/10;
+			margin: 3em auto .5em !important;
+		}
 	}
-	.logo-positioner {
-		position: absolute;
-		left: 0;
-		bottom: 0;
+
+	.gatsby-image-wrapper {
+
+		@media screen and (max-width: 1024px) {
+			position: relative !important;
+			width: 100%;
+			height: auto;
+			margin-bottom: -1px;
+		}
 	}
-	
-	.logo {
-		max-width: 4em;
-		margin: 0;
-		opacity: 0.35;
+
+	.details {
+		position: relative;
+		z-index: 1000;
+		grid-column: 5 / 9;
+		grid-row: 2 / 3;
+
+		@media screen and (max-width: 1024px) {
+			grid-column: 2/12;
+		}
 	}
-	
-	.copy {
-		font-size: 0.75em;
-		text-align: center;
-		opacity: 0.35;
-	}
-	
 
 	.contact {
 		position: relative;
-		z-index: 300;
+		z-index: 1000;
+		grid-column: 5/9;
+		grid-row: 3/4;
+
+		@media screen and (max-width: 1024px) {
+			grid-column: 2/12;
+		}
+
+		input {
+			border-bottom-color: transparent;
+		}
+	}
+	
+	.footer-navi {
+		position: relative;
+		z-index: 1000;
+		grid-column: 4/10;
+		grid-row: 4/5;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1em 0;
+
+		@media screen and (max-width: 1024px) {
+			grid-column: 2/12;
+			flex-wrap: wrap;
+		}
+
+		h6 {
+			margin: 0 .5em;
+			font-size: 1em;
+			font-weight: 600;
+
+			a:not(:hover) {
+				color: #D0C8B9;
+			}
+		}
 	}
 
-	.navi-wrap {
-		display: flex;
-		flex-wrap: wrap;
-		max-width: 50em;
-		gap: 1em 0;
-		font-size: .85em;
-		padding: 0 0 3em;
+	.copy {
+		position: relative;
+		z-index: 1000;
+		grid-column: 4/10;
+		grid-row: 5/6;
+		padding: 3em 5.23em 2em;
+		font-size: 0.65em;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+
+		@media screen and (max-width: 1024px) {
+			grid-column: 2/12;
+			margin-bottom: 2em;
+		}
+
+		h6 {
+			color: #3E805F;
+		}
+
+		a:not(:hover) {
+			color: #4CA378;
+		}
+
+		@media screen and (max-width: 1024px) {
+			text-align: center;
+		}
 	}
+	
 	.fa-heart {
 		color: #ff4f22;
 		margin: 0 .1em .05em;

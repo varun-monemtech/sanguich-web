@@ -27,7 +27,7 @@ export const contentType = 'image/jpg'
 
 const getTheFont = async () => {
   const response = await fetch(
-     new URL('../EVG/css/fonts/Montserrat-ExtraBold.ttf', import.meta.url)
+     new URL('../EVG/css/fonts/intensa/Intensa-College.ttf', import.meta.url)
    )
    const res = await response.arrayBuffer()
    return res
@@ -88,7 +88,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             background: 'transparent',
           }}
         >
-          MicroPrism
+          Sanguich
         </div>
       </div>
     ),

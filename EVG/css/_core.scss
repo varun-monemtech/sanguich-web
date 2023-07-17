@@ -1,112 +1,89 @@
 /* ==========================================================================
 	Core
 ========================================================================== */
-@import './_tailwind';
 
-:root {
-	--nav-h: 3.5rem;
-	--footer-h: 12rem;
+$clead: #3E805F; // Leading Color
+$clead2: #DCBA7B; // Secondary Leading Color
 
-	// --clead: #de3e43;
-	// --clead: #da2340;
-	--clead: #ff6b53;
-	--clead4: #e2463f;
-	--clead2: #ff8315;
-	--clead3: #ef4d46;
+// Color themes for sections (c0 is brightest, c5 darkest) c0 is the default body theme
+$c0: #f8f8f8; // Background
+$c0h: #0a0a0c; // Headers Text
+$c0p: #0a0a0c; // Body Text
+$c0a: $clead; // Links
+$c0ah: #0a0a0c; // Links Hover
 
-	// Color themes for sections (c0 is brightest, c5 darkest) c0 is the default body theme
-	--c0: #fbfbfb; // Background
-	--c0l: #ffffff; // Brighter
-	--c0d: #eeeeee; // Darker
-	--c0h: #585860; // Headers Text
-	--c0p: #666670  ; // Body Text
-	--c0a: var(--clead); // Links
-	--c0ah: #151515; // Links Hover
+$c1: #f0efee; // Background
+$c1h: #0a0a0c; // Headers Text
+$c1p: #0a0a0c; // Body Text
+$c1a: $clead; // Links
+$c1ah: #0a0a0c; // Links Hover
 
+$c2: #d8dadc; // Background
+$c2h: #0a0a0c; // Headers Text
+$c2p: #0a0a0c; // Body Text
+$c2a: $clead; // Links
+$c2ah: #0a0a0c; // Links Hover
 
-	--c1: #f1f1f1; // Background
-	--c1l: #ffffff; // Brighter
-	--c1d: #e6e6e6; // Darker
-	--c1h: #0a0a0c; // Headers Text
-	--c1p: #0a0a0c; // Body Text
-	--c1a: var(--clead); // Links
-	--c1ah: #0a0a0c; // Links Hover
+$c3: #e1e1e1; // Background
+$c3h: #0a0a0c; // Headers Text
+$c3p: #0a0a0c; // Body Text
+$c3a: $clead; // Links
+$c3ah: #0a0a0c; // Links Hover
 
+$c4: #212121; // Background
+$c4h: #D0C8B9; // Headers Text
+$c4p: #D0C8B9; // Body Text
+$c4a: #D0C8B9; // Links
+$c4ah: $clead; // Links Hover
 
-	--c2: #777; // Background
-	--c2l: #828282; // Brighter
-	--c2d: #6a6a6a; // Darker
-	--c2h: #fff; // Headers Text
-	--c2p: #fff; // Body Text
-	--c2a: #fff; // Links
-	--c2ah: var(--clead); // Links Hover
+$c5: #2A4B2E; // Background
+$c5h: #D0C8B9; // Headers Text
+$c5p: #D0C8B9; // Body Text
+$c5a: $clead; // Links
+$c5ah: #ffffff; // Links Hover
 
+// Black/White, usually used for dark or bright image backgrounds
+$x0: #ffffff; // Background
+$x0h: #0a0a0c; // Headers Text
+$x0p: #0a0a0c; // Body Text
+$x0a: #0a0a0c; // Links
+$x0ah: $clead; // Links Hover
 
-	--c3: var(--clead); // Background
-	--c3l: #fa7561; // Brighter
-	--c3d: #ea5e49; // Darker
-	--c3h: #FFFFFF; // Headers Text
-	--c3p: #FFFFFF; // Body Text
-	--c3a: #FFFFFF; // Links
-	--c3ah: #ffffff; // Links Hover
+$x1: #1d1f20; // Background
+$x1h: #fbfdff; // Headers Text
+$x1p: #fbfdff; // Body Text
+$x1a: #fbfdff; // Links
+$x1ah: $clead; // Links Hover
 
+// Don't forget to delete unused styles! Font imports at components/layout.js
+$font1: 'Intensa', Helvetica, Arial, sans-serif; // Headers
+$font2: 'LHF Desire PRO', Helvetica, Arial, sans-serif; // SubHeaders
+$font2b: 'LHF Desire Uppercase 1', Helvetica, Arial, sans-serif; // SubHeaders
+$font3: 'Josefin Sans', Helvetica, Arial, sans-serif; // Body
 
-	--c4: #242424; // Background
-	--c4l: #383838; // Brighter
-	--c4d: #171717; // Darker
-	--c4h: #ffffff; // Headers Text
-	--c4p: #ffffff; // Body Text
-	--c4a: #ffffff; // Links
-	--c4ah: var(--clead2); // Links Hover
+.font1 {
+	font-family: $font1;
+	font-weight: 400;
+}
+.font2 {
+		font-family: $font2;
+		font-weight: 400;
 
-
-	--c5: #151515; // Background
-	--c5l: #1e1e1e; // Brighter
-	--c5d: #080808; // Darker
-	--c5h: #ffffff; // Headers Text
-	--c5p: #ffffff; // Body Text
-	--c5a: #ffffff; // Links
-	--c5ah: var(--clead); // Links Hover
-
-
-	// Black/White, usually used for dark or bright image backgrounds
-	--x0: #ffffff; // Background
-	--x0l: #ffffff; // Brighter
-	--x0d: #efefef; // Darker
-	--x0h: #0a0a0c; // Headers Text
-	--x0p: #0a0a0c; // Body Text
-	--x0a: #0a0a0c; // Links
-	--x0ah: var(--clead); // Links Hover
-
-
-	--x1: #1d1f20; // Background
-	--x1l: #26292a; // Brighter
-	--x1d: #0e0f10; // Darker
-	--x1h: #fbfdff; // Headers Text
-	--x1p: #fbfdff; // Body Text
-	--x1a: #fbfdff; // Links
-	--x1ah: var(--clead); // Links Hover
-
-
-	// Dominant color for bg, body, html background
-	--cdominant: var(--c5);
-	--cdominantp: var(--c5p);
-
-
-	// // Don't forget to delete unused styles! Font imports at components/layout.js
-	// --font1: var(--font-primary); // Headers
-	// --font2: var(--font-complimentary); // SubHeaders
-	// --font3: var(--font-secondary); // Body
-
-
-	--fs: clamp(10px, calc(7px + 0.52vh + 0.175vw), 20px); // Font Size
-	--flh: 1.62; // Font Line Height
-	--fwh: 400; // Font Weight (Headers)
-	--fwhs: 700; // Font Weight (Strong Headers)
-	--fwb: 400; // Font Weight (Body)
-	--fwbs: 500; // Font Weight (Strong Body)
+	span.capitalize {
+		font-family: $font2b;
+	}
+}
+.font3 {
+	font-family: $font3;
+	font-weight: 400;
 }
 
+$fs: 16; // Font Size
+$flh: 1.45; // Font Line Height
+$fwh: 600; // Font Weight (Headers)
+$fwhs: 600; // Font Weight (Strong Headers)
+$fwb: 400; // Font Weight (Body)
+$fwbs: 600; // Font Weight (Strong Body)
 
 @import 'mixins/_mixins.scss'; // Frequently used mixins
 @import 'animations/_animations.scss';
@@ -119,8 +96,10 @@
 
 @import 'core/forms/_form.scss';
 @import 'core/forms/_input.scss';
-@import 'core/_theme.scss'; // Themes
-// @import 'fonts/suisse/stylesheet.scss';
+@import 'core/_decor.scss';
+@import 'fonts/intensa/stylesheet.scss';
+@import 'fonts/lhfdesirepro/stylesheet.scss';
+@import 'fonts/josefinsans/stylesheet.scss';
 // @import 'core/forms/_textarea.scss';
 // @import 'core/forms/_checkbox.scss';
 // @import 'core/forms/_radio.scss';
