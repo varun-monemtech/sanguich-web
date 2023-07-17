@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { Header } from '../components/Header'
+import ContextProvider from "../provider/ContextProvider"
 
 // import localFont from 'next/font/local'
 
@@ -120,14 +121,18 @@ export default async function RootLayout({
       <body className={``}>
 
         <div id="portal-dialog"></div>
+        
+        <ContextProvider>
 
-				<Header />
-       
-				<main className="">
+          <Header />
+        
+          <main className="">
 
-					{children}
-						
-				</main>
+            {children}
+              
+          </main>
+
+        </ContextProvider>
 
         <Footer options={options} />
 
