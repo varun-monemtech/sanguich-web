@@ -11,8 +11,22 @@ import { Loader } from "../components/Loader"
 import { LoadImage } from "../components/LoadImage"
 import ArtemisForm from "../components/Form"
 
-export default async function MainPage() {
 
+async function getPage() {
+	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/pages/5',
+		{
+			// cache: 'no-store',
+			next: {
+				revalidate: 600
+			}
+		}
+	)
+	return res.json()
+}
+
+
+export default async function MainPage() {
+	const page = await getPage()
 	
 	return (
 		<PageTransition>
@@ -178,6 +192,11 @@ export default async function MainPage() {
 					<hr className="center"/>
 				</div>
 			</section>
+
+
+			<pre>
+				<code>{JSON.stringify(page, null, 2)}</code>
+			</pre>
 
 		</PageTransition>
 	)
