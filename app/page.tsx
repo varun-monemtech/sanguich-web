@@ -29,7 +29,7 @@ async function getPage() {
 export default async function MainPage() {
 	const page = await getPage()
 
-  const Sections = page?.acf?.sections.map((section, i) => {
+  const Sections = page?.acf?.sections.map((section: any, i: number) => {
    
     if(section.acf_fc_layout === 'menu') {
       return (
