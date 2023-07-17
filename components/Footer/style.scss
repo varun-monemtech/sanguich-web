@@ -13,6 +13,7 @@ footer#master-footer {
 		grid-column: 5 / 9;
 		grid-row: 1 / 2;
 		margin: 2em 20% 1.5em;
+		height: auto;
 
 		@media screen and (max-width: 1024px) {
 			grid-column: 4/10;
