@@ -7,7 +7,7 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBaby } from '@fortawesome/free-solid-svg-icons'
 
-function CF7Basic(props) {
+function CF7Newsletter(props) {
 	
 	const { register, handleSubmit, formState: { errors }, reset } = useForm({reValidateMode: 'onChange'})
 	const [message, setMessage] = useState(false)
@@ -69,4 +69,4 @@ function CF7Basic(props) {
 	)
 }
 
-export default CF7Basic
+export default CF7Newsletter
