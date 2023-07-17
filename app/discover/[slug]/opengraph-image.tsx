@@ -27,7 +27,7 @@ export const contentType = 'image/jpg'
 
 const getTheFont = async () => {
   const response = await fetch(
-     new URL('../../../EVG/css/fonts/Montserrat-ExtraBold.ttf', import.meta.url)
+     new URL('../../../EVG/css/fonts/intensa/Intensa-College.ttf', import.meta.url)
    )
    const font = await response.arrayBuffer()
    return font
