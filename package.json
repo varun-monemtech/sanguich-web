@@ -24,6 +24,7 @@
     "framer-motion": "^10.12.18",
     "isomorphic-fetch": "^3.0.0",
     "lambda-rate-limiter": "^3.0.1",
+    "lodash": "^4.17.21",
     "next": "^13.4.9",
     "postmark": "^3.0.18",
     "react": "^18.2.0",
