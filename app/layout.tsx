@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { Header } from '../components/Header'
 import ContextProvider from "../provider/ContextProvider"
-
+import ExternalContextProvider from "../provider/ExternalContextProvider"
 // import localFont from 'next/font/local'
 
 import '../EVG/css/_core.scss'
@@ -124,13 +124,17 @@ export default async function RootLayout({
         
         <ContextProvider>
 
-          <Header />
-        
-          <main className="">
+          <ExternalContextProvider>
 
-            {children}
-              
-          </main>
+            <Header />
+          
+            <main className="">
+
+              {children}
+                
+            </main>
+            
+          </ExternalContextProvider>
 
         </ContextProvider>
 
