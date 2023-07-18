@@ -6,7 +6,7 @@ import { Transition } from 'react-transition-group'
 import anime from 'animejs'
 
 import Hamburger from './Hamburger'
-// import CartIndicator from './CartIndicator'
+import CartIndicator from './CartIndicator'
 import Navi from './Navi'
 import Logo from './Logo'
 import SocialIcons from '../SocialIcons'
@@ -142,9 +142,9 @@ function Header(props) {
 								<Navi {...props} />
 							</div>
 						: null }
-						{/* {!naviContext.windowSize?.mobile ?
+						{!naviContext.windowSize?.mobile ?
 							<CartIndicator />
-						: null } */}
+						: null }
 					</div>
 
 					<Transition
