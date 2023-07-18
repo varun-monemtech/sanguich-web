@@ -6,8 +6,8 @@ import { Transition } from 'react-transition-group'
 import anime from 'animejs'
 
 import Hamburger from './Hamburger'
-// import CartIndicator from './CartIndicator'
-// import Navi from './Navi'
+import CartIndicator from './CartIndicator'
+import Navi from './Navi'
 import Logo from './Logo'
 import SocialIcons from '../SocialIcons'
 
@@ -112,7 +112,7 @@ function Header(props) {
 					
 						<div className="navi-wrap">
 							<Logo />
-							{/* <Navi {...props} /> */}
+							<Navi {...props} />
 						</div>
 						<SocialIcons />
 						<Hamburger />
@@ -137,14 +137,14 @@ function Header(props) {
 							<Hamburger />
 						: null }
 						<Logo />
-						{/* {!naviContext.windowSize?.mobile ?
+						{!naviContext.windowSize?.mobile ?
 							<div className="header-bar-navi-new c5">
 								<Navi {...props} />
 							</div>
-						: null } */}
-						{/* {!naviContext.windowSize?.mobile ?
+						: null }
+						{!naviContext.windowSize?.mobile ?
 							<CartIndicator />
-						: null } */}
+						: null }
 					</div>
 
 					<Transition
@@ -180,7 +180,7 @@ function Header(props) {
 								</div>
 							</div>
 							<div className="navi-wrap">
-								{/* <Navi {...props} /> */}
+								<Navi {...props} />
 								<SocialIcons />
 							</div>
 						</div>
