@@ -9,7 +9,7 @@ import Hamburger from './Hamburger'
 // import CartIndicator from './CartIndicator'
 // import Navi from './Navi'
 import Logo from './Logo'
-// import SocialIcons from '../SocialIcons'
+import SocialIcons from '../SocialIcons'
 
 function Header(props) {
 	const naviContext = useContext(NaviContext)
@@ -114,7 +114,7 @@ function Header(props) {
 							<Logo />
 							{/* <Navi {...props} /> */}
 						</div>
-						{/* <SocialIcons /> */}
+						<SocialIcons />
 						<Hamburger />
 
 					</div>
@@ -180,8 +180,8 @@ function Header(props) {
 								</div>
 							</div>
 							<div className="navi-wrap">
-								{/* <Navi {...props} />
-								<SocialIcons /> */}
+								{/* <Navi {...props} /> */}
+								<SocialIcons />
 							</div>
 						</div>
 					</Transition>
