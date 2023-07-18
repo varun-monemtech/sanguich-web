@@ -104,17 +104,17 @@ function Menu(props) {
 				<div key={`menu-images-key-${i}`} >
 
 					{ image ?
-
-            <Image 
-              src={image.url}
-							width={1200}
-							height={1600}
-              alt={image.alt}
-              style={{objectFit: "cover"}}
-              className="image"
-              quality="90"
+            <div className='image-wrap'>
+              <Image 
+                src={image.url}
+                width={1200}
+                height={1600}
+                alt={image.alt}
+                style={{objectFit: "cover"}}
+                className="image"
+                quality="90"
               />
-
+            </div>
 					: null }
 				</div>
 			)
