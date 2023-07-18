@@ -47,7 +47,7 @@
     display: flex;
     justify-content: center;
     transition: transform .5s;
-
+    position: relative;
     &:hover {
       transform: translateY(-5px);
     }
