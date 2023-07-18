@@ -104,7 +104,6 @@ function Menu(props) {
 				<div key={`menu-images-key-${i}`} >
 
 					{ image ?
-            <div className='image-wrap'>
               <Image 
                 src={image.url}
                 width={1200}
@@ -114,7 +113,6 @@ function Menu(props) {
                 className="image"
                 quality="90"
               />
-            </div>
 					: null }
 				</div>
 			)
