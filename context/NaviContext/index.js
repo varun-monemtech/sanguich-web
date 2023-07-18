@@ -48,7 +48,7 @@ function NaviContextProvider({children, location}) {
       }
     }
 
-  },[location])
+  },[])
 
   /* ==========================================================================
     Are we on mobile
