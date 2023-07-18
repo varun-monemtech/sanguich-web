@@ -13,6 +13,7 @@ import ArtemisForm from "../components/Form"
 
 import Menu from '../components/ACF/Sanguich/Menu'
 import ACFOrder from '../components/ACF/Sanguich/Order'
+import ACFSeenOn from '../components/ACF/Sanguich/SeenOn'
 
 async function getPage() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/pages/5',
@@ -41,6 +42,12 @@ export default async function MainPage() {
     if(section.acf_fc_layout === 'order') {
       return (
         <ACFOrder key={section.id} { ...section } />
+      )
+    }
+
+    if(section.acf_fc_layout === 'seen_on') {
+      return (
+        <ACFSeenOn key={section.id} { ...section } />
       )
     }
     
