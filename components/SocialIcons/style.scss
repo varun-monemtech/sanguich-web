@@ -1,0 +1,8 @@
+.social-icon {
+	&.hint--bottom::before {
+		margin-top: calc(-1.5em - 9px);
+	}
+	&.hint--bottom::after {
+		margin-top: calc(-1.5em - 6px);
+	}
+}
