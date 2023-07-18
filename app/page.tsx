@@ -14,6 +14,7 @@ import ArtemisForm from "../components/Form"
 import Menu from '../components/ACF/Sanguich/Menu'
 import ACFOrder from '../components/ACF/Sanguich/Order'
 import ACFSeenOn from '../components/ACF/Sanguich/SeenOn'
+import ACFHero from "../components/ACF/Hero"
 
 async function getPage() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/pages/5',
@@ -32,6 +33,16 @@ export default async function MainPage() {
 	const page = await getPage()
 
   const Sections = page?.acf?.sections.map((section: any, i: number) => {
+
+    if(section.acf_fc_layout === 'hero') {
+      return (
+        <div key="hero-main">
+          <ACFHero { ...section } />
+          {/* Point of reference for past hero observer threashold, so we can calculate if the user is past hero or not */}
+          <div id="header-fold-breakpoint"></div>
+        </div>
+      )
+    }
    
     if(section.acf_fc_layout === 'menu') {
       return (
