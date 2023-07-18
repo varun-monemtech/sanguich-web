@@ -29,13 +29,13 @@ function Order(props) {
 
             <div className="order bg-overlay overlay"></div>
 
-            <Parallax className="order-parallax" translateY={[-40, 0]} tagOuter="figure">
+            <Parallax className="order-parallax" translateY={[-40, 0]}>
               <Image
                 src={image.url}
-                width={1500}
+                width={1200}
                 height={900}
                 alt={image.alt}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", width: "100%" }}
                 className="image"
                 quality="90"
               />
