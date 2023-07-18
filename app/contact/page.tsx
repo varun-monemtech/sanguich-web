@@ -1,53 +1,43 @@
-import ACF from "../../WP/ACF"
 import PageTransition from '../../animations/PageTransition'
-import { Container } from "../../components/Container"
-
-async function getPost() {
-	const res = await fetch(`https://evgreen.unixstorm.org/FRS-3/wp-json/wp/v2/pages?slug=about`,
-		{
-			// cache: 'no-store',
-			next: {
-				revalidate: 10
-			}
-		}
-	)
-	const data = await res.json()
-	return data[0]
-}
-
+import CF7Contact from '../../components/Form/CF7/Contact'
+import './style.scss'
 
 export default async function MainPage() {
-	const data = await getPost()
 	
 	return (
 		<PageTransition>
-			<div className="c0 padd-2">
-				<Container>
+			
+      <main id="mainframe" className={`main-cart page-cart c5`}>
 
-					<h1 className="h1">{data?.title?.rendered}</h1>
-					{/* <div
-						dangerouslySetInnerHTML={{ __html: data?.content?.rendered }}
-					/> */}
+				<section id={`section-contact`} className={`content c5 grid-12 is-inview inview`}>
 
-					<ACF {...data} />
+          <div className="catering span-12 border-type-3 fs-85">
 
+            <div className="decor-wrap">
+              <div className="decor-top">
+                <div className="decor-top-left"></div>
+                <div className="decor-top-center"></div>
+                <div className="decor-top-right"></div>
+              </div>
+              <div className="decor-center">
+                <div className="decor-center-left"></div>
+                <div className="decor-center-right"></div>
+              </div>
+              <div className="decor-bottom">
+                <div className="decor-bottom-left"></div>
+                <div className="decor-bottom-center"></div>
+                <div className="decor-bottom-right"></div>
+              </div>
+            </div>
 
-					{/* <button id="showDialog" onClick={() => document.getElementById("favDialog").showModal()}>Show the dialog</button> */}
+            <CF7Contact />
+            
+          </div>
 
-					{/* <button onClick={document.getElementById('test').showModal()}>click for modal</button> */}
+          </section>
 
-					{/* <pre>
-						<code>{JSON.stringify(post, null, 2)}</code>
-					</pre> */}
+      </main>
 
-					{/* <div 
-						className={classNames('shadow-small', {
-							'hover:shadow-medium transition-shadow duration-200': slug,
-						})}
-					/> */}
-					
-				</Container>
-			</div>
 		</PageTransition>
 	)
 }

@@ -59,6 +59,8 @@
 }
 
 .form-cut-off {
+	position: relative;
+	z-index: 1200;
 	overflow: hidden;
 	margin: 0 0 calc(1.75em + 6px);
 
