@@ -6,6 +6,7 @@ import ExternalContextProvider from "../provider/ExternalContextProvider"
 
 import '../EVG/css/_core.scss'
 import { Footer } from '../components/Footer'
+import { NaviContextProvider } from '../context/NaviContext'
 // import { DetectDevice } from '../components/DetectDevice'
 
 // // Primary Font (Google)
@@ -126,7 +127,9 @@ export default async function RootLayout({
 
           <ExternalContextProvider>
 
-            <Header />
+            <NaviContextProvider location="">
+              <Header />
+            </NaviContextProvider>
           
             <main className="">
 

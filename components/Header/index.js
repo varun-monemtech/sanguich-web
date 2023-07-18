@@ -1,11 +1,11 @@
 'use client'
 import React, {useContext, useEffect} from 'react'
 import './style.scss'
-import NaviContext, { NaviContextProvider } from '../../context/NaviContext'
+import NaviContext from '../../context/NaviContext'
 import { Transition } from 'react-transition-group'
 import anime from 'animejs'
 
-// import Hamburger from './Hamburger'
+import Hamburger from './Hamburger'
 // import CartIndicator from './CartIndicator'
 // import Navi from './Navi'
 import Logo from './Logo'
@@ -69,10 +69,10 @@ function Header(props) {
 	}
 
   return (
-		<NaviContextProvider>
-			{/* {!naviContext.windowSize?.mobile ?
+		<>
+			{!naviContext.windowSize?.mobile ?
 				<Hamburger />
-			: null } */}
+			: null }
 
 			<Transition
 				in={naviContext.isActive && !naviContext.windowSize?.mobile ? true :	false}
@@ -114,8 +114,8 @@ function Header(props) {
 							<Logo />
 							{/* <Navi {...props} /> */}
 						</div>
-						{/* <SocialIcons />
-						<Hamburger /> */}
+						{/* <SocialIcons /> */}
+						<Hamburger />
 
 					</div>
 				</header>
@@ -133,9 +133,9 @@ function Header(props) {
 			>
 				<div className={`header-bar-new ${naviContext.windowSize?.mobile ? 'onmobile' : ''} ${naviContext.isHamburgerActive ? 'open inview' : ''}`}>
 					<div className={`regular c5 ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
-						{/* {naviContext.windowSize?.mobile ?
+						{naviContext.windowSize?.mobile ?
 							<Hamburger />
-						: null } */}
+						: null }
 						<Logo />
 						{/* {!naviContext.windowSize?.mobile ?
 							<div className="header-bar-navi-new c5">
@@ -188,7 +188,7 @@ function Header(props) {
 				</div>
 			</Transition>
 
-		</NaviContextProvider>
+		</>
   )
 }
 
