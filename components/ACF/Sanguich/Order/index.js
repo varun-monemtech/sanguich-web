@@ -29,7 +29,7 @@ function Order(props) {
 
             <div className="order bg-overlay overlay"></div>
 
-            <Parallax className="order-parallax" translateY={[-40, 0]} tagOuter="figure">
+            <Parallax className="order-parallax" translateY={[-40, 0]}>
               <Image
                 src={image.url}
                 width={1500}
