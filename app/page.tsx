@@ -16,6 +16,8 @@ import ACFOrder from '../components/ACF/Sanguich/Order'
 import ACFSeenOn from '../components/ACF/Sanguich/SeenOn'
 import ACFHero from "../components/ACF/Hero"
 import ACFShop from "../components/ACF/Shop/Items"
+import ACFOurStory from '../components/ACF/Sanguich/OurStory'
+
 import ContextProvider from "../provider/ContextProvider"
 
 async function getPage() {
@@ -61,6 +63,12 @@ export default async function MainPage() {
     if(section.acf_fc_layout === 'seen_on') {
       return (
         <ACFSeenOn key={section.id} { ...section } />
+      )
+    }
+
+    if(section.acf_fc_layout === 'our_story') {
+      return (
+        <ACFOurStory key={section.id} { ...section } />
       )
     }
 
