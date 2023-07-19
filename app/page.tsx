@@ -18,6 +18,7 @@ import ACFHero from "../components/ACF/Hero"
 import ACFShop from "../components/ACF/Shop/Items"
 import ACFOurStory from '../components/ACF/Sanguich/OurStory'
 import ACFHola from '../components/ACF/Sanguich/Hola'
+import ACFAddress from '../components/ACF/Sanguich/Address'
 
 import ContextProvider from "../provider/ContextProvider"
 
@@ -76,6 +77,12 @@ export default async function MainPage() {
     if(section.acf_fc_layout === 'hola') {
       return (
         <ACFHola key={section.id} { ...section } />
+      )
+    }
+
+    if(section.acf_fc_layout === 'address') {
+      return (
+        <ACFAddress key={section.id} { ...section } />
       )
     }
 
