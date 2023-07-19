@@ -211,12 +211,12 @@ function Menu(props) {
 						<div id={anchor} className="anchor"></div>
 					: null}
 
-					{ image ?
+					{/* { image ?
 						<Img fluid={image}
 							imgStyle={{objectFit: 'cover'}}
 							objectPosition='50% 50%'
 						/>
-					: null }
+					: null } */}
 
 					<div className='content-box'>
 						<div className='content-holder animated'>
