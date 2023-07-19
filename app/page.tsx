@@ -17,6 +17,7 @@ import ACFSeenOn from '../components/ACF/Sanguich/SeenOn'
 import ACFHero from "../components/ACF/Hero"
 import ACFShop from "../components/ACF/Shop/Items"
 import ACFOurStory from '../components/ACF/Sanguich/OurStory'
+import ACFHola from '../components/ACF/Sanguich/Hola'
 
 import ContextProvider from "../provider/ContextProvider"
 
@@ -69,6 +70,12 @@ export default async function MainPage() {
     if(section.acf_fc_layout === 'our_story') {
       return (
         <ACFOurStory key={section.id} { ...section } />
+      )
+    }
+
+    if(section.acf_fc_layout === 'hola') {
+      return (
+        <ACFHola key={section.id} { ...section } />
       )
     }
 
