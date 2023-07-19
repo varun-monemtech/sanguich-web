@@ -178,15 +178,13 @@ const ProductGrid = () => {
           ))
           : 
           <div className="span-12 shop-intro padd-2">
-            <h2 className="text-center">No products found :(</h2>
-
-			{/* <pre>
-				<code>{JSON.stringify( collectionData?.[0]?.products, null, 2)}</code>
-			</pre> */}
-      
+            <h2 className="text-center">No products found :(</h2>      
           </div>
           }
       </div>
+      <pre>
+        <code>{JSON.stringify( productsData, null, 2)}</code>
+      </pre>
     </>
   )
 }

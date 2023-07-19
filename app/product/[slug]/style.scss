@@ -1,0 +1,337 @@
+.main-product {
+
+	.to-bottom {
+		position: absolute;
+		z-index: 1000;
+		bottom: 0.5em;
+		left: 50%;
+		transform: translate3d(-50%,0,0);
+		width: 20%;
+		max-width: 3.5em;
+		height: 20%;
+		max-height: 3.5em;
+		background: url(../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
+		background-size: contain !important;
+
+		transition: all .1s ease-in-out;
+
+		&:hover {
+			transform: translate3d(-50%,0,0) scale(1.05);
+		}
+		&:active {
+			transition: all 0s ease-in-out;
+			transform: translate3d(-50%,0,0) scale(.95);
+		}
+	}
+	.to-prev {
+		position: absolute;
+		z-index: 1000;
+		top: 50%;
+		left: 0;
+		transform: translate3d(0,-50%,0) rotate(90deg);
+		width: 20%;
+		max-width: 3.5em;
+		height: 20%;
+		max-height: 3.5em;
+		background: url(../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
+		background-size: contain !important;
+
+		transition: all .1s ease-in-out;
+
+		&:hover {
+			transform: translate3d(0,-50%,0) rotate(90deg) scale(1.05);
+		}
+		&:active {
+			transition: all 0s ease-in-out;
+			transform: translate3d(0,-50%,0) rotate(90deg) scale(.95);
+		}
+	}
+	.to-next {
+		position: absolute;
+		z-index: 1000;
+		top: 50%;
+		right: 0;
+		transform: translate3d(0,-50%,0) rotate(-90deg);
+		width: 20%;
+		max-width: 3.5em;
+		height: 20%;
+		max-height: 3.5em;
+		background: url(../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
+		background-size: contain !important;
+
+		transition: all .1s ease-in-out;
+
+		&:hover {
+			transform: translate3d(0,-50%,0) rotate(-90deg) scale(1.05);
+		}
+		&:active {
+			transition: all 0s ease-in-out;
+			transform: translate3d(0,-50%,0) rotate(-90deg) scale(.95);
+		}
+	}
+
+	.content-holder {
+		padding: 9em 4.5em 10em;
+
+		@media screen and (max-width: 1024px) {
+			padding: 5em 4em 5em;
+		}
+
+		.product-details {
+			position: relative;
+			z-index: 1200;
+
+			p {
+				margin: .5em 0;
+			}
+		}
+	}
+
+	.border-type-2 .decor-wrap {
+		padding: 1.5em;
+	}
+	.border-type-7 .decor-wrap {
+		padding-left: .75em;
+		padding-right: 1.5em;
+	}
+
+	.product-presentation {
+		padding-top: 4em;
+
+		@media screen and (max-width: 1024px) {
+			padding-top: 0;
+			> div {
+				.content-box {
+					order: 2;
+				}
+				.container {
+					margin-top: 0;
+				}
+			}
+			.bar {
+				padding-top: 2em;
+				padding-bottom: 3em;
+
+				h2 {
+					font-size: 4em;
+				}
+			}
+		}
+	}
+
+	.product-title {
+		color: #DCBA7B;
+		margin-bottom: 0;
+	}
+
+	.product-price {
+		font-size: 1.4em;
+		margin-top: .4em;
+		margin-bottom: .45em;
+	}
+
+	.product-option {
+		text-align: center;
+		max-width: 20em;
+		margin: auto;
+
+		label {
+			margin-right: 0;
+
+			font-size: 1.5em;
+			font-family: 'Intensa', Helvetica, Arial, sans-serif;
+		}
+	}
+
+	.container {
+		margin-top: 2em;
+		grid-template-rows: 4fr 1fr;
+		padding: 1.75em 1.5em 1.75em .75em;
+		position: relative;
+		// min-height: 90vh;
+		
+	}
+
+	.main-image {
+		margin-top: 1.5em;
+		position: relative;
+		border: solid #DCBA7B 2px;
+		z-index: 1200;
+		background-color: black;
+		@media only screen and (max-width: 768px) {
+			padding-bottom: 60%;
+		}
+	}
+
+	.product-summary {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		button {
+			margin: .5em 0;
+			//padding: .55em 2.75em .35em;
+			color: #2A4B2E !important;
+
+			 &:hover {
+				 color: #fff !important;
+			 }
+		}
+	}
+
+	.gallery {
+		padding-top: 1em;
+		z-index: 1200;
+		justify-content: space-between;
+		grid-column-gap: 1em;
+		
+		.gallery-item {
+			height: 100%;
+			position: relative;
+			cursor: pointer;
+			overflow: hidden;
+			border: solid #DCBA7B 2px;
+			width: 100%;
+
+			&:hover {
+				.gatsby-image-wrapper {			
+						transform:scale(1.1);
+				}
+			}
+		}
+
+		.gatsby-image-wrapper {
+			transition: all 1s ease;
+		}
+	}
+
+	.bar {
+		position: relative;
+		color: #DCBA7B;
+		padding: 5em 0 8em;
+		background: url("../../../images/background.png");
+		background-color: #212121;
+		background-size: 115%;
+		background-position: center bottom;
+
+		.header {
+			text-align: center;
+			padding: 1em 0 2em;
+			h2 {
+				color: #DCBA7B;
+			}
+		}
+	
+		.slider {
+			display: flex;
+			position: relative;
+		}
+
+		.slide {
+			flex: 0 0 33.33%;
+			position: relative;
+			height: 100%;
+			transition: all 0.7s ease-in-out;
+			@media only screen and (max-width: 768px) {
+				flex: 0 0 100%;
+			}
+			&:hover{
+				opacity: 0.75;
+				.title {
+					color: white;
+				}
+			}
+			&.slide-0 {
+                transform: translateX(0);
+            }
+            &.slide-1 {
+                transform: translateX(-100%);
+            }
+            &.slide-2 {
+                transform: translateX(-200%);
+            }
+            &.slide-3 {
+                transform: translateX(-300%);
+            }
+            &.slide-4 {
+                transform: translateX(-400%);
+            }
+            &.slide-5 {
+                transform: translateX(-500%);
+            }
+            &.slide-6 {
+                transform: translateX(-600%);
+            }
+            &.slide-7 {
+                transform: translateX(-700%);
+            }
+            &.slide-8 {
+                transform: translateX(-800%);
+            }
+            &.slide-9 {
+                transform: translateX(-900%);
+            }
+            &.slide-10 {
+                transform: translateX(-1000%);
+            }
+            &.slide-11 {
+                transform: translateX(-1100%);
+            }
+            &.slide-12 {
+                transform: translateX(-1200%);
+            }
+		}
+	
+		.img-container {
+			overflow: hidden;
+			position: relative;
+			height: 100%;
+			width: 100%;
+			padding-bottom: 65%;
+		}
+
+		.title {
+			text-align: center;
+			font-size: 1.2em;
+			text-transform: uppercase;
+			color: #DCBA7B;
+		}
+
+		.arrow {
+			position: absolute;
+			z-index: 60;
+			top: 45%;
+			transform: translateY(-50%);
+			width: 3.5em;
+			height: 3.5em;
+			transition: all 0.15s ease-in-out;
+			cursor: pointer;
+			opacity: 1;
+			
+			&.disabled {
+				cursor: none;
+				opacity: 0;
+			}
+			&.arrow-left {
+				background: url("../../../images/arrows/arrow-left.png") no-repeat scroll center transparent;
+				background-size: contain;
+				left: 0.3em;
+				&:hover {
+					transform: translate3d(0, -50%, 0) scale(1.1);
+				}
+			}
+
+			&.arrow-right {
+				
+				background: url("../../../images/arrows/arrow-right.png") no-repeat scroll center transparent;
+				background-size: contain;
+				right: 0.3em;
+				&:hover {
+					transform: translate3d(0, -50%, 0) scale(1.1);
+				}
+				
+			}
+		}
+	}
+}
