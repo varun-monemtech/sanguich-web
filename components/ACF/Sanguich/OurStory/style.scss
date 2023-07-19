@@ -1,0 +1,92 @@
+#section-our-story {
+  $green: #2F5534;
+  position: relative;
+
+  padding: 11em 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 5em 0;
+  }
+
+  .border-out {
+    position: absolute;
+    width: 97%;
+    height: 94%;
+    border-top: 1.4em solid $green;
+    border-right: 1.3em solid $green;
+    border-bottom: 1.4em solid $green;
+    border-left: 1.3em solid $green;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    @media screen and (max-width: 1024px) {
+      width: 98%;
+      height: 97%;
+    }
+
+    @media screen and (max-width: 768px) {
+      border: 0.8em solid $green;
+    }
+  }
+
+  .border-in {
+    position: absolute;
+    width: 98%;
+    height: 97%;
+    border-top: 1.4em solid $green;
+    border-right: 1.3em solid $green;
+    border-bottom: 1.4em solid $green;
+    border-left: 1.3em solid $green;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    @media screen and (max-width: 1024px) {
+      width: 98%;
+      height: 97%;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 95%;
+      height: 98%;
+      border: 0.8em solid $green;
+    }
+  }
+
+  .header {
+    text-align: center;
+    z-index: 20;
+
+    h2 {
+      color: #DCBA7B;
+      font-size: 9em;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 4.5em;
+      }
+    }
+  }
+
+  .content-container {
+    z-index: 20;
+    word-spacing: 2.1px;
+    line-height: 1.47em;
+    padding: 0 10em;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      padding: 0 3em;
+    }
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+}
