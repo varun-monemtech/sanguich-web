@@ -1,12 +1,13 @@
+'use client'
 import React, { useState, useContext, useEffect, useCallback } from 'react'
 import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
-import { Link } from "gatsby"
 import {reduce} from "lodash"
 import Select from 'react-select'
+import Link from 'next/link'
 
-import StoreContext from '../../../context/StoreContext'
+import StoreContext from '../../context/StoreContext'
 import "./style.scss"
 
 
@@ -22,9 +23,10 @@ const ProductForm = ({ product }) => {
     options,
     variants,
     variants: [initialVariant],
-    priceRange: { minVariantPrice },
+    // ProductPriceRangeV2: { minVariantPrice },
   } = product
   const [variant, setVariant] = useState({ ...initialVariant })
+  // console.log('variant',variant)
   const [quantity, setQuantity] = useState(1)
   const {
     addVariantToCart,
@@ -40,19 +42,19 @@ const ProductForm = ({ product }) => {
       client.product.fetch(productId).then(fetchedProduct => {
         // this checks the currently selected variant for availability
         const result = fetchedProduct.variants.filter(
-          variant => variant.id === productVariant.shopifyId
+          variant => variant.id === productVariant.id
         )
         if (result.length > 0) {
           setAvailable(result[0].available)
         }
       })
     },
-    [client.product, productVariant.shopifyId, variants]
+    [client.product, productVariant.id, variants]
   )
 
   useEffect(() => {
-    checkAvailability(product.shopifyId)
-  }, [productVariant, checkAvailability, product.shopifyId])
+    checkAvailability(product.id)
+  }, [productVariant, checkAvailability, product.id])
 
   const handleQuantityChange = ({ target }) => {
     setQuantity(target.value)
@@ -64,6 +66,7 @@ const ProductForm = ({ product }) => {
   }
   const handleAddQuantity = () => {
     setQuantity(quantity + 1)
+    console.log('handleAddQuantity')
   }
 
   const handleOptionChangeSelect = (optionIndex,target) => {
@@ -83,7 +86,8 @@ const ProductForm = ({ product }) => {
   }
 
   const handleAddToCart = () => {
-    addVariantToCart(productVariant.shopifyId, quantity)
+    console.log('handleAddToCart')
+    addVariantToCart(productVariant.id, quantity)
   }
 
   /* 
@@ -110,7 +114,8 @@ const ProductForm = ({ product }) => {
   }
 
   const price = Intl.NumberFormat(undefined, {
-    currency: minVariantPrice.currencyCode,
+    // currency: minVariantPrice.currencyCode,
+    currency: 'USD',
     minimumFractionDigits: 2,
     style: 'currency',
   }).format(variant.price)
@@ -214,7 +219,7 @@ const ProductForm = ({ product }) => {
         </div>
         <div className="button-box">
           {hasItems ?
-            <Link className="btn fancy" to="/cart">
+            <Link className="btn fancy" href="/cart">
               <span className="square">View Cart</span>
             </Link>
           : null }
@@ -222,46 +227,6 @@ const ProductForm = ({ product }) => {
       </div>
     </div>
   )
-}
-
-ProductForm.propTypes = {
-  product: PropTypes.shape({
-    descriptionHtml: PropTypes.string,
-    handle: PropTypes.string,
-    id: PropTypes.string,
-    shopifyId: PropTypes.string,
-    images: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        originalSrc: PropTypes.string,
-      })
-    ),
-    options: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        name: PropTypes.string,
-        values: PropTypes.arrayOf(PropTypes.string),
-      })
-    ),
-    productType: PropTypes.string,
-    title: PropTypes.string,
-    variants: PropTypes.arrayOf(
-      PropTypes.shape({
-        availableForSale: PropTypes.bool,
-        id: PropTypes.string,
-        price: PropTypes.string,
-        title: PropTypes.string,
-        shopifyId: PropTypes.string,
-        selectedOptions: PropTypes.arrayOf(
-          PropTypes.shape({
-            name: PropTypes.string,
-            value: PropTypes.string,
-          })
-        ),
-      })
-    ),
-  }),
-  addVariantToCart: PropTypes.func,
 }
 
 export default ProductForm

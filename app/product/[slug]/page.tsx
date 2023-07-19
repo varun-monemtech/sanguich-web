@@ -1,7 +1,6 @@
 import Link from "next/link"
-import LoadTransition from "../../../animations/LoadTransition"
-import { LoadImage } from "../../../components/LoadImage"
 import Client from 'shopify-buy'
+import ProductFormWrap from '../../../OLD/ProductFormWrap'
 
 import './style.scss'
 
@@ -42,6 +41,15 @@ async function getProduct(slug: string) {
 	return res
 }
 
+// Getting content here
+async function getProducts() {
+	const res = await client.product.fetchAll().then((products: any) => {
+		// Do something with the product
+		return products
+	})
+	return res
+}
+
 // // Get Metadata
 // export async function generateMetadata( { params }: { params: { slug: string }}) {
 // 	const post = await getProduct(params.slug)
@@ -65,11 +73,12 @@ async function getProduct(slug: string) {
 
 export default async function MainPage({ params }: any) {
 	const product = await getProduct(params.slug)
+	const products = await getProducts()
 
 	const allProduct: any = null
 	
 	return (
-		<LoadTransition>
+		<>
 
 				<div className="span-12 grid-12">
 					<div className='content-box span-6 span-12-mobile'
@@ -96,7 +105,7 @@ export default async function MainPage({ params }: any) {
 							{/* <Link href={`/product/${allProduct?.nodes[prev].handle}`} className="to-prev" />
 							<Link href={`/product/${allProduct?.nodes[next].handle}`} className="to-next" /> */}
 
-							{/* <ProductForm product={product} /> */}
+							<ProductFormWrap handle={params.slug} />
 						</div>
 					</div>
 					<div className="span-6 span-12-mobile grid-12 container border-type-7" >
@@ -166,15 +175,15 @@ export default async function MainPage({ params }: any) {
 
 			{/* <button onClick={document.getElementById('test').showModal()}>click for modal</button> */}
 
-			<pre>
+			{/* <pre>
 				<code>{JSON.stringify(product, null, 2)}</code>
-			</pre>
+			</pre> */}
 
 			{/* <div 
 				className={classNames('shadow-small', {
 					'hover:shadow-medium transition-shadow duration-200': slug,
 				})}
 			/> */}
-		</LoadTransition>
+		</>
 	)
 }

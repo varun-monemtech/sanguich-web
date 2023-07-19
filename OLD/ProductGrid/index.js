@@ -182,9 +182,9 @@ const ProductGrid = () => {
           </div>
           }
       </div>
-      <pre>
+      {/* <pre>
         <code>{JSON.stringify( productsData, null, 2)}</code>
-      </pre>
+      </pre> */}
     </>
   )
 }
