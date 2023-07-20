@@ -28,7 +28,7 @@
     z-index: 1000;
     bottom: 0.5em;
     left: 50%;
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0) !important;
     width: 20%;
     max-width: 3.5em;
     height: 20%;
