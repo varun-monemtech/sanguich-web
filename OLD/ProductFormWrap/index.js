@@ -10,8 +10,10 @@ export default function ProductFormWrap({handle}) {
 
   useEffect(() => {
     store.client.product.fetchByHandle(handle).then((product) => {
+			// Clear out product object, remove all functions so we can pass it down to children
+			var objectFunctionLess=JSON.parse(JSON.stringify(product))
 			// Do something with the product
-      setProductsData(product)
+      setProductsData(objectFunctionLess)
     })
   },[])
 

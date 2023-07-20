@@ -77,9 +77,9 @@ const ProductForm = ({ product }) => {
       value,
     }
 
-    const selectedVariant = find(variants, ({ selectedOptions }) =>
-      isEqual(currentOptions, selectedOptions)
-    )
+    const selectedVariant = find(variants, ({ selectedOptions }) => {
+      return isEqual(currentOptions, selectedOptions) ? true : false
+    })
 
     setVariant({ ...selectedVariant })
   }
@@ -102,21 +102,21 @@ const ProductForm = ({ product }) => {
       selectedOptions: [
         {
           name: name,
-          value: value,
+          value: value.value,
         },
       ],
     })
     if (match === undefined) return true
-    if (match.availableForSale === true) return false
+    if (match.available === true) return false
     return true
   }
 
   const price = Intl.NumberFormat(undefined, {
     // currency: minVariantPrice.currencyCode,
-    currency: variant.price.currencyCode,
+    currency: variant?.price?.currencyCode ? variant.price.currencyCode : 'USD',
     minimumFractionDigits: 2,
     style: 'currency',
-  }).format(variant.price.amount)
+  }).format(variant?.price?.amount)
 
   const [hasItems] = useQuantity()
 
@@ -153,7 +153,7 @@ const ProductForm = ({ product }) => {
                 name={name}
                 onChange={event => handleOptionChangeSelect(index, event)}
                 options={values.map(value => (
-                  { value: value, label: value, disabled: checkDisabled(name, value) }
+                  { value: value.value, label: value.value, isDisabled: checkDisabled(name, value) }
                 ))}
                 styles={customStyles}
                 theme={theme => ({

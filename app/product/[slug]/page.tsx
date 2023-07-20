@@ -77,6 +77,7 @@ export default async function MainPage({ params }: any) {
 	const product = await getProduct(params.slug)
 	const products = await getProducts()
 
+	// Clear out product object, remove all functions so we can pass it down to children
 	var objectFunctionLess=JSON.parse(JSON.stringify(product))
 
 	const allProduct: any = null

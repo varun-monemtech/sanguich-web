@@ -23,7 +23,7 @@ const ProductImages = ({ images }) => {
               <Image
                 src={image.src}
                 key={image.id}
-                alt={image.altText}
+                alt={image.altText ? image.altText : 'Product'}
                 width={600}
                 height={400}
               />
