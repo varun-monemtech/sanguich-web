@@ -17,8 +17,6 @@ export default function ProductFormWrap({handle}) {
     })
   },[])
 
-	console.log(productsData)
-
 	return (
 		<>
 			{productsData ? 
