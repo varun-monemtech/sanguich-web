@@ -9,12 +9,14 @@ export default async function RootLayout({
 
   return (
 		<PageTransition>
-			<div id="header-fold-breakpoint"></div>
-			<section className="content product-presentation c5 grid-12 is-inview border-type-2 inview inview-rn">
+			<main className="main-product">
+				<div id="header-fold-breakpoint"></div>
+				<section className="content product-presentation c5 grid-12 is-inview border-type-2 inview inview-rn">
 
-				{children}
+					{children}
 
-			</section>
+				</section>
+			</main>
 		</PageTransition>
   )
 }
