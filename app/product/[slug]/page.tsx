@@ -1,8 +1,10 @@
 import Link from "next/link"
 import Client from 'shopify-buy'
 import ProductFormWrap from '../../../OLD/ProductFormWrap'
+import ProductImages from '../../../OLD/ProductImages'
 
 import './style.scss'
+import Image from "next/image"
 
 // This function fetches API to get static parameters (slugs) that normally would be deducted from URL,
 // this way we can generate static pages and avoid the loading component flash. It's pretty gatsby-like.
@@ -75,6 +77,8 @@ export default async function MainPage({ params }: any) {
 	const product = await getProduct(params.slug)
 	const products = await getProducts()
 
+	var objectFunctionLess=JSON.parse(JSON.stringify(product))
+
 	const allProduct: any = null
 	
 	return (
@@ -116,28 +120,7 @@ export default async function MainPage({ params }: any) {
 									<div className="decor-top-right"></div>
 								</div>
 						</div>
-						<div className="main-image span-12">
-							{/* <Img
-									fluid={product.images[currentImage]?.localFile.childImageSharp.fluid}
-									key={product.images[currentImage]?.id}
-									alt={product.images[currentImage]?.title}
-									imgStyle={{objectFit: 'cover'}}
-									objectPosition='50% 50%'
-								/> */}
-						</div>
-						<div className="gallery span-12 grid-12">
-							{/* {product.images.map( (image, i) => (
-									<div key={i} onClick={() => setCurrentImage(i)} className="gallery-item span-3">
-										<Img
-											fluid={image.localFile.childImageSharp.fluid}
-											key={image.id}
-											alt={product.title}
-											imgStyle={{objectFit: 'cover'}}
-											objectPosition='50% 50%'
-										/>
-									</div>
-							))} */}
-						</div>
+						<ProductImages images={...objectFunctionLess.images} />
 					</div>
 				</div>
 				<div className="span-12 bar relative shop-featured">
@@ -154,7 +137,7 @@ export default async function MainPage({ params }: any) {
 									<Link to={`/product/${node.handle}`}>
 										<div className="img-container">
 											<Img
-											fluid={node.images[0].localFile.childImageSharp.fluid}
+											fluid={node.images[0].src}
 											key={node.images[0].id}
 											alt={node.title}
 											imgStyle={{objectFit: 'cover'}}

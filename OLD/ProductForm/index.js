@@ -66,7 +66,6 @@ const ProductForm = ({ product }) => {
   }
   const handleAddQuantity = () => {
     setQuantity(quantity + 1)
-    console.log('handleAddQuantity')
   }
 
   const handleOptionChangeSelect = (optionIndex,target) => {
@@ -86,7 +85,6 @@ const ProductForm = ({ product }) => {
   }
 
   const handleAddToCart = () => {
-    console.log('handleAddToCart')
     addVariantToCart(productVariant.id, quantity)
   }
 

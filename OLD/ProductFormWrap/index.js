@@ -15,16 +15,16 @@ export default function ProductFormWrap({handle}) {
     })
   },[])
 
-	// console.log(productsData)
+	console.log(productsData)
 
 	return (
 		<>
 			{productsData ? 
 				<ProductForm product={productsData} />
 			: null}
-			<pre>
+			{/* <pre>
 				<code>{JSON.stringify(productsData, null, 2)}</code>
-			</pre>
+			</pre> */}
 		</>
 	)
 }
