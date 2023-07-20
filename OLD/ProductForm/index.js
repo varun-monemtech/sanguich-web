@@ -115,10 +115,10 @@ const ProductForm = ({ product }) => {
 
   const price = Intl.NumberFormat(undefined, {
     // currency: minVariantPrice.currencyCode,
-    currency: 'USD',
+    currency: variant.price.currencyCode,
     minimumFractionDigits: 2,
     style: 'currency',
-  }).format(variant.price)
+  }).format(variant.price.amount)
 
   const [hasItems] = useQuantity()
 
