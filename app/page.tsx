@@ -20,6 +20,7 @@ import ACFOurStory from '../components/ACF/Sanguich/OurStory'
 import ACFHola from '../components/ACF/Sanguich/Hola'
 import ACFAddress from '../components/ACF/Sanguich/Address'
 import ACFCatering from '../components/ACF/Sanguich/Catering'
+import ACFNews from '../components/ACF/Sanguich/News'
 
 import ContextProvider from "../provider/ContextProvider"
 
@@ -35,10 +36,23 @@ async function getPage() {
 	return res.json()
 }
 
+async function getPosts() {
+	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/posts',
+		{
+			// cache: 'no-store',
+			next: {
+				revalidate: 600
+			}
+		}
+	)
+	return res.json()
+}
+
 
 export default async function MainPage() {
 	const page = await getPage()
-
+	const posts = await getPosts()
+ 
   const Sections = page?.acf?.sections.map((section: any, i: number) => {
 
     if(section.acf_fc_layout === 'hero') {
@@ -90,6 +104,12 @@ export default async function MainPage() {
     if(section.acf_fc_layout === 'catering') {
       return (
         <ACFCatering key={section.id} { ...section } />
+      )
+    }
+
+    if(section.acf_fc_layout === 'news') {
+      return (
+        <ACFNews key={section.id} { ...section } posts={posts} />
       )
     }
 
