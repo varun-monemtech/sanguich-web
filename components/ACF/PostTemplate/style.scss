@@ -1,0 +1,121 @@
+
+#post-template {
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    min-height: 50vw;
+
+    @media screen and (max-width: 768px) {
+      padding-top: 4.5em;
+    }
+
+    .img-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      flex: 1 1 100%;
+      margin: 0 auto;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      max-height: 100vh;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    position: relative;
+    z-index: 500;
+    font-size: 2.5em;
+    margin-top: 0;
+    color: #d0c8b9;
+    text-shadow: 1px 1px 0 #dba920, 4px 4px 0 #2f6148, 5px 5px 0 #aa8d3d;
+    z-index: 500;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 1.8em;
+      padding: 4em 2em 5em;
+    }
+  }
+
+  .content-title {
+    color: #dcba7b;
+  }
+
+  .video {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 1em 0;
+
+    @media screen and (max-width: 768px) {
+      max-width: 95%;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: 56%;
+
+      /* 1:1 Aspect Ratio */
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+  }
+
+
+
+  .content {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 4em 0;
+    position: relative;
+
+    @media screen and (max-width: 768px) {
+      padding: 1em 0;
+    }
+
+    .wysiwyg-inject {
+      padding: 2em 0;
+    }
+  }
+
+  .scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .img {
+    width: 80%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}

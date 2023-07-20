@@ -9,7 +9,7 @@ export default async function RootLayout({
 
   return (
 		<PageTransition>
-			<section className="post c0 padd-2 padd-top-1-5">
+			<section className="post">
 
 			<Container>
 				{children}
