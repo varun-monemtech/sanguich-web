@@ -166,18 +166,25 @@
 
 	.product-summary {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 		text-align: center;
 
-		button {
+		button,
+		a.btn {
 			margin: .5em 0;
 			//padding: .55em 2.75em .35em;
 			color: #2A4B2E !important;
 
-			 &:hover {
-				 color: #fff !important;
-			 }
+			span {
+				color: #2A4B2E !important;
+				transition: color 0.3s ease-in-out;
+			}
+
+			&:hover,
+			&:hover span {
+				color: #fff !important;
+			}
 		}
 	}
 
