@@ -68,9 +68,6 @@ export default async function MainPage({ params }: any) {
 
   return (
      <LoadTransition>
-      				<pre>
-						<code>{JSON.stringify(post, null, 2)}</code>
-					</pre>
       <PostTemplate post={post} />
     </LoadTransition>
   )
