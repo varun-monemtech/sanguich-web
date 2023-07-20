@@ -46,7 +46,7 @@ async function getPost(slug: string) {
 export async function generateMetadata( { params }: { params: { slug: string }}) {
 	const post = await getPost(params.slug)
 	return {
-		title: `${post?.title?.rendered}`,
+		title: `${post?.yoast_head_json?.title}`,
 		description: post?.excerpt?.rendered?.replace(/(<([^>]+)>)/gi, ""),
 		// url: 'theurl',
 		siteName: process.env.SITENAME,
@@ -68,6 +68,9 @@ export default async function MainPage({ params }: any) {
 
   return (
      <LoadTransition>
+      				<pre>
+						<code>{JSON.stringify(post, null, 2)}</code>
+					</pre>
       <PostTemplate post={post} />
     </LoadTransition>
   )
