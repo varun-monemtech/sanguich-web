@@ -1,6 +1,7 @@
 'use client'
 import React, {useState, createContext, useEffect, useCallback} from 'react'
 import { throttle } from 'lodash'
+import { usePathname } from 'next/navigation'
 
 const NaviContext = createContext(false)
 
@@ -15,6 +16,8 @@ function NaviContextProvider({children, location}) {
   const [beforeHeaderBreakpoint, setBeforeHeaderBreakpoint] = useState(true)
   // State for current location
   const [locationPathname, setLocationPathname] = useState(true)
+
+  const pathname = usePathname()
 
   /* ==========================================================================
     Before Breakpoint Check
@@ -48,7 +51,7 @@ function NaviContextProvider({children, location}) {
       }
     }
 
-  },[])
+  },[pathname])
 
   /* ==========================================================================
     Are we on mobile
