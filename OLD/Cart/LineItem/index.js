@@ -1,6 +1,7 @@
+'use client'
 import React, { useContext, useState, useEffect } from 'react'
 
-import StoreContext from '../../../../context/StoreContext'
+import StoreContext from '../../../context/StoreContext'
 
 const LineItem = props => {
   const { line_item } = props

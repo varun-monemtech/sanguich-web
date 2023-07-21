@@ -12,9 +12,9 @@
     font-size: 1.125em;
     line-height: 1;
     padding: .55em 3em .35em;
-    background: url(btn.png) no-repeat scroll center center transparent;
+    background: url(./btn.png) no-repeat scroll center center transparent;
     background-size: 100% 100%;
-    background-color: transparent !important;
+    // background-color: transparent !important;
     color: #2A4B2E;
     text-align: center;
     font-family: "Intensa", Helvetica, Arial, sans-serif !important;
@@ -23,10 +23,12 @@
       width: 100%;
       height: 100%;
       display: block;
+      color: #2A4B2E;
+      transition: color .2s ease-in-out;
     }
 
     &:hover {
-      a {
+      a span {
         color: #fff !important;
       }
     }
