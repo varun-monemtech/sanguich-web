@@ -39,6 +39,14 @@ img {
   object-fit: cover;
 }
 
+.wysiwyg-inject {
+  img {
+    position: relative !important;
+    object-fit: contain !important;
+    width: auto !important;
+  }
+}
+
 .bg {
 	position: absolute !important;
 	top: 0;

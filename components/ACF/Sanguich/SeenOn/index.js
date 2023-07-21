@@ -14,27 +14,32 @@ function SeenOn(props) {
     if (node.link || node.file) {
       return (
         <a key={i} href={node?.file?.localFile ? node.file.localFile.publicURL : node.link} className="single-item span-3 span-5-mobile" target="_blank" rel="noreferrer noopener">
-          <Image
-            src={logo.url}
-            width={150}
-            height={80}
-            alt={logo.alt}
-            style={{ objectFit: "contain" }}
-            quality="90"
-          />
+          <div className='image-wrapper'>
+            <Image
+              src={logo.url}
+              width={150}
+              height={80}
+              alt={logo.alt}
+              style={{ objectFit: "contain" }}
+              quality="90"
+            />
+          </div>
         </a>
       )
     } else {
       return (
         <div key={i} className="single-item span-3 span-5-mobile">
-          <Image
-            src={logo.url}
-            width={150}
-            height={80}
-            alt={logo.alt}
-            style={{ objectFit: "contain" }}
-            quality="90"
-          />
+          <div className='image-wrapper'>
+            <Image
+              src={logo.url}
+              width={150}
+              height={80}
+              alt={logo.alt}
+              style={{ objectFit: "contain" }}
+              quality="90"
+            />
+          </div>
+
         </div>
       )
     }

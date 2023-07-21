@@ -43,17 +43,17 @@
   .single-item {
     width: 100%;
     height: 100%;
-    margin: 2.5em 0;
+    margin: 4em 0;
     display: flex;
     justify-content: center;
     transition: transform .5s;
-    position: relative;
+
     &:hover {
       transform: translateY(-5px);
     }
   }
 
-  .gatsby-image-wrapper {
+  .image-wrapper {
     position: relative !important;
     width: 45%;
     height: auto;
