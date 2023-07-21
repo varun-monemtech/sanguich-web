@@ -15,9 +15,10 @@ function CF7Catering(props) {
 
 	const defaultValues = {
 		ReactDatepicker: new Date(),
+		reValidateMode: 'onChange'
 	}
 
-	const { register, handleSubmit, errors, reset, control } = useForm(defaultValues)
+	const { register, handleSubmit, control, formState: { errors }, reset } = useForm(defaultValues)
 	const [message, setMessage] = useState(false)
 	const [isLoading, setLoading] = useState(false)
 
@@ -180,26 +181,26 @@ function CF7Catering(props) {
 					<div className={`span-12 grid-12 form-fields-wrap ${isActive ? 'active' : ''}`}>
 
 						<label className="span-12 animated delay-500">
-							<input type="text" placeholder="Enter full name" name="name" ref={register({required: false, maxLength: 80, message: "error message"})} />
+						<input type="text" placeholder="Enter full name" name="name" {...register("name",{required: false})} />
 							{errors.name && <p className="small margin-off">your name is required.</p>}
 						</label>
 						<label className="span-12 animated delay-500">
-							<input type="text" placeholder="e-mail" name="email" ref={register({required: true, minLength: 6, pattern: /^\S+@\S+$/i})} />
+							<input type="text" placeholder="e-mail" name="email" {...register("email",{required: true, minLength: 6, pattern: /^\S+@\S+$/i})} />
 							{errors.email && <p className="small margin-off">a correct email is required.</p>}
 						</label>
 						<label className="span-6 span-12-mobile animated delay-500">
-							<input type="text" placeholder="company" name="company" ref={register({required: false, maxLength: 80, message: "error message"})} />
+							<input type="text" placeholder="company" name="company" {...register("company",{required: false})} />
 						</label>
 						<label className="span-6 span-12-mobile animated delay-500">
-							<input type="text" placeholder="address" name="address" ref={register({required: false, maxLength: 80, message: "error message"})} />
+							<input type="text" placeholder="address" name="address" {...register("address",{required: false})} />
 						</label>
 						<label className="span-6 span-12-mobile animated delay-500">
-							<input type="text" placeholder="city" name="city" ref={register({required: false, maxLength: 80, message: "error message"})} />
+							<input type="text" placeholder="city" name="city" {...register("city",{required: false})} />
 						</label>
 						<label className="span-6 span-12-mobile animated delay-500">
-							<input type="text" placeholder="zip" name="zip" ref={register({required: false, maxLength: 80, message: "error message"})} />
+							<input type="text" placeholder="zip" name="zip" {...register("zip",{required: false})} />
 						</label>
-						<label className="span-12 animated delay-500 has-datepicker">
+						{/* <label className="span-12 animated delay-500 has-datepicker">
 							<Controller
 								as={ReactDatePicker}
 								name="eventdate"
@@ -245,91 +246,103 @@ function CF7Catering(props) {
 								isClearable
 								shouldCloseOnSelect
 							/>
+						</label> */}
+						<label className="elevate-z span-6 span-12-laptop span-12-mobile animated delay-500 has-dropdown">
+							<Controller
+								name="typeofevent"
+								control={control}
+								// rules={{ required: true }}
+								render={({ field }) => (
+									<Select
+										instanceId={'sup-dawg'}
+										options={typeofeventvalues.map(val => (
+											{ value: val.value, label: val.label }
+										))}
+										// defaultValue={props.languageDefaultValueToSelect}
+										// isMulti
+										placeholder="Type of Event..."
+										isClearable
+										styles={customStyles}
+										theme={theme => ({
+											...theme,
+											borderRadius: 0,
+											colors: {
+												...theme.colors,
+												text: '#ffffff',
+												primary: '#EAC582',
+												primary75: '#EAC582',
+												primary50: '#EAC582',
+												primary25: '#EAC582',
+											
+												danger: '#DE350B',
+												dangerLight: '#FFBDAD',
+											
+												neutral0: '#2A4B2E',
+												neutral5: '#EAC582',
+												neutral10: 'hsl(0, 0%, 90%)',
+												neutral20: '#EAC582',
+												neutral30: '#ffffff',
+												neutral40: '#668B6B',
+												neutral50: '#D0C8B9',
+												neutral60: '#668B6B',
+												neutral70: 'hsl(0, 0%, 30%)',
+												neutral80: '#D0C8B9',
+												neutral90: 'hsl(0, 0%, 100%)',
+											},
+										})}
+									/>
+								)}
+							/>
 						</label>
 						<label className="elevate-z span-6 span-12-laptop span-12-mobile animated delay-500 has-dropdown">
-								<Controller
-									as={Select}
-									name="typeofevent"
-									control={control}
-									isClearable
-									placeholder="Type of Event..."
-									//onChange={event => handleOptionChangeSelect(index, event)}
-									options={typeofeventvalues.map(val => (
-										{ value: val.value, label: val.label }
-									))}
-									styles={customStyles}
-									theme={theme => ({
-										...theme,
-										borderRadius: 0,
-										colors: {
-											...theme.colors,
-											text: '#ffffff',
-											primary: '#EAC582',
-											primary75: '#EAC582',
-											primary50: '#EAC582',
-											primary25: '#EAC582',
-										
-											danger: '#DE350B',
-											dangerLight: '#FFBDAD',
-										
-											neutral0: '#2A4B2E',
-											neutral5: '#EAC582',
-											neutral10: 'hsl(0, 0%, 90%)',
-											neutral20: '#EAC582',
-											neutral30: '#ffffff',
-											neutral40: '#668B6B',
-											neutral50: '#D0C8B9',
-											neutral60: '#668B6B',
-											neutral70: 'hsl(0, 0%, 30%)',
-											neutral80: '#D0C8B9',
-											neutral90: 'hsl(0, 0%, 100%)',
-										},
-									})}
-								/>
-						</label>
-						<label className="elevate-z span-6 span-12-laptop span-12-mobile animated delay-500 has-dropdown">
-								<Controller
-									as={Select}
-									name="numberofpeople"
-									control={control}
-									isClearable
-									placeholder="Participants..."
-									//onChange={event => handleOptionChangeSelect(index, event)}
-									options={numberofpeoplevalues.map(val => (
-										{ value: val.value, label: val.label }
-									))}
-									styles={customStyles}
-									theme={theme => ({
-										...theme,
-										borderRadius: 0,
-										colors: {
-											...theme.colors,
-											text: '#ffffff',
-											primary: '#EAC582',
-											primary75: '#EAC582',
-											primary50: '#EAC582',
-											primary25: '#EAC582',
-										
-											danger: '#DE350B',
-											dangerLight: '#FFBDAD',
-										
-											neutral0: '#2A4B2E',
-											neutral5: '#EAC582',
-											neutral10: 'hsl(0, 0%, 90%)',
-											neutral20: '#EAC582',
-											neutral30: '#ffffff',
-											neutral40: '#668B6B',
-											neutral50: '#D0C8B9',
-											neutral60: '#668B6B',
-											neutral70: 'hsl(0, 0%, 30%)',
-											neutral80: '#D0C8B9',
-											neutral90: 'hsl(0, 0%, 100%)',
-										},
-									})}
-								/>
+							<Controller
+								name="numberofpeople"
+								control={control}
+								// rules={{ required: true }}
+								render={({ field }) => (
+									<Select
+										instanceId={'sup-dawg'}
+										options={numberofpeoplevalues.map(val => (
+											{ value: val.value, label: val.label }
+										))}
+										// defaultValue={props.languageDefaultValueToSelect}
+										// isMulti
+										placeholder="Participants..."
+										isClearable
+										styles={customStyles}
+										theme={theme => ({
+											...theme,
+											borderRadius: 0,
+											colors: {
+												...theme.colors,
+												text: '#ffffff',
+												primary: '#EAC582',
+												primary75: '#EAC582',
+												primary50: '#EAC582',
+												primary25: '#EAC582',
+											
+												danger: '#DE350B',
+												dangerLight: '#FFBDAD',
+											
+												neutral0: '#2A4B2E',
+												neutral5: '#EAC582',
+												neutral10: 'hsl(0, 0%, 90%)',
+												neutral20: '#EAC582',
+												neutral30: '#ffffff',
+												neutral40: '#668B6B',
+												neutral50: '#D0C8B9',
+												neutral60: '#668B6B',
+												neutral70: 'hsl(0, 0%, 30%)',
+												neutral80: '#D0C8B9',
+												neutral90: 'hsl(0, 0%, 100%)',
+											},
+										})}
+									/>
+								)}
+							/>
 						</label>
 						<label className="span-12 animated delay-500">
-							<textarea placeholder="message" name="message" ref={register} />
+							<textarea placeholder="message" name="message" {...register("message",{required: false})} />
 						</label>
 
 						<div className="btn-wrap span-12 text-center font1 animated delay-500">

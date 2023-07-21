@@ -1,10 +1,13 @@
+'use client'
 import React from 'react'
 import './style.scss'
 
 import Image from 'next/image'
 import CF7Catering from '../../../Form/CF7/Catering'
+import { useInView } from 'react-intersection-observer'
 
 function Catering(props) {
+	const [io, ioInView] = useInView({ triggerOnce: true })
 
   const anchor = props.anchor
   const classes = props.classes
@@ -14,7 +17,7 @@ function Catering(props) {
   return (
     <>
       {classes ?
-        <section id={`section-${anchor}`} className={`content c4 grid-12 is-inview ${classes}`}>
+        <section ref={io} id={`section-${anchor}`} className={`content c4 grid-12 is-inview ${classes} ${ioInView ? 'inview' : ''}`}>
 
           {anchor ?
             <div id={anchor} className="anchor"></div>
@@ -52,7 +55,7 @@ function Catering(props) {
               </div>
             </div>
 
-            {/* <CF7Catering /> */}
+            <CF7Catering />
 
           </div>
 
