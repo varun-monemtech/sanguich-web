@@ -50,7 +50,6 @@ function CF7Contact(props) {
 	}
 
 	const onSubmit = (form, e) => {
-		console.log('x')
 		e.preventDefault()
 
 		setLoading(true)
@@ -140,6 +139,7 @@ function CF7Contact(props) {
 								// rules={{ required: true }}
 								render={({ field }) => (
 									<Select
+										{...field}
 										instanceId={'sup-dawg'}
 										options={whatvalues.map(val => (
 											{ value: val.value, label: val.label }

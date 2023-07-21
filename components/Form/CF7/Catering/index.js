@@ -254,6 +254,7 @@ function CF7Catering(props) {
 								// rules={{ required: true }}
 								render={({ field }) => (
 									<Select
+										{...field}
 										instanceId={'sup-dawg'}
 										options={typeofeventvalues.map(val => (
 											{ value: val.value, label: val.label }
@@ -301,6 +302,7 @@ function CF7Catering(props) {
 								// rules={{ required: true }}
 								render={({ field }) => (
 									<Select
+										{...field}
 										instanceId={'sup-dawg'}
 										options={numberofpeoplevalues.map(val => (
 											{ value: val.value, label: val.label }
