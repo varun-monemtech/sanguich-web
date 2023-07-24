@@ -154,37 +154,37 @@ function NaviPrimary(props) {
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
-					<a href="/#homepage-menu">Menu</a>
+					<Link href="/#homepage-menu" scroll={false}>Menu</Link>
 				</div>
 				<div className="nav-item" 	onClick={() => { 
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
-					<a href="/#order-now">Order Online</a>
+					<Link href="/#order-now" scroll={false}>Order Online</Link>
 				</div>
 				<div className="nav-item" 	onClick={() => { 
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
-					<a href="/#catering">Catering</a>
+					<Link href="/#catering" scroll={false}>Catering</Link>
 				</div>
 				<div className="nav-item" 	onClick={() => { 
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
-					<a href="/#address">Hours &amp; Locations</a>
+					<Link href="/#address" scroll={false}>Hours &amp; Locations</Link>
 				</div>
 				<div className="nav-item" 	onClick={() => { 
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
-					<a href="/#our-story">Our &amp; Story</a>
+					<Link href="/#our-story" scroll={false}>Our &amp; Story</Link>
 				</div>
 				<div className="nav-item" 	onClick={() => { 
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
-					<a href="/#news">News</a>
+					<Link href="/#news" scroll={false}>News</Link>
 				</div>
 				<div className="nav-item" 	onClick={() => { 
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}

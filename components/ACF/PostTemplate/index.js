@@ -2,7 +2,7 @@
 import React from 'react'
 import './style.scss'
 import { useInView } from 'react-intersection-observer'
-
+import Link from 'next/link'
 import Image from 'next/image'
 
 function PostTemplate({post}) {
@@ -36,7 +36,7 @@ function PostTemplate({post}) {
               </div>
             </div>
 
-            <a href="#scroll" className="to-next animated"></a>
+            <Link href="#scroll" className="to-next animated" scroll={false}></Link>
 
             <div className="img-wrapper">
               <h2 className="title" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />
@@ -54,7 +54,7 @@ function PostTemplate({post}) {
         <div id="header-fold-breakpoint"></div>
 
         <div className="content">
-          <div id="scroll" className="scroll"></div>
+          <div id="scroll" className="anchor"></div>
           <h2 className="content-title text-center" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />
           <div className="wysiwyg-inject" dangerouslySetInnerHTML={{ __html: post?.acf?.content }} />
           {post?.acf?.video ?
