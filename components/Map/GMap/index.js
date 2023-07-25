@@ -8,7 +8,7 @@ import './style.scss'
 
 function GMap(props) {
 
-  const gMapKey = process.env.GOOGLE_API_KEY
+  const gMapKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
 
   const defaultProps = {
     center: {
