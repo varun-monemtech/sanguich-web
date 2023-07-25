@@ -215,7 +215,7 @@ input[type="submit"] {
 }
 
 .btn,
-button:not(.regular) {
+button:not(.regular, .react-datepicker__navigation, .react-datepicker__close-icon) {
 	position: relative;
 	display: inline-block;
 	text-transform: uppercase;

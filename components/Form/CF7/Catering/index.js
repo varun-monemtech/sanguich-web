@@ -8,13 +8,13 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBaby } from '@fortawesome/free-solid-svg-icons'
 import Select from 'react-select'
-import ReactDatePicker from 'react-datepicker'
+import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 
 function CF7Catering(props) {
 
 	const defaultValues = {
-		ReactDatepicker: new Date(),
+		DatePicker: new Date(),
 		reValidateMode: 'onChange'
 	}
 
@@ -200,53 +200,71 @@ function CF7Catering(props) {
 						<label className="span-6 span-12-mobile animated delay-500">
 							<input type="text" placeholder="zip" name="zip" {...register("zip",{required: false})} />
 						</label>
-						{/* <label className="span-12 animated delay-500 has-datepicker">
+						<label className="span-12 animated delay-500 has-datepicker">
 							<Controller
-								as={ReactDatePicker}
 								name="eventdate"
 								control={control}
-								valueName="selected"
-								onChange={([selected]) => selected}
-								showTimeSelect={false}
-								dateFormat="MMM d yyyy"
-								className="input"
-								placeholderText="Event date"
-								isClearable
-								shouldCloseOnSelect
+								render={({ field }) => (
+									<DatePicker
+										{...field}
+										selected={field.value}
+										// onSelect={handleDateSelect} //when day is clicked
+										onChange={(date) => field.onChange(date)}
+										valueName="selected"
+										showTimeSelect={false}
+										dateFormat="MMM d yyyy"
+										className="input"
+										placeholderText="Event date"
+										isClearable
+										shouldCloseOnSelect
+									/>
+								)}
 							/>
 						</label>
 						<label className="span-6 span-12-laptop animated delay-500 has-datepicker">
 							<Controller
-								as={ReactDatePicker}
 								name="starttime"
 								control={control}
-								valueName="selected"
-								onChange={([selected]) => selected}
-								showTimeSelect={true}
-								showTimeSelectOnly
-								dateFormat="h:mm aa"
-								className="input"
-								placeholderText="Event Start Time"
-								isClearable
-								shouldCloseOnSelect
+								render={({ field }) => (
+									<DatePicker
+										{...field}
+										selected={field.value}
+										// onSelect={handleDateSelect} //when day is clicked
+										onChange={(date) => field.onChange(date)}
+										valueName="selected"
+										showTimeSelect={true}
+										showTimeSelectOnly
+										dateFormat="h:mm aa"
+										className="input"
+										placeholderText="Event Start Time"
+										isClearable
+										shouldCloseOnSelect
+									/>
+								)}
 							/>
 						</label>
 						<label className="span-6 span-12-laptop animated delay-500 has-datepicker">
 							<Controller
-								as={ReactDatePicker}
 								name="endtime"
 								control={control}
-								valueName="selected"
-								onChange={([selected]) => selected}
-								showTimeSelect={true}
-								showTimeSelectOnly
-								dateFormat="h:mm aa"
-								className="input"
-								placeholderText="Event End Time"
-								isClearable
-								shouldCloseOnSelect
+								render={({ field }) => (
+									<DatePicker
+										{...field}
+										selected={field.value}
+										// onSelect={handleDateSelect} //when day is clicked
+										onChange={(date) => field.onChange(date)}
+										valueName="selected"
+										showTimeSelect={true}
+										showTimeSelectOnly
+										dateFormat="h:mm aa"
+										className="input"
+										placeholderText="Event End Time"
+										isClearable
+										shouldCloseOnSelect
+									/>
+								)}
 							/>
-						</label> */}
+						</label>
 						<label className="elevate-z span-6 span-12-laptop span-12-mobile animated delay-500 has-dropdown">
 							<Controller
 								name="typeofevent"
