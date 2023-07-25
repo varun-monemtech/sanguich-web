@@ -19,15 +19,15 @@ const ProductImages = ({ images }) => {
       </div>
       <div className="gallery span-12 grid-12">
         {images.map( (image, i) => (
-            <div key={i} onClick={() => setCurrentImage(i)} className="gallery-item span-3">
-              <Image
-                src={image.src}
-                key={image.id}
-                alt={image.altText ? image.altText : 'Product'}
-                width={600}
-                height={400}
-              />
-            </div>
+          <div key={i} onClick={() => setCurrentImage(i)} className="gallery-item span-3">
+            <Image
+              src={image.src}
+              key={image.id}
+              alt={image.altText ? image.altText : 'Product'}
+              width={600}
+              height={400}
+            />
+          </div>
         ))}
       </div>
     </>

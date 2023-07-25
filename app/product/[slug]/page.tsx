@@ -2,6 +2,7 @@ import Link from "next/link"
 import Client from 'shopify-buy'
 import ProductFormWrap from '../../../OLD/ProductFormWrap'
 import ProductImages from '../../../OLD/ProductImages'
+import OtherProducts from '../../../OLD/OtherProducts'
 
 import './style.scss'
 import Image from "next/image"
@@ -78,10 +79,9 @@ export default async function MainPage({ params }: any) {
 	const products = await getProducts()
 
 	// Clear out product object, remove all functions so we can pass it down to children
-	var objectFunctionLess=JSON.parse(JSON.stringify(product))
+	var productFunctionLess=JSON.parse(JSON.stringify(product))
+	var productsFunctionLess=JSON.parse(JSON.stringify(products))
 
-	const allProduct: any = null
-	
 	return (
 		<>
 
@@ -121,7 +121,7 @@ export default async function MainPage({ params }: any) {
 									<div className="decor-top-right"></div>
 								</div>
 						</div>
-						<ProductImages images={...objectFunctionLess.images} />
+						<ProductImages images={...productFunctionLess.images} />
 					</div>
 				</div>
 				<div className="span-12 bar relative shop-featured">
@@ -129,6 +129,7 @@ export default async function MainPage({ params }: any) {
 						<div className="header">
 							<h2 className="fancyfont font2"><span className="capitalize">O</span>ther <span className="capitalize">I</span>tems</h2>
 						</div>
+						<OtherProducts allProduct={productsFunctionLess} />
 						{/* <ProductGrid /> */}
 						{/* <div className="slider">
 							<div onClick={() => currentSlide > 0 ? setCurrentSlide(currentSlide - 1) : null} className={currentSlide > 0 ? "arrow arrow-left" : "arrow arrow-left disabled"}></div>
