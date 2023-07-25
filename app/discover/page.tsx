@@ -22,9 +22,9 @@ async function getPosts() {
 export async function generateMetadata( { params }: { params: { slug: string }}) {
 	return {
 		title: 'Blog',
-		description: process.env.SITEDESCRIPTION,
+		description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
 		// url: 'theurl',
-		siteName: process.env.SITENAME,
+		siteName: process.env.NEXT_PUBLIC_SITENAME,
 		images: [
 			{
 				url: 'urltoimg',

@@ -30,11 +30,11 @@ import { NaviContextProvider } from '../context/NaviContext'
 // Meta Things for SEO
 export const metadata: Metadata = {
   title: {
-    template: `%s | ${process.env.SITENAME}`,
-    default: `${process.env.SITENAME}`, // a default is required when creating a template
+    template: `%s | ${process.env.NEXT_PUBLIC_SITENAME}`,
+    default: `${process.env.NEXT_PUBLIC_SITENAME}`, // a default is required when creating a template
   },
-  description: process.env.SITEDESCRIPTION,
-  metadataBase: new URL(`${process.env.SITEURL}`),
+  description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_SITEURL}`),
   alternates: {
     canonical: '/',
     // languages: {
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     // },
   },
   openGraph: {
-    title: `${process.env.SITENAME}`,
-    description: process.env.SITEDESCRIPTION,
-    url: process.env.SITEURL,
+    title: `${process.env.NEXT_PUBLIC_SITENAME}`,
+    description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
+    url: process.env.NEXT_PUBLIC_SITEURL,
     // images: '/og?title=MicroPrism',
     locale: 'en_US',
     type: 'website',
