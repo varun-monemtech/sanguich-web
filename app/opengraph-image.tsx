@@ -35,7 +35,7 @@ const getTheFont = async () => {
 
 const getTheOgBG = async () => {
   const response = await fetch(
-     new URL('../public/img/og.jpg', import.meta.url)
+     new URL('../public/og-sang.jpg', import.meta.url)
    )
    const res = await response.arrayBuffer()
    return res
@@ -88,7 +88,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             background: 'transparent',
           }}
         >
-          Sanguich
+          TASTE LA TRADICIÓN
         </div>
       </div>
     ),

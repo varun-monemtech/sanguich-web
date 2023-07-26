@@ -45,7 +45,7 @@ async function getPost(slug: string) {
 // Get Metadata
 export async function generateMetadata( { params }: { params: { slug: string }}) {
 	const post = await getPost(params.slug)
-  console.log(post?.title?.rendered?.replace(/(<([^>]+)>)/gi, ""))
+
   return {
 		title: `${post?.title?.rendered?.replace(/(<([^>]+)>)/gi, "")}`,
 		description: post?.excerpt?.rendered?.replace(/(<([^>]+)>)/gi, ""),

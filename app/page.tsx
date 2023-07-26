@@ -10,6 +10,7 @@ import { faEarthAmericas, faFire, faMugHot, faPiggyBank } from '@fortawesome/fre
 import { Loader } from "../components/Loader"
 import { LoadImage } from "../components/LoadImage"
 import ArtemisForm from "../components/Form"
+import { Metadata } from 'next'
 
 import Menu from '../components/ACF/Sanguich/Menu'
 import ACFOrder from '../components/ACF/Sanguich/Order'
@@ -46,6 +47,10 @@ async function getPosts() {
 		}
 	)
 	return res.json()
+}
+
+export const metadata: Metadata = {
+  title: `Home | ${process.env.NEXT_PUBLIC_SITENAME}`,
 }
 
 
