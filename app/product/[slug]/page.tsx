@@ -106,7 +106,7 @@ export default async function MainPage({ params }: any) {
 									<div className="decor-bottom-right"></div>
 								</div>
 							</div>
-							<Link href="#other-items" className="to-bottom animated"></Link>
+							<Link href="#other-items" className="to-bottom animated" scroll={false}></Link>
 							{/* <Link href={`/product/${allProduct?.nodes[prev].handle}`} className="to-prev" />
 							<Link href={`/product/${allProduct?.nodes[next].handle}`} className="to-next" /> */}
 
