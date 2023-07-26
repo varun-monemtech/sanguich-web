@@ -14,6 +14,17 @@ import PostTemplate from '../../../components/ACF/PostTemplate'
 // /products/[...slug]	{ slug: string[] }[]
 // https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 
+function unEscape(htmlStr: String) {
+  htmlStr = htmlStr?.replace(/&lt;/g , "<");	 
+  htmlStr = htmlStr?.replace(/&gt;/g , ">");     
+  htmlStr = htmlStr?.replace(/&quot;/g , "\"");  
+  htmlStr = htmlStr?.replace(/&#39;/g , "\'");   
+  htmlStr = htmlStr?.replace(/&amp;/g , "&");
+  htmlStr = htmlStr?.replace(/&#038;/g , "&");
+
+  return htmlStr;
+}
+
 export async function generateStaticParams() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/posts',
 		{
@@ -47,15 +58,14 @@ export async function generateMetadata( { params }: { params: { slug: string }})
 	const post = await getPost(params.slug)
 
   return {
-		title: `${post?.title?.rendered?.replace(/(<([^>]+)>)/gi, "")}`,
-		description: post?.excerpt?.rendered?.replace(/(<([^>]+)>)/gi, ""),
+		title: `${unEscape(post?.title?.rendered)}`,
+		description: post?.yoast_head_json?.description,
 		url: `${process.env.NEXT_PUBLIC_SITEURL}/discover/${params?.slug}`,
 		siteName: process.env.NEXT_PUBLIC_SITENAME,
 		openGraph: {
-			title: `${post?.title?.rendered?.replace(/(<([^>]+)>)/gi, "")}`,
-			description: post?.excerpt?.rendered?.replace(/(<([^>]+)>)/gi, ""),
+			title: post?.yoast_head_json?.title,
+			description: post?.yoast_head_json?.description,
 			url: `${process.env.NEXT_PUBLIC_SITEURL}/discover/${params?.slug}`,
-			// images: '/opengraph-image.jpg',
 			locale: 'en_US',
 			type: 'website',
 		},
