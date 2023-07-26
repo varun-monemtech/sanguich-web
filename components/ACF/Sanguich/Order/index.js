@@ -22,7 +22,7 @@ function Order(props) {
         <section id={`section-${anchor}`} className={`content c4 is-inview ${ioInView ? 'inview' : ''} ${classes}`}>
 
           {anchor ?
-            <div id={anchor} className="anchor"></div>
+            <div id={anchor} className="anchor middle"></div>
             : null}
 
           <div className="img c4 ">

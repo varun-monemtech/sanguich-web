@@ -364,6 +364,10 @@ input:-webkit-autofill {
 	height: 100%;
 	visibility: hidden;
 
+  &.middle {
+    top: calc(50% - 50vh);
+  }
+
 	&.topper {
 		top: calc(50vh - 3em);
 	}
