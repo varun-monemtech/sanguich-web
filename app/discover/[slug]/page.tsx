@@ -45,10 +45,10 @@ async function getPost(slug: string) {
 // Get Metadata
 export async function generateMetadata( { params }: { params: { slug: string }}) {
 	const post = await getPost(params.slug)
-	return {
-		title: `${post?.yoast_head_json?.title}`,
+  return {
+		title: `${post?.title?.rendered?.replace(/(<([^>]+)>)/gi, "")}`,
 		description: post?.excerpt?.rendered?.replace(/(<([^>]+)>)/gi, ""),
-		// url: 'theurl',
+		url: `${process.env.NEXT_PUBLIC_SITEURL}/discover/${params?.slug}`,
 		siteName: process.env.NEXT_PUBLIC_SITENAME,
 		// openGraph: {
 		// 	title: `${process.env.NEXT_PUBLIC_SITENAME}`,

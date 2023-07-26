@@ -34,7 +34,7 @@ const getTheFont = async () => {
  }
 
 async function getPost(slug: string) {
-	const res = await fetch(`https://evgreen.unixstorm.org/FRS-3/wp-json/wp/v2/posts?slug=${slug}`,
+	const res = await fetch(`https://cms.sanguich.com/wp-json/wp/v2/posts?slug=${slug}`,
 		{
 			// cache: 'no-store',
 			next: {
