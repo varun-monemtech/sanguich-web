@@ -12,6 +12,17 @@ export const size = {
  
 export const contentType = 'image/jpg'
 
+function unEscape(htmlStr: String) {
+  htmlStr = htmlStr?.replace(/&lt;/g , "<");	 
+  htmlStr = htmlStr?.replace(/&gt;/g , ">");     
+  htmlStr = htmlStr?.replace(/&quot;/g , "\"");  
+  htmlStr = htmlStr?.replace(/&#39;/g , "\'");   
+  htmlStr = htmlStr?.replace(/&amp;/g , "&");
+  htmlStr = htmlStr?.replace(/&#038;/g , "&");
+
+  return htmlStr;
+}
+
 // const image = fetch(new URL('../../../public/img/og.jpg', import.meta.url)).then((res) =>
 //   res.arrayBuffer(),
 // )
@@ -95,7 +106,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             background: 'rgba(0,0,0,0.4)',
           }}
         >
-          {post?.title?.rendered}
+          {unEscape(post?.title?.rendered)}
         </div>
       </div>
     ),
