@@ -45,19 +45,20 @@ async function getPost(slug: string) {
 // Get Metadata
 export async function generateMetadata( { params }: { params: { slug: string }}) {
 	const post = await getPost(params.slug)
+  console.log(post?.title?.rendered?.replace(/(<([^>]+)>)/gi, ""))
   return {
 		title: `${post?.title?.rendered?.replace(/(<([^>]+)>)/gi, "")}`,
 		description: post?.excerpt?.rendered?.replace(/(<([^>]+)>)/gi, ""),
 		url: `${process.env.NEXT_PUBLIC_SITEURL}/discover/${params?.slug}`,
 		siteName: process.env.NEXT_PUBLIC_SITENAME,
-		// openGraph: {
-		// 	title: `${process.env.NEXT_PUBLIC_SITENAME}`,
-		// 	description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
-		// 	url: process.env.NEXT_PUBLIC_SITEURL,
-		// 	images: '/opengraph-image.jpg',
-		// 	locale: 'en_US',
-		// 	type: 'website',
-		// },
+		openGraph: {
+			title: `${post?.title?.rendered?.replace(/(<([^>]+)>)/gi, "")}`,
+			description: post?.excerpt?.rendered?.replace(/(<([^>]+)>)/gi, ""),
+			url: `${process.env.NEXT_PUBLIC_SITEURL}/discover/${params?.slug}`,
+			// images: '/opengraph-image.jpg',
+			locale: 'en_US',
+			type: 'website',
+		},
 		locale: 'en-US',
 		type: 'website'
 	}
