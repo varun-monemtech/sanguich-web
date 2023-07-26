@@ -129,11 +129,11 @@ export default async function RootLayout({
 
           <ExternalContextProvider>
 
-            <Suspense>
+            {/* <Suspense> */}
               <NaviContextProvider location="">
                 <Header />
               </NaviContextProvider>
-            </Suspense>
+            {/* </Suspense> */}
 
             <main className="">
 

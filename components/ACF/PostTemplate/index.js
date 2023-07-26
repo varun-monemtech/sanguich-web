@@ -36,7 +36,7 @@ function PostTemplate({post}) {
               </div>
             </div>
 
-            <Link href="#scroll" className="to-next animated" scroll={false}></Link>
+            <a href="#scroll" className="to-next animated" scroll={false}></a>
 
             <div className="img-wrapper">
               <h2 className="title" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />

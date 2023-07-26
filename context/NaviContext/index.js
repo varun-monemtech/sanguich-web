@@ -1,7 +1,7 @@
 'use client'
 import React, {useState, createContext, useEffect, useCallback} from 'react'
 import { throttle } from 'lodash'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const NaviContext = createContext(false)
 
@@ -18,7 +18,7 @@ function NaviContextProvider({children, location}) {
   const [locationPathname, setLocationPathname] = useState(true)
 
   const pathname = usePathname()
-  const searchParams = useSearchParams()
+  // const searchParams = useSearchParams()
 
   /* ==========================================================================
     Before Breakpoint Check
@@ -127,29 +127,29 @@ function NaviContextProvider({children, location}) {
    Smooth scroll to hash after route change
   ========================================================================== */
 
-  useEffect(() => {
-    if (window.location.hash) {
-      const href = typeof window !== 'undefined' ? window.location.hash.substr(1) : ''
-      const hash = href.split('?')[0].split('=')[0]
+  // useEffect(() => {
+  //   if (window.location.hash) {
+  //     const href = typeof window !== 'undefined' ? window.location.hash.substr(1) : ''
+  //     const hash = href.split('?')[0].split('=')[0]
 
-      if (document.querySelectorAll('#' + hash).length > 0) {
-        // Mimic is a placeholder for navigation bar
-        const mimic = null
-        const anchor = document.querySelectorAll('#' + hash)[0]
-        const anchorHeight = Math.round(anchor?.offsetHeight)
-        const viewPortHeight = window.innerHeight
-        const pageY = window.pageYOffset
-        const offsetH = mimic?.offsetHeight ? mimic.offsetHeight : 0
-        const hashTop = Math.round(document.querySelector('#' + hash)?.getBoundingClientRect().top)
-        const scrollToPosition = viewPortHeight < anchorHeight + (offsetH / 2) ? pageY - offsetH + hashTop : pageY + hashTop - (viewPortHeight - anchorHeight) / 2 - offsetH / 2
-        window.scrollTo({
-          top: scrollToPosition,
-          behavior: 'smooth'
-        })
-      }
-    }
+  //     if (document.querySelectorAll('#' + hash).length > 0) {
+  //       // Mimic is a placeholder for navigation bar
+  //       const mimic = null
+  //       const anchor = document.querySelectorAll('#' + hash)[0]
+  //       const anchorHeight = Math.round(anchor?.offsetHeight)
+  //       const viewPortHeight = window.innerHeight
+  //       const pageY = window.pageYOffset
+  //       const offsetH = mimic?.offsetHeight ? mimic.offsetHeight : 0
+  //       const hashTop = Math.round(document.querySelector('#' + hash)?.getBoundingClientRect().top)
+  //       const scrollToPosition = viewPortHeight < anchorHeight + (offsetH / 2) ? pageY - offsetH + hashTop : pageY + hashTop - (viewPortHeight - anchorHeight) / 2 - offsetH / 2
+  //       window.scrollTo({
+  //         top: scrollToPosition,
+  //         behavior: 'smooth'
+  //       })
+  //     }
+  //   }
 
-  }, [searchParams])
+  // }, [searchParams])
 
 
 	return (
