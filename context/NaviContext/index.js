@@ -1,7 +1,7 @@
 'use client'
 import React, {useState, createContext, useEffect, useCallback} from 'react'
 import { throttle } from 'lodash'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname} from 'next/navigation'
 
 const NaviContext = createContext(false)
 
@@ -18,7 +18,7 @@ function NaviContextProvider({children, location}) {
   const [locationPathname, setLocationPathname] = useState(true)
 
   const pathname = usePathname()
-  const searchParams = useSearchParams()
+  // const searchParams = useSearchParams()
 
   /* ==========================================================================
     Before Breakpoint Check
@@ -149,7 +149,7 @@ function NaviContextProvider({children, location}) {
       }
     }
 
-  }, [searchParams])
+  }, [])
 
 
 	return (
