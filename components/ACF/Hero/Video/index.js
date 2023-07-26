@@ -50,7 +50,7 @@ function SingleIMG(props) {
         </div>
       </div>
       <div className="logo"></div>
-      <a href="#homepage-menu" className="to-next animated"  scroll={false}></a>
+      <a href="#homepage-menu" className="to-next animated"  ></a>
 
       {image && parallax ? (
         <Parallax className="hero-parallax" translateY={[-20, 20]}>
