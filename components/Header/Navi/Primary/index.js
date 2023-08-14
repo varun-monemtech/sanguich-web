@@ -190,6 +190,12 @@ function NaviPrimary(props) {
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
+					<a href="/#shop" >Shop</a>
+				</div>
+				<div className="nav-item" 	onClick={() => { 
+					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
+ 					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
+				>
 					<a href="/contact">Contact</a>
 				</div>
 				{/* <div className="nav-item  "><a href="mailto:mail@mail.mail">Contact Us</a></div> */}
