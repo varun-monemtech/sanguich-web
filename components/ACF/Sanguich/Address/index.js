@@ -45,7 +45,7 @@ function Address(props) {
         </div>
 
         <div className="span-6 span-12-tablet map-part">
-          <Map {...node.map} />
+          {/* <Map {...node.map} /> */}
         </div>
 
       </div>
