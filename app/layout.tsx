@@ -87,7 +87,7 @@ async function getOptions() {
 		{
 			// cache: 'no-store',
 			next: {
-				revalidate: 600
+				revalidate: 10
 			}
 		}
 	)

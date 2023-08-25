@@ -10,7 +10,7 @@ async function getPosts() {
 		{
 			// cache: 'no-store',
 			next: {
-				revalidate: 600
+				revalidate: 10
 			}
 		}
 	)
