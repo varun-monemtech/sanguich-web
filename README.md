@@ -6,6 +6,8 @@ yarn install - to install
 yarn dev - to develop
 yarn start - to start
 
+### 1.0.6
+- [x] bmp
 ### 1.0.5
 - [x] scrolls and seo
 ### 1.0.0
