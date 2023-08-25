@@ -20,7 +20,7 @@ function Address(props) {
 
       <div key={i} className="span-6 span-12-tablet grid-12">
 
-        <div className="span-12 relative" >
+        <div className="span-12 relative aspect-ratio" >
           <Image
             src={image.url}
             width={1200}
