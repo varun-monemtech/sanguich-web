@@ -42,7 +42,15 @@
   .content-container {
     text-align: center;
     justify-content: center;
-    padding: 2em 2em;
+    padding: 2em 2em 1em;
+  }
+
+  .heading {
+    margin-bottom: 0 !important;
+  }
+
+  .m-top-off {
+    margin-top: 0 !important
   }
 
   .green-border {
