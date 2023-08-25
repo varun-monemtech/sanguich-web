@@ -29,6 +29,7 @@ function Address(props) {
             style={{ objectFit: "cover" }}
             quality="90"
           />
+          {i >= 2 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null}
         </div>
         <div className="content-container span-12">
           <h6 className='uppercase font3 heading'>{node.name}</h6>
