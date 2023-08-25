@@ -19,7 +19,7 @@ function Order(props) {
   return (
     <>
       {classes ?
-        <section id={`section-${anchor}`} className={`content c4 is-inview ${ioInView ? 'inview' : ''} ${classes}`}>
+        <section id={`section-${anchor}`} style={{zIndex: 100}} className={`content c4 is-inview ${ioInView ? 'inview' : ''} ${classes}`}>
 
           {anchor ?
             <div id={anchor} className="anchor middle"></div>
@@ -45,11 +45,13 @@ function Order(props) {
 
           <div className="links">
 
-            {/* <div className="link font1">
-							<h2 className="font2 colored"><span className="capitalize">O</span>rder&nbsp;<span className="capitalize">O</span>nline:</h2>
-						</div> */}
+            <div className="link font1">
+							{/* <h2 className="font2 colored"><span className="capitalize">O</span>rder&nbsp;<span className="capitalize">O</span>nline:</h2> */}
+							<h2 className="uppercase colored h3">Not near a location? find us on</h2>
 
-            <div className="link layer font1 uppercase">
+						</div>
+
+            {/* <div className="link layer font1 uppercase">
               <a href="https://www.toasttab.com/sanguich/v3/" target="_blank" rel="noreferral noopener" className="logo">
 
                 <Image
@@ -62,9 +64,9 @@ function Order(props) {
                   quality="90"
                 />
               </a>
-            </div>
+            </div> */}
 
-            <div className="link layer font1 uppercase">
+            <div className="link link-logo layer font1 uppercase">
               <a href="https://www.goldbelly.com/sanguich-de-miami" target="_blank" rel="noreferral noopener" className="logo">
 
                 <Image

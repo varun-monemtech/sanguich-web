@@ -13,7 +13,7 @@
   }
 
   .colored {
-    font-size: 4.5em;
+    // font-size: 4.5em;
     color: #DCBA7B !important;
   }
 
@@ -23,12 +23,15 @@
     justify-items: center;
     flex-wrap: wrap;
   }
+  .link-logo {
+    flex: 0 1 25% !important;
+  }
 
   .link {
-    flex: 0 1 20%;
+    flex: 0 1 auto;
     position: relative;
     z-index: 400;
-    padding: 4em 0;
+    padding: 2em 0;
     display: flex;
     align-items: center;
     justify-content: center;
