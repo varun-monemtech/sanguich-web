@@ -30,7 +30,7 @@ export async function generateStaticParams() {
 		{
 			// cache: 'no-store',
 			next: {
-				revalidate: 600
+				revalidate: 10
 			}
 		}
 	).then((res) => res.json())
@@ -45,7 +45,7 @@ async function getPost(slug: string) {
 		{
 			// cache: 'no-store',
 			next: {
-				revalidate: 600
+				revalidate: 10
 			}
 		}
 	)
