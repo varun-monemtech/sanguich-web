@@ -39,7 +39,7 @@ function Address(props) {
             {node.phone? <a className="lighten-green" href={`tel:${node.phone}`}>{`${ph1} ${ph2} ${ph3} |`}</a> : null}
             <a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a>
           </p>
-          <p className="uppercase marg-bottom-off">{i === 1 ? "COMING SOON" : node.hours}</p>
+          <p className="uppercase marg-bottom-off">{node.hours}</p>
           {/* <p className="green-border">CLOSED ON WEDNESDAYS</p> */}
         </div>
         <div className='span-12 flex padd-bottom-3'>
