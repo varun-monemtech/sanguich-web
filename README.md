@@ -7,7 +7,7 @@ yarn dev - to develop
 yarn start - to start
 
 ### 1.0.9
-- [x] bmp
+- [x] bump
 ### 1.0.5
 - [x] scrolls and seo
 ### 1.0.0
