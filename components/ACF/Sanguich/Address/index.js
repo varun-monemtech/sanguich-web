@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import './style.scss'
 import MultiButton from './MultiButton'
@@ -6,7 +5,7 @@ import Image from 'next/image'
 // import Map from '../../../Map/GMap'
 
 function Address(props) {
-  console.log(props)
+
   const anchor = props.anchor
   const classes = props.classes
 
@@ -30,7 +29,7 @@ function Address(props) {
             style={{ objectFit: "cover" }}
             quality="90"
           />
-          {i >= 2 ? <div className='coming-soon'><h2>COMING SOON </h2></div> : null}
+          {i >= 2 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null}
         </div>
         <div className="content-container span-12">
           <h6 className='uppercase font3 heading'>{node.name}</h6>
