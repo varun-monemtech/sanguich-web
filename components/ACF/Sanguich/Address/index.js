@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import './style.scss'
 import MultiButton from './MultiButton'
@@ -5,7 +6,7 @@ import Image from 'next/image'
 // import Map from '../../../Map/GMap'
 
 function Address(props) {
-
+  console.log(props)
   const anchor = props.anchor
   const classes = props.classes
 
@@ -20,7 +21,7 @@ function Address(props) {
 
       <div key={i} className="span-6 span-12-tablet grid-12">
 
-        <div className="span-12 relative aspect-ratio b" >
+        <div className="span-12 relative aspect-ratio" >
           <Image
             src={image.url}
             width={1200}
@@ -29,9 +30,8 @@ function Address(props) {
             style={{ objectFit: "cover" }}
             quality="90"
           />
-          {i >= 2 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null}
+          {i >= 2 ? <div className='coming-soon'><h2>COMING SOON </h2></div> : null}
         </div>
-
         <div className="content-container span-12">
           <h6 className='uppercase font3 heading'>{node.name}</h6>
           <p className={`uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
