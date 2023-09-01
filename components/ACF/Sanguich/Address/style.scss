@@ -14,8 +14,30 @@
     justify-content: center;
     align-items: center;
     font-size: 3em;
+    position: relative;
+
+    .decor-wrap {
+      z-index: -1;
+      padding: 0;
+      justify-content: center;
+    }
     .title {
       color: #DCBA7B !important;
+      padding: 0 0.1em;
+      margin: 0 !important;
+    }
+  }
+
+  .locations-bottom-decor {
+    padding: 1em 0;
+    display: inline;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .decor-wrap {
+      padding: 0;
+      justify-content: flex-end;
     }
   }
 
