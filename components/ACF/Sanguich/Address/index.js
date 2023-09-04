@@ -68,7 +68,7 @@ function Address(props) {
             : null}
 
           <div className='span-12 heading-section'>
-            <h2 className="title c4 font2"><span className="capitalize">L</span>ocations</h2>
+            <h2 className="title c4 font2"><span className="capitalize" style={{textTransform: "none !important"}}>l</span>ocations</h2>
             <div className="decor-wrap">
               <div className="decor-top with-extra">
                 {/* <div className="decor-top-left"></div> */}
