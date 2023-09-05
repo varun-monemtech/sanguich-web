@@ -75,7 +75,7 @@ function Header(props) {
 			: null }
 
 			<Transition
-				in={naviContext.isActive && !naviContext.windowSize?.mobile ? true :	false}
+				in={naviContext.isHamburgerActive && !naviContext.windowSize?.mobile ? true :	false}
 				timeout={baseDuration}
 				appear={true}
 				onEntering={fadeInLogo}
@@ -138,7 +138,7 @@ function Header(props) {
 						: null }
 						<Logo />
 						{!naviContext.windowSize?.mobile ?
-							<div className="header-bar-navi-new c5">
+							<div className="header-bar-navi-new c5"  onMouseLeave={() => naviContext.setActive(false)}>
 								<Navi {...props} />
 							</div>
 						: null }

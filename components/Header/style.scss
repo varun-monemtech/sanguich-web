@@ -116,7 +116,14 @@ header.master-header {
 		position: fixed;
 		display: flex;
 		flex-direction: column;
-		
+
+		.sub-nav-items {
+      margin: 0 !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
 		&.open {
 			.mobile {
 			}
@@ -137,8 +144,15 @@ header.master-header {
 		.header-bar-navi-new {
 			display: flex;
 			align-items: center;
+      padding: 1.5em 0;
 			margin-right: 2em;
 			margin-left: auto;
+
+      .wrapper {
+        display: flex;
+        align-items: center;
+        color: #DCBA7B;
+      }
 
 			.navi-primary {
 				display: flex;
@@ -147,7 +161,19 @@ header.master-header {
 	
 			.navi-items {
 				display: flex;
-				align-items: center;
+				// align-items: center;
+
+        .nav-item {
+          &.sub {
+            margin: .25em 0 !important;
+          }
+        }
+
+        .sub-nav-items {
+          margin-left: 0 !important;
+          font-size: 0.9em;
+          padding-top: 0.5em;
+        }
 			}
 		}
 	}

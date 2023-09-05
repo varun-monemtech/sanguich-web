@@ -18,7 +18,7 @@ function NaviItem(props) {
 
 	// disabled flag
 	let enabled = true
-	const classes = props.cssClasses.map((cssClass) => {
+	const classes = props?.cssClasses?.map((cssClass) => {
 		// if one of the classes is disabled, set the flag
 		if (cssClass === 'disabled') {
 			enabled = false
@@ -37,34 +37,34 @@ function NaviItem(props) {
 	const internal = true //props.connectedNode
 	const dropDownClickHandle = props.dropDownClickHandle
 
-	if ( internal ) {
-		return (
-			<div
-				key={id}
-				className={`nav-item ${classes} ${parentId ? 'sub' : ''}`}
-				data-hint={description}
-			>
-				{enabled ?
-					<Link
-						href={path}
-						onClick={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
-						onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
-						// onClick={dropDownClickHandle}
-						className="linking-int"
-					>
-						{label}
-						{props.itHasChildren ? <FontAwesomeIcon icon={faAngleDown} className="caret" /> : null}
-					</Link>
-				:
-					<div className="disabled">
-						{label}
-						{props.itHasChildren ? <FontAwesomeIcon icon={faAngleDown} className="caret" /> : null}
-					</div>
-				}
-				{props.children}
-			</div>
-		)
-	}
+	// if ( internal ) {
+	// 	return (
+	// 		<div
+	// 			key={id}
+	// 			className={`nav-item ${classes} ${parentId ? 'sub' : ''}`}
+	// 			data-hint={description}
+	// 		>
+	// 			{enabled ?
+	// 				<Link
+	// 					href={path}
+	// 					onClick={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
+	// 					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
+	// 					// onClick={dropDownClickHandle}
+	// 					className="linking-int"
+	// 				>
+	// 					{label}
+	// 					{props.itHasChildren ? <FontAwesomeIcon icon={faAngleDown} className="caret" /> : null}
+	// 				</Link>
+	// 			:
+	// 				<div className="disabled">
+	// 					{label}
+	// 					{props.itHasChildren ? <FontAwesomeIcon icon={faAngleDown} className="caret" /> : null}
+	// 				</div>
+	// 			}
+	// 			{props.children}
+	// 		</div>
+	// 	)
+	// }
 
 	return (
 		<div
@@ -73,16 +73,20 @@ function NaviItem(props) {
 			data-hint={description}
 		>
 			{enabled ?
-				<a 
-					href={path}
-					target={target}
-					rel={target === '_blank' ? 'noopener noreferrer' : null}
-					onClick={dropDownClickHandle}
-					className="linking-ext"
-				>
-					{label}
-					{props.itHasChildren ? <FontAwesomeIcon icon={faAngleDown} className="caret" /> : null}
-				</a>
+        <div className='wrapper'>
+          <a 
+            href={path}
+            target={target}
+            rel={target === '_blank' ? 'noopener noreferrer' : null}
+            onMouseEnter={props.itHasChildren ?  dropDownClickHandle : null }
+            onClick={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
+            onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
+            className="linking-ext"
+          >
+            {label}
+          </a>
+          {props.itHasChildren ? <FontAwesomeIcon  onClick={props.itHasChildren ? dropDownClickHandle : null} icon={faAngleDown} className={`caret  ${props.isOpen ? 'open' : ""}`} /> : null}
+        </div>
 			:
 				<div className="disabled">
 					{label}

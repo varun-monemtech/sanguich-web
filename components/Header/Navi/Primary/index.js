@@ -44,7 +44,79 @@ function NaviPrimary(props) {
 	}
 
 	// Menu feed
-	const menuNodes = props.wpgraphql?.wpNaviPrimary?.nodes[0]?.menuItems.nodes
+	// const menuNodes = props.wpgraphql?.wpNaviPrimary?.nodes[0]?.menuItems.nodes
+  const menuNodes = [
+    {
+      "id": "menu-id",
+      "label": "Menu",
+      "url": "/#homepage-menu",
+      "parentId": null,
+    },
+    {
+      "id": "order-id",
+      "label": "Order Online",
+      "url": "/#order-now",
+      "parentId": null,
+      "itHasChildren": "little-haiti-id"
+    },
+    {
+      "id": "little-haiti-id",
+      "label": "Little Haiti",
+      "url": "https://order.spoton.com/ipay-sanguich-commissary-11916/miami-fl/63927dc6fa30564633e53583",
+      "parentId": "order-id",
+      "target": "__blank"
+    },
+    {
+      "id": "calle-ocho-id",
+      "label": "Calle Ocho",
+      "url": "https://order.toasttab.com/online/sanguich",
+      "parentId": "order-id",
+      "target": "__blank"
+    },
+    {
+      "id": "gold-belly-id",
+      "label": "Gold Belly",
+      "url": "https://www.goldbelly.com/sanguich-de-miami",
+      "parentId": "order-id",
+      "target": "__blank"
+    },
+    {
+      "id": "catering-id",
+      "label": "Catering",
+      "url": "/#catering",
+      "parentId": null,
+    },
+    {
+      "id": "hours-id",
+      "label": "Hours & Locations",
+      "url": "#address",
+      "parentId": null,
+    }, 
+    {
+      "id": "story-id",
+      "label": "Our & Story",
+      "url": "/#our-story",
+      "parentId": null,
+    },
+    {
+      "id": "news-id",
+      "label": "News",
+      "url": "/#news",
+      "parentId": null,
+    },
+    {
+      "id": "shop-id",
+      "label": "Shop",
+      "url": "/#shop",
+      "parentId": null,
+    },
+    {
+      "id": "contact-id",
+      "label": "Contact",
+      "url": "#contact",
+      "parentId": null,
+    },
+  ]
 	
 	// Re-organized menu feed
 	let usedNodes = [
@@ -115,7 +187,7 @@ function NaviPrimary(props) {
 				<NaviItem
 					key={item.id}
 					{ ...item }
-					dropDownClickHandle={item.itHasChildren ? (e) => executeDropDown(e,lvl,item.id) : () => { 
+					dropDownClickHandle={item.itHasChildren ? (e) => {executeDropDown(e,lvl,item.id); naviContext.setActive(true) } : () => { 
 						setDropDown([])
 						naviContext.setActive(false)
 						naviContext.setHamburgerActive(false)
@@ -150,7 +222,7 @@ function NaviPrimary(props) {
 				onBlur={(e) => executeBlur(e)}
 			>
 				{menuServe(usedNodes, 0, 0)}
-				<div className="nav-item" 	onClick={() => { 
+				{/* <div className="nav-item" 	onClick={() => { 
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
@@ -197,7 +269,7 @@ function NaviPrimary(props) {
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
 					<a href="/contact">Contact</a>
-				</div>
+				</div> */}
 				{/* <div className="nav-item  "><a href="mailto:mail@mail.mail">Contact Us</a></div> */}
 			</div>
 		</nav>

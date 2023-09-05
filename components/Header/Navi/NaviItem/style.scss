@@ -27,8 +27,13 @@
 }
 
 .sub-nav-items {
+  margin-left: 3em;
+  font-size: 0.78em;
 	.caret {
 		transform: rotate(-90deg);
 		margin: .05em 0 0 .25em;
+    	&.open {
+		    transform: rotate(180deg);
+	    }
 	}
 }
