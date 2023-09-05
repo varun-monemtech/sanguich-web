@@ -14,12 +14,6 @@ header.master-header {
 	//padding: 5em 4em;
 	user-select: none;
 
-  .wrapper {
-    display: flex;
-    align-items: center;
-    color: #DCBA7B;
-  }
-
 	.navi-animator {
 		display: flex;
 		flex-wrap: wrap;
@@ -246,4 +240,12 @@ header.master-header {
 		margin: 0 0 0 2.5em;
 		padding: .5em 0;
 	}
+}
+
+.nav-item {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    color: #DCBA7B;
+  }
 }
