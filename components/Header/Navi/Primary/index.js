@@ -55,7 +55,7 @@ function NaviPrimary(props) {
     {
       "id": "order-id",
       "label": "Order Online",
-      "url": "/#order-now",
+      "url": "/#address",
       "parentId": null,
       "itHasChildren": "little-haiti-id"
     },
