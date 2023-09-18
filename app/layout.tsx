@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import ContextProvider from "../provider/ContextProvider"
 import ExternalContextProvider from "../provider/ExternalContextProvider"
 // import localFont from 'next/font/local'
-import { Suspense } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 import './style.scss'
 import '../EVG/css/_core.scss'
@@ -146,6 +146,8 @@ export default async function RootLayout({
         </ContextProvider>
 
         <Footer options={options} />
+
+        <Analytics />
 
       </body>
     </html>
