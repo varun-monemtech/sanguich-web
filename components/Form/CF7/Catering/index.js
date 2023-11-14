@@ -90,6 +90,7 @@ function CF7Catering(props) {
 		// Left is CF7 input name, right is ours
 		let data = new FormData()
 		data.append('your-name', form.name)
+    data.append('your-phone', form.phone)
 		data.append('your-email', form.email)
 		data.append('your-company', form.company)
 		data.append('your-address', form.address)
@@ -183,6 +184,10 @@ function CF7Catering(props) {
 						<label className="span-12 animated delay-500">
 						<input type="text" placeholder="Enter full name" name="name" {...register("name",{required: false})} />
 							{errors.name && <p className="small margin-off">your name is required.</p>}
+						</label>
+            <label className="span-12 animated delay-500">
+						<input type="text" placeholder="Phone" name="phone" {...register("phone",{required: true})} />
+							{errors.phone && <p className="small margin-off">your phone number is required.</p>}
 						</label>
 						<label className="span-12 animated delay-500">
 							<input type="text" placeholder="e-mail" name="email" {...register("email",{required: true, minLength: 6, pattern: /^\S+@\S+$/i})} />
