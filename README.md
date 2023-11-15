@@ -1,4 +1,4 @@
-# SANGUICH 2023 WEB v1.0.0 Based on FRS-3 0.9.6
+# SANGUICH 2023 WEB v1.0.0 Based on FRS-3 0.9.7
 
 Next JS Based
 
