@@ -155,7 +155,9 @@ function CF7Careers() {
               </div>
             </div>
 
-            <div className="span-12 text-center fill-this-form animated delay-500" onClick={(e) => onClickFillThisForm(e)}><h3>Careers</h3><p>Short and sweet copywrite goes here</p></div>
+            <div className="span-12 text-center fill-this-form animated delay-500" onClick={(e) => onClickFillThisForm(e)}><h3>Careers</h3>
+            {/* <p>Short and sweet copywrite goes here</p> */}
+            </div>
 
             <div className={`span-12 grid-12 form-fields-wrap active`}>
 
