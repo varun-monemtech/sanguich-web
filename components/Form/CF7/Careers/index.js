@@ -27,12 +27,16 @@ function CF7Careers() {
 
   const whatvalues = [
     {
-      value: 'CALLE OCHO',
-      label: 'CALLE OCHO',
+      value: 'LA COCINA - LITTLE HAITÍ',
+      label: 'LA COCINA - LITTLE HAITÍ',
     },
     {
-      value: 'LITTLE HAITI - LA VENTANITA',
-      label: 'LITTLE HAITI - LA VENTANITA',
+      value: 'LA VENTANITA - LITTLE HAITÍ',
+      label: 'LA VENTANITA - LITTLE HAITÍ',
+    },
+    {
+      value: 'CALLE OCHO',
+      label: 'CALLE OCHO',
     },
     {
       value: 'BAYSIDE MARKET PLACE',
@@ -155,19 +159,19 @@ function CF7Careers() {
               </div>
             </div>
 
-            <div className="span-12 text-center fill-this-form animated delay-500" onClick={(e) => onClickFillThisForm(e)}><h3>Careers</h3>
+            <div className="span-12 text-center fill-this-form animated delay-500"><h3>Careers</h3>
             {/* <p>Short and sweet copywrite goes here</p> */}
             </div>
 
             <div className={`span-12 grid-12 form-fields-wrap active`}>
 
               <label className="span-12 animated delay-500">
-                <input type="text" placeholder="Enter first name" name="fname" {...register("fname", { required: true })} />
+                <input type="text" placeholder="First name" name="fname" {...register("fname", { required: true })} />
                 {errors.fname && <p className="small margin-off">your first name is required.</p>}
               </label>
 
               <label className="span-12 animated delay-500">
-                <input type="text" placeholder="Enter last name" name="lname" {...register("lname", { required: true })} />
+                <input type="text" placeholder="Last name" name="lname" {...register("lname", { required: true })} />
                 {errors.lname && <p className="small margin-off">your last name is required.</p>}
               </label>
               <label className="span-12 animated delay-500">
@@ -175,7 +179,7 @@ function CF7Careers() {
                 {errors.email && <p className="small margin-off">a correct email is required.</p>}
               </label>
               <label className="span-12 animated delay-500">
-                <input type="text" placeholder="Enter phone" name="phone" {...register("phone", { required: true })} />
+                <input type="text" placeholder="Phone" name="phone" {...register("phone", { required: true })} />
                 {errors.phone && <p className="small margin-off">your phone is required.</p>}
               </label>
 
@@ -230,12 +234,12 @@ function CF7Careers() {
                 </div>
               </label>
               <label className="span-12 animated delay-500 inputfile">
-                <a className="inputfilelabel btn"><span><FontAwesomeIcon icon={faUpload} />{uploadLabel}</span></a>
+                <a className="inputfilelabel btn"><span><FontAwesomeIcon icon={faUpload} /> {uploadLabel}</span></a>
                 <input type="file" placeholder="Resume" name="resume" {...register("resume", { required: true })} onChange={(e) => onUploadChange(e)} />
                 {errors.resume && <p className="small margin-off">Your resume is required, or the filetype not allowed. Try PDF, DOC, DOCX, under 25Mb</p>}
               </label>
               <label className="span-12 animated delay-500">
-                <textarea placeholder="comment" name="comment" {...register("comment", { required: false, message: "error message" })} />
+                <textarea placeholder="Tell us More" name="comment" {...register("comment", { required: false, message: "error message" })} />
               </label>
 
               <div className="btn-wrap span-12 text-center font1 animated delay-500">
