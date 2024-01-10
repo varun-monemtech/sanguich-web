@@ -19,7 +19,7 @@ function CF7Careers() {
   const [message, setMessage] = useState(false)
   const [validationMessage, setValidationMessage] = useState(false)
   const [isLoading, setLoading] = useState(false)
-  const [uploadLabel, setUploadLabel] = useState('Upload Resume...')
+  const [uploadLabel, setUploadLabel] = useState('Upload Resume... (Optional)')
 
   // Form activation // thanks
   const [isActive, setActive] = useState(false)
