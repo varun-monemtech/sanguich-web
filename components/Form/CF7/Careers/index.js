@@ -235,7 +235,7 @@ function CF7Careers() {
               </label>
               <label className="span-12 animated delay-500 inputfile">
                 <a className="inputfilelabel btn"><span><FontAwesomeIcon icon={faUpload} /> {uploadLabel}</span></a>
-                <input type="file" placeholder="Resume" name="resume" {...register("resume", { required: true })} onChange={(e) => onUploadChange(e)} />
+                <input type="file" placeholder="Resume" name="resume" {...register("resume", { required: false })} onChange={(e) => onUploadChange(e)} />
                 {errors.resume && <p className="small margin-off">Your resume is required, or the filetype not allowed. Try PDF, DOC, DOCX, under 25Mb</p>}
               </label>
               <label className="span-12 animated delay-500">
