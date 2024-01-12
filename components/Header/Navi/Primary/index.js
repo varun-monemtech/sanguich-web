@@ -111,6 +111,12 @@ function NaviPrimary(props) {
       "parentId": null,
     },
     {
+      "id": "careers-id",
+      "label": "Careers",
+      "url": "/careers",
+      "parentId": null,
+    },
+    {
       "id": "contact-id",
       "label": "Contact",
       "url": "#contact",
