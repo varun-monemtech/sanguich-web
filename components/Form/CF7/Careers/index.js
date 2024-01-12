@@ -188,7 +188,7 @@ function CF7Careers() {
                   <Controller
                     name="what"
                     control={control}
-                    // rules={{ required: true }}
+                    rules={{ required: true }}
                     render={({ field }) => (
                       <Select
                         {...field}
@@ -232,6 +232,8 @@ function CF7Careers() {
                     )}
                   />
                 </div>
+                {errors.what && <p className="small margin-off">This field is required</p>}
+                
               </label>
               <label className="span-12 animated delay-500 inputfile">
                 <a className="inputfilelabel btn"><span><FontAwesomeIcon icon={faUpload} /> {uploadLabel}</span></a>
