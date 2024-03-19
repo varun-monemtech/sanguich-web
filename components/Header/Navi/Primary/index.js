@@ -62,7 +62,7 @@ function NaviPrimary(props) {
     {
       "id": "little-haiti-id",
       "label": "Little Haiti",
-      "url": "https://order.spoton.com/ipay-sanguich-commissary-11916/miami-fl/63927dc6fa30564633e53583",
+      "url": "https://order.spoton.com/ipay-sanguich-11916/miami-fl/65f0b3ede9239b003dee9ccf",
       "parentId": "order-id",
       "target": "__blank"
     },
