@@ -117,6 +117,8 @@ function CF7Catering(props) {
 		data.append('your-typeofevent', form.typeofevent?.value)
 		data.append('your-numberofpeople', form.numberofpeople?.value)
 		data.append('your-message', form.message)
+    // SPAM protection? 
+    data.append('_wpcf7_unit_tag', 'unit-tag-random-string')
 		
 		const url = 'https://cms.sanguich.com/wp-json/contact-form-7/v1/contact-forms/488/feedback'
 		const config = { headers: { 'Content-Type': 'multipart/form-data' } }
