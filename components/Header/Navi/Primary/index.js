@@ -81,6 +81,13 @@ function NaviPrimary(props) {
       "target": "__blank"
     },
     {
+      "id": "coral-gables-id",
+      "label": "Coral Gables",
+      "url": "https://order.spoton.com/ipay-sanguich-11916/coral-gables-fl/663d27323f6231003ecb9322",
+      "parentId": "order-id",
+      "target": "__blank"
+    },
+    {
       "id": "catering-id",
       "label": "Catering",
       "url": "/#catering",
