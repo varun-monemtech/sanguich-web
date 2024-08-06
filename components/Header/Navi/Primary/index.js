@@ -73,13 +73,13 @@ function NaviPrimary(props) {
       "parentId": "order-id",
       "target": "__blank"
     },
-    {
-      "id": "gold-belly-id",
-      "label": "Gold Belly",
-      "url": "https://www.goldbelly.com/sanguich-de-miami",
-      "parentId": "order-id",
-      "target": "__blank"
-    },
+    // {
+    //   "id": "gold-belly-id",
+    //   "label": "Gold Belly",
+    //   "url": "https://www.goldbelly.com/sanguich-de-miami",
+    //   "parentId": "order-id",
+    //   "target": "__blank"
+    // },
     {
       "id": "coral-gables-id",
       "label": "Coral Gables",
