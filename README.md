@@ -1,5 +1,5 @@
 # SANGUICH 2023 WEB v1.0.0 Based on FRS-3 0.9.7
-
+1
 Next JS Based
 
 yarn install - to install
