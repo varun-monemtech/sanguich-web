@@ -76,11 +76,11 @@ export default async function MainPage() {
       )
     }
 
-    if(section.acf_fc_layout === 'order') {
-      return (
-        <ACFOrder key={section.id} { ...section } />
-      )
-    }
+    // if(section.acf_fc_layout === 'order') {
+    //   return (
+    //     <ACFOrder key={section.id} { ...section } />
+    //   )
+    // }
 
     if(section.acf_fc_layout === 'seen_on') {
       return (

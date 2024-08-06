@@ -23,15 +23,17 @@ function Address(props) {
 
       <div key={i} className="span-6 span-12-tablet grid-12 tile">
 
-        <div className="span-12 relative aspect-ratio" >
-          <Image
-            src={image.url}
-            width={1200}
-            height={1600}
-            alt={image.alt}
-            style={{ objectFit: "cover" }}
-            quality="90"
-          />
+        <div className="span-12 relative aspect-ratio">
+          {image?.url &&
+            <Image
+              src={image.url}
+              width={1200}
+              height={1600}
+              alt={image.alt}
+              style={{ objectFit: "cover" }}
+              quality="90"
+            />
+          }
           {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null}
         </div>
         <div className="content-container span-12">
