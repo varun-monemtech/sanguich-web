@@ -106,7 +106,7 @@ export default async function MainPage({ params }: any) {
 									<div className="decor-bottom-right"></div>
 								</div>
 							</div>
-							<a href="#other-items" className="to-bottom animated"></a>
+							<a href="#other-items" className="to-bottom animated" aria-label="Scroll To Other Items" title="Scroll To Other Items"></a>
 							{/* <Link href={`/product/${allProduct?.nodes[prev].handle}`} className="to-prev" />
 							<Link href={`/product/${allProduct?.nodes[next].handle}`} className="to-next" /> */}
 

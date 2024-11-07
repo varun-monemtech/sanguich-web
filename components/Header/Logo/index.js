@@ -7,7 +7,7 @@ function Logo(props) {
 	//const naviContext = useContext(NaviContext)
 
   return (
-		<Link href="/" className='logo master-logo' aria-label='Go To Homepage'>
+		<Link href="/" className='logo master-logo' aria-label='Go To Homepage' title='Go To Homepage'>
 			<div className="aspect-ratio"></div>
 		</Link>
   )

@@ -151,6 +151,8 @@ function CF7Careers() {
               <div className="bg c5 animated"></div>
               <a
                 href="#careers-form"
+								aria-label="Scroll to Form"
+								title="Scroll to Form"
                 className={`arrow-up animated delay-1000 active`}
               ></a>
               <div className="decor-top">
@@ -286,11 +288,11 @@ function CF7Careers() {
                 )}
               </label>
               <label className="span-12 animated delay-500 inputfile">
-                <a className="inputfilelabel btn">
+                <span className="inputfilelabel btn">
                   <span>
                     <FontAwesomeIcon icon={faUpload} /> {uploadLabel}
                   </span>
-                </a>
+                </span>
                 <input
                   type="file"
                   placeholder="Resume"

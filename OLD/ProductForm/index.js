@@ -139,8 +139,8 @@ const ProductForm = ({ product }) => {
   
   return (
     <div className="product-details">
-      <h3 className="product-title uppercase colored text-center">{product.title}</h3>
-      <h3 className="product-price text-center">{price}</h3>
+      <h1 className="product-title uppercase colored text-center h3">{product.title}</h1>
+      <h2 className="product-price text-center h3">{price}</h2>
       <div className="product-description text-center"
         dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
       />

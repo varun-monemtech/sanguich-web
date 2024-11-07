@@ -36,10 +36,10 @@ function PostTemplate({post}) {
               </div>
             </div>
 
-            <a href="#scroll" className="to-next animated" aria-label='Scroll To Content'></a>
+            <a href="#scroll" className="to-next animated" aria-label='Scroll To Content' title='Scroll To Content'></a>
 
             <div className="img-wrapper">
-              <h2 className="title" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />
+              <h1 className="title" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />
               <Image src={post?.acf?.hero?.url} width="2500" height="1800" quality="85" alt={post?.acf?.hero?.alt} />
 
               <div className='bg-overlay' style={{ opacity: 0.3 }}>
@@ -54,7 +54,7 @@ function PostTemplate({post}) {
         <div id="header-fold-breakpoint"></div>
 
         <div className="content">
-          <div id="scroll" className="anchor"></div>
+          <div id="scroll" className="anchor" aria-label='Scroll To Content' title='Scroll To Content'></div>
           <h2 className="content-title text-center" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />
           <div className="wysiwyg-inject" dangerouslySetInnerHTML={{ __html: post?.acf?.content }} />
           {post?.acf?.video ?

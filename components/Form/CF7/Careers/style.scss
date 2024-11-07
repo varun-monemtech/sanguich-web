@@ -1,6 +1,13 @@
 .elevate-z > div {
 	//z-index: 999;
 }
+.inputfilelabel {
+	&:hover {
+		span {
+			color: #fff;
+		}
+	}
+}
 
 .has-datepicker {
 	z-index: 700;
