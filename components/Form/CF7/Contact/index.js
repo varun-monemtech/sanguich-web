@@ -129,10 +129,10 @@ function CF7Contact(props) {
             className="span-12 text-center fill-this-form animated delay-500"
             onClick={(e) => onClickFillThisForm(e)}
           >
-            <h3>Contact Us</h3>
+            <h1 className="h3">Contact Us</h1>
             <p>
               You can also reach us by phone at{" "}
-              <a href="tel:3055390969">305-539-0969</a>. Looking forward to
+              <a className="link-number" href="tel:3055390969">305-539-0969</a>. Looking forward to
               hearing from you.
             </p>
           </div>

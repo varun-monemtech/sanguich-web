@@ -8,6 +8,12 @@
 	 z-index: 600;
  	}
 }
+.link-number {
+	color: #fff !important;
+	&:hover {
+		color: #3E805F !important;
+	}
+}
 
 .badge {
 	position: absolute;

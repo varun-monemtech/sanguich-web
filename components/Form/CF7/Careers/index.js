@@ -172,7 +172,7 @@ function CF7Careers() {
             </div>
 
             <div className="span-12 text-center fill-this-form animated delay-500">
-              <h3>Careers</h3>
+              <h1 className="h3">Careers</h1>
               {/* <p>Short and sweet copywrite goes here</p> */}
             </div>
 
