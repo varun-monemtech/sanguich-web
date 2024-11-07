@@ -100,11 +100,15 @@ footer#master-footer {
 		}
 
 		h6, .h6 {
-			color: #3E805F;
+			color: #d0c8b9;
 		}
 
 		a:not(:hover) {
-			color: #4CA378;
+			color: #fff;
+		}
+
+		a:hover {
+			color:  #4CA378;
 		}
 
 		@media screen and (max-width: 1024px) {
