@@ -116,7 +116,7 @@ function Hamburger(props) {
 	}
 	
   return (
-		<div className="master-hamburger is-inview inview" onClick={() => { naviContext.activeToggle(true); naviContext.hamburgerActiveToggle(true)}} onKeyDown={() => { naviContext.activeToggle(true); naviContext.hamburgerActiveToggle(true)}} role="button" tabIndex={0}>
+		<div className="master-hamburger is-inview inview" onClick={() => { naviContext.activeToggle(true); naviContext.hamburgerActiveToggle(true)}} onKeyDown={() => { naviContext.activeToggle(true); naviContext.hamburgerActiveToggle(true)}} role="button" aria-label='Open/Close Navigation Menu' tabIndex={0}>
 			<div className={`master-hamburger-container x0 t`}>
 				<div className={`hamburger-container hamburger hamburger--close1 ${naviContext.isHamburgerActive ? 'open x1 t' : null }`}>
 					<div className="hamburger__icon">

@@ -43,7 +43,8 @@ function Address(props) {
           </p>
           <p>
             {i === 1 ? "NO DINE-IN | " : null}
-            {node.phone ? <a className="lighten-green" href={`tel:${node.phone}`}>{`${ph1} ${ph2} ${ph3} |`}</a> : null}
+            {node.phone ? <a className="lighten-green" href={`tel:${node.phone}`}>{`${ph1} ${ph2} ${ph3} `}</a> : null}
+						|
             <a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a>
           </p>
           <p className="uppercase marg-bottom-off">{node.hours}</p>

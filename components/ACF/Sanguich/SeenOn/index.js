@@ -13,7 +13,7 @@ function SeenOn(props) {
 
     if (node.link || node.file) {
       return (
-        <a key={i} href={node?.file?.localFile ? node.file.localFile.publicURL : node.link} className="single-item span-3 span-5-mobile" target="_blank" rel="noreferrer noopener">
+        <a key={i} href={node?.file?.localFile ? node.file.localFile.publicURL : node.link} aria-label='Press Logo Link' className="single-item span-3 span-5-mobile" target="_blank" rel="noreferrer noopener">
           <div className='image-wrapper'>
             <Image
               src={logo.url}

@@ -235,6 +235,7 @@ function Menu(props) {
 									}}
 									role="button"
 									tabIndex={0}
+									aria-label='Previous Tab'
 								></div>
 								<div
 									className={`arrow-next onmouseenter ${currentTabTab === menus.length - 1 ? 'disabled' : null}`}
@@ -248,6 +249,7 @@ function Menu(props) {
 									}}
 									role="button"
 									tabIndex={0}
+									aria-label='Next Tab'
 								></div>
 								
 								<div className="decor-wrap">
