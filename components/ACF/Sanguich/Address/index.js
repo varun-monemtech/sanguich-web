@@ -37,7 +37,7 @@ function Address(props) {
           {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null}
         </div>
         <div className="content-container span-12">
-          <h6 className='uppercase font3 heading'>{node.name}</h6>
+          <h3 className='uppercase font3 heading'>{node.name}</h3>
           <p className={`uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
             {node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className='padd-top block'>{node.address}</span>}
           </p>

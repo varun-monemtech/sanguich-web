@@ -67,12 +67,12 @@ export const Footer = ({options}: {options: any}) => {
 			</div>
 
 			<div className="footer-navi uppercase">
-				<h6 className="font3"><a href="https://www.facebook.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">FaceBook</a></h6>
-				<h6 className="font3"><a href="https://www.instagram.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">Instagram</a></h6>
-				<h6 className="font3"><a href="https://www.tripadvisor.com/Restaurant_Review-g34438-d13076164-Reviews-Sanguich_De_Miami-Miami_Florida.html" target="_blank" rel="noreferrer noopener">TripAdvisor</a></h6>
-				<h6 className="font3">
+				<p className="font3 h6"><a href="https://www.facebook.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">FaceBook</a></p>
+				<p className="font3 h6"><a href="https://www.instagram.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">Instagram</a></p>
+				<p className="font3 h6"><a href="https://www.tripadvisor.com/Restaurant_Review-g34438-d13076164-Reviews-Sanguich_De_Miami-Miami_Florida.html" target="_blank" rel="noreferrer noopener">TripAdvisor</a></p>
+				<p className="font3 h6">
 					<Link href="/contact">Contact</Link>
-				</h6>
+				</p>
 			</div>
 
 			<div className='copy'>

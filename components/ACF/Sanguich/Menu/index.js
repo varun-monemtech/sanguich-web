@@ -136,11 +136,11 @@ function Menu(props) {
 					return (
 						<div key={`menu-items-key-a-${i}`} className={`menu-item onmouseenter ${numberOfItems > 5 ? 'col-2' : ''} ${currentImage === i ? 'current' : null}`} onMouseEnter={() => setCurrentImage(i)} onClick={() => setCurrentImage(i)} onKeyDown={() => setCurrentImage(i)} role="button" tabIndex={0}>
 							<div className="description">
-								<h6 className="uppercase">{item.name}</h6>
+								<h4 className="uppercase">{item.name}</h4>
 								<p>{item.description}</p>
 							</div>
 							<div className="price">
-								<h6>{item.price ? `$${item.price}` : null}</h6>
+								<h4>{item.price ? `$${item.price}` : null}</h4>
 							</div>
 							{ naviContext?.windowSize?.mobile && currentImage === i ?
 								<SwitchTransition>
@@ -164,7 +164,7 @@ function Menu(props) {
 			return (
 				<div key={`menu-items-key-b-${i}`} className="menu-specific-wrap">
 					<div className={`menu-specific onclick padd-1 ${currentTab === i ? 'current' : null}`}>
-						<h4 className="uppercase">{menu.title}</h4>
+						<h3 className="uppercase h4">{menu.title}</h3>
 					</div>
 					<div className="menu-specific-items">
 						{ImagesTabPack}

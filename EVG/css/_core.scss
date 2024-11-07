@@ -74,7 +74,7 @@ $font3: 'Josefin Sans', Helvetica, Arial, sans-serif; // Body
 	}
 }
 .font3 {
-	font-family: $font3;
+	font-family: $font3 !important;
 	font-weight: 400;
 }
 

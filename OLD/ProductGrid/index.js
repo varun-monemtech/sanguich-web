@@ -121,26 +121,26 @@ const ProductGrid = () => {
             height={1200}
             className="img-cover"
           /> */}
-
+{/* 
           {firstProduct?.variants?.[0].price ? 
             <div className="gallery-overlay-price hidden">
               <div className="inner c5">
                 <h6 className="price">{getPrice(firstProduct?.variants?.[0].price)}</h6>
               </div>
             </div>
-          : null}
+          : null} */}
 
-          <h6 className="featured">Featured</h6>
-
+          <span className="featured h6">Featured</span>
+{/* 
           <div className="gallery-overlay hidden">
             <div className="inner c5">
               {firstProduct?.title ? <h4>{firstProduct?.title}</h4> : null}
               <div className="description" dangerouslySetInnerHTML={{ __html: firstProduct?.descriptionHtml }} />
               <div className="shop-now">
-                {/* <Link to={`/product/${firstProduct.handle}/`} className="btn uppercase font1"><span>Shop Now</span></Link> */}
+                // <Link to={`/product/${firstProduct.handle}/`} className="btn uppercase font1"><span>Shop Now</span></Link>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="shop-now-basic">
             <div className="uppercase font1" target="_blank" rel="noreferrer noopener"><span>Order Online</span></div>
@@ -166,7 +166,7 @@ const ProductGrid = () => {
                     height={1200}
                     className="img-cover"
                   />)}
-              <h6 className="price hidden">{title} {getPrice(firstVariant.price)}</h6>
+              {/* <h6 className="price hidden">{title} {getPrice(firstVariant.price)}</h6> */}
               <div className="shop-now hidden">
                 <div className="uppercase font1" target="_blank" rel="noreferrer noopener"><span>Shop Now</span></div>
               </div>
