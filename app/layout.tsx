@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_SITEURL}`),
   alternates: {
-    canonical: '/',
+    canonical: './',
     // languages: {
     //   'en-US': '/en-US',
     // },
