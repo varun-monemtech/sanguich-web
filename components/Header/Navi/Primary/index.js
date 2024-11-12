@@ -62,7 +62,7 @@ function NaviPrimary(props) {
     {
       "id": "little-haiti-id",
       "label": "Little Haiti",
-      "url": "https://order.spoton.com/ipay-sanguich-11916/miami-fl/65f0b3ede9239b003dee9ccf",
+      "url": "https://www.toasttab.com/sanguich-little-haiti",
       "parentId": "order-id",
       "target": "__blank"
     },
