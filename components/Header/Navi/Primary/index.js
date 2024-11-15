@@ -90,7 +90,7 @@ function NaviPrimary(props) {
     {
       "id": "coral-gables-id",
       "label": "Coral Gables",
-      "url": "https://order.spoton.com/ipay-sanguich-11916/coral-gables-fl/663d27323f6231003ecb9322",
+      "url": "https://www.toasttab.com/sanguich-coral-gables",
       "parentId": "order-id",
       "target": "__blank"
     },
