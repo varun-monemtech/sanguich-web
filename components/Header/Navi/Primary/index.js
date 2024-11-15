@@ -73,6 +73,13 @@ function NaviPrimary(props) {
       "parentId": "order-id",
       "target": "__blank"
     },
+		{
+      "id": "bayside-id",
+      "label": "Bayside Market Place",
+      "url": "https://www.toasttab.com/sanguich-bayside",
+      "parentId": "order-id",
+      "target": "__blank"
+    },
     // {
     //   "id": "gold-belly-id",
     //   "label": "Gold Belly",
