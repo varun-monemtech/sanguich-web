@@ -89,7 +89,7 @@ function NaviPrimary(props) {
     },
 		{
       "id": "bayside-id",
-      "label": "Bayside Market Place",
+      "label": "Bayside",
       "url": "https://www.toasttab.com/sanguich-bayside",
       "parentId": "order-id",
       "target": "__blank"
