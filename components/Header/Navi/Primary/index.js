@@ -73,13 +73,6 @@ function NaviPrimary(props) {
       "parentId": "order-id",
       "target": "__blank"
     },
-		{
-      "id": "bayside-id",
-      "label": "Bayside Market Place",
-      "url": "https://www.toasttab.com/sanguich-bayside",
-      "parentId": "order-id",
-      "target": "__blank"
-    },
     // {
     //   "id": "gold-belly-id",
     //   "label": "Gold Belly",
@@ -91,6 +84,13 @@ function NaviPrimary(props) {
       "id": "coral-gables-id",
       "label": "Coral Gables",
       "url": "https://www.toasttab.com/sanguich-coral-gables",
+      "parentId": "order-id",
+      "target": "__blank"
+    },
+		{
+      "id": "bayside-id",
+      "label": "Bayside Market Place",
+      "url": "https://www.toasttab.com/sanguich-bayside",
       "parentId": "order-id",
       "target": "__blank"
     },
