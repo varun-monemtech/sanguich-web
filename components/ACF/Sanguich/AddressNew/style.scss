@@ -1,9 +1,22 @@
-#section-address {
-  padding: 1.25em;
+#section-address-new {
+  padding: 1.25em 5em;
+
+	.rounded-lg {
+		border-radius: 0.5rem;
+	}
+
+	.aspect-square {
+		aspect-ratio: 1/1;
+	}
 
   .main-grid {
-    gap: 1.25em;
+    gap: 1em;
+		background-color: #000;
   }
+
+	.overflow-hidden {
+		overflow: hidden;
+	}
 
   .block {
     display: block;
@@ -41,20 +54,14 @@
     }
   }
 
-  .tile {
-    background-color: #343434;
-    padding: 1.15em 1em;
-  }
+
 
   p {
-    margin-bottom: 0.84em !important;
-    margin-top: 0.9em !important;
-    font-size: 1.02em;
+    font-size: 0.75em;
+		margin: 0 !important;
     word-spacing: 2px;
 
-    &.green-border {
-      margin-top: .75em !important;
-    }
+
   }
 
   .marg-bottom-off {
@@ -63,7 +70,7 @@
 
   .relative {
     position: relative !important;
-    padding-bottom: 70%;
+    padding-bottom: 56%;
   }
 
   .gatsby-image-wrapper {
@@ -86,12 +93,10 @@
   }
 
   .content-container {
-    text-align: center;
-    justify-content: center;
-    padding: 2em 2em 1em;
+
 
     .heading {
-      font-size: 1.75em;
+      font-size: 1.5em;
       line-height: 1.15;
     }
   }
@@ -130,11 +135,7 @@
     text-transform: uppercase;
   }
 
-  @media screen and (max-width: 1024px) {
-    .map-part {
-      min-height: 56vw;
-    }
-  }
+
 
   .coming-soon {
     position: absolute;

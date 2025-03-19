@@ -3,7 +3,7 @@ import React from 'react'
 import './style.scss'
 import MultiButton from './MultiButton'
 import Image from 'next/image'
-// import Map from '../../../Map/GMap'
+import Map from '../../../Map/GMap'
 import { useInView } from 'react-intersection-observer'
 
 function AddressNew(props) {
@@ -18,12 +18,10 @@ function AddressNew(props) {
     let ph1 = node.phone?.slice(0, 3)
     let ph2 = node.phone?.slice(3, 6)
     let ph3 = node.phone?.slice(6, node.phone.length + 1)
-
     return (
+      <div key={i} className="span-12 span-12-tablet grid-12 tile gap-1">
 
-      <div key={i} className="span-6 span-12-tablet grid-12 tile">
-
-        <div className="span-12 relative aspect-ratio">
+        <div className="span-5 relative aspect-ratio">
           {image?.url &&
             <Image
               src={image.url}
@@ -32,11 +30,12 @@ function AddressNew(props) {
               alt={image.alt}
               style={{ objectFit: "cover" }}
               quality="90"
+							className='rounded-lg'
             />
           }
           {/* {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null} */}
         </div>
-        <div className="content-container span-12">
+        <div className="content-container span-7">
           <h3 className='uppercase font3 heading'>{node.name}</h3>
           <p className={`uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
             {node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className='padd-top block'>{node.address}</span>}
@@ -49,56 +48,60 @@ function AddressNew(props) {
           </p>
           <p className="uppercase marg-bottom-off">{node.hours}</p>
           {/* <p className="green-border">CLOSED ON WEDNESDAYS</p> */}
-        </div>
-        <div className='span-12 flex padd-bottom'>
+					<div className='span-12 flex padd-bottom'>
           <MultiButton links={node.links} />
         </div>
+        </div>
+      
       </div>
 
-      // <div className="span-6 span-12-tablet map-part">
-      //   <Map {...node.map} />
-      // </div>
+
     )
   })
 
   return (
     <>
       {classes ?
-        <section ref={io} id={`section-${anchor}`} style={{ zIndex: 101 }} className={`content c4 grid-12 border-type-7 is-inview ${classes}  ${ioInView ? 'inview' : ''} `}>
+        <section ref={io} id={`section-${anchor}-new`} style={{ zIndex: 101 }} className={`content c4  border-type-7 is-inview ${classes}  ${ioInView ? 'inview' : ''} `}>
 
           {anchor ?
             <div id={anchor} className="anchor"></div>
             : null}
 
-          <div className='span-12 heading-section'>
+          <div className='heading-section'>
             <h2 className="title c4 font2"><span className="capitalize" style={{textTransform: "none !important"}}>l</span>ocations</h2>
             <div className="decor-wrap">
               <div className="decor-top with-extra">
-                {/* <div className="decor-top-left"></div> */}
                 <div className="decor-top-center with-extra">
                   <div className="decor-top-center-extra-left"></div>
                   <div id="space-logo" className="decor-top-center-extra-center"></div>
                   <div className="decor-top-center-extra-right"></div>
                 </div>
-                {/* <div className="decor-top-right"></div> */}
               </div>
             </div>
           </div>
 
-          <div className={"double main-grid span-12 span-12-mobile grid-12"}>
-            {itemsMap}
-          </div>
+					<div className='grid-12 gap-2'>
+						<div className={" main-grid  span-6 grid-12 rounded-lg padd"}>
+							{itemsMap}
+						</div>
+						<div className="span-6 span-12-tablet ">
+							<div className='aspect-square overflow-hidden rounded-lg'>
+								<Map lat={25.835647} lng={-80.19255749999999} zoom={15}/>
+							</div>
+						</div>
+					</div>
+
+   
 
           <div className='locations-bottom-decor span-12'>
             <div className="decor-wrap">
               <div className="decor-top with-extra">
-                {/* <div className="decor-top-left"></div> */}
                 <div className="decor-top-center with-extra">
                   <div className="decor-top-center-extra-left"></div>
                   <div id="space-logo" className="decor-top-center-extra-center"></div>
                   <div className="decor-top-center-extra-right"></div>
                 </div>
-                {/* <div className="decor-top-right"></div> */}
               </div>
             </div>
           </div>

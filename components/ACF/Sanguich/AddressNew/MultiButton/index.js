@@ -16,7 +16,7 @@ function MultiButton({ links }) {
 
   return (
     links?.length > 0 ?
-      <div className='multi-button' tabIndex="0" onClick={() => setMultiBtnOpen(true)} onMouseLeave={() => setMultiBtnOpen(false)}>
+      <div className='multi-button-new' tabIndex="0" onClick={() => setMultiBtnOpen(true)} onMouseLeave={() => setMultiBtnOpen(false)}>
         <div className={`btn btn-border ${multiBtnOpen ? 'border-bottom-off' : ''}`}>
           <span className='multi-btn-span'>{links?.[0]?.title}<div className='icon icon-arrow-bottom'></div> </span>
         </div>
