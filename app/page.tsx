@@ -20,6 +20,7 @@ import ACFShop from "../components/ACF/Shop/Items"
 import ACFOurStory from '../components/ACF/Sanguich/OurStory'
 import ACFHola from '../components/ACF/Sanguich/Hola'
 import ACFAddress from '../components/ACF/Sanguich/Address'
+import ACFAddressNew from '../components/ACF/Sanguich/AddressNew'
 import ACFCatering from '../components/ACF/Sanguich/Catering'
 import ACFNews from '../components/ACF/Sanguich/News'
 
@@ -105,6 +106,12 @@ export default async function MainPage() {
         <ACFAddress key={section.id} { ...section } />
       )
     }
+
+		// if(section.acf_fc_layout === 'address') {
+    //   return (
+    //     <ACFAddressNew key={section.id} { ...section } />
+    //   )
+    // }
 
     if(section.acf_fc_layout === 'catering') {
       return (
