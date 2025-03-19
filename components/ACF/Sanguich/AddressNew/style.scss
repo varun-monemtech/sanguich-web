@@ -1,6 +1,10 @@
 #section-address-new {
   padding: 1.25em 5em;
 
+	.grid-item.active {
+		background-color: #2F6148;
+	}
+
 	.rounded-lg {
 		border-radius: 0.5rem;
 	}

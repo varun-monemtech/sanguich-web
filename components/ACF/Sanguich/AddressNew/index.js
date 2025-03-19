@@ -3,8 +3,8 @@ import React from 'react'
 import './style.scss'
 import MultiButton from './MultiButton'
 import Image from 'next/image'
-import Map from '../../../Map/GMap'
 import { useInView } from 'react-intersection-observer'
+import GMap from '../../../GMap'
 
 function AddressNew(props) {
   const [io, ioInView] = useInView({ triggerOnce: true })
@@ -19,7 +19,7 @@ function AddressNew(props) {
     let ph2 = node.phone?.slice(3, 6)
     let ph3 = node.phone?.slice(6, node.phone.length + 1)
     return (
-      <div key={i} className="span-12 span-12-tablet grid-12 tile gap-1">
+      <div key={i} className="span-12 span-12-tablet grid-12 tile gap-1 grid-item">
 
         <div className="span-5 relative aspect-ratio">
           {image?.url &&
@@ -87,7 +87,7 @@ function AddressNew(props) {
 						</div>
 						<div className="span-6 span-12-tablet ">
 							<div className='aspect-square overflow-hidden rounded-lg'>
-								<Map lat={25.835647} lng={-80.19255749999999} zoom={15}/>
+								<GMap allVenues={props.items} />
 							</div>
 						</div>
 					</div>
