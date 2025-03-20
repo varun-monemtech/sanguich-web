@@ -9,11 +9,13 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 	const gMapKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
 	const path = usePathname()
 	const [gridItems, setGridItems] = useState()
+	const [scrollContainer, setScrollContainer] = useState()
 
 	useEffect(() => {
 		const gridItems = document.getElementsByClassName('grid-item')
-		if (gridItems)
-			setGridItems(gridItems)
+		const scrollContainer = document.querySelector('.scroll-container')
+		if (gridItems) setGridItems(gridItems)
+		if (scrollContainer) setScrollContainer(scrollContainer)
 	}, [path])
 
 
@@ -142,12 +144,24 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 					infowindow.open(marker.getMap(), marker)
 					marker.setIcon(iconFilled)
 					setSelectedIndex(i)
-					// google.map.panTo(position)
 					google.map.setZoom(13)
 					google.map.panTo(position, {
 						animate: true,
 						duration: 1000
 					})
+					
+					// Scroll the restaurant into view within the scroll container
+					if (scrollContainer && gridItems[i]) {
+						const containerRect = scrollContainer.getBoundingClientRect()
+						const itemRect = gridItems[i].getBoundingClientRect()
+						const relativeTop = itemRect.top - containerRect.top
+						const centerOffset = (containerRect.height - itemRect.height) / 2
+						
+						scrollContainer.scrollTo({
+							top: scrollContainer.scrollTop + relativeTop - centerOffset,
+							behavior: 'smooth'
+						})
+					}
 				}
 			})
 
