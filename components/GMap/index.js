@@ -77,75 +77,98 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 
 			// When clicking item boxes
 			gridItems[i]?.addEventListener('click', function () {
-				infowindow.currentlyOpen = i
-				infotitle.close()
-				infowindow.close()
-				infowindow.setContent(markupString)
-				infowindow.open(marker.getMap(), marker)
-				marker.setIcon(iconFilled)
-				clickFlag = true
-				setSelectedIndex(i)
-				google.map.panTo(position)
-				google.map.setZoom(13)
-				google.map.panTo(position, {
-					animate: true,
-					duration: 1000
-				})
+				if (selectedIndex === i) {
+					// If clicking the same item again, clear selection
+					infowindow.close()
+					infowindow.currentlyOpen = null
+					infotitle.close()
+					marker.setIcon(icon)
+					setSelectedIndex(null)
+				} else {
+					// If clicking a different item
+					infowindow.currentlyOpen = i
+					infotitle.close()
+					infowindow.close()
+					infowindow.setContent(markupString)
+					infowindow.open(marker.getMap(), marker)
+					marker.setIcon(iconFilled)
+					setSelectedIndex(i)
+					// google.map.panTo(position)
+					google.map.setZoom(13)
+					google.map.panTo(position, {
+						animate: true,
+						duration: 1000
+					})
+				}
 			})
 
+			// When hovering item boxes
 			gridItems[i]?.addEventListener('mouseover', function () {
-				infotitle.close() // Close previously opened infotitle
-				infowindow.close() // Close previously opened infowindow
-				infotitle.setContent(titleString)
-				infotitle.open(google.map, marker)
-				marker.setIcon(iconFilled)
-				setHoveredIndex(i)
+				if (selectedIndex !== i) {
+					infotitle.close() // Close previously opened infotitle
+					if (infowindow.currentlyOpen !== i) {
+						infotitle.setContent(titleString)
+						infotitle.open(google.map, marker)
+					}
+					marker.setIcon(iconFilled)
+					setHoveredIndex(i)
+				}
 			})
 
 			// When hovering item boxes
 			gridItems[i]?.addEventListener('mouseout', function () {
-				infotitle.close() // Close previously opened infotitle
-				infowindow.close() // Close previously opened infowindow
-				setHoveredIndex(null)
 				if (selectedIndex !== i) {
+					infotitle.close() // Close previously opened infotitle
+					setHoveredIndex(null)
 					marker.setIcon(icon)
 				}
 			})
 
 			// When clicking markers
 			marker.addListener("click", () => {
-				infowindow.currentlyOpen = i
-				infotitle.close()
-				infowindow.close()
-				infowindow.setContent(markupString)
-				infowindow.open(marker.getMap(), marker)
-				marker.setIcon(iconFilled)
-				// gridItems[i]?.scrollIntoView({ behavior: "smooth", block: "center" })
-				setSelectedIndex(i)
-				google.map.panTo(position)
-				google.map.setZoom(13)
-				google.map.panTo(position, {
-					animate: true,
-					duration: 1000
-				})
+				if (selectedIndex === i) {
+					// If clicking the same marker again, clear selection
+					infowindow.close()
+					infowindow.currentlyOpen = null
+					infotitle.close()
+					marker.setIcon(icon)
+					setSelectedIndex(null)
+				} else {
+					// If clicking a different marker
+					infowindow.currentlyOpen = i
+					infotitle.close()
+					infowindow.close()
+					infowindow.setContent(markupString)
+					infowindow.open(marker.getMap(), marker)
+					marker.setIcon(iconFilled)
+					setSelectedIndex(i)
+					// google.map.panTo(position)
+					google.map.setZoom(13)
+					google.map.panTo(position, {
+						animate: true,
+						duration: 1000
+					})
+				}
 			})
 
 			// When hovering markers
 			marker.addListener("mouseover", () => {
-				infotitle.close()
-				if (infowindow.currentlyOpen !== i) {
-					infotitle.setContent(titleString)
-					infotitle.open(marker.getMap(), marker)
+				if (selectedIndex !== i) {
+					infotitle.close()
+					if (infowindow.currentlyOpen !== i) {
+						infotitle.setContent(titleString)
+						infotitle.open(marker.getMap(), marker)
+					}
+					marker.setIcon(iconFilled)
+					setHoveredIndex(i)
 				}
-				marker.setIcon(iconFilled)
-				setHoveredIndex(i)
 			})
 
 			// When hovering markers
 			marker.addListener('mouseout', () => {
-				infotitle.close()
-				setHoveredIndex(null)
 				if (selectedIndex !== i) {
+					infotitle.close()
+					setHoveredIndex(null)
 					marker.setIcon(icon)
 				}
 			})
