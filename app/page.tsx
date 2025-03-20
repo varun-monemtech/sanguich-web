@@ -73,62 +73,62 @@ export default async function MainPage() {
    
     if(section.acf_fc_layout === 'menu') {
       return (
-        <Menu key={section.id} { ...section } />
+        <Menu key={i} { ...section } />
       )
     }
 
     // if(section.acf_fc_layout === 'order') {
     //   return (
-    //     <ACFOrder key={section.id} { ...section } />
+    //     <ACFOrder key={i} { ...section } />
     //   )
     // }
 
     if(section.acf_fc_layout === 'seen_on') {
       return (
-        <ACFSeenOn key={section.id} { ...section } />
+        <ACFSeenOn key={i} { ...section } />
       )
     }
 
     if(section.acf_fc_layout === 'our_story') {
       return (
-        <ACFOurStory key={section.id} { ...section } />
+        <ACFOurStory key={i} { ...section } />
       )
     }
 
     if(section.acf_fc_layout === 'hola') {
       return (
-        <ACFHola key={section.id} { ...section } />
+        <ACFHola key={i} { ...section } />
       )
     }
 
     if(section.acf_fc_layout === 'address') {
       return (
-        <ACFAddress key={section.id} { ...section } />
+        <ACFAddress key={i} { ...section } />
       )
     }
 
 		// if(section.acf_fc_layout === 'address') {
     //   return (
-    //     <ACFAddressNew key={section.id} { ...section } />
+    //     <ACFAddressNew key={i} { ...section } />
     //   )
     // }
 
     if(section.acf_fc_layout === 'catering') {
       return (
-        <ACFCatering key={section.id} { ...section } />
+        <ACFCatering key={i} { ...section } />
       )
     }
 
     if(section.acf_fc_layout === 'news') {
       return (
-        <ACFNews key={section.id} { ...section } posts={posts} />
+        <ACFNews key={i} { ...section } posts={posts} />
       )
     }
 
     if(section.acf_fc_layout === 'shop') {
       return (
-				<ContextProvider>
-       		<ACFShop key={section.id} { ...section } />
+				<ContextProvider key={i}>
+       		<ACFShop { ...section } />
 				</ContextProvider>
       )
     }
