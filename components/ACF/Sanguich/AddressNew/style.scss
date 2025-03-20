@@ -152,4 +152,12 @@
     justify-content: center;
     align-items: center;
   }
+
+  .grid-item {
+    transition: background-color 0.3s ease;
+    
+    &.hovered {
+      background-color: #454138;
+    }
+  }
 }

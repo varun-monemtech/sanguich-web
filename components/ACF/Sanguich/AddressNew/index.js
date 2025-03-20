@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import './style.scss'
 import MultiButton from './MultiButton'
 import Image from 'next/image'
@@ -8,10 +8,12 @@ import GMap from '../../../GMap'
 
 function AddressNew(props) {
   const [io, ioInView] = useInView({ triggerOnce: true })
+  const [hoveredIndex, setHoveredIndex] = useState(null)
+  const [selectedIndex, setSelectedIndex] = useState(null)
 
   const anchor = props.anchor
   const classes = props.classes
-
+	
   const itemsMap = props.items?.map((node, i) => {
     let image = node.img
 
@@ -19,7 +21,13 @@ function AddressNew(props) {
     let ph2 = node.phone?.slice(3, 6)
     let ph3 = node.phone?.slice(6, node.phone.length + 1)
     return (
-      <div key={i} className="span-12 span-12-tablet grid-12 tile gap-1 grid-item">
+      <div 
+        key={i} 
+        className={`span-12 span-12-tablet grid-12 tile gap-1 grid-item ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+        onMouseEnter={() => setHoveredIndex(i)}
+        onMouseLeave={() => setHoveredIndex(null)}
+        onClick={() => setSelectedIndex(i)}
+      >
 
         <div className="span-5 relative aspect-ratio">
           {image?.url &&
@@ -87,7 +95,13 @@ function AddressNew(props) {
 						</div>
 						<div className="span-6 span-12-tablet ">
 							<div className='aspect-square overflow-hidden rounded-lg'>
-								<GMap allVenues={props.items} />
+								<GMap 
+                  allVenues={props.items} 
+                  hoveredIndex={hoveredIndex} 
+                  setHoveredIndex={setHoveredIndex}
+                  selectedIndex={selectedIndex}
+                  setSelectedIndex={setSelectedIndex}
+                />
 							</div>
 						</div>
 					</div>

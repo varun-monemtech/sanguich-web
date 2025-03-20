@@ -4,7 +4,7 @@ import GoogleMapReact from 'google-map-react'
 import { GMapOptions } from './options'
 import { usePathname } from 'next/navigation'
 
-export default function GMap({ allVenues }) {
+export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selectedIndex, setSelectedIndex }) {
 
 	const gMapKey = process.env.GATSBY_GOOGLE_API_KEY
 	const path = usePathname()
@@ -77,6 +77,7 @@ export default function GMap({ allVenues }) {
 				infowindow.open(marker.getMap(), marker)
 				marker.setIcon(iconFilled)
 				clickFlag = true
+				setSelectedIndex(i)
 			})
 
 			// When hovering item boxes
@@ -86,16 +87,16 @@ export default function GMap({ allVenues }) {
 				infotitle.setContent(titleString)
 				infotitle.open(google.map, marker)
 				marker.setIcon(iconFilled)
+				setHoveredIndex(i)
 			})
 
 			// When hovering item boxes
 			gridItems[i]?.addEventListener('mouseout', function () {
-				if (!clickFlag) {
-					infotitle.close() // Close previously opened infotitle
-					infowindow.close() // Close previously opened infowindow
+				infotitle.close() // Close previously opened infotitle
+				infowindow.close() // Close previously opened infowindow
+				setHoveredIndex(null)
+				if (selectedIndex !== i) {
 					marker.setIcon(icon)
-				} else {
-					clickFlag = false
 				}
 			})
 
@@ -108,7 +109,7 @@ export default function GMap({ allVenues }) {
 				infowindow.open(marker.getMap(), marker)
 				marker.setIcon(iconFilled)
 				// gridItems[i]?.scrollIntoView({ behavior: "smooth", block: "center" })
-
+				setSelectedIndex(i)
 			})
 
 			// When hovering markers
@@ -119,20 +120,26 @@ export default function GMap({ allVenues }) {
 					infotitle.open(marker.getMap(), marker)
 				}
 				marker.setIcon(iconFilled)
+				setHoveredIndex(i)
 			})
 
 			// When hovering markers
 			marker.addListener('mouseout', () => {
 				infotitle.close()
-				marker.setIcon(icon)
+				setHoveredIndex(null)
+				if (selectedIndex !== i) {
+					marker.setIcon(icon)
+				}
 			})
 
-			// When defocusing marker
+			// When clicking map
 			google.map.addListener('click', () => {
 				infowindow.close() // Close previously opened infowindow
 				infowindow.currentlyOpen = null
 				infotitle.close() // Close previously opened infotitle
 				marker.setIcon(icon)
+				setSelectedIndex(null)
+				setHoveredIndex(null)
 			})
 
 			// marker.setMap(google.map)

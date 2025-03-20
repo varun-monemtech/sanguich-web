@@ -101,17 +101,17 @@ export default async function MainPage() {
       )
     }
 
-    if(section.acf_fc_layout === 'address') {
-      return (
-        <ACFAddress key={section.id} { ...section } />
-      )
-    }
-
-		// if(section.acf_fc_layout === 'address') {
+    // if(section.acf_fc_layout === 'address') {
     //   return (
-    //     <ACFAddressNew key={section.id} { ...section } />
+    //     <ACFAddress key={section.id} { ...section } />
     //   )
     // }
+
+		if(section.acf_fc_layout === 'address') {
+      return (
+        <ACFAddressNew key={section.id} { ...section } />
+      )
+    }
 
     if(section.acf_fc_layout === 'catering') {
       return (
