@@ -29,7 +29,7 @@ function AddressNew(props) {
         onClick={() => setSelectedIndex(i)}
       >
 
-        <div className="span-5 relative aspect-ratio">
+        <div className="span-12-tablet span-5 relative aspect-ratio">
           {image?.url &&
             <Image
               src={image.url}
@@ -43,7 +43,7 @@ function AddressNew(props) {
           }
           {/* {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null} */}
         </div>
-        <div className="content-container span-7">
+        <div className="content-container span-12-tablet  span-7">
           <h3 className='uppercase font3 heading'>{node.name}</h3>
           <p className={`uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
             {node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className='padd-top block'>{node.address}</span>}
@@ -90,7 +90,7 @@ function AddressNew(props) {
           </div>
 
 					<div className='grid-12 gap-2'>
-						<div className={" main-grid  span-6 grid-12 rounded-lg padd aspect-square"}>
+						<div className={" main-grid span-12-tablet span-6 grid-12 rounded-lg padd aspect-square"}>
 							<div className='scroll-container span-12'>
 								{itemsMap}
 							</div>
