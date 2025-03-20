@@ -27,7 +27,6 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 
 	const addMarker = (google) => {
 		const scaledSize = new google.maps.Size(40, 40)
-		const scaledSizeFilled = new google.maps.Size(60, 60)
 
 		const infowindow = new google.maps.InfoWindow()
 		const infotitle = new google.maps.InfoWindow({ disableAutoPan: true })
@@ -40,12 +39,15 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 			const titleString = `<div class="infobox"><h6>${item.name}</h6></div`
 			const markupString = 
 			`<div class="info-container">
-				<div class="block-img">
-					<div class="image-wrap aspect-ratio">
-						<img class='aspect-square' alt="${item.name}" src="${item?.img?.url}"/>
-					</div>
+				<div class="grid-item-restaurant">
+				${item?.img ?
+					`<div class="info-image">
+						<img alt="${item.name}" src="${item?.img?.sizes?.medium}"/>
+					</div>`
+					: ''
+				}
 				</div>
-				<div class='infobox font-[400]'>
+				<div class='infobox grid-item-restaurant-description-box  font-[400]'>
 					<h5 class="margin-off">${item.name}</h5>
 					<div class="flex flex-wrap mt-1 text-[0.85em] justify-between jc-space-between">
 						<h6 class="margin-off">${item.address ? item.address : ""}</h6>
@@ -60,8 +62,8 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 			}
 
 			const iconFilled = {
-				url: "/map-marker.png",
-				scaledSize: scaledSizeFilled
+				url: "/map-marker-filled.png",
+				scaledSize: scaledSize
 			}
 
 			const position = { lat: item?.map?.lat, lng: item?.map?.lng }
