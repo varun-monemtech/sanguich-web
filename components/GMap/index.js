@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 
 export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selectedIndex, setSelectedIndex }) {
 
-	const gMapKey = process.env.GATSBY_GOOGLE_API_KEY
+	const gMapKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
 	const path = usePathname()
 	const [gridItems, setGridItems] = useState()
 
@@ -26,10 +26,10 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 	}
 
 	const addMarker = (google) => {
-
 		const scaledSize = new google.maps.Size(20, 20)
 		const infowindow = new google.maps.InfoWindow()
 		const infotitle = new google.maps.InfoWindow({ disableAutoPan: true })
+		const bounds = new google.maps.LatLngBounds()
 
 		allVenues?.forEach((item, i) => {
 			if(!item.map) return
@@ -62,8 +62,11 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 				scaledSize: scaledSize
 			}
 
+			const position = { lat: item?.map?.lat, lng: item?.map?.lng }
+			bounds.extend(position)
+
 			const marker = new google.maps.Marker({
-				position: { lat: item?.map?.lat, lng: item?.map?.lng },
+				position: position,
 				map: google.map,
 				icon: icon
 			})
@@ -78,9 +81,14 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 				marker.setIcon(iconFilled)
 				clickFlag = true
 				setSelectedIndex(i)
+				google.map.panTo(position)
+				google.map.setZoom(13)
+				google.map.panTo(position, {
+					animate: true,
+					duration: 1000
+				})
 			})
 
-			// When hovering item boxes
 			gridItems[i]?.addEventListener('mouseover', function () {
 				infotitle.close() // Close previously opened infotitle
 				infowindow.close() // Close previously opened infowindow
@@ -110,6 +118,12 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 				marker.setIcon(iconFilled)
 				// gridItems[i]?.scrollIntoView({ behavior: "smooth", block: "center" })
 				setSelectedIndex(i)
+				google.map.panTo(position)
+				google.map.setZoom(13)
+				google.map.panTo(position, {
+					animate: true,
+					duration: 1000
+				})
 			})
 
 			// When hovering markers
@@ -140,10 +154,15 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 				marker.setIcon(icon)
 				setSelectedIndex(null)
 				setHoveredIndex(null)
+				google.map.fitBounds(bounds, {
+					padding: 50,
+					duration: 1000
+				})
 			})
-
-			// marker.setMap(google.map)
 		})
+
+		// Fit bounds after all markers are added
+		google.map.fitBounds(bounds)
 	}
 
 
@@ -151,7 +170,7 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 	return (
 		<>
 			<GoogleMapReact
-				// bootstrapURLKeys={{ key: "" }}
+				bootstrapURLKeys={{ key: gMapKey }}
 				defaultCenter={defaultProps.center}
 				defaultZoom={defaultProps.zoom}
 				yesIWantToUseGoogleMapApiInternals
