@@ -162,8 +162,8 @@ const ProductGrid = () => {
                   (<Image
                     src={firstImage.src}
                     alt={firstImage.altText ? firstImage.altText : 'Shop Item'}
-                    width={2560}
-                    height={1200}
+                    width={firstImage.width}
+                    height={firstImage.height}
                     className="img-cover"
                   />)}
               {/* <h6 className="price hidden">{title} {getPrice(firstVariant.price)}</h6> */}

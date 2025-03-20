@@ -40,7 +40,7 @@ function PostTemplate({post}) {
 
             <div className="img-wrapper">
               <h1 className="title" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />
-              <Image src={post?.acf?.hero?.url} width="2500" height="1800" quality="85" alt={post?.acf?.hero?.alt} />
+              <Image src={post?.acf?.hero?.url} width={post?.acf?.hero?.width} height={post?.acf?.hero?.height} quality="85" alt={post?.acf?.hero?.alt} />
 
               <div className='bg-overlay' style={{ opacity: 0.3 }}>
                 <div className='bg-overlay-x' style={{ opacity: 0.3 }}></div>
@@ -66,7 +66,7 @@ function PostTemplate({post}) {
             : null}
           {post?.acf?.image ?
             <div className="img-wrapper img wysiwyg-inject">
-              <Image src={post?.acf?.image?.url} width="1200" height="600" quality="85" alt={post?.acf?.image?.alt} />
+              <Image src={post?.acf?.image?.url} width={post?.acf?.image?.width} height={post?.acf?.image?.height} quality="85" alt={post?.acf?.image?.alt} />
             </div>
             : null}
         </div>

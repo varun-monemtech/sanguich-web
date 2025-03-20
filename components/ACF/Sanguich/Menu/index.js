@@ -106,12 +106,12 @@ function Menu(props) {
 					{ image ?
               <Image 
                 src={image.url}
-                width={1200}
-                height={1600}
+                width={image.width}
+                height={image.height}
                 alt={image.alt}
                 style={{objectFit: "cover"}}
                 className="image"
-                quality="90"
+								quality={80}
               />
 					: null }
 				</div>

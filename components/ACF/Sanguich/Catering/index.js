@@ -27,8 +27,8 @@ function Catering(props) {
 
             <Image
               src={image.url}
-              width={1200}
-              height={1600}
+              width={image.width}
+              height={image.height}
               alt={image.alt}
               style={{ objectFit: "cover" }}
               quality="90"

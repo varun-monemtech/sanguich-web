@@ -38,8 +38,8 @@ export default function OtherProducts({ allProduct }) {
               <div className="img-container">
                 <Image
                   src={node.images[0].src}
-                  width={1000}
-                  height={600}
+                  width={node.images[0].width}
+                  height={node.images[0].height}
                   key={node.images[0].id}
                   alt={node.altText ? node.altText : 'Product Image'}
                 />

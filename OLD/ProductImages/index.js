@@ -13,8 +13,8 @@ const ProductImages = ({ images }) => {
           src={images[currentImage]?.src}
           key={images[currentImage]?.id}
           alt={images[currentImage]?.altText ? images[currentImage]?.altText : 'Product'}
-          width={1200}
-          height={1600}
+          width={images[currentImage]?.width}
+          height={images[currentImage]?.height}
         />
       </div>
       <div className="gallery span-12 grid-12">
@@ -24,8 +24,8 @@ const ProductImages = ({ images }) => {
               src={image.src}
               key={image.id}
               alt={image.altText ? image.altText : 'Product'}
-              width={600}
-              height={400}
+              width={image.width}
+              height={image.height}
             />
           </div>
         ))}

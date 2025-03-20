@@ -36,8 +36,8 @@ function Gallery(props) {
 			<div key={`slide-${i}`} className="slide x1">
 				{ image ?
 					<Image src={image}
-						width={2560}
-						height={1200}
+						width={slide.width}
+						height={slide.height}
 						alt={slide.altText ? slide.altText : 'Shop Item'}
 						objectPosition='50% 50%'
 						loading='eager'
