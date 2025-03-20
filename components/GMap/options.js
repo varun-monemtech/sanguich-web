@@ -4,54 +4,12 @@ export const GMapOptions = {
 			"elementType": "geometry",
 			"stylers": [
 				{
-					"color": "#212121"
+					"color": "#1a1a1a"
 				}
 			]
 		},
 		{
-			"elementType": "labels.icon",
-			"stylers": [
-				{
-					"visibility": "off"
-				}
-			]
-		},
-		{
-			"elementType": "labels.text.fill",
-			"stylers": [
-				{
-					"color": "#757575"
-				}
-			]
-		},
-		{
-			"elementType": "labels.text.stroke",
-			"stylers": [
-				{
-					"color": "#212121"
-				}
-			]
-		},
-		{
-			"featureType": "administrative",
-			"elementType": "geometry",
-			"stylers": [
-				{
-					"color": "#757575"
-				}
-			]
-		},
-		{
-			"featureType": "administrative.country",
-			"elementType": "labels.text.fill",
-			"stylers": [
-				{
-					"color": "#9e9e9e"
-				}
-			]
-		},
-		{
-			"featureType": "administrative.land_parcel",
+			"elementType": "labels",
 			"stylers": [
 				{
 					"visibility": "off"
@@ -60,46 +18,71 @@ export const GMapOptions = {
 		},
 		{
 			"featureType": "administrative.locality",
+			"elementType": "labels.text",
+			"stylers": [
+				{
+					"visibility": "on"
+				}
+			]
+		},
+		{
+			"featureType": "administrative.neighborhood",
+			"elementType": "labels.text",
+			"stylers": [
+				{
+					"visibility": "on"
+				}
+			]
+		},
+		{
+			"featureType": "administrative.neighborhood",
 			"elementType": "labels.text.fill",
 			"stylers": [
 				{
-					"color": "#bdbdbd"
+					"color": "#CBCFD0"
+				}
+			]
+		},
+		{
+			"featureType": "administrative.neighborhood",
+			"elementType": "labels.text.stroke",
+			"stylers": [
+				{
+					"color": "#1a1a1a"
+				}
+			]
+		},
+		{
+			"featureType": "administrative.locality",
+			"elementType": "labels.text.fill",
+			"stylers": [
+				{
+					"color": "#CBCFD0"
+				}
+			]
+		},
+		{
+			"featureType": "administrative.locality",
+			"elementType": "labels.text.stroke",
+			"stylers": [
+				{
+					"color": "#1a1a1a"
+				}
+			]
+		},
+		{
+			"featureType": "landscape",
+			"stylers": [
+				{
+					"color": "#1a1a1a"
 				}
 			]
 		},
 		{
 			"featureType": "poi",
-			"elementType": "labels.text.fill",
 			"stylers": [
 				{
-					"color": "#757575"
-				}
-			]
-		},
-		{
-			"featureType": "poi.park",
-			"elementType": "geometry",
-			"stylers": [
-				{
-					"color": "#181818"
-				}
-			]
-		},
-		{
-			"featureType": "poi.park",
-			"elementType": "labels.text.fill",
-			"stylers": [
-				{
-					"color": "#616161"
-				}
-			]
-		},
-		{
-			"featureType": "poi.park",
-			"elementType": "labels.text.stroke",
-			"stylers": [
-				{
-					"color": "#1b1b1b"
+					"visibility": "off"
 				}
 			]
 		},
@@ -108,79 +91,42 @@ export const GMapOptions = {
 			"elementType": "geometry.fill",
 			"stylers": [
 				{
-					"color": "#2c2c2c"
+					"color": "#38383b"
 				}
 			]
 		},
 		{
 			"featureType": "road",
-			"elementType": "labels.text.fill",
+			"elementType": "labels",
 			"stylers": [
 				{
-					"color": "#8a8a8a"
-				}
-			]
-		},
-		{
-			"featureType": "road.arterial",
-			"elementType": "geometry",
-			"stylers": [
-				{
-					"color": "#373737"
-				}
-			]
-		},
-		{
-			"featureType": "road.highway",
-			"elementType": "geometry",
-			"stylers": [
-				{
-					"color": "#3c3c3c"
-				}
-			]
-		},
-		{
-			"featureType": "road.highway.controlled_access",
-			"elementType": "geometry",
-			"stylers": [
-				{
-					"color": "#4e4e4e"
-				}
-			]
-		},
-		{
-			"featureType": "road.local",
-			"elementType": "labels.text.fill",
-			"stylers": [
-				{
-					"color": "#616161"
+					"visibility": "off"
 				}
 			]
 		},
 		{
 			"featureType": "transit",
-			"elementType": "labels.text.fill",
 			"stylers": [
 				{
-					"color": "#757575"
+					"visibility": "off"
 				}
 			]
 		},
 		{
 			"featureType": "water",
-			"elementType": "geometry",
+			"elementType": "geometry.fill",
 			"stylers": [
 				{
-					"color": "#000000"
+					"color": "#145F41"
 				}
 			]
 		},
 		{
 			"featureType": "water",
-			"elementType": "labels.text.fill",
+			"elementType": "labels",
 			"stylers": [
 				{
-					"color": "#3d3d3d"
+					"visibility": "off"
 				}
 			]
 		}

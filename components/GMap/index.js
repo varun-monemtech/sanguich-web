@@ -26,7 +26,9 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 	}
 
 	const addMarker = (google) => {
-		const scaledSize = new google.maps.Size(20, 20)
+		const scaledSize = new google.maps.Size(40, 40)
+		const scaledSizeFilled = new google.maps.Size(60, 60)
+
 		const infowindow = new google.maps.InfoWindow()
 		const infotitle = new google.maps.InfoWindow({ disableAutoPan: true })
 		const bounds = new google.maps.LatLngBounds()
@@ -58,8 +60,8 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 			}
 
 			const iconFilled = {
-				url: "/map-marker-filled.png",
-				scaledSize: scaledSize
+				url: "/map-marker.png",
+				scaledSize: scaledSizeFilled
 			}
 
 			const position = { lat: item?.map?.lat, lng: item?.map?.lng }
