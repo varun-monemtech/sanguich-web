@@ -1,12 +1,30 @@
 #section-address-new {
-  padding: 1.25em 5em;
+  padding: 1.25em 5em 2em;
+
+
 
 	.grid-item.active {
 		background-color: #2F6148;
 	}
 
+	.tile {
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 93%;
+			height: 1px;
+			background-color: #DCBA7B;
+			position: absolute;
+			bottom: -1px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
 	.rounded-lg {
-		border-radius: 0.5rem;
+		border-radius: 16px;
 	}
 
 	.aspect-square {
@@ -14,8 +32,32 @@
 	}
 
   .main-grid {
-    gap: 1em;
 		background-color: #000;
+		padding: 1em 2em;
+
+		.scroll-container {
+			overflow: auto;
+			direction: rtl; 
+			padding-left: 20px; 
+			width: 100%;
+			* {
+				direction: ltr;
+			}
+			&::-webkit-scrollbar {
+				width: 25px;
+				padding: 2em;
+			}
+		
+			&::-webkit-scrollbar-track {
+				border-radius: 100vh;
+				background: #8B816E;
+			}
+		
+			&::-webkit-scrollbar-thumb {
+				background: #DCBA7B;
+				border-radius: 100vh;
+			}
+		}
   }
 
 	.overflow-hidden {
@@ -45,27 +87,11 @@
     }
   }
 
-  .locations-bottom-decor {
-    padding: 1em 0;
-    display: inline;
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    .decor-wrap {
-      padding: 0;
-      justify-content: flex-end;
-    }
-  }
-
-
 
   p {
     font-size: 0.75em;
 		margin: 0 !important;
     word-spacing: 2px;
-
-
   }
 
   .marg-bottom-off {
@@ -97,10 +123,14 @@
   }
 
   .content-container {
-
-
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+		
     .heading {
-      font-size: 1.5em;
+      font-size: 1.25em;
+			width: 100%;
       line-height: 1.15;
     }
   }
@@ -112,6 +142,10 @@
   .m-top-off {
     margin-top: 0 !important
   }
+
+	.gold-border {
+		border: solid 1px #DCBA7B;
+	}
 
   .green-border {
     border: solid 2px #2F6148;
@@ -154,10 +188,13 @@
   }
 
   .grid-item {
-    transition: background-color 0.3s ease;
+		padding: 1.5em 1em;
+    transition: background-color 0.5s ease, border 0.5s ease;
+			border: solid 1px #DCBA7B00;
     
     &.hovered {
       background-color: #454138;
+			border: solid 1px #DCBA7B;
     }
   }
 

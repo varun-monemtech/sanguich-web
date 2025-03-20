@@ -23,7 +23,7 @@ function AddressNew(props) {
     return (
       <div 
         key={i} 
-        className={`span-12 span-12-tablet grid-12 tile gap-1 grid-item ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+        className={`span-12 span-12-tablet grid-12 tile gap-1 grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
         onMouseEnter={() => setHoveredIndex(i)}
         onMouseLeave={() => setHoveredIndex(null)}
         onClick={() => setSelectedIndex(i)}
@@ -38,7 +38,7 @@ function AddressNew(props) {
               alt={image.alt}
               style={{ objectFit: "cover" }}
               quality="90"
-							className='rounded-lg'
+							className='rounded-lg gold-border'
             />
           }
           {/* {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null} */}
@@ -90,11 +90,13 @@ function AddressNew(props) {
           </div>
 
 					<div className='grid-12 gap-2'>
-						<div className={" main-grid  span-6 grid-12 rounded-lg padd"}>
-							{itemsMap}
+						<div className={" main-grid  span-6 grid-12 rounded-lg padd aspect-square"}>
+							<div className='scroll-container span-12'>
+								{itemsMap}
+							</div>
 						</div>
 						<div className="span-6 span-12-tablet ">
-							<div className='aspect-square overflow-hidden rounded-lg'>
+							<div className='aspect-square overflow-hidden rounded-lg gold-border'>
 								<GMap 
                   allVenues={props.items} 
                   hoveredIndex={hoveredIndex} 
@@ -106,19 +108,7 @@ function AddressNew(props) {
 						</div>
 					</div>
 
-   
-
-          <div className='locations-bottom-decor span-12'>
-            <div className="decor-wrap">
-              <div className="decor-top with-extra">
-                <div className="decor-top-center with-extra">
-                  <div className="decor-top-center-extra-left"></div>
-                  <div id="space-logo" className="decor-top-center-extra-center"></div>
-                  <div className="decor-top-center-extra-right"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+  
 
         </section>
         : null}
