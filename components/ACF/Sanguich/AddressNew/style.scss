@@ -1,6 +1,6 @@
 #section-address-new {
-  padding: 1.25em 5em 2em;
-
+  // padding: 1.25em 5em 2em;
+	padding: 1.7em;
 	@media screen and (max-width: 1024px) {
 		padding: 1.25em 1em 2em;
 	}
@@ -44,6 +44,7 @@
 			overflow: auto;
 			direction: rtl; 
 			width: 100%;
+			aspect-ratio: 1/1;
 			padding-left: 20px; 
 			@media screen and (max-width: 1024px) {
 				padding-left: 4px; 
@@ -140,6 +141,7 @@
 		flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
+		justify-content: center;
 		
     .heading {
       font-size: 1.25em;
@@ -200,6 +202,8 @@
 
   .grid-item {
 		padding: 1.5em 1em;
+		align-items: center;
+
     transition: background-color 0.5s ease, border 0.5s ease;
 			border: solid 1px #DCBA7B00;
     
@@ -241,4 +245,68 @@
 		flex-wrap: wrap;
 	}
 
+}
+
+.mobile-view-switcher {
+  display: none;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .switcher-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #145F41;
+    background: transparent;
+    color: #145F41;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+
+    &.active {
+      background: #145F41;
+      color: white;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  .mobile-visible {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .main-grid {
+    margin-bottom: 1rem;
+  }
+
+  .scroll-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .grid-item {
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+    
+    &.hovered {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+  }
 }

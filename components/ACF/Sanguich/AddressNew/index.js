@@ -10,6 +10,7 @@ function AddressNew(props) {
   const [io, ioInView] = useInView({ triggerOnce: true })
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const [selectedIndex, setSelectedIndex] = useState(null)
+  const [mobileView, setMobileView] = useState('list') // 'list' or 'map'
 
   const anchor = props.anchor
   const classes = props.classes
@@ -46,7 +47,7 @@ function AddressNew(props) {
         <div className="content-container span-12-tablet  span-7">
           <h3 className='uppercase font3 heading'>{node.name}</h3>
           <p className={`uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
-            {node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className='padd-top block'>{node.address}</span>}
+            {node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className=' block'>{node.address}</span>}
           </p>
           <p>
             {i === 1 ? "NO DINE-IN | " : null}
@@ -56,7 +57,7 @@ function AddressNew(props) {
           </p>
           <p className="uppercase marg-bottom-off">{node.hours}</p>
           {/* <p className="green-border">CLOSED ON WEDNESDAYS</p> */}
-					<div className='span-12 flex padd-bottom'>
+					<div className='span-12 flex'>
           <MultiButton links={node.links} />
         </div>
         </div>
@@ -89,13 +90,28 @@ function AddressNew(props) {
             </div>
           </div>
 
+          <div className='mobile-view-switcher'>
+            <button 
+              className={`switcher-btn ${mobileView === 'list' ? 'active' : ''}`}
+              onClick={() => setMobileView('list')}
+            >
+              List View
+            </button>
+            <button 
+              className={`switcher-btn ${mobileView === 'map' ? 'active' : ''}`}
+              onClick={() => setMobileView('map')}
+            >
+              Map View
+            </button>
+          </div>
+
 					<div className='grid-12 gap-2'>
-						<div className={" main-grid span-12-tablet span-6 grid-12 rounded-lg padd aspect-square"}>
+						<div className={`main-grid span-12-tablet span-6 grid-12 rounded-lg padd aspect-square ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
 							<div className='scroll-container span-12'>
 								{itemsMap}
 							</div>
 						</div>
-						<div className="span-6 span-12-tablet ">
+						<div className={`span-6 span-12-tablet ${mobileView === 'map' ? 'mobile-visible' : 'mobile-hidden'}`}>
 							<div className='aspect-square overflow-hidden rounded-lg gold-border'>
 								<GMap 
                   allVenues={props.items} 
