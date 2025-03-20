@@ -49,11 +49,20 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 					: ''
 				}
 				</div>
-				<div class='infobox grid-item-restaurant-description-box  font-[400]'>
+				<div class='infobox grid-item-restaurant-description-box font-[400]'>
 					<h5 class="margin-off">${item.name}</h5>
 					<div class="flex flex-wrap mt-1 text-[0.85em] justify-between jc-space-between">
 						<h6 class="margin-off">${item.address ? item.address : ""}</h6>
 						<h6 class="margin-off">${item.hours ? item.hours : ''}</h6>
+					</div>
+					<div class="order-buttons-container">
+						${item.links ? item.links
+							.filter(link => link.url && link.url !== '#' && link.url !== 'null')
+							.map((link, index) => `
+							<a href="${link.url}" class="order-button" target="_blank" rel="noreferrer noopener">
+								<span>${link.title}</span>
+							</a>
+						`).join('') : ''}
 					</div>
 				</div>
 			</div>`
@@ -210,6 +219,36 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 
 	return (
 		<>
+			<style jsx global>{`
+			
+				.order-buttons-container {
+					display: flex;
+					flex-direction: column;
+					gap: 10px;
+					margin-top: 15px;
+				}
+				.order-button {
+					display: inline-block;
+					padding: 12px 20px;
+					background-color: #1a1a1a;
+					color: white;
+					text-decoration: none;
+					border-radius: 4px;
+					text-align: center;
+					font-weight: 500;
+					transition: background-color 0.3s ease;
+				}
+				.order-button:hover {
+					background-color: #333;
+				}
+				@media (min-width: 768px) {
+			
+					.order-button {
+						padding: 15px 25px;
+						font-size: 1.1em;
+					}
+				}
+			`}</style>
 			<GoogleMapReact
 				bootstrapURLKeys={{ key: gMapKey }}
 				defaultCenter={defaultProps.center}

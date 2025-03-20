@@ -106,8 +106,8 @@ function AddressNew(props) {
           </div>
 
 					<div className='grid-12 gap-2'>
-						<div className={`main-grid span-12-tablet span-6 grid-12 rounded-lg padd aspect-square ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
-							<div className='scroll-container span-12'>
+						<div className={`main-grid span-12-tablet span-6 rounded-lg padd aspect-square aspect-auto-mobile-off ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
+							<div className='scroll-container grid-12 aspect-auto-mobile-off'>
 								{itemsMap}
 							</div>
 						</div>

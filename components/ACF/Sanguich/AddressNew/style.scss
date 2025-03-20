@@ -3,6 +3,9 @@
 	padding: 1.7em;
 	@media screen and (max-width: 1024px) {
 		padding: 1.25em 1em 2em;
+		.aspect-auto-mobile-off {
+			aspect-ratio: auto !important;
+		}
 	}
 
 	.grid-item.active {
@@ -296,9 +299,8 @@
   }
 
   .scroll-container {
-    max-height: 70vh;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    // overflow-y: auto;
+    // -webkit-overflow-scrolling: touch;
   }
 
   .grid-item {
