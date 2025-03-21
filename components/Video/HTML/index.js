@@ -50,6 +50,7 @@ function setTime(media) {
 function Vimeo(props) {
   const player = useRef(null)
   const [io, ioInView] = useInView({ triggerOnce: false })
+  const nodeRef = useRef(null);
 
   const [currentTime, setCurrentTime] = useState('00:00')
   const [isPlaying, setIsPlaying] = useState(false)
@@ -62,7 +63,7 @@ function Vimeo(props) {
     anime
       .timeline()
       .add({
-        targets: element,
+        targets: nodeRef.current,
         opacity: [0, 1],
         duration: baseDuration,
         easing: 'cubicBezier(.5,.08,.54,.9)',
@@ -72,7 +73,7 @@ function Vimeo(props) {
     anime
       .timeline()
       .add({
-        targets: element,
+        targets: nodeRef.current,
         opacity: [1, 0],
         duration: baseDuration,
         easing: 'cubicBezier(.5,.08,.54,.9)'
@@ -126,10 +127,7 @@ function Vimeo(props) {
       {/* <div className="controls"><button onClick={vPlay}>play</button><button onClick={vPause}>pause</button><button onClick={vMute}>sound is {isMuted ? 'off' : 'on'}</button>{currentTime} | {isPlaying ? 'playing' : 'not playing'}</div> */}
       <video ref={player} muted={isMuted ? true : null} loop playsInline disablePictureInPicture allow="autoplay">
         <source src={props.file} type="video/mp4" />
-        <track
-          default kind="captions"
-          srcLang="en"
-          src="none.vtt" />
+
       </video>
 
       <Transition
@@ -139,8 +137,9 @@ function Vimeo(props) {
         onEntering={fadeIn}
         onExiting={fadeOut}
         mountOnEnter={true}
+				nodeRef={nodeRef}
       >
-        <div className="cover" style={{ opacity: '0.5', backgroundColor: 'rgba(0,0,0,0.2)' }}>
+        <div ref={nodeRef} className="cover" style={{ opacity: '0.5', backgroundColor: 'rgba(0,0,0,0.2)' }}>
           {/* <Parallax className="hola-parallax" y={[-20, 20]} tagOuter="figure">
 						<Img fluid={props.placeholder}
 							imgStyle={{objectFit: 'cover'}}

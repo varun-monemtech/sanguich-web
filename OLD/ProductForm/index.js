@@ -4,11 +4,12 @@ import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 import {reduce} from "lodash"
-import Select from 'react-select'
 import Link from 'next/link'
 
 import StoreContext from '../../context/StoreContext'
 import "./style.scss"
+import dynamic from "next/dynamic";
+const CreatableSelect = dynamic(() => import("react-select/creatable"), { ssr: false });
 
 
 const useQuantity = () => {
@@ -149,7 +150,7 @@ const ProductForm = ({ product }) => {
           {name !== 'Title' ?
             <>
               <label htmlFor={name}>{name} </label>
-              <Select
+              <CreatableSelect
                 name={name}
                 onChange={event => handleOptionChangeSelect(index, event)}
                 options={values.map(value => (

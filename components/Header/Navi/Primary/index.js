@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react'
+'use client'
+import React, { useContext, useState, useRef } from 'react'
 import './style.scss'
 import NaviContext from '../../../../context/NaviContext'
 
@@ -10,15 +11,15 @@ import Link from 'next/link'
 function NaviPrimary(props) {
 	const naviContext = useContext(NaviContext)
 	const [dropDown, setDropDown] = useState([])
-
+	const nodeRef = useRef(null);
 	// Animating fade in/out
 	const baseDuration = 500
 	const fadeInLogo = element => {
-		const links = element.querySelectorAll('.nav-item')
+		const links = nodeRef.current.querySelectorAll('.nav-item')
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef.current,
 				opacity: [0, 1],
 				translateY: [-10, 0],
 				duration: baseDuration,
@@ -36,7 +37,7 @@ function NaviPrimary(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef.current,
 				opacity: [1, 0],
 				duration: baseDuration / 2,
 				easing: 'linear'
@@ -222,8 +223,9 @@ function NaviPrimary(props) {
 						onExiting={fadeOutLogo}
 						mountOnEnter
 						unmountOnExit
+						nodeRef={nodeRef}
 					>
-						<div className={`sub-nav-items level-${lvl}`}>
+						<div ref={nodeRef} className={`sub-nav-items level-${lvl}`}>
 							{menuServe(naviNodes, item.itHasChildren, lvl)}
 						</div>
 					</Transition>

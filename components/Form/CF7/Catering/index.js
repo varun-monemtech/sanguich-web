@@ -7,9 +7,10 @@ import axios from 'axios'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBaby } from '@fortawesome/free-solid-svg-icons'
-import Select from 'react-select'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
+import dynamic from "next/dynamic";
+const CreatableSelect = dynamic(() => import("react-select/creatable"), { ssr: false });
 
 function CF7Catering(props) {
 
@@ -278,9 +279,9 @@ function CF7Catering(props) {
 								control={control}
 								// rules={{ required: true }}
 								render={({ field }) => (
-									<Select
+									<CreatableSelect
 										{...field}
-										instanceId={'sup-dawg'}
+										instanceId={'catering-form-event-type'}
 										options={typeofeventvalues.map(val => (
 											{ value: val.value, label: val.label }
 										))}
@@ -326,9 +327,9 @@ function CF7Catering(props) {
 								control={control}
 								// rules={{ required: true }}
 								render={({ field }) => (
-									<Select
+									<CreatableSelect
 										{...field}
-										instanceId={'sup-dawg'}
+										instanceId={'catering-form-number-of-people'}
 										options={numberofpeoplevalues.map(val => (
 											{ value: val.value, label: val.label }
 										))}

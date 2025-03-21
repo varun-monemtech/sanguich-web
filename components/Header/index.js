@@ -1,5 +1,5 @@
 'use client'
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useRef} from 'react'
 import './style.scss'
 import NaviContext from '../../context/NaviContext'
 import { Transition } from 'react-transition-group'
@@ -13,15 +13,19 @@ import SocialIcons from '../SocialIcons'
 
 function Header(props) {
 	const naviContext = useContext(NaviContext)
+  const nodeRef1 = useRef(null);
+  const nodeRef2 = useRef(null);
+  const nodeRef3 = useRef(null);
+
 
 	// Animating fade in/out
 	const baseDuration = 500
 	const fadeInLogo = element => {
-		const links = element.querySelectorAll('.nav-item, .social-icons a')
+		const links = nodeRef1.current.querySelectorAll('.nav-item, .social-icons a')
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef1.current,
 				opacity: [0, 1],
 				//translateX: [-100, 0],
 				duration: baseDuration,
@@ -40,7 +44,28 @@ function Header(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef1.current,
+				opacity: [1, 0],
+				duration: baseDuration / 2,
+				easing: 'linear'
+			})
+	}
+
+	const fadeInBg = element => {
+		anime
+			.timeline()
+			.add({
+				targets: nodeRef2.current,
+				opacity: [0, 1],
+				duration: baseDuration,
+				easing: 'easeInOutSine',
+			})
+	}
+	const fadeOutBg = element => {
+		anime
+			.timeline()
+			.add({
+				targets: nodeRef2.current,
 				opacity: [1, 0],
 				duration: baseDuration / 2,
 				easing: 'linear'
@@ -51,7 +76,7 @@ function Header(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef3.current,
 				opacity: [0, 1],
 				duration: baseDuration,
 				easing: 'easeInOutSine',
@@ -61,7 +86,7 @@ function Header(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef3.current,
 				opacity: [1, 0],
 				duration: baseDuration / 2,
 				easing: 'linear'
@@ -82,8 +107,9 @@ function Header(props) {
 				onExiting={fadeOutLogo}
 				mountOnEnter
 				unmountOnExit
+				nodeRef={nodeRef1}
 			>
-				<header className={'master-header border-type-1 skip-animation c5'}>
+				<header ref={nodeRef1} className={'master-header border-type-1 skip-animation c5'}>
 			
 					<div className="decor-wrap">
 						<div className="decor-top with-extra">
@@ -126,12 +152,13 @@ function Header(props) {
 				in={naviContext.windowSize?.mobile || !naviContext.beforeHeaderBreakpoint ? true :	false}
 				timeout={baseDuration}
 				appear={true}
-				onEntering={fadeIn}
-				onExiting={fadeOut}
+				onEntering={fadeInBg}
+				onExiting={fadeOutBg}
 				mountOnEnter
 				unmountOnExit
+				nodeRef={nodeRef2}
 			>
-				<div className={`header-bar-new ${naviContext.windowSize?.mobile ? 'onmobile' : ''} ${naviContext.isHamburgerActive ? 'open inview' : ''}`}>
+				<div ref={nodeRef2} className={`header-bar-new ${naviContext.windowSize?.mobile ? 'onmobile' : ''} ${naviContext.isHamburgerActive ? 'open inview' : ''}`}>
 					<div className={`regular c5 ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
 						{naviContext.windowSize?.mobile ?
 							<Hamburger />
@@ -155,8 +182,9 @@ function Header(props) {
 						onExiting={fadeOut}
 						mountOnEnter
 						unmountOnExit
+						nodeRef={nodeRef3}
 					>
-						<div className="mobile c5 border-type-1">
+						<div ref={nodeRef3} className="mobile c5 border-type-1">
 							<div className="decor-wrap">
 								<div className="decor-top with-extra">
 									<div className="decor-top-left"></div>

@@ -50,11 +50,12 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    // maximumScale: 1,
-  },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  // maximumScale: 1,
 }
 
 
@@ -110,7 +111,6 @@ export default async function RootLayout({
   return (
     <html lang="en">
 			
-      <meta charSet='utf-8' />
       <meta httpEquiv='x-ua-compatible' content='ie=edge' />
       <meta name="theme-color" content="#151515" />
 			<link rel="icon" href="/favicon.ico" />

@@ -9,7 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBaby, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { useInView } from "react-intersection-observer";
 
-import Select from "react-select";
+import dynamic from "next/dynamic";
+const CreatableSelect = dynamic(() => import("react-select/creatable"), { ssr: false });
+
 
 function CF7Careers() {
   const [io, ioInView] = useInView({ triggerOnce: true });
@@ -240,9 +242,9 @@ function CF7Careers() {
                     control={control}
                     rules={{ required: true }}
                     render={({ field }) => (
-                      <Select
+                       <CreatableSelect
                         {...field}
-                        instanceId={"sup-dawg"}
+                        instanceId={"careers-form"}
                         options={whatvalues.map((val) => ({
                           value: val.value,
                           label: val.label,
@@ -290,6 +292,7 @@ function CF7Careers() {
               <label className="span-12 animated delay-500 inputfile">
                 <span className="inputfilelabel btn">
                   <span>
+										{/* @ts-ignore */}
                     <FontAwesomeIcon icon={faUpload} /> {uploadLabel}
                   </span>
                 </span>
@@ -323,6 +326,7 @@ function CF7Careers() {
                   SUBMIT{" "}
                   {isLoading ? (
                     <div className="loader-spinner">
+											{/* @ts-ignore */}
                       <FontAwesomeIcon icon={faBaby} />
                     </div>
                   ) : null}

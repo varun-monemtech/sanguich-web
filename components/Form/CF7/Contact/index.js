@@ -7,7 +7,8 @@ import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBaby } from "@fortawesome/free-solid-svg-icons";
-import Select from "react-select";
+import dynamic from "next/dynamic";
+const CreatableSelect = dynamic(() => import("react-select/creatable"), { ssr: false });
 
 function CF7Contact(props) {
   const {
@@ -181,9 +182,9 @@ function CF7Contact(props) {
                 control={control}
                 // rules={{ required: true }}
                 render={({ field }) => (
-                  <Select
+                  <CreatableSelect
                     {...field}
-                    instanceId={"sup-dawg"}
+                    instanceId={"contact-form"}
                     options={whatvalues.map((val) => ({
                       value: val.value,
                       label: val.label,
@@ -240,6 +241,7 @@ function CF7Contact(props) {
                 SUBMIT{" "}
                 {isLoading ? (
                   <div className="loader-spinner">
+										{/* @ts-ignore */}
                     <FontAwesomeIcon icon={faBaby} />
                   </div>
                 ) : null}

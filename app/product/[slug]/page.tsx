@@ -74,7 +74,8 @@ async function getProducts() {
 // 	}
 // }
 
-export default async function MainPage({ params }: any) {
+export default async function MainPage(props: { params: Promise<{ slug: string }>}) {
+	const params = await props.params;
 	const product = await getProduct(params.slug)
 	const products = await getProducts()
 
@@ -121,7 +122,7 @@ export default async function MainPage({ params }: any) {
 									<div className="decor-top-right"></div>
 								</div>
 						</div>
-						<ProductImages images={...productFunctionLess.images} />
+						{productFunctionLess?.images ? <ProductImages images={productFunctionLess.images} /> : null}
 					</div>
 				</div>
 				<div className="span-12 bar relative shop-featured">

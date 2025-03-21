@@ -1,4 +1,4 @@
-import { ImageResponse } from 'next/server'
+import { ImageResponse } from 'next/og'
  
 // Route segment config
 export const runtime = 'edge'
@@ -42,7 +42,7 @@ const getTheOgBG = async () => {
 }
  
 // Image generation
-export default async function Image({ params }: { params: { slug: string } }) {
+export default async function Image() {
  
   const imageData: any = await getTheOgBG()
   

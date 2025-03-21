@@ -1,5 +1,5 @@
 'use client'
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useRef} from 'react'
 import './style.scss'
 import Image from 'next/image'
 
@@ -16,6 +16,10 @@ function Menu(props) {
 	const classes = props.classes
 	const image = props.img
 
+	const nodeRef = useRef(null);
+	const nodeRef2 = useRef(null);
+	const nodeRef3 = useRef(null);
+
   // Animations
 	const baseDuration = 150
 	const baseDurationQuick = 150
@@ -25,7 +29,7 @@ function Menu(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef2.current,
 				opacity: [0, 1],
 				translateX: ['1em', 0],
 				duration: baseDuration,
@@ -36,7 +40,7 @@ function Menu(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef2.current,
 				opacity: [1, 0],
 				translateX: [0,'-1em'],
 				duration: baseDuration,
@@ -48,7 +52,7 @@ function Menu(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef.current,
 				opacity: [0, 1],
 				translateY: ['1em', 0],
 				duration: baseDuration,
@@ -59,7 +63,7 @@ function Menu(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef.current,
 				opacity: [1, 0],
 				translateY: [0,'-1em'],
 				duration: baseDuration,
@@ -71,7 +75,7 @@ function Menu(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef3.current,
 				opacity: [0, 1],
 				duration: baseDurationQuick,
 				easing: 'cubicBezier(.5,.08,.54,.9)',
@@ -81,7 +85,7 @@ function Menu(props) {
 		anime
 			.timeline()
 			.add({
-				targets: element,
+				targets: nodeRef3.current,
 				opacity: [1, 0],
 				duration: baseDurationQuick,
 				easing: 'cubicBezier(.5,.08,.54,.9)'
@@ -111,7 +115,7 @@ function Menu(props) {
                 alt={image.alt}
                 style={{objectFit: "cover"}}
                 className="image"
-								quality={80}
+								quality={75}
               />
 					: null }
 				</div>
@@ -150,8 +154,9 @@ function Menu(props) {
 										appear={true}
 										onEntering={fadeInY}
 										onExiting={fadeOutY}
+										nodeRef={nodeRef}	
 									>
-										<div className="image">
+										<div ref={nodeRef} className="image">
 											{ImageCurrent}
 										</div>
 									</Transition>
@@ -290,8 +295,9 @@ function Menu(props) {
 										appear={true}
 										onEntering={fadeIn}
 										onExiting={fadeOut}
+										nodeRef={nodeRef2}
 									>
-										<div className="menu-specific-wrap">
+										<div ref={nodeRef2} className="menu-specific-wrap">
 											{TabTabPack}
 										</div>
 									</Transition>
@@ -308,8 +314,9 @@ function Menu(props) {
 										appear={true}
 										onEntering={fadeInQuick}
 										onExiting={fadeOutQuick}
+										nodeRef={nodeRef3}
 									>
-										<div className="flex center">
+										<div ref={nodeRef3} className="flex center">
 											{ImageCurrent}
 											{/* <MenuImage { ...menus[currentTab] } /> */}
 										</div>

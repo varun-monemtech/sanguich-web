@@ -13,7 +13,7 @@ function Gallery(props) {
 	const settings = {
 		dots: false,
 		arrows: true,
-		infinite: true,
+		infinite: false,
 		speed: 800,
 		pauseOnFocus: true,
 		autoplay: true,

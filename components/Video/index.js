@@ -70,7 +70,8 @@ function HTMLVideo(props) {
 		bgOverlayColor,
 		bgOverlay,
 		disableInteraction,
-		track
+		track,
+		captions
 	} = props
 
 
@@ -223,14 +224,15 @@ function HTMLVideo(props) {
 										disablePictureInPicture
 										allow="autoplay"
 									>
-										{track ?
+										  {captions && (
 											<track
 												default
 												kind="captions"
 												srcLang="en"
-												src={null}
+												src={captions}
+												label="English"
 											/>
-										: null }
+          						)}
 									</video>
 								{/* </Intro> */}
 							</div>
@@ -260,14 +262,15 @@ function HTMLVideo(props) {
 									disablePictureInPicture
 									allow="autoplay"
 								>
-									{track ?
-										<track
-											default
-											kind="captions"
-											srcLang="en"
-											src={null}
-										/>
-									: null }
+										{captions && (
+											<track
+												default
+												kind="captions"
+												srcLang="en"
+												src={captions}
+												label="English"
+											/>
+          						)}
 								</video>
 							{/* </Intro> */}
 						</>
