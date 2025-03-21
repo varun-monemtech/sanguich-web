@@ -31,7 +31,7 @@ async function getPage() {
 		{
 			// cache: 'no-store',
 			next: {
-				revalidate: 10
+				revalidate: 3600
 			}
 		}
 	)
@@ -43,7 +43,7 @@ async function getPosts() {
 		{
 			// cache: 'no-store',
 			next: {
-				revalidate: 10
+				revalidate: 3600
 			}
 		}
 	)

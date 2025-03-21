@@ -49,7 +49,7 @@ async function getPost(slug: string) {
 		{
 			// cache: 'no-store',
 			next: {
-				revalidate: 10
+				revalidate: 3600
 			}
 		}
 	)

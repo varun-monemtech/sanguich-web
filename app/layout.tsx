@@ -59,36 +59,12 @@ export const viewport = {
 }
 
 
-// async function getPages() {
-// 	const res = await fetch('https://www.futuredocs.com/wp-json/better-rest-endpoints/v1/pages?content=false&acf=false&media=false&per_page=299',
-// 		{
-// 			// cache: 'no-store',
-// 			next: {
-// 				revalidate: 600
-// 			}
-// 		}
-// 	)
-// 	return res.json()
-// }
-
-// async function getPosts() {
-// 	const res = await fetch('https://evgreen.unixstorm.org/FRS-3/wp-json/wp/v2/posts',
-// 		{
-// 			// cache: 'no-store',
-// 			next: {
-// 				revalidate: 600
-// 			}
-// 		}
-// 	)
-// 	return res.json()
-// }
-
 async function getOptions() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/options/options/',
 		{
 			// cache: 'no-store',
 			next: {
-				revalidate: 10
+				revalidate: 3600
 			}
 		}
 	)
