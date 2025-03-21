@@ -136,8 +136,9 @@ export default async function RootLayout({
             {/* </Suspense> */}
 
             <main className="">
-
-              {children}
+							<NaviContextProvider location="">
+              	{children}
+              </NaviContextProvider>
                 
             </main>
             

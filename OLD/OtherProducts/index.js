@@ -1,11 +1,11 @@
 'use client'
 import Link from "next/link"
-
+import { useContext } from "react"
 import './style.scss'
 import Image from "next/image"
-import ProductGrid from "../../OLD/ProductGrid"
+// import ProductGrid from "../../OLD/ProductGrid"
 import { useState } from "react"
-
+import NaviContext from "../../context/NaviContext"
 // This function fetches API to get static parameters (slugs) that normally would be deducted from URL,
 // this way we can generate static pages and avoid the loading component flash. It's pretty gatsby-like.
 // Should return an array of objects where each object represents the populated dynamic segments of a single route.
@@ -19,14 +19,15 @@ import { useState } from "react"
 
 
 export default function OtherProducts({ allProduct }) {
+	const naviContext = useContext(NaviContext)
 
   const [ currentSlide, setCurrentSlide] = useState(0)
-  let slidesLength = allProduct?.length - 3
-	
+  let slidesLength = naviContext.windowSize?.mobile ? allProduct?.length - 1 : allProduct?.length - 3
+
 	return (
 		<>
       {/* <ProductGrid /> */}
-      <div className="slider">
+      <div className="slider" style={{overflow: 'hidden'}}>
         <div onClick={() => currentSlide > 0 ? setCurrentSlide(currentSlide - 1) : null} className={currentSlide > 0 ? "arrow arrow-left" : "arrow arrow-left disabled"}></div>
         
         {allProduct.map( (node, i) => (
