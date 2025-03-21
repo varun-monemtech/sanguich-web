@@ -19,7 +19,7 @@ async function getPosts() {
 }
 
 // Get Metadata
-export async function generateMetadata( { params }: { params: { slug: string }}) {
+export async function generateMetadata() {
 	return {
 		title: 'Blog',
 		description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,

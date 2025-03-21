@@ -3,7 +3,7 @@ import CF7Contact from '../../components/Form/CF7/Contact'
 import './style.scss'
 
 // Get Metadata
-export async function generateMetadata( { params }: { params: { slug: string }}) {
+export async function generateMetadata() {
 	return {
 		title: 'Contact',
 		description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,

@@ -3,7 +3,7 @@ import CF7Careers from '../../components/Form/CF7/Careers'
 import './style.scss'
 
 // Get Metadata
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata() {
   return {
     title: 'Careers',
     description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
