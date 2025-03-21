@@ -81,6 +81,7 @@ function CF7Newsletter(props) {
           Submit{" "}
           {isLoading ? (
             <div className="loader-spinner">
+							{/* @ts-ignore */}
               <FontAwesomeIcon icon={faBaby} />
             </div>
           ) : null}

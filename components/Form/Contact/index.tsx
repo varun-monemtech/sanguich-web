@@ -21,6 +21,7 @@ function ArtemisFormContact({register,isLoadingPush,errors}: {register: any,isLo
 				<textarea placeholder="Message" name="message" {...register("message",{required: true})} />
 				{errors.message && <p className="small margin-off">a message is required.</p>}
 			</label>
+			{/* @ts-ignore */}
 			<button className="span regular text-center w-100" type="submit">Send{isLoadingPush ? <div className="loader-spinner"><FontAwesomeIcon icon={faBaby} /></div> : null}</button>
 		</div>
 	)

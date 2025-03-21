@@ -85,11 +85,13 @@ function NaviItem(props) {
           >
             {label}
           </a>
+					{/* @ts-ignore */}
           {props.itHasChildren ? <FontAwesomeIcon  onClick={props.itHasChildren ? dropDownClickHandle : null} icon={faAngleDown} className={`caret  ${props.isOpen ? 'open' : ""}`} /> : null}
         </div>
 			:
 				<div className="disabled">
 					{label}
+					{/* @ts-ignore */}
 					{props.itHasChildren ? <FontAwesomeIcon icon={faAngleDown} className="caret" /> : null}
 				</div>
 			}
