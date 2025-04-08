@@ -1,5 +1,5 @@
-import PageTransition from '../../animations/PageTransition'
-import CF7Careers from '../../components/Form/CF7/Careers'
+import PageTransition from '@/animations/PageTransition'
+import CF7Careers from '@/components/Form/CF7/Careers'
 import './style.scss'
 
 // Get Metadata

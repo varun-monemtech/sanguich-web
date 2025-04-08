@@ -1,8 +1,8 @@
-import LoadTransition from "../../../animations/LoadTransition"
+import LoadTransition from '@/animations/LoadTransition'
 // import { LoadImage } from "../../../components/LoadImage"
 import './style.scss'
 
-import PostTemplate from '../../../components/ACF/PostTemplate'
+import PostTemplate from '@/components/ACF/PostTemplate'
 
 // This function fetches API to get static parameters (slugs) that normally would be deducted from URL,
 // this way we can generate static pages and avoid the loading component flash. It's pretty gatsby-like.

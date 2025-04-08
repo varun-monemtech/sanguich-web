@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
-import Header from '../components/Header'
-import ContextProvider from "../provider/ContextProvider"
-import ExternalContextProvider from "../provider/ExternalContextProvider"
+import Header from '@/components/Header'
+import ContextProvider from '@/provider/ContextProvider'
+import ExternalContextProvider from '@/provider/ExternalContextProvider'
 // import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/react'
 
 import './style.scss'
 import '../EVG/css/_core.scss'
-import { Footer } from '../components/Footer'
-import { NaviContextProvider } from '../context/NaviContext'
+import { Footer } from '@/components/Footer'
+import { NaviContextProvider } from '@/context/NaviContext'
 // import { DetectDevice } from '../components/DetectDevice'
 
 // // Primary Font (Google)

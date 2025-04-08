@@ -38,7 +38,7 @@ function unEscape(htmlStr: String) {
 
 const getTheFont = async () => {
   const response = await fetch(
-     new URL('../../../EVG/css/fonts/intensa/Intensa-College.ttf', import.meta.url)
+     new URL('@/EVG/css/fonts/intensa/Intensa-College.ttf', import.meta.url)
    )
    const font = await response.arrayBuffer()
    return font

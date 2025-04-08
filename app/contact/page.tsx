@@ -1,5 +1,5 @@
-import PageTransition from '../../animations/PageTransition'
-import CF7Contact from '../../components/Form/CF7/Contact'
+import PageTransition from '@/animations/PageTransition'
+import CF7Contact from '@/components/Form/CF7/Contact'
 import './style.scss'
 
 // Get Metadata

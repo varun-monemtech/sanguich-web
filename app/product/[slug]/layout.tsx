@@ -1,5 +1,5 @@
-import PageTransition from '../../../animations/PageTransition'
-import { Container } from '../../../components/Container'
+import PageTransition from '@/animations/PageTransition'
+import { Container } from '@/components/Container'
 
 export default async function RootLayout({
   children,

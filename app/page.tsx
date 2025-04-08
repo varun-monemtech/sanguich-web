@@ -1,30 +1,30 @@
 // import classNames from "classnames"
 import Image from "next/image"
-import PageTransition from '../animations/PageTransition'
-import { Container } from "../components/Container"
-import { Hero, HeroSubTitle, HeroTitle } from "../components/Hero"
-import { Background } from "../components/Background"
+import PageTransition from '@/animations/PageTransition'
+import { Container } from '@/components/Container'
+import { Hero, HeroSubTitle, HeroTitle } from '@/components/Hero'
+import { Background } from '@/components/Background'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEarthAmericas, faFire, faMugHot, faPiggyBank } from '@fortawesome/free-solid-svg-icons'
-import { Loader } from "../components/Loader"
-import { LoadImage } from "../components/LoadImage"
-import ArtemisForm from "../components/Form"
+import { Loader } from '@/components/Loader'
+import { LoadImage } from '@/components/LoadImage'
+import ArtemisForm from '@/components/Form'
 import { Metadata } from 'next'
 
-import Menu from '../components/ACF/Sanguich/Menu'
-import ACFOrder from '../components/ACF/Sanguich/Order'
-import ACFSeenOn from '../components/ACF/Sanguich/SeenOn'
-import ACFHero from "../components/ACF/Hero"
-import ACFShop from "../components/ACF/Shop/Items"
-import ACFOurStory from '../components/ACF/Sanguich/OurStory'
-import ACFHola from '../components/ACF/Sanguich/Hola'
-import ACFAddress from '../components/ACF/Sanguich/Address'
-import ACFAddressNew from '../components/ACF/Sanguich/AddressNew'
-import ACFCatering from '../components/ACF/Sanguich/Catering'
-import ACFNews from '../components/ACF/Sanguich/News'
+import Menu from '@/components/ACF/Sanguich/Menu'
+import ACFOrder from '@/components/ACF/Sanguich/Order'
+import ACFSeenOn from '@/components/ACF/Sanguich/SeenOn'
+import ACFHero from '@/components/ACF/Hero'
+import ACFShop from '@/components/ACF/Shop/Items'
+import ACFOurStory from '@/components/ACF/Sanguich/OurStory'
+import ACFHola from '@/components/ACF/Sanguich/Hola'
+import ACFAddress from '@/components/ACF/Sanguich/Address'
+import ACFAddressNew from '@/components/ACF/Sanguich/AddressNew'
+import ACFCatering from '@/components/ACF/Sanguich/Catering'
+import ACFNews from '@/components/ACF/Sanguich/News'
 
-import ContextProvider from "../provider/ContextProvider"
+import ContextProvider from '@/provider/ContextProvider'
 
 async function getPage() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/pages/5',

@@ -1,6 +1,6 @@
 import Link from "next/link"
-import PageTransition from '../../animations/PageTransition'
-import { Container } from "../../components/Container"
+import PageTransition from '@/animations/PageTransition'
+import { Container } from '@/components/Container'
 import Image from "next/image"
 import './style.scss'
 

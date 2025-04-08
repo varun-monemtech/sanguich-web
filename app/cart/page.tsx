@@ -1,5 +1,5 @@
-import PageTransition from '../../animations/PageTransition'
-import Cart from '../../OLD/Cart'
+import PageTransition from '@/animations/PageTransition'
+import Cart from '@/OLD/Cart'
 
 export default async function PageCart() {
 	

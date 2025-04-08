@@ -1,8 +1,8 @@
 import Link from "next/link"
 import Client from 'shopify-buy'
-import ProductFormWrap from '../../../OLD/ProductFormWrap'
-import ProductImages from '../../../OLD/ProductImages'
-import OtherProducts from '../../../OLD/OtherProducts'
+import ProductFormWrap from '@/OLD/ProductFormWrap'
+import ProductImages from '@/OLD/ProductImages'
+import OtherProducts from '@/OLD/OtherProducts'
 
 import './style.scss'
 import Image from "next/image"
