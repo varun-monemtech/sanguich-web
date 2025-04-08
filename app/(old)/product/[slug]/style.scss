@@ -10,7 +10,7 @@
 		max-width: 3.5em;
 		height: 20%;
 		max-height: 3.5em;
-		background: url(../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
+		background: url(../../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
 		background-size: contain !important;
 
 		transition: all .1s ease-in-out;
@@ -33,7 +33,7 @@
 		max-width: 3.5em;
 		height: 20%;
 		max-height: 3.5em;
-		background: url(../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
+		background: url(../../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
 		background-size: contain !important;
 
 		transition: all .1s ease-in-out;
@@ -56,7 +56,7 @@
 		max-width: 3.5em;
 		height: 20%;
 		max-height: 3.5em;
-		background: url(../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
+		background: url(../../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
 		background-size: contain !important;
 
 		transition: all .1s ease-in-out;
@@ -218,7 +218,7 @@
 		position: relative;
 		color: #DCBA7B;
 		padding: 5em 0 8em;
-		background: url("../../../images/background.png");
+		background: url("../../../../images/background.png");
 		background-color: #212121;
 		background-size: 115%;
 		background-position: center bottom;
@@ -322,7 +322,7 @@
 				opacity: 0;
 			}
 			&.arrow-left {
-				background: url("../../../images/arrows/arrow-left.png") no-repeat scroll center transparent;
+				background: url("../../../../images/arrows/arrow-left.png") no-repeat scroll center transparent;
 				background-size: contain;
 				left: 0.3em;
 				&:hover {
@@ -332,7 +332,7 @@
 
 			&.arrow-right {
 				
-				background: url("../../../images/arrows/arrow-right.png") no-repeat scroll center transparent;
+				background: url("../../../../images/arrows/arrow-right.png") no-repeat scroll center transparent;
 				background-size: contain;
 				right: 0.3em;
 				&:hover {
