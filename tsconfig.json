@@ -18,6 +18,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["./components/*"],
+      "@app/*": ["./app/*"],
+      "@public/*": ["./public/*"],
+      "@context/*": ["./context/*"],
+      "@provider/*": ["./provider/*"],
+      "@animations/*": ["./animations/*"]
+    },
     "plugins": [
       {
         "name": "next"
