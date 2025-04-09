@@ -5,7 +5,7 @@ import ExternalContextProvider from '@/provider/ExternalContextProvider'
 import { Analytics } from '@vercel/analytics/react'
 
 import './style.scss'
-
+import './global.css'
 import '@/EVG/css/_core.scss'
 import { Footer } from '@/components/Footer'
 import { NaviContextProvider } from '@/context/NaviContext'
