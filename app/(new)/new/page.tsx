@@ -1,6 +1,6 @@
 
 
-import Menu from '@/components/ACF/Sanguich/Menu'
+import Menu from '../_components/Menu'
 import ACFOrder from '@/components/ACF/Sanguich/Order'
 import ACFSeenOn from '@/components/ACF/Sanguich/SeenOn'
 import ACFHero from '@/components/ACF/Hero'
