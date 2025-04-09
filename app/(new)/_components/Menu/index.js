@@ -133,13 +133,13 @@ function Menu(props) {
 			const ImagesTabPack = menu.items.map((item, i) => {
 				if (item.subgroup) {
 					return (
-						<div key={`menu-items-key-a-${i}`} className="col-1 subgroup fs-85">
-							<h4 className="uppercase text-center">{item.subgroup}</h4>
+						<div key={`menu-items-key-a-${i}`} className="col-1 subgroup fs-85 ">
+							<h4 className="uppercase text-center ">{item.subgroup}</h4>
 						</div>
 					)
 				} else {
 					return (
-						<div key={`menu-items-key-a-${i}`} className={`menu-item onmouseenter ${numberOfItems > 5 ? 'col-2' : ''} ${currentImage === i ? 'current' : null}`} onMouseEnter={() => setCurrentImage(i)} onClick={() => setCurrentImage(i)} onKeyDown={() => setCurrentImage(i)} role="button" tabIndex={0}>
+						<div key={`menu-items-key-a-${i}`} className={`menu-item cursor-pointer ${numberOfItems > 5 ? 'col-2' : ''} ${currentImage === i ? 'current' : null}`} onMouseEnter={() => setCurrentImage(i)} onClick={() => setCurrentImage(i)} onKeyDown={() => setCurrentImage(i)} role="button" tabIndex={0}>
 							<div className="description">
 								<h4 className="uppercase">{item.name}</h4>
 								<p>{item.description}</p>
@@ -169,10 +169,11 @@ function Menu(props) {
 			})
 			return (
 				<div key={`menu-items-key-b-${i}`} className="menu-specific-wrap">
-					<div className={`menu-specific onclick padd-1 ${currentTab === i ? 'current' : null}`}>
-						<h3 className="uppercase h4">{menu.title}</h3>
+					<div className={`menu-specific cursor-pointer padd-1 ${currentTab === i ? 'current' : null}`}>
+						<h3 className="uppercase h4 !text-[#274F37]">{menu.title}</h3>
+						<div className='hr-decor' />
 					</div>
-					<div className="menu-specific-items">
+					<div className="menu-specific-items max-w-[50rem] mx-auto text-[#274F37]">
 						{ImagesTabPack}
 					</div>
 				</div>
@@ -182,15 +183,6 @@ function Menu(props) {
 		return false
 	})
 
-	// GrandParent Tabs
-	// const TabTabTabPack = menus.map((menu, i) => {
-
-	// 	return (
-	// 		<div className={`menu-general-tabs onlick padd-1 ${currentTabTab === i ? 'current' : null}`} onClick={() => {setCurrentImage(0); onTabTabChange(i)}} onKeyDown={() => {setCurrentImage(0); onTabTabChange(i)}} role="button" tabIndex={0}>
-	// 			<h6>{menu.title}</h6>
-	// 		</div>
-	// 	)
-	// })
 
 	// On Parent Tab Change
 	function onTabChange(i) {
@@ -202,35 +194,23 @@ function Menu(props) {
 		setCurrentTabTab(i)
 	}
 
-	// Update Tab Based on Grandparent Change
-	// useEffect(() => {
-	// 	const newTab = menus.findIndex((e) => e.node.location_type[0] === currentTabTab)
-	// 	setCurrentTab(newTab)
-	// },[currentTabTab,menus])
 
 	return (
 		<>
 			{anchor ?
-				<section ref={io} id={`section-${anchor}`} className={`content c5 grid-12 is-inview ${ioInView ? 'inview' : ''} ${classes}`}>
+				<section ref={io} id={`section-${anchor}`} className={`bg-[#D0C8B9] is-inview ${ioInView ? 'inview' : ''}  border-type-8 ${classes}`}>
 
 					{anchor ?
 						<div id={anchor} className="anchor"></div>
 						: null}
 
-					{/* { image ?
-						<Img fluid={image}
-							imgStyle={{objectFit: 'cover'}}
-							objectPosition='50% 50%'
-						/>
-					: null } */}
-
 					<div className='content-box'>
-						<div className='content-holder animated'>
+						<div className='flex max-lg:flex-col animated'>
 
 							<div className="menu-general">
-								<h2 className="menu-title font2"><span className="capitalize">M</span>enu</h2>
+								<h2 className="menu-title text-[4.5em] !text-[#274F37] text-center m-0 font2"><span className="capitalize">M</span>enu</h2>
 								<div
-									className={`arrow-prev onmouseenter ${currentTabTab === 0 ? 'disabled' : null}`}
+									className={`arrow-prev cursor-pointer ${currentTabTab === 0 ? 'opacity-0 cursor-auto' : null}`}
 									onClick={() => {
 										onTabTabChange((current) => current > 0 ? current - 1 : 0)
 										setCurrentImage(0)
@@ -244,7 +224,7 @@ function Menu(props) {
 									aria-label='Previous Tab'
 								></div>
 								<div
-									className={`arrow-next onmouseenter ${currentTabTab === menus.length - 1 ? 'disabled' : null}`}
+									className={`arrow-next cursor-pointer ${currentTabTab === menus.length - 1 ? 'opacity-0 cursor-auto' : null}`}
 									onClick={() => {
 										onTabTabChange((current) => current < menus.length - 1 ? current + 1 : menus.length - 1)
 										setCurrentImage(0)
@@ -275,20 +255,6 @@ function Menu(props) {
 									</div>
 								</div>
 
-								{/* <SwitchTransition>
-									<Transition
-										key={currentTab}
-										timeout={baseDuration}
-										appear={true}
-										onEntering={fadeIn}
-										onExiting={fadeOut}
-									>
-										<>
-											{TabTabTabPack}
-										</>
-									</Transition>
-								</SwitchTransition> */}
-
 								<SwitchTransition>
 									<Transition
 										key={currentTabTab}
@@ -307,7 +273,7 @@ function Menu(props) {
 
 							{!naviContext?.windowSize?.mobile ?
 
-								<div className="menu-specific-item-image c4">
+								<div className="relative basis-[42%] max-lg:pb-[56%] max-lg:flex-col c4">
 									<SwitchTransition>
 										<Transition
 											key={[currentImage, currentTabTab]}
@@ -319,7 +285,6 @@ function Menu(props) {
 										>
 											<div ref={nodeRef3} className="flex center">
 												{ImageCurrent}
-												{/* <MenuImage { ...menus[currentTab] } /> */}
 											</div>
 										</Transition>
 									</SwitchTransition>
