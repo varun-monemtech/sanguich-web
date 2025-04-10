@@ -1,0 +1,134 @@
+.intro {
+
+  &.fade-in-up {
+    &.not-in-view {
+      .content {
+        opacity: 0;
+        transform: translateY(2rem);
+      }
+
+      &.long {
+        .content {
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    &.in-view {
+      .content {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: all 750ms ease-in-out 0s;
+        transition-property: transform, opacity;
+      }
+    }
+  }
+
+  &.fade-in-down {
+    &.not-in-view {
+      .content {
+        opacity: 0;
+        transform: translateY(-2rem);
+      }
+
+      &.long {
+        .content {
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    &.in-view {
+      .content {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: all 750ms ease-in-out 0s;
+        transition-property: transform, opacity;
+      }
+    }
+  }
+
+  &.fade-in-rotate {
+
+    &.not-in-view {
+      .content {
+        opacity: 0;
+        transform: translateY(1rem) rotate(5deg);
+        transform-origin: left !important;
+
+      }
+    }
+
+    &.in-view {
+      .content {
+        opacity: 1;
+        transform: translateY(0%) rotate(0);
+        transition: all 700ms ease-in-out 0s;
+        transform-origin: left !important;
+        transition-property: transform, opacity;
+      }
+    }
+  }
+
+  .frame {
+    background: currentColor;
+  }
+
+  &.not-in-view {
+    >.frame-x {
+      transform: translateY(-102%);
+    }
+
+    >.frame-y {
+      transform: translateX(-102%);
+    }
+  }
+
+  &.in-view {
+    >.frame-t {
+      transform: translateX(0);
+      transition: transform 375ms ease-in-out 200ms;
+    }
+
+    >.frame-r {
+      transform: translateY(0);
+      transition: transform 375ms ease-in-out 600ms;
+    }
+
+    .frame-b {
+      transform: translateX(0);
+      transition: transform 375ms ease-in-out 200ms;
+    }
+
+    .frame-l {
+      transform: translateY(0);
+      transition: transform 600ms ease-in-out 600ms;
+    }
+  }
+
+  &.not-in-view {
+    >.bg {
+      transform: translateX(-101%);
+    }
+  }
+
+  &.in-view {
+    >.bg {
+      transform: translateX(0);
+      transition: transform 500ms ease-in-out;
+    }
+  }
+
+  @for $i from 1 through 20 {
+    $base: 50;
+    $delay: $i * $base;
+
+    &.delay-content-#{$delay} {
+      &.in-view {
+        .content {
+          transition-delay: #{$delay}ms;
+        }
+      }
+    }
+  }
+}
