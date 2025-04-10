@@ -4,7 +4,7 @@ import Menu from '../_components/Menu'
 import ACFOrder from '@/components/ACF/Sanguich/Order'
 import ACFSeenOn from '@/components/ACF/Sanguich/SeenOn'
 import ACFHero from '@/components/ACF/Hero'
-import ACFShop from '@/components/ACF/Shop/Items'
+import ProductGrid from '../_components/ProductGrid'
 import ACFOurStory from '@/components/ACF/Sanguich/OurStory'
 import ACFHola from '@/components/ACF/Sanguich/Hola'
 import ACFAddress from '@/components/ACF/Sanguich/Address'
@@ -115,7 +115,7 @@ export default async function MainPage() {
     if(section.acf_fc_layout === 'shop') {
       return (
 				<ContextProvider key={i}>
-       		<ACFShop { ...section } />
+       		<ProductGrid { ...section } />
 				</ContextProvider>
       )
     }
