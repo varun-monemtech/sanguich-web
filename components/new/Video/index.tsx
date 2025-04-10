@@ -289,7 +289,7 @@ const VideoComponent = ({
         <div className="mute-indicator absolute top-4 right-4 flex gap-2 z-[53]">
           <button
             onClick={handleMute}
-            className="p-2 text-white/80 hover:text-white transition-colors"
+            className="regular p-2 text-white/80 hover:text-white transition-colors"
           >
             {isMuted ? (
               <div className="transform transition-all duration-300 animate-in-from-top">
@@ -306,7 +306,7 @@ const VideoComponent = ({
         <div className="fullscreen-indicator absolute bottom-4 right-4 flex gap-2 z-[53]">
           <button
             onClick={handleFullscreen}
-            className="p-2 text-white/80 hover:text-white transition-colors"
+            className="regular p-2 text-white/80 hover:text-white transition-colors"
           >
             {isFullscreen ? (
               <div className="transform transition-all duration-300 animate-in-from-top">
@@ -345,7 +345,7 @@ const VideoComponent = ({
     return (
       <button
         onClick={handleClick}
-        className="absolute inset-0 flex items-center justify-center z-[52] bg-black/20 hover:bg-black/30 transition-colors group"
+        className="regular absolute inset-0 flex items-center justify-center z-[52] bg-black/20 hover:bg-black/30 transition-colors group"
       >
         {showPlayButton && (
           <div className="p-4 w-20 h-20 max-md:w-12 max-md:h-12 group-hover:scale-110 transition bg-[url('/videos/play.png')] bg-center bg-no-repeat bg-contain">
