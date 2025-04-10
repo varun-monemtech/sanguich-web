@@ -12,6 +12,8 @@ import ACFAddressNew from '@/components/ACF/Sanguich/AddressNew'
 import ACFCatering from '../_components/Catering'
 import ACFNews from '@/components/ACF/Sanguich/News'
 
+import Counter from '../_components/Counter'
+
 import ContextProvider from '@/provider/ContextProvider'
 
 import { Metadata } from 'next'
@@ -123,6 +125,7 @@ export default async function MainPage() {
 	return (
 		<>
 			{Sections ? Sections : null}
-			</>
+			<Counter />
+		</>
 	)
 }
