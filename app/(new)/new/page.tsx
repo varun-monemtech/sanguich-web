@@ -9,7 +9,6 @@ import ACFOurStory from '@/components/ACF/Sanguich/OurStory'
 import ACFHola from '../_components/Hola'
 import ACFAddress from '../_components/Address'
 import ACFCatering from '../_components/Catering'
-import ACFNews from '@/components/ACF/Sanguich/News'
 
 import Counter from '../_components/Counter'
 
@@ -105,11 +104,6 @@ export default async function MainPage() {
       )
     }
 
-    if(section.acf_fc_layout === 'news') {
-      return (
-        <ACFNews key={i} { ...section } posts={posts} />
-      )
-    }
 
     if(section.acf_fc_layout === 'shop') {
       return (

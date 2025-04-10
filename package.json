@@ -28,6 +28,7 @@
     "isomorphic-fetch": "^3.0.0",
     "lambda-rate-limiter": "^4.0.2",
     "lodash": "^4.17.21",
+    "lucide-react": "^0.487.0",
     "next": "^15.2.3",
     "postmark": "^4.0.5",
     "react": "^19.0.0",
