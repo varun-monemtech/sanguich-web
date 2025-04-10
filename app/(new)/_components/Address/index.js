@@ -4,7 +4,7 @@ import './style.scss'
 import MultiButton from './MultiButton'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
-import GMap from '../../../GMap'
+import GMap from '@/components/GMap'
 
 function AddressNew(props) {
   const [io, ioInView] = useInView({ triggerOnce: true })
@@ -113,13 +113,13 @@ function AddressNew(props) {
 						</div>
 						<div className={`span-6 span-12-tablet ${mobileView === 'map' ? 'mobile-visible' : 'mobile-hidden'}`}>
 							<div className='aspect-square overflow-hidden rounded-lg gold-border'>
-								<GMap 
+								{/* <GMap 
                   allVenues={props.items} 
                   hoveredIndex={hoveredIndex} 
                   setHoveredIndex={setHoveredIndex}
                   selectedIndex={selectedIndex}
                   setSelectedIndex={setSelectedIndex}
-                />
+                /> */}
 							</div>
 						</div>
 					</div>
