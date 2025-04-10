@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-import { LoadImage } from '@/components/LoadImage'
+import { LoadImage } from '@/components/new/LoadImage'
 import Intro from '@/animations/Intro_Framer'
 
 // Simple animated digit

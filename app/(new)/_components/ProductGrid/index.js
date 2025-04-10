@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 import Link from 'next/link'
-import { LoadImage } from '@/components/LoadImage'
+import { LoadImage } from '@/components/new/LoadImage'
 import StoreContext from '@/context/StoreContext'
 import './style.scss'
 
