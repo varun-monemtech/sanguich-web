@@ -1,12 +1,11 @@
 'use client'
 import React, { useState } from 'react'
 import './style.scss'
-import MultiButton from './MultiButton'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
-import GMap from '@/components/GMap'
+import { LoadImage } from '@/components/new/LoadImage'
 
-function AddressNew(props) {
+function Recipes(props) {
   const [io, ioInView] = useInView({ triggerOnce: true })
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const [selectedIndex, setSelectedIndex] = useState(null)
@@ -58,7 +57,6 @@ function AddressNew(props) {
           <p className="uppercase marg-bottom-off">{node.hours}</p>
           {/* <p className="green-border">CLOSED ON WEDNESDAYS</p> */}
 					<div className='span-12 flex'>
-          <MultiButton links={node.links} />
         </div>
         </div>
       
@@ -71,14 +69,14 @@ function AddressNew(props) {
   return (
     <>
       {classes ?
-        <section ref={io} id={`section-${anchor}-new`} style={{ zIndex: 101 }} className={`content c4  border-type-7 is-inview ${classes}  ${ioInView ? 'inview' : ''} `}>
+        <section ref={io} id={`section-recipes-new`} style={{ zIndex: 101 }} className={`content c5  border-type-7 is-inview ${classes}  ${ioInView ? 'inview' : ''} `}>
 
           {anchor ?
             <div id={anchor} className="anchor"></div>
             : null}
 
           <div className='heading-section'>
-            <h2 className="title c4 font2"><span className="capitalize" style={{textTransform: "none !important"}}>l</span>ocations</h2>
+            <h2 className="title c5 font2">Recpies</h2>
 						<div className="decor-wrap">
 						<div className="decor-top with-extra">
 							<div className="decor-top-left"></div>
@@ -90,6 +88,7 @@ function AddressNew(props) {
 							<div className="decor-top-right"></div>
 						</div>
 						</div>
+
           </div>
 
           <div className='mobile-view-switcher'>
@@ -108,20 +107,30 @@ function AddressNew(props) {
           </div>
 
 					<div className='grid-12 gap-2'>
+				
+						<div className={`span-6 span-12-tablet ${mobileView === 'map' ? 'mobile-visible' : 'mobile-hidden'}`}>
+							<div className='aspect-video relative overflow-hidden rounded-lg gold-border'>
+								{selectedIndex !== null && props.items && props.items[selectedIndex]?.img?.url && (
+									<LoadImage
+										src={props.items[selectedIndex].img.url}
+										width={props.items[selectedIndex].img.width}
+										height={props.items[selectedIndex].img.height}
+										alt={props.items[selectedIndex].img.alt || props.items[selectedIndex].name}
+										style={{ objectFit: "cover", width: "100%", height: "100%" }}
+										quality="90"
+										className='rounded-lg'
+									/>
+								)}
+								{selectedIndex === null && (
+									<div className="flex items-center justify-center h-full text-center p-4">
+										<p>Select a location to view details</p>
+									</div>
+								)}
+							</div>
+						</div>
 						<div className={`main-grid span-12-tablet span-6 rounded-lg padd aspect-square aspect-auto-mobile-off ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
 							<div className='scroll-container grid-12 aspect-auto-mobile-off'>
 								{itemsMap}
-							</div>
-						</div>
-						<div className={`span-6 span-12-tablet ${mobileView === 'map' ? 'mobile-visible' : 'mobile-hidden'}`}>
-							<div className='aspect-square overflow-hidden rounded-lg gold-border'>
-								{/* <GMap 
-                  allVenues={props.items} 
-                  hoveredIndex={hoveredIndex} 
-                  setHoveredIndex={setHoveredIndex}
-                  selectedIndex={selectedIndex}
-                  setSelectedIndex={setSelectedIndex}
-                /> */}
 							</div>
 						</div>
 					</div>
@@ -134,4 +143,4 @@ function AddressNew(props) {
   )
 }
 
-export default AddressNew
+export default Recipes
