@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useInView } from 'react-intersection-observer'
-import Newsletter from '../../Form/CF7/Newsletter'
+import Newsletter from '../../form/CF7/Newsletter'
 import { LoadImage } from '@/components/new/LoadImage'
 import './style.scss'
 
