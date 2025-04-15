@@ -1,8 +1,8 @@
 'use client'
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { LoadImage } from '@/components/new/LoadImage'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Mousewheel, Scrollbar, FreeMode } from 'swiper/modules'
+import { FreeMode, Mousewheel, Scrollbar } from 'swiper/modules'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -12,14 +12,14 @@ import 'swiper/css/free-mode';
 // Timeline data array
 const timelineData = [
 	{
-		image: "/founders.png",
+		image: "/images/timeline/1.jpg",
 		alt: "Rosa and Daniel",
 		events: [
 			"Rosa and Daniel dreamt up of starting their own sandwich business."
 		]
 	},
 	{
-		image: "/images/timeline-finger.jpg",
+		image: "/images/timeline/1.jpg",
 		alt: "Challenges",
 		events: [
 			"Their daughter London was born Oct 2.",
@@ -29,7 +29,7 @@ const timelineData = [
 		]
 	},
 	{
-		image: "/images/timeline-houses.jpg",
+		image: "/images/timeline/2.jpg",
 		alt: "Houses",
 		events: [
 			"Rosa and Daniel designed and begin the process of transforming our name.",
@@ -42,7 +42,7 @@ const timelineData = [
 		]
 	},
 	{
-		image: "/images/timeline-shop.jpg",
+		image: "/images/timeline/2.jpg",
 		alt: "Sanguich Shop",
 		events: [
 			"We launch Sanguich at CGAF, Feb 1. Immediately successful. One of the fastest selling vendors on record.",
@@ -52,7 +52,56 @@ const timelineData = [
 		]
 	},
 	{
-		image: "/images/timeline-interior.jpg",
+		image: "/images/timeline/1.jpg",
+		alt: "Sanguich Interior",
+		events: [
+			"Nov 3rd we have a grand opening party. Largest crowds ever seen for a restaurant in Little Havana.",
+			"Nov 28th Joe Carollo began his attack on our business and family.",
+			"Joe Carollo is successful in his attempt to close us down. He issued the first injunction to impound a small business."
+		]
+	},
+	{
+		image: "/images/timeline/1.jpg",
+		alt: "Rosa and Daniel",
+		events: [
+			"Rosa and Daniel dreamt up of starting their own sandwich business."
+		]
+	},
+	{
+		image: "/images/timeline/1.jpg",
+		alt: "Challenges",
+		events: [
+			"Their daughter London was born Oct 2.",
+			"Daniel & Rosa incorporate Sanguich on Nov 15.",
+			"Daniel quit his job Dec 15.",
+			"Daniel & Rosa began planning to launch Sanguich."
+		]
+	},
+	{
+		image: "/images/timeline/2.jpg",
+		alt: "Houses",
+		events: [
+			"Rosa and Daniel designed and begin the process of transforming our name.",
+			"We dramatically downsize our lives in preparation to launch a new company.",
+			"We chose to live with her mom, Haydee. I help to rehab Rosa's mom's house so that we could have a comfortable and healthy living environment.",
+			"Their daughter Juliette is born Sept 11.",
+			"Rosa continues to work, Daniel quits an amazing job to make ends meet while we plan our next steps.",
+			"We finalize the brand aesthetic and our Pan Con Lechon recipe.",
+			"We decide to participate in the Coconut Grove Arts Festival."
+		]
+	},
+	{
+		image: "/images/timeline/2.jpg",
+		alt: "Sanguich Shop",
+		events: [
+			"We launch Sanguich at CGAF, Feb 1. Immediately successful. One of the fastest selling vendors on record.",
+			"We were invited to participate in the Carnival on Alhambra two weeks later. Carnival we even a greater success.",
+			"We were invited to participate in Calle Ocho's Cubano Week. We win.",
+			"Sept 28th we open our custom shipping container on Calle Ocho."
+		]
+	},
+	{
+		image: "/images/timeline/1.jpg",
 		alt: "Sanguich Interior",
 		events: [
 			"Nov 3rd we have a grand opening party. Largest crowds ever seen for a restaurant in Little Havana.",
@@ -66,47 +115,58 @@ function Timeline() {
 	const swiperRef = useRef(null);
 
 	return (
-		<section id="section-timeline" className="bg-[#274F37] py-16 md:py-24 relative">
-			<div className="container mx-auto px-4">
-				<div className="text-center mb-12">
-					<h2 className="text-5xl md:text-6xl font2 text-[#EFE7D3] mb-6 relative inline-block">
-						Our Timeline
-						<div className="absolute -left-24 -right-24 h-px bg-[#EFE7D3]/40 top-1/2"></div>
-					</h2>
+		<section id="section-timeline" className="bg-[#274F37] py-2 pb-10 relative border-type-7 is-inview inview">
+			<div className="mx-auto px-4">
+
+				<div className='flex justify-center items-center text-[3em] relative'>
+					<h2 className="title !bg-[#274F37] z-[1001] text-[#EFE7D3] font2 !m-0 px-[0.25em] py-[0.15em]">Our Timeline</h2>
+					<div className="decor-wrap">
+						<div className="decor-top with-extra">
+							<div className="decor-top-left"></div>
+							<div className="decor-top-center with-extra">
+								<div className="decor-top-center-extra-left"></div>
+								<div id="space-logo" className="decor-top-center-extra-center"></div>
+								<div className="decor-top-center-extra-right"></div>
+							</div>
+							<div className="decor-top-right"></div>
+						</div>
+					</div>
 				</div>
 
-				<div className="timeline-swiper-container relative h-[70vh] md:h-[80vh]">
+				<div className="timeline-swiper-container md:px-8">
 					<Swiper
 						ref={swiperRef}
-						modules={[Mousewheel, Scrollbar]}
+						modules={[Mousewheel, Scrollbar, FreeMode]}
 						spaceBetween={30}
-						slidesPerView={2}
+						slidesPerView={4}
 						freeMode={true}
-						// mousewheel={true}
+						mousewheel={
+							{
+								forceToAxis: true,
+							}
+						}
 						scrollbar={{
 							draggable: true,
+							hide: false,
 						}}
-						className="h-full"
+						className="h-full !overflow-visible"
 					>
 						{timelineData.map((slide, index) => (
-							<SwiperSlide key={index} className="flex items-center">
-								<div className="timeline-column w-full px-4 md:max-w-3xl mx-auto">
-									<div className="flex flex-col md:flex-row md:items-center gap-8">
-										<div className="rounded-full overflow-hidden mb-6 md:mb-0 border-2 border-[#EFE7D3]/20 w-full max-w-[220px] mx-auto aspect-square relative flex-shrink-0">
-											<LoadImage
-												src={slide.image}
-												width={300}
-												height={300}
-												alt={slide.alt}
-												className="w-full h-full object-cover absolute inset-0"
-												animation="fade"
-											/>
-										</div>
-										<div className="text-[#EFE7D3]">
-											{slide.events.map((event, eventIndex) => (
-												<p key={eventIndex} className="text-sm mb-3 font-light">{event}</p>
-											))}
-										</div>
+							<SwiperSlide key={index} >
+								<div className="w-full">
+									<div className="rounded-[4rem] overflow-hidden mb-6 border-2 border-[#D6B35F] w-full  relative">
+										<LoadImage
+											src={slide.image}
+											width={300}
+											height={300}
+											alt={slide.alt}
+											className="w-full h-full  aspect-[18/9]"
+										/>
+									</div>
+									<div className="text-[#EFE7D3] pr-4">
+										{slide.events.map((event, eventIndex) => (
+											<p key={eventIndex} className="text-sm  font-light">{event}</p>
+										))}
 									</div>
 								</div>
 							</SwiperSlide>
@@ -116,50 +176,29 @@ function Timeline() {
 
 				{/* Custom CSS for Swiper styling */}
 				<style jsx global>{`
-          .swiper-pagination {
-            right: 10px !important;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-          }
-          
-          .timeline-bullet {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(239, 231, 211, 0.5);
-            margin: 4px 0;
-            cursor: pointer;
-            display: inline-block;
-            transition: all 0.3s ease;
-            opacity: 1;
-          }
-          
-          .timeline-bullet-active {
-            background-color: rgba(239, 231, 211, 1);
-            transform: scale(1.2);
-          }
+					.swiper-scrollbar-horizontal {
+						height: 25px !important;
+						background: #11341F;
+						width: 50% !important;
+						left: 50% !important;
+						transform: translateX(-50%) !important;
+					}
+
+					.swiper-scrollbar-drag {
+						background: #DCBA7B !important;
+					}
+		
+					.swiper-wrapper {
+						padding-bottom: 5rem !important;	
+						overflow: visible !important;
+					}
           
           .swiper-slide {
             height: auto;
             overflow-y: auto;
             display: flex;
-            align-items: center;
-            justify-content: center;
           }
           
-          /* Hide scrollbar for Chrome, Safari and Opera */
-          .swiper-slide::-webkit-scrollbar {
-            display: none;
-          }
-          
-          /* Hide scrollbar for IE, Edge and Firefox */
-          .swiper-slide {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-          }
         `}</style>
 			</div>
 		</section>

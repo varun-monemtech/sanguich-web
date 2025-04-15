@@ -28,8 +28,8 @@ export default async function AboutPage() {
 				/>
 			</section>
 			<Founders />
-			<Franchising />
 			<Timeline />
+			<Franchising />
 		</>
 	)
 }
