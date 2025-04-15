@@ -1,0 +1,94 @@
+'use client'
+
+import Link from 'next/link'
+import { useInView } from 'react-intersection-observer'
+import Newsletter from '../../Form/CF7/Newsletter'
+import { LoadImage } from '@/components/new/LoadImage'
+import './style.scss'
+
+export const Footer = () => {
+	const [io, ioInView] = useInView({ triggerOnce: false })
+
+
+	const d = new Date()
+	const year = d.getFullYear()
+
+	const logo = {
+		url: '/logo-footer.png',
+		alt: 'Sanguich Logo',
+		width: 500,
+		height: 200
+	}
+
+	return (
+		<footer ref={io} id='master-footer' className={`relative border-type-1 c5 flex flex-col is-inview ${ioInView ? 'inview' : ''}`}>
+
+			<div className="decor-wrap">
+				<div className="decor-top with-extra">
+					<div className="decor-top-left"></div>
+					<div className="decor-top-center with-extra">
+						<div className="decor-top-center-extra-left"></div>
+						<div className="decor-top-center-extra-right"></div>
+					</div>
+					<div className="decor-top-right"></div>
+				</div>
+				<div className="decor-center">
+					<div className="decor-center-left"></div>
+					<div className="decor-center-right"></div>
+				</div>
+				<div className="decor-bottom">
+					<div className="decor-bottom-left"></div>
+					<div className="decor-bottom-center with-extra">
+						<div className="decor-bottom-center-extra-left"></div>
+						<div className="decor-bottom-center-extra-right"></div>
+					</div>
+					<div className="decor-bottom-right"></div>
+				</div>
+			</div>
+			{logo ?
+				<LoadImage
+					width={500}
+					height={200}
+					alt={logo?.alt}
+					src={logo?.url}
+					className="max-w-[20rem] w-full h-auto [&_img]:!relative"
+				/>
+				: null}
+
+			<div id="contact" className="contact padd-2 fs-85">
+				<Newsletter />
+			</div>
+
+			<div className="footer-navi uppercase">
+				<p className="font3 h6"><a href="https://www.facebook.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">FaceBook</a></p>
+				<p className="font3 h6"><a href="https://www.instagram.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">Instagram</a></p>
+				<p className="font3 h6"><a href="https://www.tripadvisor.com/Restaurant_Review-g34438-d13076164-Reviews-Sanguich_De_Miami-Miami_Florida.html" target="_blank" rel="noreferrer noopener">TripAdvisor</a></p>
+				<p className="font3 h6">
+					<Link href="/careers">Careers</Link>
+				</p>
+				<p className="font3 h6">
+					<Link href="/press">Press</Link>
+				</p>
+				<p className="font3 h6">
+					<Link href="/contact">Contact</Link>
+				</p>
+			</div>
+			<LoadImage
+				width={500}
+				height={200}
+				alt={"Crafted con Amor"}
+				src={'/crafted.png'}
+				contain
+				className="max-w-[6rem] w-full h-auto [&_img]:!relative my-5"
+			/>
+
+			<div className='copy'>
+				<p className="uppercase h5 !m-0">Soñado en 2014. Establecido en 2015</p>
+				{/* <p className="uppercase h6">Copyright &copy; {year}. SITE BY <a href="https://www.deepsleepstudio.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" style={{ wordSpacing: '.5em' }} className='h5'>ds/s</a>.</p> */}
+				<p className="uppercase h5 py-1 !m-0 !text-[#74A387]">MADE WITH WALTER MERCADO AMOR BY <a href="https://www.deepsleepstudio.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" className='!text-[#74A387] hover:!text-[#fff]'>DEEPSLEEP STUDIO</a>.</p>
+
+			</div>
+
+		</footer>
+	)
+}
