@@ -1,6 +1,5 @@
 
 import VideoComponent from '@/components/new/Video'
-import './style.scss'
 
 function Hola(props) {
 

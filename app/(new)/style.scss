@@ -170,3 +170,18 @@
     }
   }
 }
+
+.hola {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url("../../images/hola.png");
+	background-repeat: no-repeat;
+	background-size: 18% auto;
+	background-position: center center;
+	z-index: 1000;
+
+	@media screen and (max-width: 768px) {
+		background-size: 30% auto;
+	}
+}
