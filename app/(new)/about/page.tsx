@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import Founders from '@/app/(new)/_components/Founders'
 import Franchising from '@/app/(new)/_components/Franchising'
 import Timeline from '@/app/(new)/_components/Timeline'
-
+import Purpose from '@/app/(new)/_components/Purpose'
 export const metadata: Metadata = {
 	title: `About Us | ${process.env.NEXT_PUBLIC_SITENAME}`,
 }
@@ -29,6 +29,7 @@ export default async function AboutPage() {
 			</section>
 			<Founders />
 			<Timeline />
+			<Purpose />
 			<Franchising />
 		</>
 	)
