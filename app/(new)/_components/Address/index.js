@@ -5,6 +5,7 @@ import MultiButton from './MultiButton'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
 import GMap from '@/components/GMap'
+import { LoadImage } from '@/components/LoadImage'
 
 function AddressNew(props) {
   const [io, ioInView] = useInView({ triggerOnce: true })
@@ -30,22 +31,22 @@ function AddressNew(props) {
         onClick={() => setSelectedIndex(i)}
       >
 
-        <div className="span-12-tablet span-5 relative aspect-ratio">
+        <div className="span-12-tablet span-5 relative aspect-ratio rounded-lg gold-border overflow-hidden">
           {image?.url &&
-            <Image
+            <LoadImage
               src={image.url}
               width={image.width}
               height={image.height}
               alt={image.alt}
               style={{ objectFit: "cover" }}
               quality="90"
-							className='rounded-lg gold-border'
+							className=''
             />
           }
           {/* {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null} */}
         </div>
-        <div className="content-container span-12-tablet  span-7">
-          <h3 className='uppercase font3 heading'>{node.name}</h3>
+        <div className="content-container span-12-tablet mt-2  span-7">
+          <h3 className='uppercase font3 heading pb-1'>{node.name}</h3>
           <p className={`uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
             {node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className=' block'>{node.address}</span>}
           </p>
@@ -56,8 +57,7 @@ function AddressNew(props) {
             <a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a>
           </p>
           <p className="uppercase marg-bottom-off">{node.hours}</p>
-          {/* <p className="green-border">CLOSED ON WEDNESDAYS</p> */}
-					<div className='span-12 flex'>
+					<div className='span-12 flex pt-2'>
           <MultiButton links={node.links} />
         </div>
         </div>
