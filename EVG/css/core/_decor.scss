@@ -2347,3 +2347,242 @@ $size_x_bp6: 70px;
 $size_y_bp6: 70px;
 
 
+
+
+// Decor Style 10
+$size_x: 141px;
+$size_y: 141px;
+$size_x_bp1: 120px;
+$size_y_bp1: 120px;
+$size_x_bp2: 100px;
+$size_y_bp2: 100px;
+$size_x_bp3: 80px;
+$size_y_bp3: 80px;
+$size_x_bp4: 70px;
+$size_y_bp4: 70px;
+$size_x_bp5: 70px;
+$size_y_bp5: 70px;
+$size_x_bp6: 70px;
+$size_y_bp6: 70px;
+
+
+.border-type-10 {
+
+	.decor-wrap {
+		padding: $decor_wrap;
+
+		> div > div,
+		> div > div:before {
+			transition: clip-path 1.5s ease-in-out, opacity 1s ease-in-out;
+		}
+	}
+
+	.decor-top {
+		height: $size_y;
+
+		@media screen and (max-width: $bp1) {
+			height: $size_y_bp1;
+		}
+		@media screen and (max-width: $bp2) {
+			height: $size_y_bp2;
+		}
+		@media screen and (max-width: $bp3) {
+			height: $size_y_bp3;
+		}
+		@media screen and (max-width: $bp4) {
+			height: $size_y_bp4;
+		}
+		@media screen and (max-width: $bp5) {
+			height: $size_y_bp5;
+		}
+		@media screen and (max-width: $bp6) {
+			height: $size_y_bp6;
+		}
+
+		.decor-top-left {
+			width: $size_x;
+			background: url(../../../images/border-10/tl.png) no-repeat scroll center center transparent;
+			background-size: contain;
+
+			@media screen and (max-width: $bp1) {
+				width: $size_x_bp1;
+			}
+			@media screen and (max-width: $bp2) {
+				width: $size_x_bp2;
+			}
+			@media screen and (max-width: $bp3) {
+				width: $size_x_bp3;
+			}
+			@media screen and (max-width: $bp4) {
+				width: $size_x_bp4;
+			}
+			@media screen and (max-width: $bp5) {
+				width: $size_x_bp5;
+			}
+			@media screen and (max-width: $bp6) {
+				width: $size_x_bp6;
+			}
+		}
+
+		.decor-top-center {
+			background: url(../../../images/border-10/ct.png) repeat-x scroll center center transparent;
+			background-size: contain;
+		}
+
+		.decor-top-right {
+			width: $size_x;
+			background: url(../../../images/border-10/tr.png) no-repeat scroll center center transparent;
+			background-size: contain;
+
+			@media screen and (max-width: $bp1) {
+				width: $size_x_bp1;
+			}
+			@media screen and (max-width: $bp2) {
+				width: $size_x_bp2;
+			}
+			@media screen and (max-width: $bp3) {
+				width: $size_x_bp3;
+			}
+			@media screen and (max-width: $bp4) {
+				width: $size_x_bp4;
+			}
+			@media screen and (max-width: $bp5) {
+				width: $size_x_bp5;
+			}
+			@media screen and (max-width: $bp6) {
+				width: $size_x_bp6;
+			}
+		}
+	}
+
+	.decor-center {
+		
+		.decor-center-left {
+			width: $size_x;
+			background: url(../../../images/border-10/cl.png) repeat-y scroll center center transparent;
+			background-size: contain;
+
+			@media screen and (max-width: $bp1) {
+				width: $size_x_bp1;
+			}
+			@media screen and (max-width: $bp2) {
+				width: $size_x_bp2;
+			}
+			@media screen and (max-width: $bp3) {
+				width: $size_x_bp3;
+			}
+			@media screen and (max-width: $bp4) {
+				width: $size_x_bp4;
+			}
+			@media screen and (max-width: $bp5) {
+				width: $size_x_bp5;
+			}
+			@media screen and (max-width: $bp6) {
+				width: $size_x_bp6;
+			}
+		}
+		
+		.decor-center-right {
+			width: $size_x;
+			background: url(../../../images/border-10/cr.png) repeat-y scroll center center transparent;
+			background-size: contain;
+
+			@media screen and (max-width: $bp1) {
+				width: $size_x_bp1;
+			}
+			@media screen and (max-width: $bp2) {
+				width: $size_x_bp2;
+			}
+			@media screen and (max-width: $bp3) {
+				width: $size_x_bp3;
+			}
+			@media screen and (max-width: $bp4) {
+				width: $size_x_bp4;
+			}
+			@media screen and (max-width: $bp5) {
+				width: $size_x_bp5;
+			}
+			@media screen and (max-width: $bp6) {
+				width: $size_x_bp6;
+			}
+		}
+	}
+
+	.decor-bottom {
+		height: $size_y;
+
+		@media screen and (max-width: $bp1) {
+			height: $size_y_bp1;
+		}
+		@media screen and (max-width: $bp2) {
+			height: $size_y_bp2;
+		}
+		@media screen and (max-width: $bp3) {
+			height: $size_y_bp3;
+		}
+		@media screen and (max-width: $bp4) {
+			height: $size_y_bp4;
+		}
+		@media screen and (max-width: $bp5) {
+			height: $size_y_bp5;
+		}
+		@media screen and (max-width: $bp6) {
+			height: $size_y_bp6;
+		}
+
+		.decor-bottom-left {
+			width: $size_x;
+			background: url(../../../images/border-10/bl.png) no-repeat scroll center center transparent;
+			background-size: contain;
+
+			@media screen and (max-width: $bp1) {
+				width: $size_x_bp1;
+			}
+			@media screen and (max-width: $bp2) {
+				width: $size_x_bp2;
+			}
+			@media screen and (max-width: $bp3) {
+				width: $size_x_bp3;
+			}
+			@media screen and (max-width: $bp4) {
+				width: $size_x_bp4;
+			}
+			@media screen and (max-width: $bp5) {
+				width: $size_x_bp5;
+			}
+			@media screen and (max-width: $bp6) {
+				width: $size_x_bp6;
+			}
+		}
+
+		.decor-bottom-center {
+			background: url(../../../images/border-10/cb.png) repeat-x scroll center center transparent;
+			background-size: contain;
+		}
+
+		.decor-bottom-right {
+			width: $size_x;
+			background: url(../../../images/border-10/br.png) no-repeat scroll center center transparent;
+			background-size: contain;
+
+			@media screen and (max-width: $bp1) {
+				width: $size_x_bp1;
+			}
+			@media screen and (max-width: $bp2) {
+				width: $size_x_bp2;
+			}
+			@media screen and (max-width: $bp3) {
+				width: $size_x_bp3;
+			}
+			@media screen and (max-width: $bp4) {
+				width: $size_x_bp4;
+			}
+			@media screen and (max-width: $bp5) {
+				width: $size_x_bp5;
+			}
+			@media screen and (max-width: $bp6) {
+				width: $size_x_bp6;
+			}
+		}
+	}
+}

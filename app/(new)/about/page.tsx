@@ -1,5 +1,6 @@
 import VideoComponent from '@/components/new/Video'
 import { Metadata } from 'next'
+import Founders from '@/app/(new)/_components/Founders'
 
 export const metadata: Metadata = {
 	title: `About Us | ${process.env.NEXT_PUBLIC_SITENAME}`,
@@ -24,7 +25,7 @@ export default async function AboutPage() {
 					}
 				/>
 			</section>
-
+			<Founders />
 		</>
 	)
 }
