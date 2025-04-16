@@ -348,7 +348,7 @@ const VideoComponent = ({
         className="regular absolute inset-0 flex items-center justify-center z-[52] bg-black/20 hover:bg-black/30 transition-colors group"
       >
         {showPlayButton && (
-          <div className="p-4 w-20 h-20 max-md:w-12 max-md:h-12 group-hover:scale-110 transition bg-[url('/videos/play.png')] bg-center bg-no-repeat bg-contain">
+          <div className="p-4 w-20 h-20 max-md:w-12 max-md:h-12 group-hover:scale-110 transition bg-[url('/play.png')] bg-center bg-no-repeat bg-contain">
             {/* <Play size={120} className="text-white" /> */}
           </div>
         )}
