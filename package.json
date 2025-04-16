@@ -24,7 +24,7 @@
     "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.5.0",
-    "google-map-react": "github:google-map-react/google-map-react#pull/1245/head",
+    "google-map-react": "^2.2.1",
     "isomorphic-fetch": "^3.0.0",
     "lambda-rate-limiter": "^4.0.2",
     "lodash": "^4.17.21",
@@ -50,6 +50,5 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.3.2"
-  },
-  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  }
 }
