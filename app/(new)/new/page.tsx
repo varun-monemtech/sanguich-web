@@ -15,6 +15,7 @@ import Counter from '../_components/Counter'
 import ContextProvider from '@/provider/ContextProvider'
 
 import { Metadata } from 'next'
+import Hero from '../_components/Hero'
 
 async function getPage() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/pages/5',
@@ -117,6 +118,7 @@ export default async function MainPage() {
 	
 	return (
 		<>
+		<Hero />
 			{Sections ? Sections : null}
 			<Counter />
 		</>
