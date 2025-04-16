@@ -1,4 +1,4 @@
-import PostTemplate from '@/components/ACF/PostTemplate'
+import PostTemplate from '../../_components/PostTemplate'
 
 function unEscape(htmlStr: String) {
 	htmlStr = htmlStr?.replace(/&lt;/g, "<");
