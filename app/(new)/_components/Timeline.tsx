@@ -137,7 +137,6 @@ function Timeline() {
 					<Swiper
 						ref={swiperRef}
 						modules={[Mousewheel, Scrollbar, FreeMode]}
-						spaceBetween={30}
 						slidesPerView={4}
 						freeMode={true}
 						mousewheel={
@@ -150,22 +149,41 @@ function Timeline() {
 							hide: false,
 						}}
 						className="h-full !overflow-visible"
+						breakpoints={{
+							2: {
+								slidesPerView: 2,
+							},
+							768: {
+								slidesPerView: 3,
+							},
+							1024: {
+								slidesPerView: 4,
+							}
+						}}
 					>
 						{timelineData.map((slide, index) => (
-							<SwiperSlide key={index} >
+							<SwiperSlide key={index} className='overflow-hidden' >
 								<div className="w-full">
-									<div className="rounded-[4rem] overflow-hidden mb-6 border-2 border-[#D6B35F] w-full  relative">
-										<LoadImage
-											src={slide.image}
-											width={300}
-											height={300}
-											alt={slide.alt}
-											className="w-full h-full  aspect-[18/9]"
-										/>
+
+									<div className='px-2'>
+										<div className="rounded-[4rem] overflow-hidden  border-2 border-[#D6B35F] w-full  relative">
+											<LoadImage
+												src={slide.image}
+												width={300}
+												height={300}
+												alt={slide.alt}
+												className="w-full h-full  aspect-[18/9]"
+											/>
+										</div>
 									</div>
-									<div className="text-[#EFE7D3] pr-4">
+
+									<div className='relative w-[101%] h-[1px] bg-white mx-auto my-7'>
+										<div className='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[1px] h-[3rem] bg-white mx-auto ' />
+									</div>
+
+									<div className="text-[#EFE7D3] px-2">
 										{slide.events.map((event, eventIndex) => (
-											<p key={eventIndex} className="text-sm  font-light">{event}</p>
+											<p key={eventIndex} className="text-sm">{event}</p>
 										))}
 									</div>
 								</div>
