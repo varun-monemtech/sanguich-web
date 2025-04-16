@@ -3,7 +3,6 @@
 import Menu from '../_components/Menu'
 import ACFOrder from '@/components/ACF/Sanguich/Order'
 import ACFSeenOn from '@/components/ACF/Sanguich/SeenOn'
-import ACFHero from '@/components/ACF/Hero'
 import ProductGrid from '../_components/ProductGrid'
 import ACFOurStory from '@/components/ACF/Sanguich/OurStory'
 import ACFHola from '../_components/Hola'
@@ -55,7 +54,8 @@ export default async function MainPage() {
     if(section.acf_fc_layout === 'hero') {
       return (
         <div key="hero-main">
-          <ACFHero { ...section } />
+          {/* <ACFHero { ...section } /> */}
+					<Hero />
           {/* Point of reference for past hero observer threashold, so we can calculate if the user is past hero or not */}
           <div id="header-fold-breakpoint"></div>
         </div>
@@ -118,7 +118,6 @@ export default async function MainPage() {
 	
 	return (
 		<>
-		<Hero />
 			{Sections ? Sections : null}
 			<Counter />
 		</>
