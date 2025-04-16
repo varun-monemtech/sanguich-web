@@ -18,7 +18,7 @@ export default async function AboutPage() {
 				<VideoComponent
 					url={'/static/796867dcdbbddbad0c13d54714d5d9d9/SANGUICH-Interview-1.mp4'}
 					mode="inline"
-					wrapperClasses="light"
+					wrapperClasses="light [&_button>div]:hidden"
 					overlay={
 						{
 							color: '#44444466',

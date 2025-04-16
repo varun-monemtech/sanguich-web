@@ -21,7 +21,7 @@ function Hola(props) {
 						url={video}
 						// imgCover={{url: image.url, alt: ''}}
 						mode="inline"
-						wrapperClasses="light"
+						wrapperClasses="light [&_button>div]:hidden"
 						overlay={
 							{
 								color: '#44444466',
