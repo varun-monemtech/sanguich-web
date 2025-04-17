@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { LoadImage } from "@/components/new/LoadImage"
+import { notFound } from "next/navigation"
 
 function unEscape(htmlStr: String) {
 	htmlStr = htmlStr?.replace(/&lt;/g, "<");
@@ -25,9 +26,9 @@ async function getPosts() {
 }
 
 // Get Metadata
-export async function generateMetadata() {
+export async function generateMetadata({ params }: { params: { page: string } }) {
 	return {
-		title: 'Blog',
+		title: `Blog - Page ${params.page}`,
 		description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
 		siteName: process.env.NEXT_PUBLIC_SITENAME,
 		images: [
@@ -41,16 +42,48 @@ export async function generateMetadata() {
 	}
 }
 
+// Generuję statycznie 10 stron
+export function generateStaticParams() {
+	return [
+		{ page: '2' },
+		{ page: '3' },
+		{ page: '4' },
+		{ page: '5' },
+		{ page: '6' },
+		{ page: '7' },
+		{ page: '8' },
+		{ page: '9' },
+		{ page: '10' },
+		{ page: '11' },
+	]
+}
 
-export default async function MainPage() {
+export default async function PaginatedPage({ params }: { params: { page: string } }) {
+	// Używam stałej wartości - 2 posty na stronę
 	const POSTS_PER_PAGE = 4;
+
+	const page = Number(params.page);
+
+	// Walidacja strony
+	if (isNaN(page) || page < 1) {
+		notFound();
+	}
 
 	const allPosts = await getPosts();
 
-	const paginatedPosts = allPosts.slice(0, POSTS_PER_PAGE);
+	// Calculate pagination
+	const startIndex = (page - 1) * POSTS_PER_PAGE;
+	const endIndex = startIndex + POSTS_PER_PAGE;
+	const paginatedPosts = allPosts.slice(startIndex, endIndex);
 	const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 
-	const hasNextPage = totalPages > 1;
+	// Sprawdzam czy strona istnieje
+	if (page > totalPages) {
+		notFound();
+	}
+
+	const hasNextPage = page < totalPages;
+	const hasPrevPage = page > 1;
 
 	const posts = paginatedPosts?.map((post: any, i: number) => {
 
@@ -103,8 +136,9 @@ export default async function MainPage() {
 			{/* Pagination */}
 			<div className="pagination-controls flex justify-center gap-3 mt-12">
 				<Link
-					href={'news'}
-					className={`opacity-50 pointer-events-none group flex flex-row-reverse justify-center items-center gap-1 next-page uppercase font1`}
+					href={page === 2 ? '/news' : `/news/page/${page - 1}`}
+					className={`${hasPrevPage ? '' : 'opacity-50 pointer-events-none'} group flex flex-row-reverse justify-center items-center gap-1 next-page uppercase font1`}
+
 				>
 					<div className="relative ">
 						<div
@@ -118,8 +152,10 @@ export default async function MainPage() {
 						Prev
 					</span>
 				</Link>
+
 				<Link
-					href="/news/page/2"
+					href={`/news/page/${page + 1}`}
+
 					className={`${hasNextPage ? '' : 'opacity-50 pointer-events-none'} group flex justify-center items-center gap-1 next-page uppercase font1`}
 				>
 					<div className="relative">
@@ -134,7 +170,8 @@ export default async function MainPage() {
 						Next
 					</span>
 				</Link>
+
 			</div>
 		</div>
 	)
-}
+} 

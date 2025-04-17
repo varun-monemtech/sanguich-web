@@ -185,3 +185,18 @@
 		background-size: 30% auto;
 	}
 }
+
+
+.arrow-prev-image {
+	width: 3.5em;
+	height: 3.5em;
+	background: url(../../images/arrows/arrow-left-new.png) no-repeat scroll center transparent;
+	background-size: contain;
+}
+
+.arrow-next-image {
+	width: 3.5em;
+	height: 3.5em;
+	background: url(../../images/arrows/arrow-right-new.png) no-repeat scroll center transparent;
+	background-size: contain;
+}
