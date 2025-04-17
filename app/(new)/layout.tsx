@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 import './style.scss'
 import './global.css'
 import '@/EVG/css/_core.scss'
-import { Footer } from '@/components/Footer'
+import { Footer } from './_components/Footer'
 import { NaviContextProvider } from '@/context/NaviContext'
 
 // Meta Things for SEO
@@ -88,7 +88,7 @@ export default async function RootLayout({
 
 				</ContextProvider>
 
-				<Footer options={options} />
+				<Footer />
 
 				<Analytics />
 
