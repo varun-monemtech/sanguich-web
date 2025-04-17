@@ -30,8 +30,8 @@ function NaviPrimary(props) {
 				opacity: [0, 1],
 				duration: baseDuration,
 				easing: 'easeInOutSine',
-				delay: anime.stagger(300)
-			}, `-=${baseDuration/2}`)
+				delay: anime.stagger(100)
+			}, `-=${baseDuration/3}`)
 	}
 	const fadeOutLogo = element => {
 		anime

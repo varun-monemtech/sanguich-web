@@ -26,7 +26,7 @@ function Header(props) {
   useEffect(() => {
     const unsubscribe = scrollY.on('change', (latest) => {
       // Show header bar when scrolled past a threshold (e.g., 100px)
-      setShowHeaderBar(latest > 500);
+      setShowHeaderBar(latest > 100);
     });
     
     return () => unsubscribe();
@@ -71,8 +71,9 @@ function Header(props) {
 			.add({
 				targets: nodeRef2.current,
 				opacity: [0, 1],
+				translateY: [-100, 0],
 				duration: baseDuration,
-				easing: 'easeInOutSine',
+				easing: 'easeOutSine',
 			})
 	}
 	const fadeOutBg = element => {
@@ -81,6 +82,7 @@ function Header(props) {
 			.add({
 				targets: nodeRef2.current,
 				opacity: [1, 0],
+				translateY: [0, -100],
 				duration: baseDuration / 2,
 				easing: 'linear'
 			})

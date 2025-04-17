@@ -113,7 +113,7 @@ header.master-header {
 	}
 
 	&.onmobile {
-		position: fixed;
+		position: sticky;
 		display: flex;
 		flex-direction: column;
 
