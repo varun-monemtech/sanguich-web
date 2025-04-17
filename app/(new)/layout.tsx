@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Header from '@/components/Header'
+import Header from './_components/Header'
 import ContextProvider from '@/provider/ContextProvider'
 import ExternalContextProvider from '@/provider/ExternalContextProvider'
 import { Analytics } from '@vercel/analytics/react'

@@ -1,0 +1,39 @@
+.disabled {
+	position: relative;
+	overflow: visible;
+	align-items: center;
+
+	.disabled{
+		padding: .5em .5em;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 53%;
+			left: 50%;
+			width: 80%;
+			height: 0px;
+			border-top: 2px solid;
+			transform: translate3d(-50%,-50%,0);
+			opacity: .85;
+		}
+	}
+}
+
+.caret {
+	font-size: .75em;
+	display: inline-block;
+	margin: .15em 0 0 .25em;
+}
+
+.sub-nav-items {
+  margin-left: 3em;
+  font-size: 0.78em;
+	.caret {
+		transform: rotate(-90deg);
+		margin: .05em 0 0 .25em;
+    	&.open {
+		    transform: rotate(180deg);
+	    }
+	}
+}

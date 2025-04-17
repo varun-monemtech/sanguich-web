@@ -53,12 +53,7 @@ export default async function MainPage() {
 
     if(section.acf_fc_layout === 'hero') {
       return (
-        <div key="hero-main">
-          {/* <ACFHero { ...section } /> */}
-					<Hero />
-          {/* Point of reference for past hero observer threashold, so we can calculate if the user is past hero or not */}
-          <div id="header-fold-breakpoint"></div>
-        </div>
+				<Hero key={i} />
       )
     }
    

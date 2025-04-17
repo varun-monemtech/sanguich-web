@@ -1,0 +1,312 @@
+/* ==========================================================================
+  Hamburger
+========================================================================== */
+
+$size: 4.6em;
+$height: 19px;
+$width: 30px;
+$line-size: 2px;
+$line-color: #DCBA7B;
+$line-radius: 1px;
+$to-translate: ($height - $line-size) / 2;
+$bounce: cubic-bezier(.87,-.50,.19,1.50);
+
+
+.master-hamburger {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1502;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	height: auto;
+	overflow: visible;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+
+	//transition: left .5s ease-in-out;
+
+	@media screen and (max-width:768px) {
+
+	}
+
+	@media screen and (min-width:1024px) {
+		//display: none;
+	}
+
+	.hamburger-container {
+		position: relative;
+		top: 0;
+		right: 0;
+	}
+
+	.starfall-wrap {
+		position: absolute;
+		top: calc(50% - 2px);
+		left: calc(50% + 4px);
+		width: 36px;
+		height: 6em;
+		transform: translate3d(-50%,0,0) rotate(225deg);
+		transform-origin: top center;
+	}
+}
+
+.master-hamburger-positioner {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	display: flex;
+	align-items: center;
+}
+.master-hamburger-container {
+}
+
+.master-header-hamburger.hidden {
+	display: none;
+}
+
+.hamburger {
+	position: relative;
+	height: 4.25em;
+	width: $size;
+	//background-color: transparent;
+	cursor: pointer;
+	margin: 0;
+	overflow: hidden;
+	transition: all .1s ease-in-out;
+
+	&__icon {
+		position: absolute;
+		width: $width;
+		height: $height;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&__line {
+		position: absolute;
+		left: 0;
+		background-color: $line-color;
+		height: $line-size;
+		width: 100%;
+		border-radius: $line-radius;
+		pointer-events: none;
+		&--1 {
+			top: 0;
+		}
+		&--2 {
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+		&--3 {
+			bottom: 0;
+			width: 100%;
+		}
+	}
+	
+	/*--- Close Button 1 ---*/
+	
+	&--close1 &__line--1 {
+		transition: transform .2s ease-in-out,
+			background-color .5s ease-in-out;
+	}
+	&--close1 &__line--2 {
+		right: 0;
+		transition: right .2s ease-in-out, 
+			opacity .35s ease-in-out, 
+			transform 0s ease-in-out,
+			background-color .5s ease-in-out;
+	}
+	&--close1 &__line--3 {
+		transition: transform .2s ease-in-out,
+			background-color .5s ease-in-out;
+	}
+}
+
+.navi-animator {
+
+	.hamburger__icon {
+		width: $width * 2;
+	}
+}
+
+.hamburger.hamburger--close1.open {
+	//transform: translateX(-.25em);
+
+	.hamburger__line--1 {
+		transform: translate3d(0, $to-translate, 0) rotate(135deg);
+	}
+	.hamburger__line--2 {
+		opacity: 0;
+		right: -$width*4;
+		transform: translate3d(-$width, 0, 0);
+		transition: opacity .2s ease-in-out, 
+			transform .2s ease-in-out, 
+			right .0s ease-in-out .2s,
+			background-color .5s ease-in-out;
+	}
+
+	.hamburger__line--3 {
+		transform: translate3d(0, -$to-translate, 0) rotate(-135deg);
+	}
+
+	.hamburger__line--3 {
+		width: 100%;
+	}
+}
+
+.cover {
+	position: absolute;
+	z-index: 500;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+
+
+main {
+	overflow: hidden;
+}
+
+#mainframe {
+	will-change: transform;
+
+	@media screen and (max-width: 1024px) {
+		padding-top: 4em;
+	}
+}
+
+#mainframe-cover {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	//pointer-events: none;
+	overflow: hidden;
+
+	&.active {
+		z-index: 9999;
+	}
+}
+
+#mainframe-bg-overlay {
+	position: absolute;
+	z-index: 200;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0;
+}
+
+#mainframe-stripes {
+	position: absolute;
+	z-index: 300;
+	top: 0;
+	left: 5%;
+	width: 100%;
+	height: 100%;
+	transform: translate3d(-120%,120%,0);
+	overflow: hidden;
+	clip-path: polygon(100% 100%, 0% 100%, 5% 87.5%, 0% 75%, 5% 62.5%, 0% 50%, 5% 37.5%, 0% 25%, 5% 12.5%, 0% 0%, 100% 0, 95% 12.5%, 100% 25%, 95% 37.5%, 100% 50%, 95% 62.5%, 100% 75%, 95% 87.5%);
+
+	.rotate {
+		position: absolute;
+		z-index: 300;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		transform: translate3d(-50%,-50%,0) rotate(-30deg) scale(2);
+	}
+
+	.stripes {
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		.layer-1 {
+			position: absolute;
+			z-index: 550;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			.animate {
+				transform: translateX(-25%);
+			}
+		}
+
+		.layer-2 {
+			position: absolute;
+			z-index: 500;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			.animate {
+				transform: translateX(25%);
+			}
+		}
+	}
+
+	&.inview-rn {
+
+		.stripes {
+			.layer-1 {
+				.animate {
+					animation: scrollTextx 36s linear infinite;
+				}
+			}
+			.layer-2 {
+				.animate {
+					animation: scrollTextReversex 36s linear infinite;
+				}
+			}
+		}
+	}
+
+
+	.line {
+		position: relative;
+		width: 100%;
+		height: $width;
+		color: #fff;
+		flex: 1 1 10%;
+	}
+
+ 
+	&.inview-rn {
+		.marquee > div {
+			animation: scrollTextx 36s linear infinite;
+		}
+		.marquee.reverse > div {
+			animation: scrollTextReversex 48s linear infinite;
+		}
+	}
+	@keyframes scrollTextx {
+		from { transform: translateX(-25%); }
+		50% { transform: translateX(25%); }
+		to { transform: translateX(-25%); }
+	}
+	@keyframes scrollTextReversex {
+		from { transform: translateX(25%); }
+		50% { transform: translateX(-25%); }
+		to { transform: translateX(25%); }
+	}
+}
