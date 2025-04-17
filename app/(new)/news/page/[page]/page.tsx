@@ -26,7 +26,9 @@ async function getPosts() {
 }
 
 // Get Metadata
-export async function generateMetadata({ params }: { params: { page: string } }) {
+
+export async function generateMetadata(props: { params: Promise<{ page: string }>}) {
+	const params = await props.params;
 	return {
 		title: `Blog - Page ${params.page}`,
 		description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
@@ -58,7 +60,8 @@ export function generateStaticParams() {
 	]
 }
 
-export default async function PaginatedPage({ params }: { params: { page: string } }) {
+export default async function PaginatedPage(props: { params: Promise<{ page: string }>}) {
+	const params = await props.params;
 	// Używam stałej wartości - 2 posty na stronę
 	const POSTS_PER_PAGE = 4;
 

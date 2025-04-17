@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Header from './_components/Header'
 import ContextProvider from '@/provider/ContextProvider'
-import ExternalContextProvider from '@/provider/ExternalContextProvider'
 import { Analytics } from '@vercel/analytics/react'
 
 import './style.scss'
@@ -71,7 +70,6 @@ export default async function RootLayout({
 
 				<ContextProvider>
 
-					<ExternalContextProvider>
 
 						<NaviContextProvider location="">
 							<Header />
@@ -83,8 +81,6 @@ export default async function RootLayout({
 							</NaviContextProvider>
 
 						</main>
-
-					</ExternalContextProvider>
 
 				</ContextProvider>
 
