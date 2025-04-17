@@ -6,12 +6,15 @@ import Image from 'next/image'
 function News({ anchor, classes, posts }) {
 
   const recentNews = posts.map((post, i) => {
-    return (
+
+		return (
       <div key={i} className='single-post span-12 grid-12'>
 
         <div className='img-container'>
-          <Image src={post?.x_featured_media_original} width="500" height="200" quality="85" alt='post thumbnail' />
-        </div>
+					{post.yoast_head_json.og_image?.[0].url ? 
+          	<Image src={post.yoast_head_json.og_image?.[0].url} width="500" height="200" quality="85" alt='post thumbnail' />
+					: null}
+					</div>
 
         <div className='content-box'>
           <h3 className="title" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />

@@ -47,10 +47,10 @@ export default async function MainPage() {
 
 	const posts = data?.map((post: any, i: number) => {
 
-		const image = post?.x_featured_media_original ?
+		const image = post.yoast_head_json.og_image?.[0].url ?
 			<Link href={`/news/${post?.slug}`} className="basis-full md:basis-1/2">
 				<LoadImage
-					src={post?.x_featured_media_original}
+					src={post.yoast_head_json.og_image?.[0].url}
 					width="2560"
 					height="900"
 					className="aspect-[21/9] [&_img]:!relative rounded-[1rem]"
