@@ -240,7 +240,7 @@ function NaviPrimary(props) {
   return (
 		<nav className='navi navi-primary'>
 			<div
-				className='navi-items font1'
+				className='navi-items font1 gap-x-4'
 				onBlur={(e) => executeBlur(e)}
 			>
 				{menuServe(usedNodes, 0, 0)}

@@ -34,10 +34,10 @@ header.master-header {
 		}
 
 		a {
-			color: #DCBA7B;
+			color: #EAE5DE;
 
 			&:hover {
-				color: #3E805F;
+				color: #DCBA7B;
 			}
 		}
 
@@ -104,10 +104,10 @@ header.master-header {
 		margin: .5em .75em;
 		a {
 			white-space: nowrap;
-			color: #DCBA7B;
+			color: #EAE5DE;
 
 			&:hover {
-				color: #D0C8B9;
+				color: #DCBA7B;
 			}
 		}
 	}
@@ -145,7 +145,7 @@ header.master-header {
 			display: flex;
 			align-items: center;
       padding: 1.5em 0;
-			margin-right: 2em;
+			margin-right: 5em;
 			margin-left: auto;
 
 			.navi-primary {

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .font-outline-custom {
+    filter: drop-shadow(1px 0px 0px rgba(112,112,112,1)) drop-shadow(-1px 0px 0px rgba(112,112,112,1)) drop-shadow(0px 1px 0px rgba(112,112,112,1)) drop-shadow(0px -1px 0px rgba(112,112,112,1));
+  }
+
+}
