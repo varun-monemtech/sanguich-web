@@ -86,10 +86,7 @@ export default async function MainPage() {
 
 		if (section.acf_fc_layout === 'address') {
 			return (
-				<Fragment key={i}>
-					<ACFAddress  {...section} />
-					<Recipes  {...section} />
-				</Fragment>
+				<ACFAddress key={i} {...section} />
 			)
 		}
 
@@ -113,7 +110,9 @@ export default async function MainPage() {
 	return (
 		<>
 			{Sections ? Sections : null}
+			<Recipes />
 			<Counter />
+
 		</>
 	)
 }
