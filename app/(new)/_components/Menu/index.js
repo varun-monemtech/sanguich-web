@@ -1,12 +1,11 @@
 'use client'
 import React, { useState, useContext, useRef } from 'react'
 import './style.scss'
-import Image from 'next/image'
 import Intro from '@/animations/Intro_Framer'
 import { Transition, SwitchTransition } from 'react-transition-group'
 import anime from 'animejs'
 import NaviContext from '../../../../context/NaviContext'
-
+import { LoadImage } from '@/components/new/LoadImage'
 
 function Menu(props) {
 	const naviContext = useContext(NaviContext)
@@ -104,20 +103,16 @@ function Menu(props) {
 		if (i === currentTabTab) {
 			const image = menu.items[currentImage]?.img
 			return (
-				<div key={`menu-images-key-${i}`} >
-
-					{image ?
-						<Image
-							src={image.url}
-							width={image.width}
-							height={image.height}
-							alt={image.alt}
-							style={{ objectFit: "cover" }}
-							className="image"
-							quality={75}
-						/>
-						: null}
-				</div>
+				image ?
+					<LoadImage
+						key={`menu-images-key-${i}`}
+						src={image.url}
+						width={image.width}
+						height={image.height}
+						alt={image.alt}
+						quality={75}
+					/>
+					: null
 			)
 		}
 	})
@@ -281,7 +276,7 @@ function Menu(props) {
 												onExiting={fadeOutQuick}
 												nodeRef={nodeRef3}
 											>
-												<div ref={nodeRef3} className="flex center">
+												<div ref={nodeRef3} className="">
 													{ImageCurrent}
 												</div>
 											</Transition>

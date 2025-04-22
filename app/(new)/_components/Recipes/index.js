@@ -1,6 +1,5 @@
 'use client'
 import  { useState } from 'react'
-import Image from 'next/image'
 import { LoadImage } from '@/components/new/LoadImage'
 import Intro from '@/animations/Intro_Framer'
 
@@ -31,7 +30,7 @@ function Recipes(props) {
 
         <div className="span-12-tablet span-5 relative aspect-video">
           {image?.url &&
-            <Image
+            <LoadImage
               src={image.url}
               width={image.width}
               height={image.height}

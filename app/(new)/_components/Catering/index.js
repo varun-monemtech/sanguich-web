@@ -3,6 +3,7 @@ import './style.scss'
 import Image from 'next/image'
 import CF7Catering from '../../form/CF7/Catering'
 import Intro from '@/animations/Intro_Framer'
+import { LoadImage } from '@/components/new/LoadImage'
 function Catering(props) {
 
 	const anchor = props.anchor
@@ -22,13 +23,11 @@ function Catering(props) {
 
 							<div className="img span-6 span-12-tablet">
 
-								<Image
+								<LoadImage
 									src={image.url}
 									width={image.width}
 									height={image.height}
 									alt={image.alt}
-									style={{ objectFit: "cover" }}
-									quality="90"
 								/>
 
 							</div>
