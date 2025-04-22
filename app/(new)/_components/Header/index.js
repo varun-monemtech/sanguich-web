@@ -11,12 +11,15 @@ import CartIndicator from './CartIndicator'
 import Navi from './Navi'
 import Logo from './Logo'
 import SocialIcons from '@/components/SocialIcons'
-
+import { usePathname } from 'next/navigation'
 function Header(props) {
 	const naviContext = useContext(NaviContext)
   const nodeRef1 = useRef(null);
   const nodeRef2 = useRef(null);
   const nodeRef3 = useRef(null);
+
+	const pathname = usePathname()
+	const showHeaderBarBasedOnPath = pathname.startsWith('/news') || pathname === '/about'
   
   // Use Framer Motion's useScroll hook to track scroll position
   const { scrollY } = useScroll();
@@ -165,7 +168,7 @@ function Header(props) {
 		
 			
 			<Transition
-				in={naviContext.windowSize?.mobile || showHeaderBar ? true : false}
+				in={naviContext.windowSize?.mobile || showHeaderBar || showHeaderBarBasedOnPath ? true : false}
 				timeout={baseDuration}
 				appear={true}
 				onEntering={fadeInBg}
