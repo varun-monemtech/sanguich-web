@@ -3,11 +3,12 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Play, Pause, Volume, VolumeX, X, Maximize, Minimize } from 'lucide-react'
 import { useInView } from 'framer-motion'
-// import {
-//   Dialog,
-//   DialogContent,
-//   DialogClose
-// } from '@/components/shadcn/ui/dialog'
+import {
+  Dialog,
+  DialogContent,	
+  DialogClose,
+	DialogTitle
+} from '@/components/shadcn/ui/dialog'
 import { LoadImage } from '../LoadImage'
 
 type VideoProps = {
@@ -348,7 +349,7 @@ const VideoComponent = ({
         className="regular absolute inset-0 flex items-center justify-center z-[52] bg-black/20 hover:bg-black/30 transition-colors group"
       >
         {showPlayButton && (
-          <div className="p-4 w-20 h-20 max-md:w-12 max-md:h-12 group-hover:scale-110 transition bg-[url('/play.png')] bg-center bg-no-repeat bg-contain">
+          <div className="p-4 w-20 h-20 max-md:w-12 max-md:h-12 group-hover:scale-110 transition bg-[url('/videos/play.png')] bg-center bg-no-repeat bg-contain">
             {/* <Play size={120} className="text-white" /> */}
           </div>
         )}
@@ -356,29 +357,32 @@ const VideoComponent = ({
     )
   }
 
-  // const renderLightbox = () => {
-  //   if (mode !== 'lightbox') return null
+  const renderLightbox = () => {
+    if (mode !== 'lightbox') return null
 
-  //   return (
-  //     <Dialog open={showLightbox} onOpenChange={handleLightboxChange}>
-  //       <DialogContent className="max-w-6xl h-[80vh] p-0 bg-black">
-  //         <DialogClose className="absolute top-4 right-4 p-2 text-white hover:text-gray-300 z-10">
-  //           <X size={24} />
-  //         </DialogClose>
-  //         <div className="w-full h-full flex items-center justify-center">
-  //           <video
-  //             key={url} // Force video element recreation when url changes
-  //             src={url}
-  //             className="w-full h-full object-contain"
-  //             controls
-  //             autoPlay
-  //             playsInline
-  //           />
-  //         </div>
-  //       </DialogContent>
-  //     </Dialog>
-  //   )
-  // }
+    return (
+      <Dialog open={showLightbox} onOpenChange={handleLightboxChange}>
+				<DialogTitle className='hidden'>
+					Video
+				</DialogTitle>
+        <DialogContent className="max-w-6xl h-[80vh] p-0 bg-black">
+          <DialogClose className="regular absolute top-4 right-4 p-2 text-white hover:text-gray-300 z-10">
+            <X size={24} />
+          </DialogClose>
+          <div className="w-full h-full flex items-center justify-center">
+            <video
+              key={url} // Force video element recreation when url changes
+              src={url}
+              className="w-full h-full object-contain"
+              controls
+              autoPlay
+              playsInline
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
+    )
+  }
 
   return (
     <>
@@ -446,7 +450,7 @@ const VideoComponent = ({
         {renderControls()}
         {renderPlayButton()}
       </div>
-      {/* {renderLightbox()} */}
+      {renderLightbox()}
     </>
   )
 }
