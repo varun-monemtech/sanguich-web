@@ -8,6 +8,7 @@ import { FreeMode, Mousewheel, Scrollbar } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/scrollbar';
 import 'swiper/css/free-mode';
+import Intro from '@/animations/Intro_Framer';
 
 // Timeline data array
 const timelineData = [
@@ -115,7 +116,8 @@ function Timeline() {
 	const swiperRef = useRef(null);
 
 	return (
-		<section id="section-timeline" className="bg-[#274F37] py-2 pb-10 relative border-type-7 is-inview inview">
+		<section id="section-timeline" className="bg-[#274F37] py-2 pb-10 relative border-type-7 ">
+			<Intro delay={50}>
 			<div className="mx-auto px-4">
 
 				<div className='flex justify-center items-center text-[3em] relative'>
@@ -219,6 +221,7 @@ function Timeline() {
           
         `}</style>
 			</div>
+			</Intro>
 		</section>
 	)
 }

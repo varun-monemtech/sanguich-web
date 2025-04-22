@@ -1,12 +1,12 @@
 'use client'
-import React, { useState } from 'react'
-import './style.scss'
+import  { useState } from 'react'
 import Image from 'next/image'
-import { useInView } from 'react-intersection-observer'
 import { LoadImage } from '@/components/new/LoadImage'
+import Intro from '@/animations/Intro_Framer'
+
+import './style.scss'
 
 function Recipes(props) {
-  const [io, ioInView] = useInView({ triggerOnce: true })
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const [selectedIndex, setSelectedIndex] = useState(null)
   const [mobileView, setMobileView] = useState('list') // 'list' or 'map'
@@ -29,7 +29,7 @@ function Recipes(props) {
         onClick={() => setSelectedIndex(i)}
       >
 
-        <div className="span-12-tablet span-5 relative aspect-ratio">
+        <div className="span-12-tablet span-5 relative aspect-video">
           {image?.url &&
             <Image
               src={image.url}
@@ -69,8 +69,8 @@ function Recipes(props) {
   return (
     <>
       {classes ?
-        <section ref={io} id={`section-recipes-new`} style={{ zIndex: 101 }} className={`content c5  border-type-7 is-inview ${classes}  ${ioInView ? 'inview' : ''} `}>
-
+        <section  id={`section-recipes-new`} style={{ zIndex: 101 }} className={`content c5  border-type-7 is-inview ${classes}  `}>
+					<Intro delay={50}>
           {anchor ?
             <div id={anchor} className="anchor"></div>
             : null}
@@ -136,7 +136,7 @@ function Recipes(props) {
 					</div>
 
   
-
+					</Intro>
         </section>
         : null}
     </>

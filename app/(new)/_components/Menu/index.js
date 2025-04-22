@@ -2,15 +2,13 @@
 import React, { useState, useContext, useRef } from 'react'
 import './style.scss'
 import Image from 'next/image'
-
+import Intro from '@/animations/Intro_Framer'
 import { Transition, SwitchTransition } from 'react-transition-group'
-import { useInView } from 'react-intersection-observer'
 import anime from 'animejs'
 import NaviContext from '../../../../context/NaviContext'
 
 
 function Menu(props) {
-	const [io, ioInView] = useInView({ triggerOnce: false })
 	const naviContext = useContext(NaviContext)
 	const content = props.wysiwyg
 	const anchor = props.anchor
@@ -184,10 +182,10 @@ function Menu(props) {
 	})
 
 
-	// On Parent Tab Change
-	function onTabChange(i) {
-		setCurrentTab(i)
-	}
+	// // On Parent Tab Change
+	// function onTabChange(i) {
+	// 	setCurrentTab(i)
+	// }
 
 	// On Grandparent Tab Change
 	function onTabTabChange(i) {
@@ -198,103 +196,103 @@ function Menu(props) {
 	return (
 		<>
 			{anchor ?
-				<section ref={io} id={`section-${anchor}`} className={`bg-[#D0C8B9] is-inview ${ioInView ? 'inview' : ''}  border-type-8 ${classes}`}>
+				<section id={`section-${anchor}`} className={`bg-[#D0C8B9]  border-type-8 ${classes}`}>
+					<Intro delay={50}>
+						{anchor ?
+							<div id={anchor} className="anchor"></div>
+							: null}
 
-					{anchor ?
-						<div id={anchor} className="anchor"></div>
-						: null}
+						<div className='content-box'>
+							<div className='flex max-lg:flex-col animated'>
 
-					<div className='content-box'>
-						<div className='flex max-lg:flex-col animated'>
+								<div className="menu-general">
+									<h2 className="menu-title text-[4.5em] !text-[#274F37] text-center m-0 font2"><span className="capitalize">M</span>enu</h2>
+									<div
+										className={`arrow-prev cursor-pointer ${currentTabTab === 0 ? 'opacity-0 cursor-auto' : null}`}
+										onClick={() => {
+											onTabTabChange((current) => current > 0 ? current - 1 : 0)
+											setCurrentImage(0)
+										}}
+										onKeyDown={() => {
+											onTabTabChange((current) => current > 0 ? current - 1 : 0)
+											setCurrentImage(0)
+										}}
+										role="button"
+										tabIndex={0}
+										aria-label='Previous Tab'
+									></div>
+									<div
+										className={`arrow-next cursor-pointer ${currentTabTab === menus.length - 1 ? 'opacity-0 cursor-auto' : null}`}
+										onClick={() => {
+											onTabTabChange((current) => current < menus.length - 1 ? current + 1 : menus.length - 1)
+											setCurrentImage(0)
+										}}
+										onKeyDown={() => {
+											onTabTabChange((current) => current < menus.length - 1 ? current + 1 : menus.length - 1)
+											setCurrentImage(0)
+										}}
+										role="button"
+										tabIndex={0}
+										aria-label='Next Tab'
+									></div>
 
-							<div className="menu-general">
-								<h2 className="menu-title text-[4.5em] !text-[#274F37] text-center m-0 font2"><span className="capitalize">M</span>enu</h2>
-								<div
-									className={`arrow-prev cursor-pointer ${currentTabTab === 0 ? 'opacity-0 cursor-auto' : null}`}
-									onClick={() => {
-										onTabTabChange((current) => current > 0 ? current - 1 : 0)
-										setCurrentImage(0)
-									}}
-									onKeyDown={() => {
-										onTabTabChange((current) => current > 0 ? current - 1 : 0)
-										setCurrentImage(0)
-									}}
-									role="button"
-									tabIndex={0}
-									aria-label='Previous Tab'
-								></div>
-								<div
-									className={`arrow-next cursor-pointer ${currentTabTab === menus.length - 1 ? 'opacity-0 cursor-auto' : null}`}
-									onClick={() => {
-										onTabTabChange((current) => current < menus.length - 1 ? current + 1 : menus.length - 1)
-										setCurrentImage(0)
-									}}
-									onKeyDown={() => {
-										onTabTabChange((current) => current < menus.length - 1 ? current + 1 : menus.length - 1)
-										setCurrentImage(0)
-									}}
-									role="button"
-									tabIndex={0}
-									aria-label='Next Tab'
-								></div>
-
-								<div className="decor-wrap">
-									<div className="decor-top">
-										<div className="decor-top-left"></div>
-										<div className="decor-top-center"></div>
-										<div className="decor-top-right"></div>
-									</div>
-									<div className="decor-center">
-										<div className="decor-center-left"></div>
-										<div className="decor-center-right"></div>
-									</div>
-									<div className="decor-bottom">
-										<div className="decor-bottom-left"></div>
-										<div className="decor-bottom-center"></div>
-										<div className="decor-bottom-right"></div>
-									</div>
-								</div>
-
-								<SwitchTransition>
-									<Transition
-										key={currentTabTab}
-										timeout={baseDuration}
-										appear={true}
-										onEntering={fadeIn}
-										onExiting={fadeOut}
-										nodeRef={nodeRef2}
-									>
-										<div ref={nodeRef2} className="menu-specific-wrap">
-											{TabTabPack}
+									<div className="decor-wrap">
+										<div className="decor-top">
+											<div className="decor-top-left"></div>
+											<div className="decor-top-center"></div>
+											<div className="decor-top-right"></div>
 										</div>
-									</Transition>
-								</SwitchTransition>
-							</div>
+										<div className="decor-center">
+											<div className="decor-center-left"></div>
+											<div className="decor-center-right"></div>
+										</div>
+										<div className="decor-bottom">
+											<div className="decor-bottom-left"></div>
+											<div className="decor-bottom-center"></div>
+											<div className="decor-bottom-right"></div>
+										</div>
+									</div>
 
-							{!naviContext?.windowSize?.mobile ?
-
-								<div className="relative basis-[42%] max-lg:pb-[56%] max-lg:flex-col c4">
 									<SwitchTransition>
 										<Transition
-											key={[currentImage, currentTabTab]}
-											timeout={baseDurationQuick}
+											key={currentTabTab}
+											timeout={baseDuration}
 											appear={true}
-											onEntering={fadeInQuick}
-											onExiting={fadeOutQuick}
-											nodeRef={nodeRef3}
+											onEntering={fadeIn}
+											onExiting={fadeOut}
+											nodeRef={nodeRef2}
 										>
-											<div ref={nodeRef3} className="flex center">
-												{ImageCurrent}
+											<div ref={nodeRef2} className="menu-specific-wrap">
+												{TabTabPack}
 											</div>
 										</Transition>
 									</SwitchTransition>
 								</div>
 
-								: null}
+								{!naviContext?.windowSize?.mobile ?
 
+									<div className="relative basis-[42%] max-lg:pb-[56%] max-lg:flex-col c4">
+										<SwitchTransition>
+											<Transition
+												key={[currentImage, currentTabTab]}
+												timeout={baseDurationQuick}
+												appear={true}
+												onEntering={fadeInQuick}
+												onExiting={fadeOutQuick}
+												nodeRef={nodeRef3}
+											>
+												<div ref={nodeRef3} className="flex center">
+													{ImageCurrent}
+												</div>
+											</Transition>
+										</SwitchTransition>
+									</div>
+
+									: null}
+
+							</div>
 						</div>
-					</div>
-
+					</Intro>
 				</section>
 				: null}
 		</>

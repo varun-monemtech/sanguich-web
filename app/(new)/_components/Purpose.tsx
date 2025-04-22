@@ -1,9 +1,9 @@
 import { LoadImage } from '@/components/new/LoadImage'
 
-function Purpose() {
+function 	Purpose() {
 
 	return (
-		<section id={`section-purpose`} className={`bg-[#EFE7D3] is-inview inview`}>
+		<section id={`section-purpose`} className={`bg-[#EFE7D3]`}>
 			<div className="aspect-video overflow-hidden">
 				<LoadImage
 					src="/purpose.jpg"

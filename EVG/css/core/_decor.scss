@@ -230,6 +230,16 @@ $decor_wrap: 1.75em;
 			}
 		}
 	}
+	.in-view &,
+	.skip-animation & {
+		> div {
+			> div,
+			> div:before {
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+				opacity: 1;
+			}
+		}
+	}
 }
 
 // Decor Style 1

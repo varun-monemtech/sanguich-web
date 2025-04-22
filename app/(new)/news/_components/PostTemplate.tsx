@@ -1,16 +1,12 @@
-'use client'
 import React from 'react'
-import { useInView } from 'react-intersection-observer'
 import { LoadImage } from '@/components/new/LoadImage'
 import Pagination from './Pagination'
 import Intro from '@/animations/Intro_Framer'
 
-
 function PostTemplate({ post, hasNextPage, hasPrevPage, prevLink, nextLink }: { post: any, hasNextPage: boolean, hasPrevPage: boolean, prevLink: string, nextLink: string }) {
-	const [io, ioInView] = useInView({ triggerOnce: true })
 
 	return (
-		<section ref={io} id="post-template-new" className={`bg-[#D0C8B9] px-12 text-[#274F37] hero is-inview ${ioInView ? 'inview' : ''} border-type-7 `}>
+		<section  id="post-template-new" className={`bg-[#D0C8B9] px-12 text-[#274F37] hero`}>
 			<Intro className={`	
 					overflow-visible
 					

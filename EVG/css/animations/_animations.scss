@@ -33,6 +33,11 @@
 	transform: translate3d(0,0,0) rotate(0deg);
 }
 
+.in-view .animated {
+	opacity: 1;
+	transform: translate3d(0,0,0) rotate(0deg);
+}
+
 .delay-500 {
 	transition-delay: 500ms;
 }
