@@ -2,16 +2,15 @@
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
 import { LoadImage } from '@/components/new/LoadImage'
+import Pagination from './Pagination'
 
-function PostTemplate({ post }) {
+
+function PostTemplate({ post, hasNextPage, hasPrevPage, prevLink, nextLink }: { post: any, hasNextPage: boolean, hasPrevPage: boolean, prevLink: string, nextLink: string }) {
 	const [io, ioInView] = useInView({ triggerOnce: true })
 
 	return (
 		<section ref={io} id="post-template-new" className={`bg-[#D0C8B9] px-12 text-[#274F37] hero is-inview ${ioInView ? 'inview' : ''} border-type-7 `}>
-
-
 			<div className="relative pt-24">
-
 				<div className="decor-wrap ">
 					<div className="decor-top with-extra">
 						<div className="decor-top-left"></div>
@@ -60,6 +59,13 @@ function PostTemplate({ post }) {
 					</div>
 					: null}
 			</div>
+
+			<Pagination
+				hasNextPage={hasNextPage}
+				hasPrevPage={hasPrevPage}
+				prevLink={prevLink}
+				nextLink={nextLink}
+			/>
 		</section>
 	)
 }
