@@ -1,6 +1,7 @@
 import { LoadImage } from '@/components/new/LoadImage'
 import Pagination from './Pagination'
 import Link from 'next/link'
+import Intro from '@/animations/Intro_Framer';
 
 function unEscape(htmlStr: String) {
 	htmlStr = htmlStr?.replace(/&lt;/g, "<");
@@ -45,14 +46,30 @@ export default function PostsTemplate({ posts, hasNextPage, hasPrevPage, prevLin
 
 		return post?.slug ? (
 			<article key={i} className={`${i === 0 ? 'col-span-3 flex max-md:flex-wrap gap-x-10' : 'col-span-3 md:col-span-1'}`}>
-				{image}
-				<div className="md:basis-1/2 flex flex-wrap content-center">
-					{title}
-					{excerpt}
-					<Link href={`/news/${post.slug}`} className="md:basis-1/2 pt-3 uppercase font3 text-[#274F37]">Read More</Link>
+				<Intro delay={i * 50} className={`	
+					overflow-visible
+					
+					[&.not-in-view_.content]:opacity-0
+					[&.not-in-view_.content]:translate-y-[4rem]
+					[&.in-view_.content]:opacity-100
+					[&.in-view_.content]:translate-y-[0%]
+					[&.in-view_.content]:ease-in-out
+					[&.in-view_.content]:duration-500
+			
+				`}>
+					<div className={`${i === 0 ? 'col-span-3 flex max-md:flex-wrap gap-x-10' : 'col-span-3 md:col-span-1'}`}>
+						{image}
+						<div className="md:basis-1/2 flex flex-wrap content-center">
+							{title}
+							{excerpt}
+							<Link href={`/news/${post.slug}`} className="md:basis-1/2 pt-3 uppercase font3 text-[#274F37]">Read More</Link>
 
-				</div>
+						</div>
+					</div>
+
+				</Intro>
 			</article>
+
 		) : false
 	})
 
