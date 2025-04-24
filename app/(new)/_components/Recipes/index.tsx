@@ -1,5 +1,5 @@
 'use client'
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useRef } from 'react'
 import { LoadImage } from '@/components/new/LoadImage'
 import Intro from '@/animations/Intro_Framer'
 import {
@@ -8,6 +8,9 @@ import {
 	DialogClose,
 	DialogTitle
 } from '@/components/shadcn/ui/dialog'
+import { Transition, SwitchTransition } from 'react-transition-group'
+// @ts-ignore
+import anime from 'animejs' 
 
 import { X, CirclePlay } from 'lucide-react'
 
@@ -82,10 +85,36 @@ function Recipes() {
 	const [selectedIndex, setSelectedIndex] = useState<number>(0)
 	const [showLightbox, setShowLightbox] = useState(false)
 
+	const nodeRef = useRef(null)
+
 	const handleLightboxChange = useCallback((open: boolean) => {
 		setShowLightbox(open)
 	}, [])
 
+	// Animation functions
+	const baseDuration = 150
+
+	const fadeIn = () => {
+		anime
+			.timeline()
+			.add({
+				targets: nodeRef.current,
+				opacity: [0, 1],
+				duration: baseDuration,
+				easing: 'cubicBezier(.5,.08,.54,.9)',
+			})
+	}
+
+	const fadeOut = () => {
+		anime
+			.timeline()
+			.add({
+				targets: nodeRef.current,
+				opacity: [1, 0],
+				duration: baseDuration,
+				easing: 'cubicBezier(.5,.08,.54,.9)'
+			})
+	}
 
 	const itemsMap = recipesMockData?.map((node, i) => {
 
@@ -146,42 +175,53 @@ function Recipes() {
 					<div className='grid-12 gap-2'>
 
 						<div className={`span-7 span-12-tablet`}>
-							{selectedIndex !== null && recipesMockData && recipesMockData[selectedIndex]?.img?.url && (
-								<>
-									<div className='group aspect-video relative overflow-hidden rounded-lg gold-border cursor-pointer'
-										onClick={() => setShowLightbox(true)}
-									>
-										<LoadImage
-											src={recipesMockData[selectedIndex].img.url}
-											width={recipesMockData[selectedIndex].img.width}
-											height={recipesMockData[selectedIndex].img.height}
-											alt={recipesMockData[selectedIndex].img.alt || recipesMockData[selectedIndex].name}
-											quality="90"
-											className='rounded-lg [&_img]:!relative group-hover:scale-110 transition-all duration-300'
-										/>
-										<div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
-											<div className='flex items-center justify-center'>
-												<CirclePlay size={128} className='text-2xl text-white scale-110 group-hover:scale-100  transition-all duration-300' />
-											</div>
-										</div>
+							{/* @ts-ignore */}
+							<SwitchTransition>
+							{/* @ts-ignore */}
+								<Transition
+									key={selectedIndex}
+									timeout={baseDuration}
+									appear={true}
+									onEntering={fadeIn}
+									onExiting={fadeOut}
+									nodeRef={nodeRef}
+								>
+									<div ref={nodeRef}>	
+										{selectedIndex !== null && recipesMockData && recipesMockData[selectedIndex]?.img?.url && (
+											<>
+												<div className='group aspect-video relative overflow-hidden rounded-lg gold-border cursor-pointer'
+													onClick={() => setShowLightbox(true)}
+												>
+													<LoadImage
+														src={recipesMockData[selectedIndex].img.url}
+														width={recipesMockData[selectedIndex].img.width}
+														height={recipesMockData[selectedIndex].img.height}
+														alt={recipesMockData[selectedIndex].img.alt || recipesMockData[selectedIndex].name}
+														quality="90"
+														className='rounded-lg [&_img]:!relative group-hover:scale-110 transition-all duration-300'
+													/>
+													<div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
+														<div className='flex items-center justify-center'>
+															<CirclePlay size={128} className='text-2xl text-white scale-110 group-hover:scale-100  transition-all duration-300' />
+														</div>
+													</div>
+												</div>
+												<div className="content-container span-12-tablet span-7 pt-4">
+													<h3 className='uppercase font3 heading'>{recipesMockData[selectedIndex].name}</h3>
+													<p>{recipesMockData[selectedIndex].description}</p>
+												</div>
+											</>
+										)}
 									</div>
-									<div className="content-container span-12-tablet  span-7 pt-4">
-										<h3 className='uppercase font3 heading'>{recipesMockData[selectedIndex].name}</h3>
-										<p>{recipesMockData[selectedIndex].description}</p>
-									</div>
-								</>
-
-							)}
-
+								</Transition>
+							</SwitchTransition>
 						</div>
-						<div className={`main-grid span-12-tablet span-5 rounded-lg padd  `}>
+						<div className={`main-grid span-12-tablet span-5 rounded-lg padd`}>
 							<div className='scroll-container grid-12 max-h-[80vh]'>
 								{itemsMap}
 							</div>
 						</div>
 					</div>
-
-
 				</Intro>
 
 				<Dialog open={showLightbox} onOpenChange={handleLightboxChange}>
