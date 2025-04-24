@@ -70,13 +70,13 @@ function CounterItem({ endValue, label, image, imageAlt }) {
 
 	return (
 		<div className="flex flex-col items-center">
-			<div className="w-44 h-44  overflow-hidden relative mb-4 ">
+			<div className="w-52 h-52  border-2 border-[#707070] relative mb-4 rounded-full overflow-hidden">
 				<LoadImage
 					src={image}
 					width={256}
 					height={256}
 					alt={imageAlt}
-					className="object-cover"
+					className="object-cover "
 				/>
 			</div>
 
@@ -114,7 +114,7 @@ function CounterSection() {
 					<CounterItem
 						endValue={4234882}
 						label={`SANGUICHES \n SERVED`}
-						image="/images/counters/sanguich.png"
+						image="/images/counters/sanguich.jpg"
 						imageAlt="Sandwich served"
 					/>
 				</Intro>
@@ -130,7 +130,7 @@ function CounterSection() {
 					<CounterItem
 						endValue={7234882}
 						label={`CAFECITOS \n SERVED`}
-						image="/images/counters/cafecito.png"
+						image="/images/counters/cafecito.jpg"
 						imageAlt="Cafecito being made"
 					/>
 				</Intro>
@@ -146,7 +146,7 @@ function CounterSection() {
 					<CounterItem
 						endValue={32234882}
 						label={`SHARED \n LAUGHS`}
-						image="/images/counters/laughs.png"
+						image="/images/counters/laughs.jpg"
 						imageAlt="People laughing"
 					/>
 				</Intro>
@@ -162,7 +162,7 @@ function CounterSection() {
 					<CounterItem
 						endValue={32234882}
 						label={`HUGS \n GIVEN`}
-						image="/images/counters/hugs.png"
+						image="/images/counters/hugs.jpg"
 						imageAlt="People hugging"
 					/>
 				</Intro>
