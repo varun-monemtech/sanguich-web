@@ -104,14 +104,23 @@ export default async function MainPage() {
 			)
 		}
 
+		if (section.acf_fc_layout === 'counter') {
+			return (
+				<Counter key={i} {...section} />
+			)
+		}
+
+		if (section.acf_fc_layout === 'recipes') {
+			return (
+				<Recipes key={i} {...section} />
+			)
+		}
+
 	})
 
 	return (
 		<>
 			{Sections ? Sections : null}
-			<Recipes />
-			<Counter />
-
 		</>
 	)
 }
