@@ -117,13 +117,13 @@ function AddressNew(props) {
 							</div>
 							<div className={`span-7 span-12-tablet ${mobileView === 'map' ? 'mobile-visible' : 'mobile-hidden'}`}>
 								<div className='aspect-square overflow-hidden rounded-lg gold-border'>
-									{/* <GMap 
+									<GMap 
                   allVenues={props.items} 
                   hoveredIndex={hoveredIndex} 
                   setHoveredIndex={setHoveredIndex}
                   selectedIndex={selectedIndex}
                   setSelectedIndex={setSelectedIndex}
-                /> */}
+                />
 								</div>
 							</div>
 						</div>
