@@ -110,7 +110,8 @@ function Menu(props) {
 						width={image.width}
 						height={image.height}
 						alt={image.alt}
-						quality={75}
+						// quality={75}
+						className='lg:[&_img]:relative aspect-[3/3.5]'
 					/>
 					: null
 			)
@@ -132,7 +133,7 @@ function Menu(props) {
 					)
 				} else {
 					return (
-						<div key={`menu-items-key-a-${i}`} className={`menu-item cursor-pointer ${numberOfItems > 5 ? 'col-2' : ''} ${currentImage === i ? 'current' : null}`} onMouseEnter={() => setCurrentImage(i)} onClick={() => setCurrentImage(i)} onKeyDown={() => setCurrentImage(i)} role="button" tabIndex={0}>
+						<div key={`menu-items-key-a-${i}`} className={`menu-item  cursor-pointer ${numberOfItems > 5 ? 'col-2' : ''} ${currentImage === i ? 'current' : null}`} onMouseEnter={() => setCurrentImage(i)} onClick={() => setCurrentImage(i)} onKeyDown={() => setCurrentImage(i)} role="button" tabIndex={0}>
 							<div className="description">
 								<h4 className="uppercase">{item.name}</h4>
 								<p>{item.description}</p>
@@ -150,7 +151,7 @@ function Menu(props) {
 										onExiting={fadeOutY}
 										nodeRef={nodeRef}
 									>
-										<div ref={nodeRef} className="image">
+										<div ref={nodeRef} className="image ">
 											{ImageCurrent}
 										</div>
 									</Transition>
@@ -200,8 +201,8 @@ function Menu(props) {
 						<div className='content-box'>
 							<div className='flex max-lg:flex-col animated'>
 
-								<div className="menu-general">
-									<h2 className="menu-title text-[4.5em] !text-[#274F37] text-center m-0 font2"><span className="capitalize">M</span>enu</h2>
+								<div className="menu-general flex flex-wrap justify-center content-start">
+									<h2 className="menu-title text-[4.5em] !text-[#274F37] text-center m-0 lg:pt-8 font2"><span className="capitalize">M</span>enu</h2>
 									<div
 										className={`arrow-prev cursor-pointer ${currentTabTab === 0 ? 'opacity-0 cursor-auto' : null}`}
 										onClick={() => {
