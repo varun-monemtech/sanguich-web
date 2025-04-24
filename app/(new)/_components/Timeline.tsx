@@ -20,7 +20,7 @@ const timelineData = [
 		]
 	},
 	{
-		image: "/images/timeline/1.jpg",
+		image: "/images/timeline/2.jpg",
 		alt: "Challenges",
 		events: [
 			"Their daughter London was born Oct 2.",
@@ -30,7 +30,7 @@ const timelineData = [
 		]
 	},
 	{
-		image: "/images/timeline/2.jpg",
+		image: "/images/timeline/3.jpg",
 		alt: "Houses",
 		events: [
 			"Rosa and Daniel designed and begin the process of transforming our name.",
@@ -43,22 +43,13 @@ const timelineData = [
 		]
 	},
 	{
-		image: "/images/timeline/2.jpg",
+		image: "/images/timeline/4.jpg",
 		alt: "Sanguich Shop",
 		events: [
 			"We launch Sanguich at CGAF, Feb 1. Immediately successful. One of the fastest selling vendors on record.",
 			"We were invited to participate in the Carnival on Alhambra two weeks later. Carnival we even a greater success.",
 			"We were invited to participate in Calle Ocho's Cubano Week. We win.",
 			"Sept 28th we open our custom shipping container on Calle Ocho."
-		]
-	},
-	{
-		image: "/images/timeline/1.jpg",
-		alt: "Sanguich Interior",
-		events: [
-			"Nov 3rd we have a grand opening party. Largest crowds ever seen for a restaurant in Little Havana.",
-			"Nov 28th Joe Carollo began his attack on our business and family.",
-			"Joe Carollo is successful in his attempt to close us down. He issued the first injunction to impound a small business."
 		]
 	},
 	{
@@ -69,7 +60,7 @@ const timelineData = [
 		]
 	},
 	{
-		image: "/images/timeline/1.jpg",
+		image: "/images/timeline/2.jpg",
 		alt: "Challenges",
 		events: [
 			"Their daughter London was born Oct 2.",
@@ -79,7 +70,7 @@ const timelineData = [
 		]
 	},
 	{
-		image: "/images/timeline/2.jpg",
+		image: "/images/timeline/3.jpg",
 		alt: "Houses",
 		events: [
 			"Rosa and Daniel designed and begin the process of transforming our name.",
@@ -92,7 +83,7 @@ const timelineData = [
 		]
 	},
 	{
-		image: "/images/timeline/2.jpg",
+		image: "/images/timeline/4.jpg",
 		alt: "Sanguich Shop",
 		events: [
 			"We launch Sanguich at CGAF, Feb 1. Immediately successful. One of the fastest selling vendors on record.",
@@ -101,15 +92,6 @@ const timelineData = [
 			"Sept 28th we open our custom shipping container on Calle Ocho."
 		]
 	},
-	{
-		image: "/images/timeline/1.jpg",
-		alt: "Sanguich Interior",
-		events: [
-			"Nov 3rd we have a grand opening party. Largest crowds ever seen for a restaurant in Little Havana.",
-			"Nov 28th Joe Carollo began his attack on our business and family.",
-			"Joe Carollo is successful in his attempt to close us down. He issued the first injunction to impound a small business."
-		]
-	}
 ];
 
 function Timeline() {

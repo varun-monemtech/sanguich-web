@@ -64,7 +64,7 @@ function HeroNew() {
 
 			<div className="decor-wrap">
 				<div className="decor-top with-extra">
-					<div className="decor-top-left"></div>
+					<div className="decor-top-left before:hidden"></div>
 					<div className="decor-top-center with-extra">
 						<div className="decor-top-center-extra-left"></div>
 						<div className="decor-top-center-extra-right"></div>

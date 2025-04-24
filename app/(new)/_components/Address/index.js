@@ -23,7 +23,7 @@ function AddressNew(props) {
 		return (
 			<div
 				key={i}
-				className={`span-12 span-12-tablet grid-12 tile gap-1 grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+				className={`span-12 flex gap-5 tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 				onMouseEnter={() => setHoveredIndex(i)}
 				onMouseLeave={() => setHoveredIndex(null)}
 				onClick={() => setSelectedIndex(i)}
@@ -56,7 +56,12 @@ function AddressNew(props) {
 					</p>
 					<p className="uppercase marg-bottom-off">{node.hours}</p>
 					<div className='span-12 flex pt-2'>
-						<MultiButton links={node.links} />
+						{/* <MultiButton links={node.links} /> */}
+						{node.links?.[1] && 
+							<a href={node.links?.[1].url} target='_blank' className='hover:!border-[#3e805f] border !border-white border-solid rounded-lg  px-4 py-2  text-sm'>
+								<span className='uppercase  text-xs leading-[1] vertical-bottom'>{node.links?.[1].title}</span>
+							</a>
+						}
 					</div>
 				</div>
 
@@ -105,12 +110,12 @@ function AddressNew(props) {
 						</div>
 
 						<div className='grid-12 gap-2'>
-							<div className={`main-grid span-12-tablet span-6 rounded-lg padd aspect-square aspect-auto-mobile-off ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
-								<div className='scroll-container grid-12 aspect-auto-mobile-off'>
+							<div className={`main-grid span-12-tablet span-5 rounded-lg padd  ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
+								<div className='scroll-container grid-12 '>
 									{itemsMap}
 								</div>
 							</div>
-							<div className={`span-6 span-12-tablet ${mobileView === 'map' ? 'mobile-visible' : 'mobile-hidden'}`}>
+							<div className={`span-7 span-12-tablet ${mobileView === 'map' ? 'mobile-visible' : 'mobile-hidden'}`}>
 								<div className='aspect-square overflow-hidden rounded-lg gold-border'>
 									{/* <GMap 
                   allVenues={props.items} 

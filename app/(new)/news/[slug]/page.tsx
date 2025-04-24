@@ -87,11 +87,11 @@ export default async function MainPage(props: any) {
 	const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null
 
 	return (
-		<PostTemplate post={post}
-			hasNextPage={!!nextPost}
-			hasPrevPage={!!prevPost}
-			prevLink={`/news/${prevPost?.slug}`}
-			nextLink={`/news/${nextPost?.slug}`}
-		/>
+			<PostTemplate post={post}
+				hasNextPage={!!nextPost}
+				hasPrevPage={!!prevPost}
+				prevLink={`/news/${prevPost?.slug}`}
+				nextLink={`/news/${nextPost?.slug}`}
+			/>
 	)
 }

@@ -6,7 +6,8 @@ import Intro from '@/animations/Intro_Framer'
 function PostTemplate({ post, hasNextPage, hasPrevPage, prevLink, nextLink }: { post: any, hasNextPage: boolean, hasPrevPage: boolean, prevLink: string, nextLink: string }) {
 
 	return (
-		<section  id="post-template-new" className={`bg-[#D0C8B9] px-12 text-[#274F37] hero`}>
+		<section id="post-template-new" className={`bg-[#D0C8B9] px-10 text-[#274F37] hero`}>
+
 			<Intro className={`	
 					overflow-visible
 					
@@ -18,27 +19,14 @@ function PostTemplate({ post, hasNextPage, hasPrevPage, prevLink, nextLink }: { 
 					[&.in-view_.content]:duration-500
 			
 				`}>
-				<div className="relative pt-24">
-					<div className="decor-wrap ">
-						<div className="decor-top with-extra">
-							<div className="decor-top-left"></div>
-							<div className="decor-top-center with-extra">
-								<div className="decor-top-center-extra-left"></div>
-								<div className="decor-top-center-extra-right"></div>
-							</div>
-							<div className="decor-top-right"></div>
-						</div>
-						<div className="decor-center">
-							<div className="decor-center-left"></div>
-							<div className="decor-center-right"></div>
-						</div>
-					</div>
+				<div className="relative ">
+	
 					<LoadImage
 						src={post?.acf?.hero?.url}
 						width={post?.acf?.hero?.width}
 						height={post?.acf?.hero?.height}
 						alt={post?.acf?.hero?.alt}
-						className={'[&_img]:relative aspect-[21/5] rounded-[2rem]'}
+						className={'[&_img]:relative aspect-[3.62/1] rounded-[2rem]'}
 
 					/>
 				</div>
@@ -73,7 +61,7 @@ function PostTemplate({ post, hasNextPage, hasPrevPage, prevLink, nextLink }: { 
 								width={post?.acf?.image?.width}
 								height={post?.acf?.image?.height}
 								alt={post?.acf?.image?.alt}
-								className={'[&_img]:relative aspect-[21/8] my-10 rounded-[2rem]'}
+								className={'[&_img]:relative aspect-[3.62/1] my-10 rounded-[2rem]'}
 							/>
 						</div>
 						: null}

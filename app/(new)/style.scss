@@ -200,3 +200,9 @@
 	background: url(../../images/arrows/arrow-right-new.png) no-repeat scroll center transparent;
 	background-size: contain;
 }
+
+
+.filter-green {
+	filter: brightness(0) saturate(100%) invert(25%) sepia(6%) saturate(3239%) hue-rotate(91deg) brightness(98%) contrast(92%);
+
+}

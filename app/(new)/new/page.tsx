@@ -16,7 +16,6 @@ import ContextProvider from '@/provider/ContextProvider'
 import { Metadata } from 'next'
 import Hero from '../_components/Hero'
 import Recipes from '../_components/Recipes'
-import { Fragment } from 'react'
 
 async function getPage() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/pages/5',
