@@ -59,13 +59,13 @@ function SeenOn(props: any) {
 	return (
 		<>
 			{classes ?
-				<section id={`section-${anchor}`} className={`content c4 is-inview ${classes}`}>
+				<section id={`section-${anchor}`} className={`frs-grid content c4 is-inview ${classes}`}>
 
 					{anchor ?
 						<div id={anchor} className="anchor"></div>
 						: null}
 
-					<Intro delay={50} className="span-12 px-24">
+					<Intro delay={50} className="span-12 ">
 						<div className='flex justify-center py-2 items-center text-[3em] relative border-type-7 '>
 							<h2 className="px-[0.1em] py-0 !m-0 z-[1001] c4 font2 !text-[#dcba7b]">As Seen On</h2>
 							<div className="decor-wrap !p-0 z-[-1] justify-center">

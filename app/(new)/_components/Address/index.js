@@ -74,7 +74,7 @@ function AddressNew(props) {
 	return (
 		<>
 			{classes ?
-				<section id={`section-${anchor}-new`} style={{ zIndex: 101 }} className={`content c4  border-type-7  ${classes}  `}>
+				<section id={`section-${anchor}-new`} style={{ zIndex: 101 }} className={`frs-grid content c4  border-type-7  ${classes}  `}>
 
 					{anchor ?
 						<div id={anchor} className="anchor"></div>

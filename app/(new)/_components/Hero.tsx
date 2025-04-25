@@ -58,7 +58,7 @@ function HeroNew() {
 	return (
 		<section
 			id="section-hero-new"
-			className="relative pt-32 border-type-1 is-inview inview"
+			className="frs-grid frs-grid-ultrawide relative pt-32 border-type-1 is-inview inview overflow-x-clip"
 			ref={containerRef}
 		>
 

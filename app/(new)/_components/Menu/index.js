@@ -192,7 +192,7 @@ function Menu(props) {
 	return (
 		<>
 			{anchor ?
-				<section id={`section-${anchor}`} className={`bg-[#D0C8B9]  border-type-8 ${classes}`}>
+				<section id={`section-${anchor}`} className={`frs-grid frs-grid-ultrawide bg-[#D0C8B9]  border-type-8 ${classes}`}>
 					<Intro delay={50}>
 						{anchor ?
 							<div id={anchor} className="anchor"></div>

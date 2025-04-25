@@ -14,7 +14,7 @@ function Catering(props) {
 	return (
 		<>
 			{classes ?
-				<section id={`section-${anchor}`} className={`content c4   ${classes} `}>
+				<section id={`section-${anchor}`} className={`frs-grid frs-grid-ultrawide content c4   ${classes} `}>
 					<Intro delay={50}>
 						<div className='grid-12'>
 							{anchor ?

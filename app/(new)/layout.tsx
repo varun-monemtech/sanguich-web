@@ -72,7 +72,7 @@ export default async function RootLayout({
 			</head>
 
 
-			<body className={``}>
+			<body className={`frs-grid`}>
 
 				<div id="portal-dialog"></div>
 
@@ -83,7 +83,7 @@ export default async function RootLayout({
 							<Header />
 						</NaviContextProvider>
 
-						<main className="frs-grid frs-grid-full">
+						<main className="frs-grid-full">
 							<NaviContextProvider location="">
 								{children}
 							</NaviContextProvider>

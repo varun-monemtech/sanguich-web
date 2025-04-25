@@ -15,8 +15,8 @@ function OurStory(props) {
   return (
     <>
       {classes ?
-        <section ref={io} id={`section-${anchor}`} className={`content c5 grid-12 is-inview ${ioInView ? 'inview' : ''} ${classes}`}>
-
+        <section ref={io} id={`section-${anchor}`} className={`frs-grid content c5 ${ioInView ? 'inview' : ''} ${classes}`}>
+					<div className={`frs-grid  grid-12 is-inview `}>
           {anchor ?
             <div id={anchor} className="anchor"></div>
             : null}
@@ -38,7 +38,7 @@ function OurStory(props) {
             </div>
 
           </div>
-
+					</div>
         </section>
         : null}
     </>

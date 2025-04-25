@@ -119,8 +119,6 @@ export default async function MainPage() {
 	})
 
 	return (
-		<>
-			{Sections ? Sections : null}
-		</>
+			Sections ? Sections : null
 	)
 }

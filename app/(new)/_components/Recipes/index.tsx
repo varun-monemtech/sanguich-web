@@ -154,11 +154,11 @@ function Recipes() {
 
 	return (
 		<>
-			<section id={`section-recipes-new`} style={{ zIndex: 101 }} className={`content c5  border-type-7 is-inview   `}>
+			<section id={`section-recipes-new`} style={{ zIndex: 101 }} className={`frs-grid content c5  border-type-7 is-inview   `}>
 				<Intro delay={50}>
 					<div className='heading-section flex justify-center items-center text-[3em] relative'>
 						<h2 className="text-[#DCBA7B] m-0 px-[0.1em] py-0 c5 font2 z-[1001]">Recipes</h2>
-						<div className="decor-wrap z-[-1] justify-center p-0">
+						<div className="decor-wrap z-[-1] justify-center !p-0">
 							<div className="decor-top with-extra">
 								<div className="decor-top-left"></div>
 								<div className="decor-top-center with-extra">

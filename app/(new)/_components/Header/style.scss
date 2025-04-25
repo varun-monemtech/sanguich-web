@@ -87,6 +87,10 @@ header.master-header {
 		top: 6em;
 		right: 6em;
 		left: auto;
+		.master-hamburger-container{
+			display: flex;
+			justify-content: end;
+		}
 	}
 }
 

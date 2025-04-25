@@ -25,7 +25,7 @@ function ACFShop(props) {
 
 	return (
 		<>
-			<section id={`section-${anchor}`} className={`content shop-featured border-type-7 c4   ${classes} `}>
+			<section id={`section-${anchor}`} className={`frs-grid content shop-featured border-type-7 c4   ${classes} `}>
 				<Intro delay={50}>
 					{anchor ?
 						<div id={anchor} className="anchor"></div>

@@ -11,7 +11,7 @@ function Hola(props) {
 	return (
 		<>
 			{classes ?
-				<section id={`section-${anchor}`} className={`c4 relative aspect-video  `}>
+				<section id={`section-${anchor}`} className={`frs-grid frs-grid-ultrawide c5 relative aspect-video  `}>
 
 					{anchor ?
 						<div id={anchor} className="anchor"></div>

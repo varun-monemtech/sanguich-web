@@ -99,7 +99,7 @@ function CounterSection() {
 	return (
 		<section
 			id="section-counter"
-			className="bg-[#E1B875] py-16  md:py-12 px-4 relative"
+			className="frs-grid bg-[#E1B875] py-16 md:py-12 px-4 relative"
 		>
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 				<Intro delay={50} className='

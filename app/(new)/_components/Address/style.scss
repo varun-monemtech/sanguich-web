@@ -1,8 +1,7 @@
 #section-address-new {
-  // padding: 1.25em 5em 2em;
-	padding: 1.7em;
+	padding: 1.7em 0;
 	@media screen and (max-width: 1024px) {
-		padding: 1.25em 1em 2em;
+		padding: 1.25em 0 2em;
 		.aspect-auto-mobile-off {
 			aspect-ratio: auto !important;
 		}

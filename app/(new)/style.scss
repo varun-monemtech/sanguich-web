@@ -212,14 +212,15 @@
 ========================================================================== */
 
 .frs-grid {
-  --gap: clamp(1rem, 6vw, 3.6rem);
-  --tighter: min(86rem, 100% - var(--gap) * 2);
-  --tight: minmax(0, 2rem);
-  --content: minmax(0, 3rem);
-  --wide: minmax(0, 2rem);
-  --wider: minmax(0, 5rem);
-  --ultrawide: minmax(0, 1fr);
-  --full: minmax(var(--gap), 1fr);
+	--gap: clamp(1rem, 6vw, 3rem);
+	--tighter: min(86rem, 100% - var(--gap) * 2);
+	--tight: minmax(0, 2rem);
+	--content: minmax(0, 2rem);
+	--wide: minmax(0, 2rem);
+	--wider: minmax(var(--gap), var(--gap)) ;
+	--ultrawide: minmax(0, var(--gap));
+	--full: minmax(0, 1fr);
+
 
   display: grid !important;
   grid-template-columns:
