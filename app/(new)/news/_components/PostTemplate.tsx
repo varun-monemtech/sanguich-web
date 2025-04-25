@@ -6,7 +6,7 @@ import Intro from '@/animations/Intro_Framer'
 function PostTemplate({ post, hasNextPage, hasPrevPage, prevLink, nextLink }: { post: any, hasNextPage: boolean, hasPrevPage: boolean, prevLink: string, nextLink: string }) {
 
 	return (
-		<section id="post-template-new" className={`bg-[#D0C8B9] px-10 text-[#274F37] hero`}>
+		<section id="post-template-new" className={` text-[#274F37] hero`}>
 
 			<Intro className={`	
 					overflow-visible

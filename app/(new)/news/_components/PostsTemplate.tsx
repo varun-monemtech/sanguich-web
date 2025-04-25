@@ -75,7 +75,7 @@ export default function PostsTemplate({ posts, hasNextPage, hasPrevPage, prevLin
 
 
 	return (
-		<div className="px-10 bg-[#D0C8B9]">
+		<>
 
 			<div className="posts-wrap grid grid-cols-3 gap-10 text-[#274F37]">
 				{postsMap}
@@ -87,6 +87,6 @@ export default function PostsTemplate({ posts, hasNextPage, hasPrevPage, prevLin
 				prevLink={prevLink}
 				nextLink={nextLink}
 			/>
-		</div>
+		</>
 	)
 }
