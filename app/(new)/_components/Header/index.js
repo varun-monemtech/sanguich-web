@@ -130,7 +130,7 @@ function Header(props) {
 				unmountOnExit
 				nodeRef={nodeRef1}
 			>
-				<header ref={nodeRef1} className={' master-header border-type-1 skip-animation c5'}>
+				<header ref={nodeRef1} className={'frs-grid-full master-header border-type-1 skip-animation c5'}>
 			
 					<div className="decor-wrap">
 						<div className="decor-top with-extra">
@@ -154,7 +154,7 @@ function Header(props) {
 							<div className="decor-bottom-right"></div>
 						</div>
 					</div>
-					
+					<div className='frs-grid frs-grid-wider h-full'>
 					<div className={`navi-animator`}>
 					
 						<div className="navi-wrap">
@@ -164,6 +164,7 @@ function Header(props) {
 						<SocialIcons />
 						<Hamburger />
 
+					</div>
 					</div>
 				</header>
 			</Transition>
@@ -180,7 +181,7 @@ function Header(props) {
 				nodeRef={nodeRef2}
 			>
 				<div ref={nodeRef2} className={`frs-grid-full header-bar-new border rounded-b-[37px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.16)] c5 border-[#DCBA7B] ${naviContext.windowSize?.mobile ? 'onmobile' : ''} ${naviContext.isHamburgerActive ? 'open inview' : ''}`}>
-					<div className='frs-grid frs-grid-ultrawide '>
+					<div className='frs-grid  '>
 					<div className={`regular  ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
 						{naviContext.windowSize?.mobile ?
 							<Hamburger />

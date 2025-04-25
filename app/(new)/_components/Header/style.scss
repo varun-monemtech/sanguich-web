@@ -117,7 +117,7 @@ header.master-header {
 	}
 
 	&.onmobile {
-		position: sticky;
+		// position: sticky;
 		display: flex;
 		flex-direction: column;
 
@@ -134,7 +134,7 @@ header.master-header {
 		justify-content: space-between;
 
 		&.onmobile {
-			padding: .25em 1em;
+			padding: .25em 0em;
 			.master-hamburger {
 				position: relative;
 			}
@@ -144,7 +144,6 @@ header.master-header {
 			display: flex;
 			align-items: center;
       padding: 1.5em 0;
-			margin-right: 5em;
 			margin-left: auto;
 
 			.navi-primary {
@@ -236,7 +235,7 @@ header.master-header {
 	}
 
 	.master-logo {
-		margin: 0 0 0 2.5em;
+		margin: 0;
 		padding: .5em 0;
 	}
 }

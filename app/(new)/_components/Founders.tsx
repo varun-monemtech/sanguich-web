@@ -24,7 +24,7 @@ function Founders() {
 					</div>
 				</div>
 				<div className='frs-grid'>
-				<div className="content-wrapper py-12 md:py-16  lg:py-20 ">
+				<div className="content-wrapper py-12 px-8 md:py-16 md:px-12 lg:py-20 lg:px-16">
 					<div className="mx-auto max-w-7xl">
 						<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 							<div className="order-2 lg:order-1">

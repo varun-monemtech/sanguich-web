@@ -100,11 +100,11 @@ function Timeline() {
 	return (
 		<section id="section-timeline" className="frs-grid frs-grid-ultrawide  bg-[#274F37] py-2 pb-10 relative border-type-7 ">
 			<Intro delay={50}>
-			<div className="mx-auto px-4">
-
+			<div className="">
+				<div className='frs-grid'>
 				<div className='flex justify-center items-center text-[3em] relative'>
 					<h2 className="title !bg-[#274F37] z-[1001] text-[#EFE7D3] font2 !m-0 px-[0.25em] py-[0.15em]">Our Timeline</h2>
-					<div className="decor-wrap">
+					<div className="decor-wrap !px-0">
 						<div className="decor-top with-extra">
 							<div className="decor-top-left"></div>
 							<div className="decor-top-center with-extra">
@@ -116,8 +116,9 @@ function Timeline() {
 						</div>
 					</div>
 				</div>
+				</div>
 
-				<div className="timeline-swiper-container md:px-8">
+				<div className="timeline-swiper-container pr-5">
 					<Swiper
 						ref={swiperRef}
 						modules={[Mousewheel, Scrollbar, FreeMode]}
