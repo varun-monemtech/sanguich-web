@@ -2,9 +2,9 @@
 
 import Menu from '../_components/Menu'
 import ACFOrder from '@/components/ACF/Sanguich/Order'
-import ACFSeenOn from '@/components/ACF/Sanguich/SeenOn'
+import ACFSeenOn from '../_components/SeenOn'
 import ProductGrid from '../_components/ProductGrid'
-import ACFOurStory from '@/components/ACF/Sanguich/OurStory'
+import ACFOurStory from '../_components/OurStory'
 import ACFHola from '../_components/Hola'
 import ACFAddress from '../_components/Address'
 import ACFCatering from '../_components/Catering'
