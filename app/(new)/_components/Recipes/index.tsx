@@ -127,13 +127,14 @@ function Recipes() {
 				onMouseLeave={() => setHoveredIndex(null)}
 				onClick={() => setSelectedIndex(i)}
 			>
-				<div className="span-12-tablet span-5 relative aspect-video rounded-lg gold-border overflow-hidden">
+				<div className="span-12-tablet span-5 relative  overflow-hidden">
 					{node.img?.url &&
 						<LoadImage
 							src={node.img.url}
 							width={node.img.width}
 							height={node.img.height}
 							alt={node.img.alt}
+							className='[&_img]:relative aspect-video rounded-lg gold-border'
 						/>
 					}
 				</div>

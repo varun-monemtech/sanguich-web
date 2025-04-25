@@ -29,22 +29,21 @@ function AddressNew(props) {
 				onClick={() => setSelectedIndex(i)}
 			>
 
-				<div className="span-12-tablet span-5 relative aspect-video rounded-lg gold-border overflow-hidden">
+				<div className="span-12-tablet span-5 relative  overflow-hidden">
 					{image?.url &&
 						<LoadImage
 							src={image.url}
 							width={image.width}
 							height={image.height}
 							alt={image.alt}
-							style={{ objectFit: "cover" }}
 							quality="90"
-							className=''
+							className='[&_img]:relative rounded-lg gold-border aspect-video'
 						/>
 					}
 					{/* {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null} */}
 				</div>
-				<div className="content-container span-12-tablet mt-2  span-7">
-					<h3 className='uppercase font3 heading pb-1'>{node.name}</h3>
+				<div className="content-container span-12-tablet  span-7">
+					<h3 className='uppercase font3 heading pb-1 !text-md'>{node.name}</h3>
 					<p className={`uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
 						{node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className=' block'>{node.address}</span>}
 					</p>
@@ -58,7 +57,7 @@ function AddressNew(props) {
 					<div className='span-12 flex pt-2'>
 						{/* <MultiButton links={node.links} /> */}
 						{node.links?.[1] && 
-							<a href={node.links?.[1].url} target='_blank' className='hover:!border-[#3e805f] border !border-white border-solid rounded-lg  px-4 py-2  text-sm'>
+							<a href={node.links?.[1].url} target='_blank' className='hover:!border-[#3e805f] border !border-white border-solid rounded-lg  px-3 py-1  text-sm'>
 								<span className='uppercase  text-xs leading-[1] vertical-bottom'>{node.links?.[1].title}</span>
 							</a>
 						}
