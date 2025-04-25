@@ -98,7 +98,7 @@ function Timeline() {
 	const swiperRef = useRef(null);
 
 	return (
-		<section id="section-timeline" className="bg-[#274F37] py-2 pb-10 relative border-type-7 ">
+		<section id="section-timeline" className="frs-grid frs-grid-ultrawide  bg-[#274F37] py-2 pb-10 relative border-type-7 ">
 			<Intro delay={50}>
 			<div className="mx-auto px-4">
 

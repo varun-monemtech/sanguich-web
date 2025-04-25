@@ -13,7 +13,7 @@ export default async function AboutPage() {
 
 	return (
 		<>
-			<section id={`section-about-hero`} className={`c4 is-inview`}>
+			<section id={`section-about-hero`} className={`frs-grid-ultrawide c5 is-inview`}>
 				<div id={'about-hero'} className="anchor"></div>
 				<VideoComponent
 					url={'/static/796867dcdbbddbad0c13d54714d5d9d9/SANGUICH-Interview-1.mp4'}

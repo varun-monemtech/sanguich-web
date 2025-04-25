@@ -4,9 +4,9 @@ import { LoadImage } from '@/components/new/LoadImage'
 function Franchising() {
 
 	return (
-		<section id={`section-franchising`} className={`bg-[#EFE7D3] border-type-10`}>
+		<section id={`section-franchising`} className={`frs-grid bg-[#EFE7D3] border-type-10`}>
 			<Intro delay={50}>
-				<div className="decor-wrap">
+				<div className="decor-wrap !px-[0]">
 					<div className="decor-top">
 						<div className="decor-top-left"></div>
 						<div className="decor-top-center"></div>

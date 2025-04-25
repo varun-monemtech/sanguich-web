@@ -3,7 +3,7 @@ import { LoadImage } from '@/components/new/LoadImage'
 function 	Purpose() {
 
 	return (
-		<section id={`section-purpose`} className={`bg-[#EFE7D3]`}>
+		<section id={`section-purpose`} className={`frs-grid frs-grid-ultrawide bg-[#EFE7D3]`}>
 			<div className="aspect-video overflow-hidden">
 				<LoadImage
 					src="/purpose.jpg"
