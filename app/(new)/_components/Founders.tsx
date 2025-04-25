@@ -4,9 +4,9 @@ import { LoadImage } from '@/components/new/LoadImage'
 function Founders() {
 
 	return (
-		<section id={`section-founder`} className={`frs-grid bg-[#EFE7D3] border-type-10`}>
+		<section id={`section-founder`} className={`frs-grid-full bg-[#EFE7D3] border-type-10`}>
 			<Intro delay={50}>
-				<div className="decor-wrap !px-[0] z-[-1]">
+				<div className="decor-wrap  !z-[-1]">
 					<div className="decor-top">
 						<div className="decor-top-left"></div>
 						<div className="decor-top-center"></div>
@@ -23,6 +23,7 @@ function Founders() {
 						<div className="decor-bottom-right"></div>
 					</div>
 				</div>
+				<div className='frs-grid'>
 				<div className="content-wrapper py-12 md:py-16  lg:py-20 ">
 					<div className="mx-auto max-w-7xl">
 						<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -58,6 +59,7 @@ function Founders() {
 							</div>
 						</div>
 					</div>
+				</div>
 				</div>
 			</Intro>
 

@@ -58,7 +58,7 @@ function HeroNew() {
 	return (
 		<section
 			id="section-hero-new"
-			className="frs-grid frs-grid-ultrawide relative pt-32 border-type-1 is-inview inview overflow-x-clip"
+			className="frs-grid-full relative pt-32 border-type-1 is-inview inview overflow-x-clip"
 			ref={containerRef}
 		>
 
@@ -84,7 +84,7 @@ function HeroNew() {
 					<div className="decor-bottom-right"></div>
 				</div>
 			</div>
-
+<div className='frs-grid'>
 			<motion.div
 				className="max-w-[20em]  lg:max-w-4xl  mx-auto w-full rounded-sm z-[200] relative"
 				initial={{ opacity: 0, translateY: 100 }}
@@ -201,6 +201,7 @@ function HeroNew() {
 					/>
 				</div>
 			</motion.div>
+			</div>
 		</section>
 	)
 }
