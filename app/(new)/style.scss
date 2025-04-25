@@ -206,3 +206,83 @@
 	filter: brightness(0) saturate(100%) invert(25%) sepia(6%) saturate(3239%) hue-rotate(91deg) brightness(98%) contrast(92%);
 
 }
+
+/* ==========================================================================
+	Grid
+========================================================================== */
+
+.frs-grid {
+  --gap: clamp(1rem, 6vw, 3.6rem);
+  --tighter: min(86rem, 100% - var(--gap) * 2);
+  --tight: minmax(0, 2rem);
+  --content: minmax(0, 3rem);
+  --wide: minmax(0, 2rem);
+  --wider: minmax(0, 5rem);
+  --ultrawide: minmax(0, 1fr);
+  --full: minmax(var(--gap), 1fr);
+
+  display: grid !important;
+  grid-template-columns:
+    [full-start] var(--full)
+    [ultrawide-start] var(--ultrawide)
+    [wider-start] var(--wider)
+    [wide-start] var(--wide)
+    [content-start] var(--content)
+    [tight-start] var(--tight)
+    [tighter-start] var(--tighter) [tighter-end]
+    var(--tight) [tight-end]
+    var(--content) [content-end]
+    var(--wide) [wide-end]
+    var(--wider) [wider-end]
+    var(--ultrawide) [ultrawide-end]
+    var(--full) [full-end];
+
+	& > :not(.absolute) {
+		grid-column: content;
+	}
+	&.frs-grid-tighter > * {
+		grid-column: tighter;
+	}
+	&.frs-grid-tight > * {
+		grid-column: tight;
+	}
+	&.frs-grid-wide > * {
+		grid-column: wide;
+	}
+	&.frs-grid-wider > * {
+		grid-column: wider;
+	}
+	&.frs-grid-ultrawide > * {
+		grid-column: ultrawide;
+	}
+	&.frs-grid-full > * {
+		grid-column: full;
+	}
+
+	.frs-grid-tighter {
+		grid-column: tighter;
+	}
+	.frs-grid-tight {
+		grid-column: tight;
+	}
+	.frs-grid-wide {
+		grid-column: wide;
+	}
+	.frs-grid-wider {
+		grid-column: wider;
+	}
+	.frs-grid-ultrawide {
+		grid-column: ultrawide;
+	}
+	.frs-grid-full {
+		grid-column: full;
+
+		&.frs-grid {
+			display: grid;
+			grid-template-columns: inherit;
+			& > *:not(.frs-grid-full) {
+				grid-column: content;
+			}
+		}
+	}
+}

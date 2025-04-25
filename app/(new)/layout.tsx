@@ -59,10 +59,18 @@ export default async function RootLayout({
 
 	return (
 		<html lang="en">
-
+			<head>
 			<meta httpEquiv='x-ua-compatible' content='ie=edge' />
 			<meta name="theme-color" content="#151515" />
 			<link rel="icon" href="/favicon.ico" />
+
+			<style>{`
+          html {
+            font-size: clamp(16px,1vw,25px);
+          }
+        `}</style>
+			</head>
+
 
 			<body className={``}>
 
@@ -75,7 +83,7 @@ export default async function RootLayout({
 							<Header />
 						</NaviContextProvider>
 
-						<main className="">
+						<main className="frs-grid frs-grid-full">
 							<NaviContextProvider location="">
 								{children}
 							</NaviContextProvider>
