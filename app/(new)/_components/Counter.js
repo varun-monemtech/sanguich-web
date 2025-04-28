@@ -70,7 +70,7 @@ function CounterItem({ endValue, label, image, imageAlt }) {
 
 	return (
 		<div className="flex flex-col items-center">
-			<div className="w-52 h-52  border-2 border-[#707070] relative mb-4 rounded-full overflow-hidden">
+			<div className="w-32 h-32 md:w-52 md:h-52  border-2 border-[#707070] relative mb-2 md:mb-4 rounded-full overflow-hidden">
 				<LoadImage
 					src={image}
 					width={256}
@@ -80,14 +80,14 @@ function CounterItem({ endValue, label, image, imageAlt }) {
 				/>
 			</div>
 
-			<div className="min-h-[3rem]">
+			<div className="md:min-h-[3rem]">
 				<NumberDisplay
 					number={endValue}
-					className="text-7xl font2 text-[#222121] text-center overflow-hidden"
+					className="text-3xl md:text-7xl font2 text-[#222121] text-center overflow-hidden"
 				/>
 			</div>
 
-			<p className="text-lg font1 uppercase text-[#274F37] whitespace-pre-line text-center">
+			<p className="text-md md:text-lg font1 uppercase text-[#274F37] whitespace-pre-line text-center">
 				{label}
 			</p>
 		</div>
@@ -99,9 +99,9 @@ function CounterSection() {
 	return (
 		<section
 			id="section-counter"
-			className="frs-grid bg-[#E1B875] py-16 md:py-12 px-4 relative"
+			className="frs-grid bg-[#E1B875] py-16 md:py-12 md:px-4 relative"
 		>
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+			<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12">
 				<Intro delay={50} className='
 
 					[&.not-in-view_.content]:opacity-0

@@ -1,5 +1,5 @@
 'use client'
-import React, {useContext, useRef, useState, useEffect} from 'react'
+import React, { useContext, useRef, useState, useEffect } from 'react'
 import './style.scss'
 import NaviContext from '@/context/NaviContext'
 import { Transition } from 'react-transition-group'
@@ -14,26 +14,26 @@ import SocialIcons from '@/components/SocialIcons'
 import { usePathname } from 'next/navigation'
 function Header(props) {
 	const naviContext = useContext(NaviContext)
-  const nodeRef1 = useRef(null);
-  const nodeRef2 = useRef(null);
-  const nodeRef3 = useRef(null);
+	const nodeRef1 = useRef(null);
+	const nodeRef2 = useRef(null);
+	const nodeRef3 = useRef(null);
 
 	const pathname = usePathname()
 	const showHeaderBarBasedOnPath = pathname.startsWith('/news') || pathname === '/about'
-  
-  // Use Framer Motion's useScroll hook to track scroll position
-  const { scrollY } = useScroll();
-  const [showHeaderBar, setShowHeaderBar] = useState(false);
-  
-  // Update headerBar visibility based on scroll position
-  useEffect(() => {
-    const unsubscribe = scrollY.on('change', (latest) => {
-      // Show header bar when scrolled past a threshold (e.g., 100px)
-      setShowHeaderBar(latest > 100);
-    });
-    
-    return () => unsubscribe();
-  }, [scrollY]);
+
+	// Use Framer Motion's useScroll hook to track scroll position
+	const { scrollY } = useScroll();
+	const [showHeaderBar, setShowHeaderBar] = useState(false);
+
+	// Update headerBar visibility based on scroll position
+	useEffect(() => {
+		const unsubscribe = scrollY.on('change', (latest) => {
+			// Show header bar when scrolled past a threshold (e.g., 100px)
+			setShowHeaderBar(latest > 100);
+		});
+
+		return () => unsubscribe();
+	}, [scrollY]);
 
 	// Animating fade in/out
 	const baseDuration = 500
@@ -112,16 +112,16 @@ function Header(props) {
 			})
 	}
 
-  return (
+	return (
 		<>
 			{!naviContext.windowSize?.mobile ?
-			<div className='frs-grid-full'>
-				<Hamburger />
+				<div className='frs-grid-full'>
+					<Hamburger />
 				</div>
-			: null }
+				: null}
 
 			<Transition
-				in={naviContext.isHamburgerActive && !naviContext.windowSize?.mobile ? true :	false}
+				in={naviContext.isHamburgerActive && !naviContext.windowSize?.mobile ? true : false}
 				timeout={baseDuration}
 				appear={true}
 				onEntering={fadeInLogo}
@@ -131,7 +131,7 @@ function Header(props) {
 				nodeRef={nodeRef1}
 			>
 				<header ref={nodeRef1} className={'frs-grid-full master-header border-type-1 skip-animation c5'}>
-			
+
 					<div className="decor-wrap">
 						<div className="decor-top with-extra">
 							<div className="decor-top-left"></div>
@@ -155,21 +155,23 @@ function Header(props) {
 						</div>
 					</div>
 					<div className='frs-grid frs-grid-wider h-full'>
-					<div className={`navi-animator`}>
-					
-						<div className="navi-wrap">
-							<Logo />
-							<Navi {...props} />
-						</div>
-						<SocialIcons />
-						<Hamburger />
+						<div className={`navi-animator`}>
 
-					</div>
+							<div className="navi-wrap">
+								<Logo />
+								<Navi {...props} />
+							</div>
+							<SocialIcons />
+							<div className='absolute right-[6em] top-[6em]'>
+								<Hamburger />
+							</div>
+
+						</div>
 					</div>
 				</header>
 			</Transition>
-		
-			
+
+
 			<Transition
 				in={naviContext.windowSize?.mobile || showHeaderBar || showHeaderBarBasedOnPath ? true : false}
 				timeout={baseDuration}
@@ -182,23 +184,23 @@ function Header(props) {
 			>
 				<div ref={nodeRef2} className={`frs-grid-full header-bar-new border rounded-b-[37px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.16)] c5 border-[#DCBA7B] ${naviContext.windowSize?.mobile ? 'onmobile' : ''} ${naviContext.isHamburgerActive ? 'open inview' : ''}`}>
 					<div className='frs-grid  '>
-					<div className={`regular  ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
-						{naviContext.windowSize?.mobile ?
-							<Hamburger />
-						: null }
-						<Logo />
-						{!naviContext.windowSize?.mobile ?
-							<div className="header-bar-navi-new  "  onMouseLeave={() => naviContext.setActive(false)}>
-								<Navi {...props} />
-							</div>
-						: null }
-						{!naviContext.windowSize?.mobile ?
-							<CartIndicator />
-						: null }
-					</div>
+						<div className={`regular  ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
+							{naviContext.windowSize?.mobile ?
+								<Hamburger />
+								: null}
+							<Logo />
+							{!naviContext.windowSize?.mobile ?
+								<div className="header-bar-navi-new  " onMouseLeave={() => naviContext.setActive(false)}>
+									<Navi {...props} />
+								</div>
+								: null}
+							{!naviContext.windowSize?.mobile ?
+								<CartIndicator />
+								: null}
+						</div>
 					</div>
 					<Transition
-						in={naviContext.windowSize?.mobile && naviContext.isHamburgerActive ? true :	false}
+						in={naviContext.windowSize?.mobile && naviContext.isHamburgerActive ? true : false}
 						timeout={baseDuration}
 						appear={true}
 						onEntering={fadeIn}
@@ -240,7 +242,7 @@ function Header(props) {
 			</Transition>
 
 		</>
-  )
+	)
 }
 
 export default Header

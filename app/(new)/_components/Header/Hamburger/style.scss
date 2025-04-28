@@ -2,9 +2,9 @@
   Hamburger
 ========================================================================== */
 
-$size: 4.6em;
-$height: 19px;
-$width: 30px;
+$size: 5.3em;
+$height: 18px;
+$width: 44px;
 $line-size: 2px;
 $line-color: #DCBA7B;
 $line-radius: 1px;
@@ -19,7 +19,6 @@ $bounce: cubic-bezier(.87,-.50,.19,1.50);
 	z-index: 1502;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	width: auto;
 	height: auto;
 	overflow: visible;
@@ -106,7 +105,8 @@ $bounce: cubic-bezier(.87,-.50,.19,1.50);
 		}
 		&--3 {
 			bottom: 0;
-			width: 100%;
+			right: 0;
+			width: 70%;
 		}
 	}
 	

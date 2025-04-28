@@ -1,48 +1,66 @@
-'use client'
-import React from 'react'
 import './style.scss'
-import { useInView } from 'react-intersection-observer'
-
+import Intro from '@/animations/Intro_Framer'
 function OurStory(props) {
 
-  const [io, ioInView] = useInView({ triggerOnce: true })
-  const anchor = props.anchor
-  const classes = props.classes
-  // const header = props.header
-  const content = props.content
+	const anchor = props.anchor
+	const classes = props.classes
+	// const header = props.header
+	const content = props.content
 
 
-  return (
-    <>
-      {classes ?
-        <section ref={io} id={`section-${anchor}`} className={`frs-grid content c5 ${ioInView ? 'inview' : ''} ${classes}`}>
-					<div className={`frs-grid  grid-12 is-inview `}>
-          {anchor ?
-            <div id={anchor} className="anchor"></div>
-            : null}
+	return (
+		<>
+			{classes ?
+				<section id={`section-${anchor}`} className={`frs-grid-full relative content border-type-11 c5 ${classes}`}>
+					<Intro delay={50}>
+						<div className="decor-wrap filter-green">
+							<div className="decor-top with-extra">
+								<div className="decor-top-left before:hidden"></div>
+								<div className="decor-top-center with-extra">
+									<div className="decor-top-center-extra-left"></div>
+									<div className="decor-top-center-extra-right"></div>
+								</div>
+								<div className="decor-top-right"></div>
+							</div>
+							<div className="decor-center">
+								<div className="decor-center-left"></div>
+								<div className="decor-center-right"></div>
+							</div>
+							<div className="decor-bottom">
+								<div className="decor-bottom-left"></div>
+								<div className="decor-bottom-center with-extra">
+									<div className="decor-bottom-center-extra-left"></div>
+									<div className="decor-bottom-center-extra-right"></div>
+								</div>
+								<div className="decor-bottom-right"></div>
+							</div>
+						</div>
 
-          <div className="border-out">
-            <div className="border-in"></div>
-          </div>
+						<div className={`frs-grid py-24 md:py-52 z-[1001] relative`}>
+							{anchor ?
+								<div id={anchor} className="anchor"></div>
+								: null}
 
-          <div className="span-12 grid-12 c5">
 
-            <div className="header span-12">
-              <h2 className="font2">
-                Our Story
-              </h2>
-            </div>
 
-            <div className="content-container max-w-7xl mx-auto span-12">
-              <div className='content-holder' dangerouslySetInnerHTML={{ __html: content }} />
-            </div>
 
-          </div>
-					</div>
-        </section>
-        : null}
-    </>
-  )
+								<div className="header">
+									<h2 className="font2 !m-0  text-[4em] md:text-[5em] !p-0 !text-[#DCBA7B] text-center leading-[1]">
+										Our Story
+									</h2>
+								</div>
+
+								<div className="content-container max-md:mx-6  max-w-4xl mx-auto span-12">
+									<div className='content-holder text-sm md:text-[1.1em] !text-[#D0C8B9] text-center font-[100] [&_span]:inline-block [&_span]:py-1' dangerouslySetInnerHTML={{ __html: content }} />
+								</div>
+
+						</div>
+					</Intro>
+
+				</section>
+				: null}
+		</>
+	)
 }
 
 export default OurStory

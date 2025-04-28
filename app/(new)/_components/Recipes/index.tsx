@@ -192,7 +192,7 @@ function Recipes() {
 													/>
 													<div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
 														<div className='flex items-center justify-center'>
-															<CirclePlay size={128} className='text-2xl text-white scale-110 group-hover:scale-100  transition-all duration-300' />
+															<CirclePlay className='text-2xl text-white scale-110 group-hover:scale-100  transition-all duration-300' />
 														</div>
 													</div>
 												</div>

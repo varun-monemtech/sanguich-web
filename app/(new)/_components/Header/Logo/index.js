@@ -9,7 +9,7 @@ function Logo() {
 
   return (
 		<Link href="/" className='logo master-logo' onClick={() => naviContext.setHamburgerActive(false)} aria-label='Go To Homepage' title='Go To Homepage'>
-			<div className="aspect-ratio"></div>
+			<div className="aspect-ratio max-md:!pb-[30%]"></div>
 		</Link>
   )
 }

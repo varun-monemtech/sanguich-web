@@ -117,7 +117,7 @@ function Hamburger(props) {
 	}
 	
   return (
-		<div className="frs-grid frs-grid-ultrawide master-hamburger w-full is-inview inview" onClick={() => { naviContext.activeToggle(true); naviContext.hamburgerActiveToggle(true)}} onKeyDown={() => { naviContext.activeToggle(true); naviContext.hamburgerActiveToggle(true)}} role="button" aria-label='Open/Close Navigation Menu' tabIndex={0}>
+		<div className={`frs-grid-full master-hamburger w-full is-inview inview ${naviContext.isHamburgerActive ? 'open-container' : null}`} onClick={() => { naviContext.activeToggle(true); naviContext.hamburgerActiveToggle(true)}} onKeyDown={() => { naviContext.activeToggle(true); naviContext.hamburgerActiveToggle(true)}} role="button" aria-label='Open/Close Navigation Menu' tabIndex={0}>
 			<div className={`master-hamburger-container x0 t`}>
 				<div className={`hamburger-container hamburger hamburger--close1 ${naviContext.isHamburgerActive ? 'open x1 t' : null }`}>
 					<div className="hamburger__icon">

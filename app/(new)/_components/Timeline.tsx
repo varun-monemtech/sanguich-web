@@ -126,7 +126,7 @@ function Timeline() {
 							className="h-full !overflow-visible"
 							breakpoints={{
 								2: {
-									slidesPerView: 2,
+									slidesPerView: 1,
 								},
 								768: {
 									slidesPerView: 3,
