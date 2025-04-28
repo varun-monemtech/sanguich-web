@@ -7,6 +7,7 @@ import { LoadImage } from '@/components/new/LoadImage'
 import StoreContext from '@/context/StoreContext'
 import './style.scss'
 import Intro from '@/animations/Intro_Framer'
+import BorderHeading from '../BorderHeading'
 
 function ACFShop(props) {
 
@@ -30,21 +31,12 @@ function ACFShop(props) {
 					{anchor ?
 						<div id={anchor} className="anchor"></div>
 						: null}
+
+					<BorderHeading>
+						<h2 className={`px-[0.1em] py-0 !m-0 z-[1001] c4 font2 !text-[#dcba7b]`}>Shop</h2>
+					</BorderHeading>
+
 					<div className='grid-12'>
-						<div className='span-12 heading-section'>
-							<h2 className="title c4 font2">Shop</h2>
-							<div className="decor-wrap">
-								<div className="decor-top with-extra">
-									<div className="decor-top-left"></div>
-									<div className="decor-top-center with-extra">
-										<div className="decor-top-center-extra-left"></div>
-										<div id="space-logo" className="decor-top-center-extra-center"></div>
-										<div className="decor-top-center-extra-right"></div>
-									</div>
-									<div className="decor-top-right"></div>
-								</div>
-							</div>
-						</div>
 
 						<div className="grid grid-cols-12 gap-2 md:gap-6 md:px-10 span-12 product-grid">
 							{productsData

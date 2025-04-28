@@ -1,7 +1,7 @@
 import Intro from '@/animations/Intro_Framer'
 import Link from 'next/link'
 import { LoadImage } from '@/components/new/LoadImage'
-
+import BorderHeading from './BorderHeading'	
 
 
 function SeenOn(props: any) {
@@ -65,22 +65,9 @@ function SeenOn(props: any) {
 						<div id={anchor} className="anchor"></div>
 						: null}
 
-					<Intro delay={50} className="span-12 ">
-						<div className='flex justify-center py-2 items-center text-[1.5em] md:text-[3em] relative border-type-7 '>
-							<h2 className="px-[0.1em] py-0 !m-0 z-[1001] c4 font2 !text-[#dcba7b]">As Seen On</h2>
-							<div className="decor-wrap !p-0 z-[-1] justify-center">
-								<div className="decor-top with-extra">
-									<div className="decor-top-left"></div>
-									<div className="decor-top-center with-extra">
-										<div className="decor-top-center-extra-left"></div>
-										<div id="space-logo" className="decor-top-center-extra-center"></div>
-										<div className="decor-top-center-extra-right"></div>
-									</div>
-									<div className="decor-top-right"></div>
-								</div>
-							</div>
-						</div>
-					</Intro>
+					<BorderHeading>
+						<h2 className={`px-[0.1em] py-0 !m-0 z-[1001] c4 font2 !text-[#dcba7b]`}>As Seen On</h2>
+					</BorderHeading>
 
 					<div className=" c4">
 						<div className=" grid grid-cols-12 md:grid-cols-10  justify-center ">

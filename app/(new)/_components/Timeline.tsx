@@ -9,7 +9,7 @@ import 'swiper/css'
 import 'swiper/css/scrollbar';
 import 'swiper/css/free-mode';
 import Intro from '@/animations/Intro_Framer';
-
+import BorderHeading from './BorderHeading'
 // Timeline data array
 const timelineData = [
 	{
@@ -100,85 +100,75 @@ function Timeline() {
 	return (
 		<section id="section-timeline" className="frs-grid frs-grid-ultrawide  bg-[#274F37] py-2 pb-10 relative border-type-7 ">
 			<Intro delay={50}>
-			<div className="">
-				<div className='frs-grid'>
-				<div className='flex justify-center items-center text-[1.5em] md:text-[3em] relative'>
-					<h2 className="title !bg-[#274F37] z-[1001] text-[#EFE7D3] font2 !m-0 px-[0.25em] py-[0.15em]">Our Timeline</h2>
-					<div className="decor-wrap !px-0">
-						<div className="decor-top with-extra">
-							<div className="decor-top-left"></div>
-							<div className="decor-top-center with-extra">
-								<div className="decor-top-center-extra-left"></div>
-								<div id="space-logo" className="decor-top-center-extra-center"></div>
-								<div className="decor-top-center-extra-right"></div>
-							</div>
-							<div className="decor-top-right"></div>
-						</div>
+				<div className="">
+					<div className='frs-grid'>
+						<BorderHeading>
+							<h2 className={` m-0 px-[0.1em] py-0  font2 !bg-[#274F37] z-[1001] text-[#EFE7D3]`}>Our Timeline</h2>
+						</BorderHeading>
+
 					</div>
-				</div>
-				</div>
 
-				<div className="timeline-swiper-container pr-5">
-					<Swiper
-						ref={swiperRef}
-						modules={[Mousewheel, Scrollbar, FreeMode]}
-						slidesPerView={4}
-						freeMode={true}
-						mousewheel={
-							{
-								forceToAxis: true,
+					<div className="timeline-swiper-container pr-5">
+						<Swiper
+							ref={swiperRef}
+							modules={[Mousewheel, Scrollbar, FreeMode]}
+							slidesPerView={4}
+							freeMode={true}
+							mousewheel={
+								{
+									forceToAxis: true,
+								}
 							}
-						}
-						scrollbar={{
-							draggable: true,
-							hide: false,
-						}}
-						className="h-full !overflow-visible"
-						breakpoints={{
-							2: {
-								slidesPerView: 2,
-							},
-							768: {
-								slidesPerView: 3,
-							},
-							1024: {
-								slidesPerView: 4,
-							}
-						}}
-					>
-						{timelineData.map((slide, index) => (
-							<SwiperSlide key={index} className='overflow-hidden' >
-								<div className="w-full">
+							scrollbar={{
+								draggable: true,
+								hide: false,
+							}}
+							className="h-full !overflow-visible"
+							breakpoints={{
+								2: {
+									slidesPerView: 2,
+								},
+								768: {
+									slidesPerView: 3,
+								},
+								1024: {
+									slidesPerView: 4,
+								}
+							}}
+						>
+							{timelineData.map((slide, index) => (
+								<SwiperSlide key={index} className='overflow-hidden' >
+									<div className="w-full">
 
-									<div className='px-2'>
-										<div className="rounded-[4rem] overflow-hidden  border-2 border-[#D6B35F] w-full  relative">
-											<LoadImage
-												src={slide.image}
-												width={300}
-												height={300}
-												alt={slide.alt}
-												className="w-full h-full  aspect-[18/9]"
-											/>
+										<div className='px-2'>
+											<div className="rounded-[4rem] overflow-hidden  border-2 border-[#D6B35F] w-full  relative">
+												<LoadImage
+													src={slide.image}
+													width={300}
+													height={300}
+													alt={slide.alt}
+													className="w-full h-full  aspect-[18/9]"
+												/>
+											</div>
+										</div>
+
+										<div className='relative w-[101%] h-[1px] bg-white mx-auto my-7'>
+											<div className='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[1px] h-[3rem] bg-white mx-auto ' />
+										</div>
+
+										<div className="text-[#EFE7D3] px-2">
+											{slide.events.map((event, eventIndex) => (
+												<p key={eventIndex} className="text-sm">{event}</p>
+											))}
 										</div>
 									</div>
+								</SwiperSlide>
+							))}
+						</Swiper>
+					</div>
 
-									<div className='relative w-[101%] h-[1px] bg-white mx-auto my-7'>
-										<div className='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[1px] h-[3rem] bg-white mx-auto ' />
-									</div>
-
-									<div className="text-[#EFE7D3] px-2">
-										{slide.events.map((event, eventIndex) => (
-											<p key={eventIndex} className="text-sm">{event}</p>
-										))}
-									</div>
-								</div>
-							</SwiperSlide>
-						))}
-					</Swiper>
-				</div>
-
-				{/* Custom CSS for Swiper styling */}
-				<style jsx global>{`
+					{/* Custom CSS for Swiper styling */}
+					<style jsx global>{`
 					.swiper-scrollbar-horizontal {
 						height: 25px !important;
 						background: #11341F;
@@ -203,7 +193,7 @@ function Timeline() {
           }
           
         `}</style>
-			</div>
+				</div>
 			</Intro>
 		</section>
 	)

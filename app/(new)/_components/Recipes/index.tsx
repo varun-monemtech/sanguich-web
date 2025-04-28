@@ -15,6 +15,7 @@ import anime from 'animejs'
 import { X, CirclePlay } from 'lucide-react'
 
 import './style.scss'
+import BorderHeading from '../BorderHeading'
 
 
 export const recipesMockData = [
@@ -156,22 +157,10 @@ function Recipes() {
 	return (
 		<>
 			<section id={`section-recipes-new`} style={{ zIndex: 101 }} className={`frs-grid content c5  border-type-7 is-inview   `}>
-				<Intro delay={50}>
-					<div className='heading-section flex justify-center items-center text-[1.5em] md:text-[3em] relative'>
-						<h2 className="text-[#DCBA7B] m-0 px-[0.1em] py-0 c5 font2 z-[1001]">Recipes</h2>
-						<div className="decor-wrap z-[-1] justify-center !p-0">
-							<div className="decor-top with-extra">
-								<div className="decor-top-left"></div>
-								<div className="decor-top-center with-extra">
-									<div className="decor-top-center-extra-left"></div>
-									<div id="space-logo" className="decor-top-center-extra-center"></div>
-									<div className="decor-top-center-extra-right"></div>
-								</div>
-								<div className="decor-top-right"></div>
-							</div>
-						</div>
 
-					</div>
+					<BorderHeading>
+						<h2 className={`text-[#DCBA7B] m-0 px-[0.1em] py-0 c5 font2 z-[1001]`}>Recipes</h2>
+					</BorderHeading>
 
 					<div className='grid-12 !gap-2'>
 
@@ -223,7 +212,6 @@ function Recipes() {
 							</div>
 						</div>
 					</div>
-				</Intro>
 
 				<Dialog open={showLightbox} onOpenChange={handleLightboxChange}>
 					<DialogTitle className='hidden'>

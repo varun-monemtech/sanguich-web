@@ -5,6 +5,7 @@ import GMap from '@/components/GMap'
 import { LoadImage } from '@/components/new/LoadImage'
 import Intro from '@/animations/Intro_Framer'
 import './style.scss'
+import BorderHeading from '../BorderHeading'
 
 function AddressNew(props) {
 	const [hoveredIndex, setHoveredIndex] = useState(null)
@@ -78,21 +79,10 @@ function AddressNew(props) {
 					{anchor ?
 						<div id={anchor} className="anchor"></div>
 						: null}
-					<Intro delay={50}>
-						<div className='heading-section'>
-							<h2 className="title c4 font2"><span className="capitalize" style={{ textTransform: "none !important" }}>l</span>ocations</h2>
-							<div className="decor-wrap">
-								<div className="decor-top with-extra">
-									<div className="decor-top-left"></div>
-									<div className="decor-top-center with-extra">
-										<div className="decor-top-center-extra-left"></div>
-										<div id="space-logo" className="decor-top-center-extra-center"></div>
-										<div className="decor-top-center-extra-right"></div>
-									</div>
-									<div className="decor-top-right"></div>
-								</div>
-							</div>
-						</div>
+					<BorderHeading>
+						<h2 className={`c4 !text-[#dcba7b] font2 px-[0.1em] !m-0 z-[1001]`}>Locations</h2>
+					</BorderHeading>
+
 						<div className='mobile-view-switcher'>
 							<button
 								className={`switcher-btn ${mobileView === 'list' ? 'active' : ''}`}
@@ -126,7 +116,6 @@ function AddressNew(props) {
 								</div>
 							</div>
 						</div>
-					</Intro>
 
 
 				</section>
