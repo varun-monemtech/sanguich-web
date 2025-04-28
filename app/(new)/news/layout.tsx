@@ -10,7 +10,7 @@ export default async function RootLayout({
 	return (
 		<div className="frs-grid bg-[#D0C8B9]">
 			<Intro delay={50} className=" pt-13 ">
-				<div className='flex justify-center py-2 items-center text-[3em] relative border-type-7 '>
+				<div className='flex justify-center py-2 items-center text-[1.5em] md:text-[3em] relative border-type-7 '>
 					<h2 className="text-[#274F37] px-[0.1em] py-0 !m-0 z-[1001] bg-[#D0C8B9] font2">News</h2>
 					<div className="decor-wrap !p-0 z-[-1] justify-center filter-green">
 						<div className="decor-top with-extra">

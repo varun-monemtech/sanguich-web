@@ -102,7 +102,7 @@ function Timeline() {
 			<Intro delay={50}>
 			<div className="">
 				<div className='frs-grid'>
-				<div className='flex justify-center items-center text-[3em] relative'>
+				<div className='flex justify-center items-center text-[1.5em] md:text-[3em] relative'>
 					<h2 className="title !bg-[#274F37] z-[1001] text-[#EFE7D3] font2 !m-0 px-[0.25em] py-[0.15em]">Our Timeline</h2>
 					<div className="decor-wrap !px-0">
 						<div className="decor-top with-extra">

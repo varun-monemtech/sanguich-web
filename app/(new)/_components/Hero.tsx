@@ -58,11 +58,11 @@ function HeroNew() {
 	return (
 		<section
 			id="section-hero-new"
-			className="frs-grid-full relative pt-32 border-type-1 is-inview inview overflow-x-clip"
+			className="max-md:mt-10 frs-grid-full relative pt-32 border-type-1 is-inview inview overflow-x-clip"
 			ref={containerRef}
 		>
 
-			<div className="decor-wrap">
+			<div className="decor-wrap ">
 				<div className="decor-top with-extra">
 					<div className="decor-top-left before:hidden"></div>
 					<div className="decor-top-center with-extra">
@@ -84,9 +84,9 @@ function HeroNew() {
 					<div className="decor-bottom-right"></div>
 				</div>
 			</div>
-<div className='frs-grid'>
+<div className='frs-grid z-[1001] relative'>
 			<motion.div
-				className="max-w-[20em]  lg:max-w-4xl  mx-auto w-full rounded-sm z-[200] relative"
+				className="max-w-[15em] md:max-w-[20em]  lg:max-w-4xl  mx-auto w-full rounded-sm z-[200] relative"
 				initial={{ opacity: 0, translateY: 100 }}
 				animate={{ opacity: 1, translateY: 0 }}
 				transition={{
@@ -108,7 +108,7 @@ function HeroNew() {
 			</motion.div>
 
 			<motion.div
-				className=" px-8 lg:px-24 mx-auto w-full top-24 rounded-sm z-10 max-lg:pt-24"
+				className=" px-3 md:px-8 lg:px-24 mx-auto w-full top-24 rounded-sm z-10 max-lg:pt-12"
 				style={{
 					y: bigSandwichParallax
 				}}
@@ -123,7 +123,7 @@ function HeroNew() {
 				/>
 			</motion.div>
 
-			<div className='grid py-10 grid-cols-3 max-lg:pb-20 gap-2 lg:gap-24 mx-8 lg:mx-32 relative mt-20 z-10'>
+			<div className='grid md:py-10 grid-cols-2 md:grid-cols-3 max-lg:pb-20 gap-2 lg:gap-24 mx-4 lg:mx-32 relative mt-20 z-10'>
 				<motion.div
 					style={{
 						y: sandwich1Parallax

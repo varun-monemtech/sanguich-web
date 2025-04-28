@@ -121,7 +121,7 @@ function Recipes() {
 		return (
 			<div
 				key={i}
-				className={`span-12  cursor-pointer flex gap-5 tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+				className={`span-12  cursor-pointer flex max-md:flex-wrap gap-3 md:gap-5 tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 
 				onMouseEnter={() => setHoveredIndex(i)}
 				onMouseLeave={() => setHoveredIndex(null)}
@@ -157,7 +157,7 @@ function Recipes() {
 		<>
 			<section id={`section-recipes-new`} style={{ zIndex: 101 }} className={`frs-grid content c5  border-type-7 is-inview   `}>
 				<Intro delay={50}>
-					<div className='heading-section flex justify-center items-center text-[3em] relative'>
+					<div className='heading-section flex justify-center items-center text-[1.5em] md:text-[3em] relative'>
 						<h2 className="text-[#DCBA7B] m-0 px-[0.1em] py-0 c5 font2 z-[1001]">Recipes</h2>
 						<div className="decor-wrap z-[-1] justify-center !p-0">
 							<div className="decor-top with-extra">
@@ -173,7 +173,7 @@ function Recipes() {
 
 					</div>
 
-					<div className='grid-12 gap-2'>
+					<div className='grid-12 !gap-2'>
 
 						<div className={`span-7 span-12-tablet`}>
 							{/* @ts-ignore */}

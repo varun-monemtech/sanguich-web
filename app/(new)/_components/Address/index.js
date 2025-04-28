@@ -23,7 +23,7 @@ function AddressNew(props) {
 		return (
 			<div
 				key={i}
-				className={`span-12 flex gap-5 tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+				className={`span-12 flex max-md:flex-wrap gap-3 md:gap-5 tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 				onMouseEnter={() => setHoveredIndex(i)}
 				onMouseLeave={() => setHoveredIndex(null)}
 				onClick={() => setSelectedIndex(i)}
@@ -108,7 +108,7 @@ function AddressNew(props) {
 							</button>
 						</div>
 
-						<div className='grid-12 gap-2'>
+						<div className='grid-12 !gap-2'>
 							<div className={`main-grid span-12-tablet span-5 rounded-lg padd  ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
 								<div className='scroll-container grid-12 '>
 									{itemsMap}
