@@ -20,7 +20,7 @@ function Menu(props) {
 
 	// Animations
 	const baseDuration = 150
-	const baseDurationQuick = 150
+	const baseDurationQuick = 15
 	// Animating fade in/out
 	const fadeIn = () => {
 
@@ -111,7 +111,7 @@ function Menu(props) {
 						height={image.height}
 						alt={image.alt}
 						// quality={75}
-						className='lg:[&_img]:relative aspect-[3/3.5]'
+						className='lg:[&_img]:relative aspect-[3/3.5] bg-[#c0b7a8] [&_img]:!duration-[300ms]'
 					/>
 					: null
 			)
@@ -151,7 +151,7 @@ function Menu(props) {
 										onExiting={fadeOutY}
 										nodeRef={nodeRef}
 									>
-										<div ref={nodeRef} className="image ">
+										<div ref={nodeRef} className="image bg-[#c0b7a8]">
 											{ImageCurrent}
 										</div>
 									</Transition>
@@ -191,6 +191,26 @@ function Menu(props) {
 
 	return (
 		<>
+			{/* Hidden container for preloading all menu images */}
+			<div style={{ display: 'none' }} aria-hidden="true">
+				{menus?.map((menu, menuIndex) => (
+					menu.items?.map((item, itemIndex) => {
+						const image = item?.img
+						return image ? (
+							<LoadImage
+								key={`preload-${menuIndex}-${itemIndex}`}
+								src={image.url}
+								width={image.width}
+								height={image.height}
+								alt=""
+								loading="lazy"
+								priority={false}
+							/>
+						) : null
+					})
+				))}
+			</div>
+
 			{anchor ?
 				<section id={`section-${anchor}`} className={`frs-grid frs-grid-ultrawide bg-[#D0C8B9]  border-type-8 ${classes}`}>
 					<Intro delay={50}>
@@ -267,7 +287,7 @@ function Menu(props) {
 
 								{!naviContext?.windowSize?.mobile ?
 
-									<div className="relative basis-[42%] max-lg:pb-[56%] max-lg:flex-col c4">
+									<div className="relative basis-[42%] max-lg:pb-[56%] max-lg:flex-col c4 !bg-[#c0b7a8]">
 										<SwitchTransition>
 											<Transition
 												key={[currentImage, currentTabTab]}
