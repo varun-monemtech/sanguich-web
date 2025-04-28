@@ -25,7 +25,7 @@
     "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.5.0",
-		"google-map-react": "file:./google-map-react-2.2.3.tgz",
+    "google-map-react": "file:./google-map-react-2.2.3.tgz",
     "isomorphic-fetch": "^3.0.0",
     "lambda-rate-limiter": "^4.0.2",
     "lodash": "^4.17.21",
@@ -49,6 +49,7 @@
     "typescript": "^5.8.2"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.3.2"
