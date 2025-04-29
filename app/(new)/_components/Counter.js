@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { motion } from 'framer-motion'
 import { LoadImage } from '@/components/new/LoadImage'
 import Intro from '@/animations/Intro_Framer'
 import SlotCounter from 'react-slot-counter'
@@ -55,8 +54,21 @@ function CounterSection() {
 	return (
 		<section
 			id="section-counter"
-			className="frs-grid bg-[#E1B875] py-16 md:py-12 md:px-4 relative"
+			className="frs-grid bg-[#E1B875] py-16 md:py-12 md:px-4 relative in-view"
 		>
+			
+			<div className={`decor-wrap !p-0 !z-[-1] justify-start filter-white border-type-7 max-md:hidden`} style={{ filter: 'brightness(0.65)' }}>
+				<div className="decor-top with-extra top-1/3">
+					<div className="decor-top-left"></div>
+					<div className="decor-top-center with-extra">
+						<div className="decor-top-center-extra-left"></div>
+						<div id="space-logo" className="decor-top-center-extra-center"></div>
+						<div className="decor-top-center-extra-right"></div>
+					</div>
+					<div className="decor-top-right"></div>
+				</div>
+			</div>
+
 			<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12">
 				<Intro delay={0} className='
 					[&.not-in-view_.content]:opacity-0
