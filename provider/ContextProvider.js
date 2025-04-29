@@ -27,7 +27,6 @@ const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     const initializeCheckout = async () => {
-      // Check for an existing cart.
       const isBrowser = typeof window !== 'undefined'
       const existingCheckoutID = isBrowser
         ? localStorage.getItem('shopify_checkout_id')
@@ -49,7 +48,6 @@ const ContextProvider = ({ children }) => {
       if (existingCheckoutID) {
         try {
           const checkout = await fetchCheckout(existingCheckoutID)
-          // Make sure this cart hasn’t already been purchased.
           if (!isRemoved.current && !checkout.completedAt) {
             setCheckoutInState(checkout)
             return
@@ -78,8 +76,9 @@ const ContextProvider = ({ children }) => {
         store,
         addVariantToCart: async (variantId, quantity) => {
           if (variantId === '' || !quantity) {
-            console.error('Both a size and quantity are required.')
-            return
+            const errorMsg = 'Both a size and quantity are required.';
+            console.error(errorMsg);
+            return errorMsg;
           }
 
           updateStore(prevState => {
@@ -87,19 +86,43 @@ const ContextProvider = ({ children }) => {
           })
 
           const { checkout, client } = store
-
           const checkoutId = checkout.id
           const lineItemsToUpdate = [
             { variantId, quantity: parseInt(quantity, 10) },
           ]
 
-          return client.checkout
-            .addLineItems(checkoutId, lineItemsToUpdate)
-            .then(checkout => {
-              updateStore(prevState => {
-                return { ...prevState, checkout, adding: false }
-              })
+          try {
+            const updatedCheckout = await client.checkout.addLineItems(checkoutId, lineItemsToUpdate);
+            
+            if (updatedCheckout.userErrors && updatedCheckout.userErrors.length > 0) {
+              const inventoryError = updatedCheckout.userErrors.find(err => 
+                err.field && err.field.includes('quantity') || 
+                err.message && err.message.toLowerCase().includes('inventory') ||
+                err.message && err.message.toLowerCase().includes('stock')
+              );
+
+              if (inventoryError) {
+                const errorMsg = inventoryError.message || 'Not enough items in stock.';
+                console.error('Inventory Error:', inventoryError);
+                updateStore(prevState => ({ ...prevState, adding: false }));
+                return errorMsg;
+              }
+            }
+
+            updateStore(prevState => {
+              return { ...prevState, checkout: updatedCheckout, adding: false }
             })
+            console.log('Item added successfully');
+            return null;
+
+          } catch (error) {
+            const errorMsg = 'Error adding item to cart.';
+            console.error('Shopify SDK Error:', error);
+            updateStore(prevState => {
+              return { ...prevState, adding: false }
+            });
+            return errorMsg;
+          }
         },
         removeLineItem: (client, checkoutID, lineItemID) => {
           return client.checkout

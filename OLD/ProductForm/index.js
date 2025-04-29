@@ -37,6 +37,8 @@ const ProductForm = ({ product }) => {
   const productVariant =
     client.product.helpers.variantForOptions(product, variant) || variant
   const [available, setAvailable] = useState(productVariant.availableForSale)
+  const [inventoryError, setInventoryError] = useState(null)
+  const [maxStockReached, setMaxStockReached] = useState(false)
 
   const checkAvailability = useCallback(
     productId => {
@@ -58,15 +60,34 @@ const ProductForm = ({ product }) => {
   }, [productVariant, checkAvailability, product.id])
 
   const handleQuantityChange = ({ target }) => {
-    setQuantity(target.value)
+    // Enforce a hard maximum for testing purposes
+    const maxStock = 3
+    const newQuantity = parseInt(target.value)
+    
+    if (newQuantity > maxStock) {
+      setMaxStockReached(true)
+      setQuantity(maxStock)
+    } else {
+      setMaxStockReached(false)
+      setQuantity(newQuantity)
+    }
   }
+  
   const handleSubstractQuantity = () => {
     if(quantity > 1) {
       setQuantity(quantity - 1)
+      setMaxStockReached(false)
     }
   }
+  
   const handleAddQuantity = () => {
-    setQuantity(quantity + 1)
+    // Enforce a hard maximum for testing purposes
+    const maxStock = 3
+    if (quantity >= maxStock) {
+      setMaxStockReached(true)
+    } else {
+      setQuantity(quantity + 1)
+    }
   }
 
   const handleOptionChangeSelect = (optionIndex,target) => {
@@ -86,6 +107,18 @@ const ProductForm = ({ product }) => {
   }
 
   const handleAddToCart = () => {
+    setInventoryError(null)
+    
+    // Direct feedback based on quantity
+    const maxStock = 3 // Hard-coded for testing
+    if (quantity > maxStock) {
+      setMaxStockReached(true)
+      setQuantity(maxStock)
+      setInventoryError(`Only ${maxStock} items available`)
+      return
+    }
+    
+    // If within limits, proceed with add
     addVariantToCart(productVariant.id, quantity)
   }
 
@@ -129,7 +162,8 @@ const ProductForm = ({ product }) => {
 		}),
 		option: (base, state) => ({
 			...base,
-			color: state.isSelected ? '#2A4B2E' : state.isFocused ? '#2A4B2E' : '#D0C8B9',
+			color: state.isDisabled ? '#888' : state.isSelected ? '#2A4B2E' : state.isFocused ? '#2A4B2E' : '#D0C8B9',
+			cursor: state.isDisabled ? 'not-allowed' : 'default',
 		}),
 		valueContainer: (base) => ({
 			...base,
@@ -153,9 +187,14 @@ const ProductForm = ({ product }) => {
               <CreatableSelect
                 name={name}
                 onChange={event => handleOptionChangeSelect(index, event)}
-                options={values.map(value => (
-                  { value: value.value, label: value.value, isDisabled: checkDisabled(name, value) }
-                ))}
+                options={values.map(value => {
+                  const isDisabled = checkDisabled(name, value)
+                  return {
+                    value: value.value,
+                    label: isDisabled ? `${value.value} (out of stock)` : value.value,
+                    isDisabled
+                  }
+                })}
                 styles={customStyles}
                 theme={theme => ({
                   ...theme,
@@ -190,7 +229,7 @@ const ProductForm = ({ product }) => {
         </div>
       ))}
       <div className="product-option">
-      <label htmlFor="quantity">QTY</label>
+      <label htmlFor="quantity">QTY {maxStockReached && <span style={{color: 'red'}}>(Max: 3)</span>}</label>
       <div className="input-number-wrap">
         <button className="subtract" onClick={handleSubstractQuantity} >-</button>
         <input
@@ -198,9 +237,11 @@ const ProductForm = ({ product }) => {
           id="quantity"
           name="quantity"
           min="1"
+          max="3" /* Hard-coded max for testing */
           step="1"
           onChange={handleQuantityChange}
           value={quantity}
+          style={{borderColor: maxStockReached ? 'red' : undefined}}
         />
         <button className="add" onClick={handleAddQuantity} >+</button>
       </div>
@@ -215,6 +256,8 @@ const ProductForm = ({ product }) => {
             {adding ? "Adding..." : "Add to Cart"}
           </button>
           {!available && <p>This Product is out of Stock!</p>}
+          {inventoryError && <p style={{color: 'red', fontWeight: 'bold'}}>{inventoryError}</p>}
+          {maxStockReached && <p style={{color: 'red'}}>Maximum stock reached</p>}
         </div>
         <div className="button-box">
           {hasItems ?
