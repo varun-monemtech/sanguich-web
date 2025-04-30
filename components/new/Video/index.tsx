@@ -290,6 +290,7 @@ const VideoComponent = ({
         <div className="mute-indicator absolute top-4 right-4 flex gap-2 z-[53]">
           <button
             onClick={handleMute}
+						aria-label={isMuted ? 'Unmute' : 'Mute'}
             className="regular p-2 text-white/80 hover:text-white transition-colors"
           >
             {isMuted ? (
@@ -307,6 +308,7 @@ const VideoComponent = ({
         <div className="fullscreen-indicator absolute bottom-4 right-4 flex gap-2 z-[53]">
           <button
             onClick={handleFullscreen}
+						aria-label={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
             className="regular p-2 text-white/80 hover:text-white transition-colors"
           >
             {isFullscreen ? (
@@ -346,6 +348,7 @@ const VideoComponent = ({
     return (
       <button
         onClick={handleClick}
+				aria-label={isPlaying ? 'Pause' : 'Play'}
         className="regular absolute inset-0 flex items-center justify-center z-[52] bg-black/20 hover:bg-black/30 transition-colors group"
       >
         {showPlayButton && (

@@ -92,13 +92,18 @@ function AddressNew(props) {
 								className={`switcher-btn ${mobileView === 'list' ? 'active' : ''}`}
 								onClick={() => setMobileView('list')}
 							>
+								<span>
 								List View
+
+								</span>
 							</button>
 							<button
 								className={`switcher-btn ${mobileView === 'map' ? 'active' : ''}`}
 								onClick={() => setMobileView('map')}
 							>
+								<span>
 								Map View
+								</span>
 							</button>
 						</div>
 

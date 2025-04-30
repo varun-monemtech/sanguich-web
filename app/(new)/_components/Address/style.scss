@@ -258,9 +258,9 @@
 
   .switcher-btn {
     padding: 0.5rem 1rem;
-    border: 1px solid #145F41;
+    // border: 1px solid #145F41;
     background: transparent;
-    color: #145F41;
+    // color: #145F41;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -268,8 +268,22 @@
     font-size: 14px;
     font-weight: 500;
 
+		span {
+			transform: translateY(0.13em);
+			display: block;
+			position: relative;
+		}
+
+		&:active{
+			background: #145F41 !important;
+			border-color: #145F41 !important;
+      color: white;
+		}
+		
+
     &.active {
-      background: #145F41;
+      background: #145F41 !important;
+			border-color: #145F41 !important;
       color: white;
     }
 
