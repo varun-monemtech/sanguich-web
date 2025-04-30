@@ -23,7 +23,7 @@ export const Footer = () => {
 	return (
 		<footer ref={io} id='master-footer' className={`frs-grid-full relative border-type-1 c5  is-inview ${ioInView ? 'inview' : ''}`}>
 			<div className='frs-grid'>
-				<div className='flex flex-col items-center'>
+				<div className='flex flex-col items-center max-md:pt-13'>
 					<div className="decor-wrap">
 						<div className="decor-top with-extra">
 							<div className="decor-top-left"></div>
