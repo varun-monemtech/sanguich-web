@@ -119,21 +119,21 @@ function HeroNew() {
 					/>
 				</motion.div>
 
-				<div className='grid md:py-10 grid-cols-2 md:grid-cols-3 max-lg:pb-20 gap-2 lg:gap-24 mx-4 lg:mx-32 relative mt-20 z-10'>
+				<div className='md:py-10 flex max-md:flex-wrap justify-center max-lg:pb-20 max-md:gap-y-5  lg:gap-24 mx-4 lg:mx-32 relative mt-20 z-10'>
 					<motion.div
 						style={{
 							y: sandwich1Parallax
 						}}
 						ref={sandwich1Ref}
 						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
-						className='mt-10'
+						className='mt-10 basis-1/2  md:basis-1/3 max-lg:px-1 drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
 					>
 						<LoadImage
 							src='/images/sandwiches/1.png'
 							alt='sandwich'
 							width={500}
 							height={500}
-							className='[&_img]:relative drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
+							className='[&_img]:relative overflow-visible '
 						/>
 					</motion.div>
 
@@ -143,14 +143,14 @@ function HeroNew() {
 						}}
 						ref={sandwich2Ref}
 						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
-						className='mt-5'
+						className='mt-5 basis-1/2   md:basis-1/3 max-lg:px-1 drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
 					>
 						<LoadImage
 							src='/images/sandwiches/2.png'
 							alt='sandwich'
 							width={500}
 							height={500}
-							className='[&_img]:relative drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
+							className='[&_img]:relative  overflow-visible '
 						/>
 					</motion.div>
 
@@ -160,13 +160,14 @@ function HeroNew() {
 							y: sandwich3Parallax
 						}}
 						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+						className='basis-1/2  md:basis-1/3 max-lg:px-1 drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
 					>
 						<LoadImage
 							src='/images/sandwiches/3.png'
 							alt='sandwich'
 							width={500}
 							height={500}
-							className='[&_img]:relative drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
+							className='[&_img]:relative  overflow-visible '
 						/>
 					</motion.div>
 				</div>
@@ -186,14 +187,14 @@ function HeroNew() {
 							alt='sandwich'
 							width={500}
 							height={500}
-							className='[&_img]:relative drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)] pr-10'
+							className='h-full w-full [&_img]:h-full [&_img]:w-full [&_img]:relative drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)] pr-10'
 						/>
 						<LoadImage
 							src='/mask.svg'
 							alt='sandwich'
 							width={500}
 							height={500}
-							className='[&_img]:relative drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
+							className='h-full w-full  [&_img]:h-full [&_img]:w-full [&_img]:relative drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
 						/>
 					</div>
 				</motion.div>
