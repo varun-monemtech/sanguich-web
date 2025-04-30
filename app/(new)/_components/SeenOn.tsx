@@ -70,7 +70,7 @@ function SeenOn(props: any) {
 					</BorderHeading>
 
 					<div className=" c4">
-						<div className=" grid grid-cols-12 md:grid-cols-10  justify-center ">
+						<div className=" grid grid-cols-12 md:grid-cols-10  justify-center gap-6 py-4">
 							{itemsMap}
 						</div>
 					</div>
