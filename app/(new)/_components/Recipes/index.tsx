@@ -11,7 +11,7 @@ import {
 import { Transition, SwitchTransition } from 'react-transition-group'
 // @ts-ignore
 import anime from 'animejs' 
-
+// import { ScrollArea } from '@/components/shadcn/ui/scroll-area'
 import { X, CirclePlay } from 'lucide-react'
 
 import './style.scss'
@@ -211,6 +211,16 @@ function Recipes() {
 								{itemsMap}
 							</div>
 						</div>
+						{/* <ScrollArea type="always" className="h-[200px] w-[300px] border  [&_.scroll-bar]:bg-[#0B170F] [&_.thumb]:bg-[#DCBA7B]">
+							<div className='p-4'>
+							Jokester began sneaking into the castle in the middle of the night and leaving
+							jokes all over the place: under the king's pillow, in his soup, even in the
+							royal toilet. The king was furious, but he couldn't seem to stop Jokester. And
+							then, one day, the people of the kingdom discovered that the jokes left by
+							Jokester were so funny that they couldn't help but laugh. And once they
+							started laughing, they couldn't stop.
+							</div>
+						</ScrollArea> */}
 					</div>
 
 				<Dialog open={showLightbox} onOpenChange={handleLightboxChange}>
