@@ -83,7 +83,7 @@ export default async function RootLayout({
 							<Header />
 						</NaviContextProvider>
 
-						<main className="frs-grid-full">
+						<main className="frs-grid-full overflow-hidden">
 							<NaviContextProvider location="">
 								{children}
 							</NaviContextProvider>

@@ -162,7 +162,7 @@ function Recipes() {
 						<h2 className={`text-[#DCBA7B] m-0 px-[0.1em] py-0 c5 font2 z-[1001]`}>Recipes</h2>
 					</BorderHeading>
 
-					<div className='grid-12 !gap-10'>
+					<div className='grid-12 md:gap-10'>
 
 						<div className={`span-7 span-12-tablet`}>
 							{/* @ts-ignore */}

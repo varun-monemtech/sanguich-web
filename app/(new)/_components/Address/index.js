@@ -102,7 +102,7 @@ function AddressNew(props) {
 							</button>
 						</div>
 
-						<div className='grid-12 !gap-10'>
+						<div className='grid-12 md:gap-10'>
 							<div className={`main-grid span-12-tablet span-5 rounded-lg padd  ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
 								<div className='scroll-container grid-12 '>
 									{itemsMap}
