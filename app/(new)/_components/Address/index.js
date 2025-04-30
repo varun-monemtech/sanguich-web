@@ -24,7 +24,7 @@ function AddressNew(props) {
 		return (
 			<div
 				key={i}
-				className={`span-12 flex max-md:flex-wrap gap-3 md:gap-5 tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+				className={`span-12 flex max-md:flex-wrap gap-2 md:gap-3 tile grid-item rounded-lg cursor-pointer ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 				onMouseEnter={() => setHoveredIndex(i)}
 				onMouseLeave={() => setHoveredIndex(null)}
 				onClick={() => setSelectedIndex(i)}
@@ -38,32 +38,36 @@ function AddressNew(props) {
 							height={image.height}
 							alt={image.alt}
 							quality="90"
-							className='[&_img]:relative rounded-lg gold-border aspect-video'
+							className='[&_img]:relative rounded-lg gold-border aspect-[16/10]'
 						/>
 					}
 					{/* {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null} */}
 				</div>
 				<div className="content-container span-12-tablet  span-7">
-					<h3 className='uppercase font3 heading pb-1 !text-md'>{node.name}</h3>
-					<p className={`uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
+					<h3 className='uppercase font3 heading pb-1 !text-md leading-[1]'>{node.name}</h3>
+					<div className='text-sm pt-1'>
+					<p className={` uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
 						{node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className=' block'>{node.address}</span>}
 					</p>
-					<p>
+					<p className='pt-1'>
 						{i === 1 ? "NO DINE-IN | " : null}
 						{node.phone ? <a className="lighten-green" href={`tel:${node.phone}`}>{`${ph1} ${ph2} ${ph3} `}</a> : null}
 						|
 						<a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a>
 					</p>
-					<p className="uppercase marg-bottom-off">{node.hours}</p>
+					<p className="pt-1 uppercase marg-bottom-off">{node.hours}</p>
+					</div>
 					<div className='span-12 flex pt-2'>
 						{/* <MultiButton links={node.links} /> */}
 						{node.links?.[1] && 
-							<a href={node.links?.[1].url} target='_blank' className='hover:!border-[#3e805f] border !border-white border-solid rounded-lg  px-3 py-1  text-sm'>
+							<a href={node.links?.[1].url} target='_blank' className='hover:!border-[#3e805f] border !border-white border-solid rounded-md  px-3 py-1  text-sm'>
 								<span className='uppercase  text-xs leading-[1] vertical-bottom'>{node.links?.[1].title}</span>
 							</a>
 						}
+						
 					</div>
 				</div>
+	
 
 			</div>
 
@@ -98,7 +102,7 @@ function AddressNew(props) {
 							</button>
 						</div>
 
-						<div className='grid-12 !gap-2'>
+						<div className='grid-12 !gap-10'>
 							<div className={`main-grid span-12-tablet span-5 rounded-lg padd  ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
 								<div className='scroll-container grid-12 '>
 									{itemsMap}

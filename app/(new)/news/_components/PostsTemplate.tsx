@@ -32,7 +32,7 @@ export default function PostsTemplate({ posts, hasNextPage, hasPrevPage, prevLin
 		const title = post?.title?.rendered ?
 			<div className="">
 				<Link href={`/news/${post.slug}`} className="">
-					<h2 className="text-md pt-4 pb-2 font3 uppercase text-[#274F37]">{unEscape(post.title.rendered)}</h2>
+					<h2 className="text-lg pt-4 pb-3 font3  uppercase text-[#274F37]">{unEscape(post.title.rendered)}</h2>
 				</Link>
 			</div>
 			: null

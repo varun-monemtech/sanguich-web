@@ -68,7 +68,7 @@ function ACFShop(props) {
 						</div>
 
 						<div className='span-12 bottom-heading-section'>
-							<p className="title uppercase c4 font1">Order Online</p>
+							<p className="title uppercase c4  text-lg font1">Order Online</p>
 							<div className="decor-wrap">
 								<div className="decor-top with-extra">
 									<div className="decor-top-left"></div>

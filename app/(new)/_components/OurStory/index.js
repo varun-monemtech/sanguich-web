@@ -41,17 +41,14 @@ function OurStory(props) {
 								<div id={anchor} className="anchor"></div>
 								: null}
 
-
-
-
 								<div className="header">
 									<h2 className="font2 !m-0  text-[4em] md:text-[5em] !p-0 !text-[#DCBA7B] text-center leading-[1]">
 										Our Story
 									</h2>
 								</div>
 
-								<div className="content-container max-md:mx-6  max-w-4xl mx-auto span-12">
-									<div className='content-holder text-sm md:text-[1.1em] !text-[#D0C8B9] text-center font-[100] [&_span]:inline-block [&_span]:py-1' dangerouslySetInnerHTML={{ __html: content }} />
+								<div className="content-container max-md:mx-6  max-w-5xl mx-auto span-12 pt-5">
+									<div className='content-holder text-sm md:text-[1.25em]  leading-[1.4] !text-[#D0C8B9] text-center !font-[100] [&_span]:inline-block [&_span]:py-1' dangerouslySetInnerHTML={{ __html: content }} />
 								</div>
 
 						</div>

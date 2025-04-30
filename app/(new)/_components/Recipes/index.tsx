@@ -122,7 +122,7 @@ function Recipes() {
 		return (
 			<div
 				key={i}
-				className={`span-12  cursor-pointer flex max-md:flex-wrap gap-3 md:gap-5 tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+				className={`span-12  cursor-pointer flex max-md:flex-wrap gap-2 md:gap-3 tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 
 				onMouseEnter={() => setHoveredIndex(i)}
 				onMouseLeave={() => setHoveredIndex(null)}
@@ -140,11 +140,11 @@ function Recipes() {
 					}
 				</div>
 				<div className="content-container span-12-tablet span-7">
-					<h3 className='uppercase font3 heading'>{node.name}</h3>
-					<p>{node.description}</p>
+					<h3 className='uppercase font3 heading !text-md leading-[1]'>{node.name}</h3>
+					<p className='text-sm leading-[1] pt-1'>{node.description}</p>
 					<div className='span-12 flex pt-2'>
-						<div tabIndex={0} role='button' onClick={() => setShowLightbox(true)} className='group hover:!border-[#3e805f] border cursor-pointer !border-white border-solid rounded-lg  px-4 py-2  text-sm'>
-							<span className='uppercase  text-xs leading-[1] vertical-bottom group-hover:text-[#3e805f]'>Watch</span>
+						<div tabIndex={0} role='button' onClick={() => setShowLightbox(true)} className='group hover:!border-[#3e805f] border cursor-pointer !border-white border-solid rounded-lg  px-3 py-1  text-sm'>
+							<span className='uppercase text-xs leading-[1] vertical-bottom group-hover:text-[#3e805f]'>Watch</span>
 						</div>
 					</div>
 
@@ -162,7 +162,7 @@ function Recipes() {
 						<h2 className={`text-[#DCBA7B] m-0 px-[0.1em] py-0 c5 font2 z-[1001]`}>Recipes</h2>
 					</BorderHeading>
 
-					<div className='grid-12 !gap-2'>
+					<div className='grid-12 !gap-10'>
 
 						<div className={`span-7 span-12-tablet`}>
 							{/* @ts-ignore */}

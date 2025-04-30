@@ -104,7 +104,7 @@ function HeroNew() {
 				</motion.div>
 
 				<motion.div
-					className=" px-3 md:px-8 lg:px-24 mx-auto w-full top-24 rounded-sm z-10 max-lg:pt-12"
+					className=" px-3 md:px-8 lg:px-0 mx-auto w-full top-24 rounded-sm z-10 max-lg:pt-12"
 					style={{
 						y: bigSandwichParallax
 					}}
@@ -119,7 +119,7 @@ function HeroNew() {
 					/>
 				</motion.div>
 
-				<div className='md:py-10 flex max-md:flex-wrap justify-center max-lg:pb-20 max-md:gap-y-5  lg:gap-24 mx-4 lg:mx-32 relative mt-20 z-10'>
+				<div className='md:py-10 flex max-md:flex-wrap justify-center max-lg:pb-20 max-md:gap-y-5  lg:gap-36 mx-4 lg:mx-10 relative  z-10'>
 					<motion.div
 						style={{
 							y: sandwich1Parallax
@@ -160,7 +160,7 @@ function HeroNew() {
 							y: sandwich3Parallax
 						}}
 						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
-						className='basis-1/2  md:basis-1/3 max-lg:px-1 drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
+						className='basis-1/2 md:basis-1/3 max-lg:px-1 drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
 					>
 						<LoadImage
 							src='/images/sandwiches/3.png'

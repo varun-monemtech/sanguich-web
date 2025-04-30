@@ -26,7 +26,7 @@
 	}
 
 	.main-grid {
-		background-color: #0C1C12;
+		background-color: #173221;
 		padding: 1em 2em;
 
 		@media screen and (max-width: 1024px) {
@@ -76,7 +76,6 @@
 		flex-direction: column;
 		flex-wrap: wrap;
 		align-content: center;
-		justify-content: center;
 
 		.heading {
 			font-size: 1.25em;
@@ -96,7 +95,6 @@
 
 	.grid-item {
 		padding: 1.5em 1em;
-		align-items: center;
 
 		transition: background-color 0.5s ease, border 0.5s ease;
 		border: solid 1px #DCBA7B00;
