@@ -61,7 +61,7 @@ function AddressNew(props) {
 						{/* <MultiButton links={node.links} /> */}
 						{node.links?.[1] && 
 							<a href={node.links?.[1].url} target='_blank' className='hover:!border-[#3e805f] border !border-white border-solid rounded-md  px-3 py-1  text-sm'>
-								<span className='uppercase  text-xs leading-[1] vertical-bottom'>{node.links?.[1].title}</span>
+								<span className='translate-y-[0.1em] relative block uppercase  text-xs leading-[1] vertical-bottom'>{node.links?.[1].title}</span>
 							</a>
 						}
 						

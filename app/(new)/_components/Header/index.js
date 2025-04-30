@@ -182,7 +182,7 @@ function Header(props) {
 				unmountOnExit
 				nodeRef={nodeRef2}
 			>
-				<div ref={nodeRef2} className={`frs-grid-full header-bar-new border rounded-b-[37px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.16)] c5 border-[#DCBA7B] ${naviContext.windowSize?.mobile ? 'onmobile' : ''} ${naviContext.isHamburgerActive ? 'open inview' : ''}`}>
+				<div ref={nodeRef2} className={`frs-grid-full header-bar-new border-2 rounded-b-[37px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.16)] c5 border-[#DCBA7B] ${naviContext.windowSize?.mobile ? 'onmobile' : ''} ${naviContext.isHamburgerActive ? 'open inview' : ''}`}>
 					<div className='frs-grid  '>
 						<div className={`regular  ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
 							{naviContext.windowSize?.mobile ?
