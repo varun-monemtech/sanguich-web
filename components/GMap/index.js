@@ -83,7 +83,8 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 			const marker = new google.maps.Marker({
 				position: position,
 				map: google.map,
-				icon: icon
+				icon: icon,
+				title: item.name
 			})
 
 			// When clicking item boxes

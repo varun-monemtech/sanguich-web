@@ -157,7 +157,7 @@ function Header(props) {
 					<div className='frs-grid frs-grid-wider h-full'>
 						<div className={`navi-animator`}>
 
-							<div role='navigation' className="navi-wrap">
+							<div role='navigation' id='navi' className="navi-wrap">
 								<Logo />
 								<Navi {...props} />
 							</div>
@@ -184,7 +184,7 @@ function Header(props) {
 			>
 				<div ref={nodeRef2} className={`frs-grid-full header-bar-new border-2 rounded-b-[37px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.16)] c5 border-[#DCBA7B] ${naviContext.windowSize?.mobile ? 'onmobile' : ''} ${naviContext.isHamburgerActive ? 'open inview' : ''}`}>
 					<div className='frs-grid  '>
-						<div role='navigation' className={`regular  ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
+						<div role='navigation' id='navi-bar' className={`regular  ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
 							{naviContext.windowSize?.mobile ?
 								<Hamburger />
 								: null}
