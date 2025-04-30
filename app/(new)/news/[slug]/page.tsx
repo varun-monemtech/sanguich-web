@@ -1,3 +1,4 @@
+import { ToTopOnLoad } from '../../_components/ToTopOnLoad';
 import PostTemplate from '../_components/PostTemplate'
 
 function unEscape(htmlStr: String) {
@@ -87,11 +88,14 @@ export default async function MainPage(props: any) {
 	const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null
 
 	return (
+		<>
+			<ToTopOnLoad />
 			<PostTemplate post={post}
 				hasNextPage={!!nextPost}
 				hasPrevPage={!!prevPost}
 				prevLink={`/news/${prevPost?.slug}`}
 				nextLink={`/news/${nextPost?.slug}`}
 			/>
+		</>
 	)
 }

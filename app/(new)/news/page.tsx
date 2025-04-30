@@ -1,4 +1,5 @@
 
+import { ToTopOnLoad } from "../_components/ToTopOnLoad"
 import PostsTemplate from "./_components/PostsTemplate"
 
 async function getPosts() {
@@ -39,12 +40,15 @@ export default async function MainPage() {
 
 
 	return (
-		<PostsTemplate
-			posts={paginatedPosts}
-			hasNextPage={hasNextPage}
-			hasPrevPage={false}
-			nextLink={`/news/page/2`}
-			prevLink={`/news`}
-		/>
+		<>
+			<ToTopOnLoad />
+			<PostsTemplate
+				posts={paginatedPosts}
+				hasNextPage={hasNextPage}
+				hasPrevPage={false}
+				nextLink={`/news/page/2`}
+				prevLink={`/news`}
+			/>
+		</>
 	)
 }

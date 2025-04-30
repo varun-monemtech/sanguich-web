@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import PostsTemplate from "../../_components/PostsTemplate"
+import { ToTopOnLoad } from "@/app/(new)/_components/ToTopOnLoad"
 
 
 async function getPosts() {
@@ -76,12 +77,15 @@ export default async function PaginatedPage(props: { params: Promise<{ page: str
 
 
 	return (
-		<PostsTemplate
-			posts={paginatedPosts}
-			hasNextPage={hasNextPage}
-			hasPrevPage={hasPrevPage}
-			prevLink={`/news/page/${page - 1}`}
-			nextLink={`/news/page/${page + 1}`}
-		/>
+		<>
+			<ToTopOnLoad />
+			<PostsTemplate
+				posts={paginatedPosts}
+				hasNextPage={hasNextPage}
+				hasPrevPage={hasPrevPage}
+				prevLink={`/news/page/${page - 1}`}
+				nextLink={`/news/page/${page + 1}`}
+			/>
+		</>
 	)
 } 
