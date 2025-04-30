@@ -35,19 +35,19 @@ function HeroNew() {
 		target: sandwich1Ref,
 		offset: ['end start', 'start end']
 	})
-	const sandwich1Parallax = useTransform(sandwich1Progress, [0, 1], ['-9em', '-2em'])
+	const sandwich1Parallax = useTransform(sandwich1Progress, [0, 1], ['-9vw', '-2vw'])
 
 	const { scrollYProgress: sandwich2Progress } = useScroll({
 		target: sandwich2Ref,
 		offset: ['end start', 'start end']
 	})
-	const sandwich2Parallax = useTransform(sandwich2Progress, [0, 1], ['-20em', '0em'])
+	const sandwich2Parallax = useTransform(sandwich2Progress, [0, 1], ['-20vw', '0vw'])
 
 	const { scrollYProgress: sandwich3Progress } = useScroll({
 		target: sandwich3Ref,
 		offset: ['end start', 'start end']
 	})
-	const sandwich3Parallax = useTransform(sandwich3Progress, [0, 1], ['-10em', '-4em'])
+	const sandwich3Parallax = useTransform(sandwich3Progress, [0, 1], ['-10vw', '2vw'])
 
 	const { scrollYProgress: maskProgress } = useScroll({
 		target: maskRef,
@@ -119,7 +119,7 @@ function HeroNew() {
 					/>
 				</motion.div>
 
-				<div className='md:py-10 flex max-md:flex-wrap justify-center max-lg:pb-20 max-md:gap-y-5  lg:gap-36 mx-4 lg:mx-10 relative  z-10'>
+				<div className='md:py-10 flex max-md:flex-wrap justify-center max-lg:pb-20  lg:gap-36 mx-4 lg:mx-10 relative  z-10'>
 					<motion.div
 						style={{
 							y: sandwich1Parallax
