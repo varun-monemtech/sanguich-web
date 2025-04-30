@@ -50,10 +50,10 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 				}
 				</div>
 				<div class='infobox grid-item-restaurant-description-box font-[400]'>
-					<h5 class="margin-off">${item.name}</h5>
+					<h5 class="margin-off !text-[#212121]">${item.name}</h5>
 					<div class="flex flex-wrap mt-1 text-[0.85em] justify-between jc-space-between">
-						<h6 class="margin-off">${item.address ? item.address : ""}</h6>
-						<h6 class="margin-off">${item.hours ? item.hours : ''}</h6>
+						<h6 class="margin-off !text-[#212121]">${item.address ? item.address : ""}</h6>
+						<h6 class="margin-off !text-[#212121]">${item.hours ? item.hours : ''}</h6>
 					</div>
 					<div class="order-buttons-container">
 						${item.links ? item.links
