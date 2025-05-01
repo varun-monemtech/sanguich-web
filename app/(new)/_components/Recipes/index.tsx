@@ -139,12 +139,14 @@ function Recipes() {
 						/>
 					}
 				</div>
-				<div className="content-container span-12-tablet span-7">
-					<h3 className='uppercase font3 heading !text-md leading-[1]'>{node.name}</h3>
+				<div className="content-container span-12-tablet span-7 flex justify-between py-1">
+					<div>
+					<h3 className='uppercase font3 heading !text-md !leading-[1]'>{node.name}</h3>
 					<p className='text-sm leading-[1] pt-1'>{node.description}</p>
+					</div>
 					<div className='span-12 flex pt-2'>
 						<div tabIndex={0} role='button' onClick={() => setShowLightbox(true)} className='group hover:!border-[#3e805f] border cursor-pointer !border-white border-solid rounded-lg  px-3 py-1  text-sm'>
-							<span className='uppercase translate-y-[0.1em] relative block  text-xs leading-[1] vertical-bottom group-hover:text-[#3e805f]'>Watch</span>
+							<span className='uppercase translate-y-[0.15em] relative block  text-xs leading-[1] vertical-bottom group-hover:text-[#3e805f]'>Watch</span>
 						</div>
 					</div>
 

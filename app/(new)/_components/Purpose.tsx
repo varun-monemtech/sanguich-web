@@ -14,7 +14,7 @@ function 	Purpose() {
 				/>
 			</div>
 			<div className='absolute top-1/2 -translate-y-1/2  left-0 w-full h-auto flex items-center justify-center bg-[#1D3B29]'>
-				<h2 className='text-[#EFE7D3] font2 py-1 md:py-3 max-md:px-2 text-center text-lg md:text-6xl'><span className='text-[#D7B35E] text-lg md:text-5xl'>Our Purpose is  </span>We exist to preserve Cuban culture through food and hospitality.</h2>
+				<h2 className='text-[#EFE7D3] font2 py-1 md:py-3 max-md:px-2 text-center text-lg md:text-6xl'>We exist to preserve Cuban culture through food and hospitality.</h2>
 			</div>
 		</section>
 	)
