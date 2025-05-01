@@ -106,6 +106,7 @@ $bounce: cubic-bezier(.87,-.50,.19,1.50);
 		&--3 {
 			bottom: 0;
 			right: 0;
+			left: initial;
 			width: 70%;
 		}
 	}

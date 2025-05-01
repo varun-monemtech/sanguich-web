@@ -24,7 +24,7 @@ function AddressNew(props) {
 		return (
 			<div
 				key={i}
-				className={`span-12 flex  gap-2 md:gap-3 tile grid-item rounded-lg cursor-pointer ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+				className={`span-12  cursor-pointer flex gap-2 md:gap-3 p-[0.5em] md:py-[1.5em] md:px-[1em] tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 				onMouseEnter={() => setHoveredIndex(i)}
 				onMouseLeave={() => setHoveredIndex(null)}
 				onClick={() => setSelectedIndex(i)}
