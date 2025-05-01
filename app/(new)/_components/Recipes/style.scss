@@ -26,7 +26,7 @@
 	}
 
 	.main-grid {
-		background-color: #173221;
+	
 		padding: 1em 2em;
 
 		@media screen and (max-width: 1024px) {
@@ -36,11 +36,7 @@
 		.scroll-container {
 			overflow: auto;
 			width: 100%;
-			padding-right: 20px;
 
-			@media screen and (max-width: 1024px) {
-				padding-left: 4px;
-			}
 
 			&::-webkit-scrollbar {
 				width: 25px;
@@ -94,7 +90,6 @@
 	}
 
 	.grid-item {
-		padding: 1.5em 1em;
 
 		transition: background-color 0.5s ease, border 0.5s ease;
 		border: solid 1px #DCBA7B00;
