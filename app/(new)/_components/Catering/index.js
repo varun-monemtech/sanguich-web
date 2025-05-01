@@ -1,9 +1,10 @@
 import './style.scss'
 
-import Image from 'next/image'
 import CF7Catering from '../../form/CF7/Catering'
 import Intro from '@/animations/Intro_Framer'
 import { LoadImage } from '@/components/new/LoadImage'
+import Link from 'next/link'
+
 function Catering(props) {
 
 	const anchor = props.anchor
@@ -32,12 +33,24 @@ function Catering(props) {
 
 							</div>
 
-							<div className="catering span-6 span-12-tablet border-type-9 fs-85">
+							<div className="catering span-6 span-12-tablet border-type-9 fs-85 relative">
+
 
 								<div className="decor-wrap">
+
 									<div className="decor-top">
+
 										<div className="decor-top-left"></div>
-										<div className="decor-top-center"></div>
+										<div className="decor-top-center ">
+											<div className='max-w-md mx-auto   border-2  border-[#DCBA7B] flex bg-[#1E3C2A] h-full  flex-col items-center  z-[1001] relative py-2'>
+												<p className='font1 text-center !m-0 !text-xs uppercase'>For orders of 20 people <br />
+													or less please order here.</p>
+												<Link href={`#`} className='btn hover:opacity-80 text-xs mt-[0.1rem]'>
+													<span className='text-[0.75rem] '>ORDER NOW</span>
+												</Link>
+											</div>
+
+										</div>
 										<div className="decor-top-right"></div>
 									</div>
 									<div className="decor-center">
