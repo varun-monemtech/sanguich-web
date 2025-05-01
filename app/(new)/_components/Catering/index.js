@@ -22,18 +22,19 @@ function Catering(props) {
 								<div id={anchor} className="anchor"></div>
 								: null}
 
-							<div className="img span-6 span-12-tablet">
+							<div className="img span-6 span-12-tablet ">
 
 								<LoadImage
 									src={image.url}
 									width={image.width}
 									height={image.height}
 									alt={image.alt}
+									className='max-md:aspect-[16/10]'
 								/>
 
 							</div>
 
-							<div className="catering span-6 span-12-tablet border-type-9 fs-85 relative">
+							<div className=" catering span-6 span-12-tablet border-type-9 fs-85 relative">
 
 
 								<div className="decor-wrap">
@@ -41,16 +42,7 @@ function Catering(props) {
 									<div className="decor-top">
 
 										<div className="decor-top-left"></div>
-										<div className="decor-top-center ">
-											<div className='max-w-md mx-auto   border-2  border-[#DCBA7B] flex bg-[#1E3C2A] h-full  flex-col items-center  z-[1001] relative py-2'>
-												<p className='font1 text-center !m-0 !text-xs uppercase'>For orders of 20 people <br />
-													or less please order here.</p>
-												<Link href={`#`} className='btn hover:opacity-80 text-xs mt-[0.1rem]'>
-													<span className='text-[0.75rem] '>ORDER NOW</span>
-												</Link>
-											</div>
-
-										</div>
+										<div className="decor-top-center"></div>
 										<div className="decor-top-right"></div>
 									</div>
 									<div className="decor-center">
@@ -62,6 +54,14 @@ function Catering(props) {
 										<div className="decor-bottom-center"></div>
 										<div className="decor-bottom-right"></div>
 									</div>
+								</div>
+
+								<div className='max-w-md mx-auto   border-2  border-[#DCBA7B] flex bg-[#1E3C2A]  flex-col items-center  z-[1001] relative py-2'>
+									<p className='font1 text-center !m-0 !text-xs uppercase'>For orders of 20 people <br />
+										or less please order here.</p>
+									<Link href={`#`} className='btn hover:opacity-80 text-xs mt-1'>
+										<span className='text-[0.75rem]'>ORDER HERE</span>
+									</Link>
 								</div>
 
 								<CF7Catering />
