@@ -59,11 +59,11 @@ function HeroNew() {
 	return (
 		<section
 			id="section-hero-new"
-			className="max-md:mt-10 frs-grid-full relative pt-32 border-type-1 is-inview inview overflow-x-clip"
+			className="max-md:mt-10 frs-grid-full relative pt-32 border-type-1 is-inview inview overflow-x-clip m-[1.5em]"
 			ref={containerRef}
 		>
 
-			<div className="decor-wrap ">
+			<div className="decor-wrap !p-0">
 				<div className="decor-top with-extra">
 					<div className="decor-top-left before:hidden"></div>
 					<div className="decor-top-center with-extra">
