@@ -7,6 +7,7 @@ import anime from 'animejs'
 import NaviContext from '../../../../context/NaviContext'
 import { LoadImage } from '@/components/new/LoadImage'
 import Link from 'next/link'
+import MobileMenu from './MobileMenu'
 
 function Menu(props) {
 	const naviContext = useContext(NaviContext)
@@ -14,6 +15,12 @@ function Menu(props) {
 	const anchor = props.anchor
 	const classes = props.classes
 	const image = props.img
+	const isMobile = naviContext?.windowSize?.mobile
+	
+	// If mobile, render the mobile menu instead
+	if (isMobile) {
+		return <MobileMenu {...props} />
+	}
 
 	const nodeRef = useRef(null);
 	const nodeRef2 = useRef(null);

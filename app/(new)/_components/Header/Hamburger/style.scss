@@ -310,3 +310,10 @@ main {
 		to { transform: translateX(25%); }
 	}
 }
+
+
+@media screen and (max-width: 768px) {
+	.hamburger__line {
+		background-color: #2A4B2E;
+	}
+}
