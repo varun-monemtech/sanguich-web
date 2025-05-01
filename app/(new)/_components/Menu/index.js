@@ -6,6 +6,7 @@ import { Transition, SwitchTransition } from 'react-transition-group'
 import anime from 'animejs'
 import NaviContext from '../../../../context/NaviContext'
 import { LoadImage } from '@/components/new/LoadImage'
+import Link from 'next/link'
 
 function Menu(props) {
 	const naviContext = useContext(NaviContext)
@@ -163,11 +164,20 @@ function Menu(props) {
 			})
 			return (
 				<div key={`menu-items-key-b-${i}`} className="menu-specific-wrap">
-					<div className={`menu-specific cursor-pointer padd-1 ${currentTab === i ? 'current' : null}`}>
-						<h3 className="uppercase h4 !text-[#274F37]">{menu.title}</h3>
-						<div className='hr-decor' />
+					<div className={`menu-specific flex flex-col items-center cursor-pointer padd-1 ${currentTab === i ? 'current' : null}`}>
+						
+						<h3 className=" text-center !p-0 !m-0 !text-[#274F37] font2 !text-[4.5em]">{menu.title}</h3>
+						<Link href={`#${menu.title}`} className='btn  hover:opacity-80'>
+							<span>ORDER NOW</span>
+							</Link>
 					</div>
+					
 					<div className="menu-specific-items max-w-[50rem] mx-auto text-[#274F37]">
+						<div className='w-full flex justify-center'>
+						<div className='hr-decor' />
+
+						</div>
+
 						{ImagesTabPack}
 					</div>
 				</div>
@@ -221,8 +231,8 @@ function Menu(props) {
 						<div className='content-box'>
 							<div className='flex max-lg:flex-col animated'>
 
-								<div className="menu-general flex flex-wrap justify-center content-start">
-									<h2 className="menu-title text-[4.5em] !text-[#274F37] text-center m-0 lg:pt-8 font2"><span className="capitalize">M</span>enu</h2>
+								<div className="menu-general flex flex-wrap justify-center content-between">
+									{/* <h2 className="menu-title text-[4.5em] !text-[#274F37] text-center m-0 lg:pt-8 font2"><span className="capitalize">M</span>enu</h2> */}
 									<div
 										className={`arrow-prev cursor-pointer ${currentTabTab === 0 ? 'opacity-0 cursor-auto' : null}`}
 										onClick={() => {
@@ -283,6 +293,31 @@ function Menu(props) {
 											</div>
 										</Transition>
 									</SwitchTransition>
+									{/* Slider dots */}
+									<div className="slider-dots flex justify-center gap-2 w-full my-4 z-[1001]">
+										{menus.map((menu, i) => (
+											<div
+												key={`slider-dot-${i}`}
+												className={`group w-2 h-2  cursor-pointer  `}
+												onClick={() => {
+													onTabTabChange(i)
+													setCurrentImage(0)
+												}}
+												onKeyDown={(e) => {
+													if (e.key === 'Enter' || e.key === ' ') {
+														onTabTabChange(i)
+														setCurrentImage(0)
+													}
+												}}
+												role="button"
+												tabIndex={0}
+												aria-label={`Go to menu tab ${menu.title}`}
+											>
+
+												<span className={`block w-full h-full  transition-all duration-300 rounded-full ${currentTabTab === i ? 'bg-[#274F37] scale-110' : 'bg-[#8B8476] group-hover:bg-[#274F37]/50'}`}></span>
+											</div>
+										))}
+									</div>
 								</div>
 
 								{!naviContext?.windowSize?.mobile ?

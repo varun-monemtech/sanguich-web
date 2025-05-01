@@ -1,16 +1,13 @@
 section#section-homepage-menu {
 	.hr-decor {
-		position: absolute;
 		z-index: 500;
-		top: 50%;
-		left: 50%;
+
 		width: 4.5em;
 		height: 1em;
-		transform: translate3d(-50%, -50%, 0);
 		transition: all .15s ease-in-out;
 		background: url(../../../../images/hr-decor.png) no-repeat scroll center transparent;
 		background-size: contain;
-		margin-top: 1.15em;
+		margin-bottom: 0.75em;
 	}
 	.arrow-prev {
 		position: absolute;
@@ -67,6 +64,11 @@ section#section-homepage-menu {
 		}
 	}
 
+	.btn {
+		background-color: #274F37 !important;
+		border: 1px solid #274F37 !important;
+		color: #D0C8B9;
+	}
 
 	.menu-general {
 		position: relative;
