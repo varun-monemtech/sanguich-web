@@ -20,10 +20,10 @@ function SeenOn(props: any) {
 					target="_blank"
 					href={node?.file?.localFile ? node.file.localFile.publicURL : node.link}
 					aria-label='Press Logo Link'
-					className="col-span-4 md:col-span-2 relative hover:translate-y-[-5px] transition-transform duration-500"
+					className="col-span-12 md:col-span-2 relative hover:translate-y-[-5px] transition-transform duration-500"
 					rel="noreferrer noopener"
 				>
-					<div className='w-[65%] lg:w-[45%] h-auto relative mx-auto'>
+					<div className='w-[25%] lg:w-[45%] h-auto relative mx-auto'>
 						<LoadImage
 							src={logo.url}
 							width={150}
@@ -38,8 +38,8 @@ function SeenOn(props: any) {
 			)
 		} else {
 			return (
-				<div key={i} className="col-span-4 md:col-span-2 relative ">
-					<div className='w-[65%] lg:w-[45%] h-auto relative mx-auto'>
+				<div key={i} className="col-span-12 md:col-span-2 relative ">
+					<div className='w-[25%] lg:w-[45%] h-auto relative mx-auto'>
 						<LoadImage
 							src={logo.url}
 							width={150}
@@ -70,7 +70,7 @@ function SeenOn(props: any) {
 					</BorderHeading>
 
 					<div className=" c4">
-						<div className=" grid grid-cols-12 md:grid-cols-10  justify-center gap-6 py-4">
+						<div className=" grid grid-cols-12 md:grid-cols-10  justify-center gap-6 max-md:pb-4 md:py-4">
 							{itemsMap}
 						</div>
 					</div>

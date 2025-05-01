@@ -41,7 +41,7 @@ function ACFShop(props) {
 						<div className="grid grid-cols-12 gap-2 md:gap-6 md:px-10 span-12 product-grid">
 							{productsData
 								? productsData.map(({ id, handle, title, images: [firstImage], variants: [firstVariant] }, index) => (
-									<article key={index} className=" col-span-6 md:col-span-4 rounded-xl border-[2px] border-solid !border-[#DBA920] overflow-hidden product-single">
+									<article key={index} className=" col-span-12 md:col-span-4 rounded-xl border-[2px] border-solid !border-[#DBA920] overflow-hidden product-single">
 										<Link href={`/product/${handle}/`} className="aspect-ratio ">
 											{firstImage &&
 												(<LoadImage

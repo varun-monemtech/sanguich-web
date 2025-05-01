@@ -104,29 +104,29 @@ function HeroNew() {
 				</motion.div>
 
 				<motion.div
-					className=" px-3 md:px-8 lg:px-0 mx-auto w-full top-24 rounded-sm z-10 max-lg:pt-12"
+					className=" px-0 md:px-8 lg:px-0 mx-auto w-full top-24 z-10 max-lg:pt-12"
 					style={{
 						y: bigSandwichParallax
 					}}
 					ref={bigSandwichRef}
 				>
 					<LoadImage
-						src='/images/sandwiches/big.png'
+						src='/images/sandwiches/sandwich-big.jpg'
 						alt='sandwich'
 						width={500}
 						height={500}
-						className='[&_img]:relative '
+						className='[&_img]:relative rounded-[58px] md:rounded-[281px] aspect-[21/9] md:aspect-[21/7] border-2 border-[#DCBA7B]'
 					/>
 				</motion.div>
 
-				<div className='md:py-10 flex max-md:flex-wrap justify-center max-lg:pb-20  lg:gap-36 mx-4 lg:mx-10 relative  z-10'>
+				<div className='md:py-10 flex max-md:flex-wrap justify-center max-lg:pb-20  lg:gap-36 mx-0 lg:mx-10 relative  z-10'>
 					<motion.div
 						style={{
 							y: sandwich1Parallax
 						}}
 						ref={sandwich1Ref}
 						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
-						className='mt-10 basis-1/2  md:basis-1/3 max-lg:px-1 drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
+						className='md:mt-10 basis-1/3  md:basis-1/3 max-lg:px-[0.25rem] drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
 					>
 						<LoadImage
 							src='/images/sandwiches/1.png'
@@ -143,7 +143,7 @@ function HeroNew() {
 						}}
 						ref={sandwich2Ref}
 						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
-						className='mt-5 basis-1/2   md:basis-1/3 max-lg:px-1 drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
+						className='max-md:-mt-5 md:mt-5 basis-1/3   md:basis-1/3 max-lg:px-[0.25rem] drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
 					>
 						<LoadImage
 							src='/images/sandwiches/2.png'
@@ -160,7 +160,7 @@ function HeroNew() {
 							y: sandwich3Parallax
 						}}
 						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
-						className='basis-1/2 md:basis-1/3 max-lg:px-1 drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
+						className='basis-1/3 md:basis-1/3 max-lg:px-[0.25rem] drop-shadow-[0_13px_13px_rgba(0,0,0,0.57)]'
 					>
 						<LoadImage
 							src='/images/sandwiches/3.png'

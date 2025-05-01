@@ -121,8 +121,8 @@ function Recipes() {
 
 		return (
 			<div
-				key={i}
-				className={`span-12  cursor-pointer flex max-md:flex-wrap gap-2 md:gap-3 tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+			key={i}
+				className={`span-12  cursor-pointer flex gap-2 md:gap-3 p-[0.5em] md:py-[1.5em] md:px-[1em] tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 
 				onMouseEnter={() => setHoveredIndex(i)}
 				onMouseLeave={() => setHoveredIndex(null)}
@@ -139,10 +139,10 @@ function Recipes() {
 						/>
 					}
 				</div>
-				<div className="content-container span-12-tablet span-7 flex justify-between py-1">
+				<div className="content-container span-12-tablet span-7 flex justify-between py-[0.15rem]">
 					<div>
-					<h3 className='uppercase font3 heading !text-md !leading-[1]'>{node.name}</h3>
-					<p className='text-sm leading-[1] pt-1'>{node.description}</p>
+					<h3 className='max-md:!text-sm uppercase font3 heading !text-md !leading-[1]'>{node.name}</h3>
+					<p className='!text-[0.7rem] md:text-sm leading-[1] pt-1'>{node.description}</p>
 					</div>
 					<div className='span-12 flex pt-2'>
 						<div tabIndex={0} role='button' onClick={() => setShowLightbox(true)} className='group hover:!border-[#3e805f] border cursor-pointer !border-white border-solid rounded-lg  px-3 py-1  text-sm'>
@@ -164,7 +164,7 @@ function Recipes() {
 						<h2 className={`text-[#DCBA7B] m-0 px-[0.1em] py-0 c5 font2 z-[1001]`}>Recipes</h2>
 					</BorderHeading>
 
-					<div className='grid-12 md:gap-10'>
+					<div className='grid-12 max-md:gap-y-4 md:gap-10'>
 
 						<div className={`span-7 span-12-tablet`}>
 							{/* @ts-ignore */}
@@ -208,8 +208,8 @@ function Recipes() {
 								</Transition>
 							</SwitchTransition>
 						</div>
-						<div className={`main-grid span-12-tablet span-5 rounded-lg padd`}>
-							<div className='scroll-container grid-12 max-h-[80vh]'>
+						<div className={`main-grid md:bg-[#173221] max-md:!p-0 span-12-tablet span-5 rounded-lg padd`}>
+							<div className='scroll-container grid-12 max-h-[80vh] lg:pr-1'>
 								{itemsMap}
 							</div>
 						</div>

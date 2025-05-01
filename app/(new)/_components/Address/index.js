@@ -10,7 +10,7 @@ import BorderHeading from '../BorderHeading'
 function AddressNew(props) {
 	const [hoveredIndex, setHoveredIndex] = useState(null)
 	const [selectedIndex, setSelectedIndex] = useState(null)
-	const [mobileView, setMobileView] = useState('list') // 'list' or 'map'
+	// const [mobileView, setMobileView] = useState('list') // 'list' or 'map'
 
 	const anchor = props.anchor
 	const classes = props.classes
@@ -24,13 +24,13 @@ function AddressNew(props) {
 		return (
 			<div
 				key={i}
-				className={`span-12 flex max-md:flex-wrap gap-2 md:gap-3 tile grid-item rounded-lg cursor-pointer ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+				className={`span-12 flex  gap-2 md:gap-3 tile grid-item rounded-lg cursor-pointer ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 				onMouseEnter={() => setHoveredIndex(i)}
 				onMouseLeave={() => setHoveredIndex(null)}
 				onClick={() => setSelectedIndex(i)}
 			>
 
-				<div className="span-12-tablet span-5 relative  overflow-hidden">
+				<div className="span-12-tablet span-5 relative overflow-hidden">
 					{image?.url &&
 						<LoadImage
 							src={image.url}
@@ -44,9 +44,9 @@ function AddressNew(props) {
 					{/* {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null} */}
 				</div>
 				<div className="content-container span-12-tablet  span-7">
-					<h3 className='uppercase font3 heading pb-1 !text-md leading-[1]'>{node.name}</h3>
+					<h3 className='max-md:!text-sm uppercase font3 heading md:pb-1 !text-md !leading-[1]'>{node.name}</h3>
 					<div className='text-sm pt-1'>
-					<p className={` uppercase ${node.map ? 'underline' : ''}  m-top-off`}>
+					<p className={` uppercase ${node.map ? 'underline' : ''} m-top-off`}>
 						{node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className=' block'>{node.address}</span>}
 					</p>
 					<p className='pt-1'>
@@ -87,7 +87,7 @@ function AddressNew(props) {
 						<h2 className={`c4 !text-[#dcba7b] font2 px-[0.1em] !m-0 z-[1001]`}>Locations</h2>
 					</BorderHeading>
 
-						<div className='mobile-view-switcher'>
+						{/* <div className='mobile-view-switcher'>
 							<button
 								className={`switcher-btn ${mobileView === 'list' ? 'active' : ''}`}
 								onClick={() => setMobileView('list')}
@@ -105,15 +105,15 @@ function AddressNew(props) {
 								Map View
 								</span>
 							</button>
-						</div>
+						</div> */}
 
-						<div className='grid-12 md:gap-10'>
-							<div className={`main-grid span-12-tablet span-5 rounded-lg padd  ${mobileView === 'list' ? 'mobile-visible' : 'mobile-hidden'}`}>
+						<div className='grid-12 max-md:gap-y-4 md:gap-10'>
+							<div className={`main-grid md:bg-[#000]  max-md:!p-0  span-12-tablet span-5 rounded-lg padd `}>
 								<div className='scroll-container grid-12 '>
 									{itemsMap}
 								</div>
 							</div>
-							<div className={`span-7 span-12-tablet ${mobileView === 'map' ? 'mobile-visible' : 'mobile-hidden'}`}>
+							<div className={`max-md:-order-1 span-7 span-12-tablet`}>
 								<div className='aspect-square overflow-hidden rounded-lg gold-border'>
 									<GMap 
                   allVenues={props.items} 
