@@ -3,6 +3,7 @@ import React from 'react'
 import './style.scss'
 import Intro from '@/animations/Intro_Framer'
 import { LoadImage } from '@/components/new/LoadImage'
+import BorderHeading from '../BorderHeading'
 
 function MobileMenu(props) {
   const anchor = props.anchor
@@ -29,18 +30,22 @@ function MobileMenu(props) {
       </div>
 
       {anchor ?
-        <section id={`section-${anchor}`} className={`frs-grid frs-grid-ultrawide bg-[#D0C8B9] border-type-8 ${classes}`}>
+        <section id={`section-${anchor}`} className={`frs-grid frs-grid-ultrawide bg-[#D0C8B9] border-type-7 ${classes}`}>
           <Intro delay={50}>
             {anchor ? <div id={anchor} className="anchor"></div> : null}
+
+						<BorderHeading>
+							<h2 className={`text-[#274F37] m-0 px-[0.1em] py-0 bg-[#D0C8B9] font2 z-[1001]`}>Menu</h2>
+						</BorderHeading>
 
             <div className='content-box'>
               <div className='animated'>
                 {menus.map((menu, menuIndex) => (
                   <div key={`mobile-menu-${menuIndex}`} className="menu-category mb-16 p-2">
                     {/* Menu title section is commented out per user request */}
-                    <h4 className="text-center font-bold text-[1.5em] mb-8 text-[#274F37]">{menu.title}</h4>
+                    <h4 className="text-center font-bold text-[1.5em] mb-6 text-[#274F37]">{menu.title}</h4>
                     
-                    <div className="max-w-[50rem] mx-auto text-[#274F37] px-4 sm:px-6">
+                    <div className="max-w-[50rem] mx-auto text-[#274F37] px-3 sm:px-6">
                       {menu.items.map((item, itemIndex) => {
                         if (item.subgroup) {
                           return (
@@ -50,16 +55,16 @@ function MobileMenu(props) {
                           )
                         } else {
                           return (
-                            <div key={`mobile-menu-item-${menuIndex}-${itemIndex}`} className="flex items-center gap-6 mb-8 last:mb-0 pb-2 border-b border-[#274F37]/20 last:border-b-0">
+                            <div key={`mobile-menu-item-${menuIndex}-${itemIndex}`} className="flex items-center gap-2 mb-2 last:mb-0 pb-2 border-b border-[#274F37]/20 last:border-b-0">
                               <div className="description flex-1 pr-1">
                                 <h4 className="uppercase text-[1.2em] font-bold mb-1 text-[#274F37]">{item.name}</h4>
                                 {item.description && (
-                                  <p className="text-[0.9em] text-[#274F37]/90 max-w-prose">{item.description}</p>
+                                  <p className="text-[0.9em] text-[#274F37]/90 max-w-prose mt-0">{item.description}</p>
                                 )}
                               </div>
                               
                               {item.img ? (
-                                <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 bg-[#c0b7a8] rounded overflow-hidden">
+                                <div className="relative w-36 h-auto aspect-[16/10] flex-shrink-0 bg-[#c0b7a8] border rounded-xl border-[#DCBA7B] overflow-hidden">
 																	<LoadImage
                                     src={item.img.url}
                                     alt={item.img.alt || item.name}

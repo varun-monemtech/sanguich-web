@@ -24,6 +24,7 @@
 	.master-logo {
 		.aspect-ratio {
 			background: url(logo-green.png) no-repeat scroll center left transparent;
+			background-size: contain;
 		}
 	}
 }

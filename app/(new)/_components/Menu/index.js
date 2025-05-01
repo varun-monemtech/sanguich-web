@@ -142,13 +142,13 @@ function Menu(props) {
 				} else {
 					return (
 						<div key={`menu-items-key-a-${i}`} className={`menu-item  cursor-pointer ${numberOfItems > 5 ? 'col-2' : ''} ${currentImage === i ? 'current' : null}`} onMouseEnter={() => setCurrentImage(i)} onClick={() => setCurrentImage(i)} onKeyDown={() => setCurrentImage(i)} role="button" tabIndex={0}>
-							<div className="description">
+							<div className="description text-center">
 								<h4 className="uppercase">{item.name}</h4>
 								<p>{item.description}</p>
 							</div>
-							<div className="price">
+							{/* <div className="price">
 								<h4>{item.price ? `$${item.price}` : null}</h4>
-							</div>
+							</div> */}
 							{naviContext?.windowSize?.mobile && currentImage === i ?
 								<SwitchTransition>
 									<Transition
