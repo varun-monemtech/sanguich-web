@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './style.scss'
 import Intro from '@/animations/Intro_Framer'
 import { LoadImage } from '@/components/new/LoadImage'
@@ -11,8 +11,15 @@ function MobileMenu(props) {
   const classes = props.classes
   const menus = props.menus
   const [openMenus, setOpenMenus] = useState([0]) // Initially open first menu category
+  const [hasInteracted, setHasInteracted] = useState(false)
+  const [showHint, setShowHint] = useState(true)
 
   const toggleMenu = (index) => {
+    if (index === 0 && !hasInteracted) {
+      setHasInteracted(true)
+      setShowHint(false)
+    }
+    
     setOpenMenus(prev => {
       if (prev.includes(index)) {
         return prev.filter(i => i !== index)
@@ -20,6 +27,12 @@ function MobileMenu(props) {
         return [...prev, index]
       }
     })
+  }
+  
+  const expandMenu = () => {
+    setHasInteracted(true)
+    setShowHint(false)
+    // Ensure menu stays open by not removing it from openMenus
   }
 
   return (
@@ -46,9 +59,11 @@ function MobileMenu(props) {
           <Intro delay={50}>
             {anchor ? <div id={anchor} className="anchor"></div> : null}
 
-						<BorderHeading>
-							<h2 className={`text-[#274F37] m-0 px-[0.1em] py-0 bg-[#D0C8B9] font2 z-[1001]`}>Menu</h2>
-						</BorderHeading>
+						<div className="px-3 sm:px-6 [&_.decor-wrap]:[filter:contrast(0.5)]">
+							<BorderHeading>
+								<h2 className={`text-[#274F37] m-0 px-[0.1em] py-0 bg-[#D0C8B9] font2 z-[1001]`}>Menu</h2>
+							</BorderHeading>
+						</div>
 						<div className='hr-decor mx-auto' />
 
             <div className='content-box'>
@@ -101,11 +116,38 @@ function MobileMenu(props) {
                         <motion.div 
                           id={`menu-items-${menuIndex}`}
                           initial={{ height: 0, opacity: 0, overflow: "hidden" }}
-                          animate={{ height: "auto", opacity: 1, overflow: "visible" }}
+                          animate={{ 
+                            height: menuIndex === 0 && !hasInteracted ? "180px" : "auto", 
+                            opacity: 1, 
+                            overflow: menuIndex === 0 && !hasInteracted ? "hidden" : "visible" 
+                          }}
                           exit={{ height: 0, opacity: 0, overflow: "hidden" }}
                           transition={{ duration: 0.4, ease: "easeInOut" }}
-                          className="max-w-[50rem] mx-auto text-[#274F37] px-3 sm:px-6 bg-[#B7B0A2] pt-3"
+                          className="max-w-[50rem] mx-auto text-[#274F37] px-3 sm:px-6 bg-[#B7B0A2] pt-3 relative"
                         >
+                          {menuIndex === 0 && showHint && !hasInteracted && (
+                            <motion.div 
+                              className="absolute inset-0 flex items-center justify-center bg-[#B7B0A2]/90 z-10 cursor-pointer"
+                              initial={{ opacity: 1 }}
+                              animate={{ opacity: hasInteracted ? 0 : 1 }}
+                              exit={{ opacity: 0 }}
+                              onClick={expandMenu}
+                              transition={{ duration: 0.3 }}
+                            >
+                              <h4 className="text-[#274F37] text-center text-[1.25rem] px-6 py-3 flex items-center justify-center gap-2">
+                                Click on category to expand
+																<LoadImage
+																	src={"/caret-down.png"}
+																	alt={"Caret Down"}
+																	className="relative w-2 h-full aspect-[72/63] contain"
+																	width={72}
+																	height={63}
+																	loading="lazy"
+																/>
+                              </h4>
+                            </motion.div>
+                          )}
+                          
                           {menu.items.map((item, itemIndex) => {
                             if (item.subgroup) {
                               return (
