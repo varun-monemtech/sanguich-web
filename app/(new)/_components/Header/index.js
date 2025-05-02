@@ -5,6 +5,7 @@ import NaviContext from '@/context/NaviContext'
 import { Transition } from 'react-transition-group'
 import anime from 'animejs'
 import { useScroll } from 'framer-motion'
+import Link from 'next/link'
 
 import Hamburger from './Hamburger'
 import CartIndicator from './CartIndicator'
@@ -17,6 +18,7 @@ function Header(props) {
 	const nodeRef1 = useRef(null);
 	const nodeRef2 = useRef(null);
 	const nodeRef3 = useRef(null);
+	const nodeRef4 = useRef(null); // Ref for Order Now button
 
 	const pathname = usePathname()
 	const showHeaderBarBasedOnPath = pathname.startsWith('/news') || pathname === '/about'
@@ -112,6 +114,27 @@ function Header(props) {
 			})
 	}
 
+	// Animation for Order Now button
+	const slideInOrderBtn = element => {
+		anime({
+			targets: nodeRef4.current,
+			translateY: [-50, 0],
+			opacity: [0, 1],
+			duration: baseDuration / 2,
+			easing: 'easeOutSine'
+		})
+	}
+
+	const slideOutOrderBtn = element => {
+		anime({
+			targets: nodeRef4.current,
+			translateY: [0, -50],
+			opacity: [1, 0],
+			duration: baseDuration / 2,
+			easing: 'easeInSine'
+		})
+	}
+
 	return (
 		<>
 			{!naviContext.windowSize?.mobile ?
@@ -119,6 +142,26 @@ function Header(props) {
 					<Hamburger />
 				</div>
 				: null}
+
+			{/* Order Now button for mobile with animation */}
+			<Transition
+				in={naviContext.windowSize?.mobile && showHeaderBar}
+				timeout={baseDuration / 2}
+				appear={true}
+				onEntering={slideInOrderBtn}
+				onExiting={slideOutOrderBtn}
+				mountOnEnter
+				unmountOnExit
+				nodeRef={nodeRef4}
+			>
+				<div ref={nodeRef4} className="fixed z-500 w-full flex justify-center top-[60px] drop-shadow-[0_-2rem_0_#2b4b2e]">
+					<Link href="/#order" className="w-full py-2 px-6 bg-[#2b4b2e] uppercase font-intensa text-[#D0C8B9] text-center font-bold drop-shadow-[0_3px_6px_rgba(0,0,0,0.16)]">
+						<h5>
+							Order Now
+						</h5>
+					</Link>
+				</div>
+			</Transition>
 
 			<Transition
 				in={naviContext.isHamburgerActive && !naviContext.windowSize?.mobile ? true : false}
