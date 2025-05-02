@@ -134,7 +134,7 @@ function MobileMenu(props) {
                           }}
                           exit={{ height: 0, opacity: 0, overflow: "hidden" }}
                           transition={{ duration: 0.4, ease: "easeInOut" }}
-                          className="max-w-[50rem] mx-auto text-[#274F37] px-3 sm:px-6 bg-[#B7B0A2] pt-3 relative"
+                          className="max-w-[50rem] mx-auto text-[#274F37] px-3 sm:px-6 bg-[#B7B0A2] pt-3 relative border-b border-[#96896F]"
                         >
                           {menuIndex === 0 && showHint && !hasInteracted && (
                             <motion.div 
