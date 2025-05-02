@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { LoadImage } from '@/components/new/LoadImage'
 import HeroTitleAnimated from './HeroTitleAnimated'
+import Intro from '@/animations/Intro_Framer'
 
 function HeroNew() {
 	const containerRef = useRef(null)
@@ -59,10 +60,10 @@ function HeroNew() {
 	return (
 		<section
 			id="section-hero-new"
-			className="max-md:mt-13 frs-grid-full relative pt-32 border-type-1 is-inview inview overflow-x-clip m-[1.5em]"
+			className="max-md:mt-13 frs-grid-full relative border-type-1  overflow-x-clip m-[1.5em]"
 			ref={containerRef}
 		>
-
+			<Intro delay={50}>
 			<div className="decor-wrap !p-0">
 				<div className="decor-top with-extra">
 					<div className="decor-top-left before:hidden"></div>
@@ -86,7 +87,7 @@ function HeroNew() {
 				</div>
 			</div>
 
-			<div className='frs-grid z-[1001] relative'>
+			<div className='frs-grid z-[1001] relative pt-32 '>
 				<motion.div
 					className="max-w-[15em] md:max-w-[20em]  lg:max-w-4xl  mx-auto w-full rounded-sm z-[200] relative"
 					initial={{ opacity: 0, translateY: 100 }}
@@ -199,6 +200,9 @@ function HeroNew() {
 					</div>
 				</motion.div>
 			</div>
+		</Intro>
+
+
 		</section>
 	)
 }
