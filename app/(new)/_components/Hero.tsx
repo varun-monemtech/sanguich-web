@@ -59,7 +59,7 @@ function HeroNew() {
 	return (
 		<section
 			id="section-hero-new"
-			className="max-md:mt-10 frs-grid-full relative pt-32 border-type-1 is-inview inview overflow-x-clip m-[1.5em]"
+			className="max-md:mt-13 frs-grid-full relative pt-32 border-type-1 is-inview inview overflow-x-clip m-[1.5em]"
 			ref={containerRef}
 		>
 

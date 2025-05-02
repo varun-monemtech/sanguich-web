@@ -37,13 +37,34 @@ function MobileMenu(props) {
 						<BorderHeading>
 							<h2 className={`text-[#274F37] m-0 px-[0.1em] py-0 bg-[#D0C8B9] font2 z-[1001]`}>Menu</h2>
 						</BorderHeading>
+						<div className='hr-decor mx-auto' />
 
             <div className='content-box'>
               <div className='animated'>
                 {menus.map((menu, menuIndex) => (
                   <div key={`mobile-menu-${menuIndex}`} className="menu-category mb-16 p-2">
-                    {/* Menu title section is commented out per user request */}
-                    <h4 className="text-center font-bold text-[1.5em] mb-6 text-[#274F37]">{menu.title}</h4>
+
+                    <h4 className="text-center font-bold text-[1.5em] mb-6 text-[#274F37] flex items-center justify-center gap-2">
+											<LoadImage
+												src={"/swirl-left.png"}
+												alt={"Decor"}
+												className="relative w-8 h-full aspect-[144/88] contain"
+												width={144}
+												height={88}
+												loading="lazy"
+											/>
+											<span className="basis-auto grow-0 uppercase text-[1.75rem]">
+												{menu.title}
+											</span>
+											<LoadImage
+												src={"/swirl-right.png"}
+												alt={"Decor"}
+												className="relative w-8 h-full aspect-[144/88] contain"
+												width={144}
+												height={88}
+												loading="lazy"
+											/>
+										</h4>
                     
                     <div className="max-w-[50rem] mx-auto text-[#274F37] px-3 sm:px-6">
                       {menu.items.map((item, itemIndex) => {
