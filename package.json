@@ -26,7 +26,7 @@
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
-    "framer-motion": "^12.5.0",
+    "framer-motion": "^12.9.4",
     "google-map-react": "file:./google-map-react-2.2.3.tgz",
     "isomorphic-fetch": "^3.0.0",
     "lambda-rate-limiter": "^4.0.2",

@@ -1,14 +1,26 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import './style.scss'
 import Intro from '@/animations/Intro_Framer'
 import { LoadImage } from '@/components/new/LoadImage'
 import BorderHeading from '../BorderHeading'
+import { motion, AnimatePresence } from 'framer-motion'
 
 function MobileMenu(props) {
   const anchor = props.anchor
   const classes = props.classes
   const menus = props.menus
+  const [openMenus, setOpenMenus] = useState([0]) // Initially open first menu category
+
+  const toggleMenu = (index) => {
+    setOpenMenus(prev => {
+      if (prev.includes(index)) {
+        return prev.filter(i => i !== index)
+      } else {
+        return [...prev, index]
+      }
+    })
+  }
 
   return (
     <>
@@ -42,67 +54,96 @@ function MobileMenu(props) {
             <div className='content-box'>
               <div className='animated'>
                 {menus.map((menu, menuIndex) => (
-                  <div key={`mobile-menu-${menuIndex}`} className="menu-category mb-16 p-2">
-
-                    <h4 className="text-center font-bold text-[1.5em] mb-6 text-[#274F37] flex items-center justify-center gap-2">
-											<LoadImage
-												src={"/swirl-left.png"}
-												alt={"Decor"}
-												className="relative w-8 h-full aspect-[144/88] contain"
-												width={144}
-												height={88}
-												loading="lazy"
-											/>
-											<span className="basis-auto grow-0 uppercase text-[1.75rem]">
-												{menu.title}
-											</span>
-											<LoadImage
-												src={"/swirl-right.png"}
-												alt={"Decor"}
-												className="relative w-8 h-full aspect-[144/88] contain"
-												width={144}
-												height={88}
-												loading="lazy"
-											/>
-										</h4>
+                  <div key={`mobile-menu-${menuIndex}`} className="menu-category">
+                    <button 
+                      onClick={() => toggleMenu(menuIndex)}
+                      className="w-full text-center font-bold text-[1.5em] !p-1 !py-3 !bg-transparent regular text-[#274F37] !flex items-center justify-center gap-2 cursor-pointer transition-all hover:opacity-90 border-b border-[#96896F]"
+                      aria-expanded={openMenus.includes(menuIndex)}
+                      aria-controls={`menu-items-${menuIndex}`}
+                    >
+                      <LoadImage
+                        src={"/swirl-left.png"}
+                        alt={"Decor"}
+                        className="relative w-8 h-full aspect-[144/88] contain"
+                        width={144}
+                        height={88}
+                        loading="lazy"
+                      />
+                      <h4 className="m-0 basis-auto grow-0 uppercase text-[1.5rem] flex items-center">
+                        {menu.title}
+                        <motion.span 
+                          className="ml-2 inline-block -top-0.5 relative"
+                          animate={{ rotate: openMenus.includes(menuIndex) ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <LoadImage
+                            src={"/caret-down.png"}
+                            alt={"Caret Down"}
+                            className="relative w-2 h-full aspect-[72/63] contain"
+                            width={72}
+                            height={63}
+                            loading="lazy"
+                          />
+                        </motion.span>
+                      </h4>
+                      <LoadImage
+                        src={"/swirl-right.png"}
+                        alt={"Decor"}
+                        className="relative w-8 h-full aspect-[144/88] contain"
+                        width={144}
+                        height={88}
+                        loading="lazy"
+                      />
+                    </button>
                     
-                    <div className="max-w-[50rem] mx-auto text-[#274F37] px-3 sm:px-6">
-                      {menu.items.map((item, itemIndex) => {
-                        if (item.subgroup) {
-                          return (
-                            <div key={`mobile-menu-item-${menuIndex}-${itemIndex}`} className="col-1 subgroup fs-85 mt-10 mb-3">
-                              <h4 className="uppercase text-center text-[#274F37] font-semibold">{item.subgroup}</h4>
-                            </div>
-                          )
-                        } else {
-                          return (
-                            <div key={`mobile-menu-item-${menuIndex}-${itemIndex}`} className="flex items-center gap-2 mb-2 last:mb-0 pb-2 border-b border-[#274F37]/20 last:border-b-0">
-                              <div className="description flex-1 pr-1">
-                                <h4 className="uppercase text-[1.2em] font-bold mb-1 text-[#274F37]">{item.name}</h4>
-                                {item.description && (
-                                  <p className="text-[0.9em] text-[#274F37]/90 max-w-prose mt-0">{item.description}</p>
-                                )}
-                              </div>
-                              
-                              {item.img ? (
-                                <div className="relative w-36 h-auto aspect-[16/10] flex-shrink-0 bg-[#c0b7a8] border rounded-xl border-[#DCBA7B] overflow-hidden">
-																	<LoadImage
-                                    src={item.img.url}
-                                    alt={item.img.alt || item.name}
-                                    className="w-full h-full object-cover"
-																		width={item.img.width}
-																		height={item.img.height}
-                                    loading="lazy"
-                                  />
+                    <AnimatePresence>
+                      {openMenus.includes(menuIndex) && (
+                        <motion.div 
+                          id={`menu-items-${menuIndex}`}
+                          initial={{ height: 0, opacity: 0, overflow: "hidden" }}
+                          animate={{ height: "auto", opacity: 1, overflow: "visible" }}
+                          exit={{ height: 0, opacity: 0, overflow: "hidden" }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                          className="max-w-[50rem] mx-auto text-[#274F37] px-3 sm:px-6 bg-[#B7B0A2] pt-3"
+                        >
+                          {menu.items.map((item, itemIndex) => {
+                            if (item.subgroup) {
+                              return (
+                                <div key={`mobile-menu-item-${menuIndex}-${itemIndex}`} className="col-1 subgroup fs-85 mt-10 mb-3">
+                                  <h4 className="uppercase text-center text-[#274F37] font-semibold">{item.subgroup}</h4>
                                 </div>
-                              ) : (
-                                <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 bg-[#c0b7a8] rounded"></div>
-                              )}
-                            </div>
-                          )
-                        }
-                      })}
-                    </div>
+                              )
+                            } else {
+                              return (
+                                <div key={`mobile-menu-item-${menuIndex}-${itemIndex}`} className="flex items-center gap-2 mb-2 last:mb-0 pb-2 border-b border-[#274F37]/20 last:border-b-0">
+                                  <div className="description flex-1 pr-1">
+                                    <h4 className="uppercase text-[1.2em] font-bold mb-1 text-[#274F37]">{item.name}</h4>
+                                    {item.description && (
+                                      <p className="text-[0.9em] text-[#274F37]/90 max-w-prose mt-0">{item.description}</p>
+                                    )}
+                                  </div>
+                                  
+                                  {item.img ? (
+                                    <div className="relative w-36 h-auto aspect-[16/10] flex-shrink-0 bg-[#c0b7a8] border rounded-xl border-[#DCBA7B] overflow-hidden">
+                                      <LoadImage
+                                        src={item.img.url}
+                                        alt={item.img.alt || item.name}
+                                        className="w-full h-full object-cover"
+                                        width={item.img.width}
+                                        height={item.img.height}
+                                        loading="lazy"
+                                      />
+                                    </div>
+                                  ) : (
+                                    <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 bg-[#c0b7a8] rounded"></div>
+                                  )}
+                                </div>
+                              )
+                            }
+                          })}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 ))}
               </div>
