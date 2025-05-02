@@ -59,7 +59,7 @@ function MobileMenu(props) {
           <Intro delay={50}>
             {anchor ? <div id={anchor} className="anchor"></div> : null}
 
-						<div className="px-3 sm:px-6 [&_.decor-wrap]:[filter:contrast(0.5)]">
+						<div className="px-3 pt-6 sm:px-6 [&_.decor-wrap]:[filter:contrast(0.5)]">
 							<BorderHeading>
 								<h2 className={`text-[#274F37] m-0 px-[0.1em] py-0 bg-[#D0C8B9] font2 z-[1001]`}>Menu</h2>
 							</BorderHeading>
