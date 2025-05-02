@@ -5,6 +5,8 @@ import Intro from '@/animations/Intro_Framer'
 import { LoadImage } from '@/components/new/LoadImage'
 import BorderHeading from '../BorderHeading'
 import { motion, AnimatePresence } from 'framer-motion'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
 
 function MobileMenu(props) {
   const anchor = props.anchor
@@ -13,6 +15,7 @@ function MobileMenu(props) {
   const [openMenus, setOpenMenus] = useState([0]) // Initially open first menu category
   const [hasInteracted, setHasInteracted] = useState(false)
   const [showHint, setShowHint] = useState(true)
+  const [lightbox, setLightbox] = useState({ open: false, image: null })
 
   const toggleMenu = (index) => {
     if (index === 0 && !hasInteracted) {
@@ -33,6 +36,14 @@ function MobileMenu(props) {
     setHasInteracted(true)
     setShowHint(false)
     // Ensure menu stays open by not removing it from openMenus
+  }
+
+  const openLightbox = (image) => {
+    setLightbox({ open: true, image })
+  }
+
+  const closeLightbox = () => {
+    setLightbox({ open: false, image: null })
   }
 
   return (
@@ -166,7 +177,10 @@ function MobileMenu(props) {
                                   </div>
                                   
                                   {item.img ? (
-                                    <div className="relative w-36 h-auto aspect-[16/10] flex-shrink-0 bg-[#c0b7a8] border rounded-xl border-[#DCBA7B] overflow-hidden">
+                                    <div 
+                                      className="relative w-36 h-auto aspect-[16/10] flex-shrink-0 bg-[#c0b7a8] border rounded-xl border-[#DCBA7B] overflow-hidden cursor-pointer"
+                                      onClick={() => openLightbox(item.img)}
+                                    >
                                       <LoadImage
                                         src={item.img.url}
                                         alt={item.img.alt || item.name}
@@ -193,6 +207,20 @@ function MobileMenu(props) {
           </Intro>
         </section>
       : null}
+
+      {/* Lightbox component */}
+      <Lightbox
+        open={lightbox.open}
+        close={closeLightbox}
+        slides={lightbox.image ? [{ src: lightbox.image.url, alt: lightbox.image.alt }] : []}
+        animation={{ fade: 300 }}
+        carousel={{ finite: true }}
+        controller={{ closeOnBackdropClick: true }}
+        render={{
+          buttonPrev: () => null,
+          buttonNext: () => null,
+        }}
+      />
     </>
   )
 }

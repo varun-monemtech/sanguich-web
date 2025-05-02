@@ -154,7 +154,7 @@ function Header(props) {
 				unmountOnExit
 				nodeRef={nodeRef4}
 			>
-				<div ref={nodeRef4} className="fixed z-500 w-full flex justify-center top-[60px] drop-shadow-[0_-2rem_0_#2b4b2e]">
+				<div ref={nodeRef4} className="fixed z-500 w-full flex justify-center max-md:top-[60px] max-lg:top-[80px] drop-shadow-[0_-2rem_0_#2b4b2e]">
 					<Link href="/#order" className="w-full py-2 px-6 bg-[#2b4b2e] uppercase rounded-b-3xl font-intensa text-[#D0C8B9] text-center font-bold drop-shadow-[0_3px_6px_rgba(0,0,0,0.16)]">
 						<h5>
 							Order Now

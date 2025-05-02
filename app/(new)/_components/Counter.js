@@ -26,7 +26,7 @@ const NumberDisplay = ({ number, className }) => {
 function CounterItem({ endValue, label, image, imageAlt }) {
 	return (
 		<div className="flex flex-col items-center">
-			<div className="w-52 h-52 border-2 border-[#707070] relative mb-2 md:mb-4 rounded-full overflow-hidden">
+			<div className="w-32 h-32 md:w-52 md:h-52 border-2 border-[#707070] relative mb-2 md:mb-4 rounded-full overflow-hidden">
 				<LoadImage
 					src={image}
 					width={256}
@@ -39,11 +39,11 @@ function CounterItem({ endValue, label, image, imageAlt }) {
 			<div className="md:min-h-[3rem]">
 				<NumberDisplay
 					number={endValue}
-					className="text-6xl md:text-7xl font2 text-[#222121] text-center overflow-hidden"
+					className="text-4xl md:text-7xl font2 text-[#222121] text-center overflow-hidden"
 				/>
 			</div>
 
-			<p className="text-lg font1 uppercase text-[#274F37] whitespace-pre-line text-center">
+			<p className="text-lg font1 max-md:mt-2 uppercase text-[#274F37] whitespace-pre-line text-center">
 				{label}
 			</p>
 		</div>
@@ -69,7 +69,7 @@ function CounterSection() {
 				</div>
 			</div>
 
-			<div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-12">
+			<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12">
 				<Intro delay={0} className='
 					[&.not-in-view_.content]:opacity-0
 					[&.not-in-view_.content]:translate-y-[4rem]
