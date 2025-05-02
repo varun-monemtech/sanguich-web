@@ -1,5 +1,4 @@
-
-
+import React from 'react'
 import Menu from '../_components/Menu'
 import ACFOrder from '@/components/ACF/Sanguich/Order'
 import ACFSeenOn from '../_components/SeenOn'

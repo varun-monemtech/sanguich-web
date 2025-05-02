@@ -7,6 +7,10 @@ import BorderHeading from '../BorderHeading'
 import { motion, AnimatePresence } from 'framer-motion'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import { SearchIcon } from 'lucide-react'
 
 function MobileMenu(props) {
   const anchor = props.anchor
@@ -16,6 +20,31 @@ function MobileMenu(props) {
   const [hasInteracted, setHasInteracted] = useState(false)
   const [showHint, setShowHint] = useState(true)
   const [lightbox, setLightbox] = useState({ open: false, image: null })
+  const [featuredItems, setFeaturedItems] = useState([])
+
+  useEffect(() => {
+    // Filter for featured items across all menu categories
+    const featured = []
+    menus?.forEach(menu => {
+      menu.items?.forEach(item => {
+        if (item.featured) {
+          featured.push({...item, menuCategory: menu.title})
+        }
+      })
+    })
+    
+    // For testing - if no featured items found, use the first item from each menu
+    if (featured.length === 0 && menus?.length > 0) {
+      menus.forEach(menu => {
+        if (menu.items?.length > 0) {
+          const firstItem = menu.items[0]
+          featured.push({...firstItem, menuCategory: menu.title})
+        }
+      })
+    }
+    
+    setFeaturedItems(featured)
+  }, [menus])
 
   const toggleMenu = (index) => {
     if (index === 0 && !hasInteracted) {
@@ -46,6 +75,55 @@ function MobileMenu(props) {
     setLightbox({ open: false, image: null })
   }
 
+  // Custom arrow components that mimic the Menu component style
+  const SliderArrowPrev = (props) => {
+    const { className, onClick } = props
+    return (
+      <div 
+        className="menu-slider-arrow-prev arrow-prev cursor-pointer !-top-[2.5rem] !w-[2.5rem]" 
+        onClick={onClick}
+        role="button"
+        tabIndex={0}
+        aria-label="Previous slide"
+      />
+    )
+  }
+
+  const SliderArrowNext = (props) => {
+    const { className, onClick } = props
+    return (
+      <div 
+        className="menu-slider-arrow-next arrow-next cursor-pointer !-top-[2.5rem] !w-[2.5rem]" 
+        onClick={onClick}
+        role="button"
+        tabIndex={0}
+        aria-label="Next slide"
+      />
+    )
+  }
+
+  // Featured items slider settings
+  const sliderSettings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    nextArrow: <SliderArrowNext />,
+    prevArrow: <SliderArrowPrev />,
+    customPaging: function(i) {
+      return (
+        <div className="w-2 h-2 cursor-pointer">
+          <span className="block w-full h-full transition-all duration-300 rounded-full bg-[#8B8476] hover:bg-[#274F37]/50"></span>
+        </div>
+      );
+    }
+  }
+
   return (
     <>
       {/* Hidden container for preloading all menu images - position absolute to remove from flow */}
@@ -70,12 +148,54 @@ function MobileMenu(props) {
           <Intro delay={50}>
             {anchor ? <div id={anchor} className="anchor"></div> : null}
 
-						<div className="px-3 pt-6 sm:px-6 [&_.decor-wrap]:[filter:contrast(0.5)]">
-							<BorderHeading>
-								<h2 className={`text-[#274F37] m-0 px-[0.1em] py-0 bg-[#D0C8B9] font2 z-[1001]`}>Menu</h2>
-							</BorderHeading>
-						</div>
-						<div className='hr-decor mx-auto' />
+            <div className="px-3 pt-6 sm:px-6 [&_.decor-wrap]:[filter:contrast(0.5)]">
+              <BorderHeading>
+                <h2 className={`text-[#274F37] m-0 px-[0.1em] py-0 bg-[#D0C8B9] font2 z-[1001]`}>Menu</h2>
+              </BorderHeading>
+            </div>
+            <div className='hr-decor mx-auto' />
+
+            {/* Featured Items Carousel */}
+            {featuredItems.length > 0 && (
+              <div className="px-3 sm:px-6 pt-4 pb-8 relative [&_.slick-list]:!pb-3">
+                <h3 className="text-[#274F37] text-lg uppercase font-bold text-center mb-4">Featured Items</h3>
+                <div className="featured-slider">
+                  <Slider {...sliderSettings}>
+                    {featuredItems.map((item, index) => (
+                      <div key={`featured-item-${index}`} className="px-2 h-full">
+                        <div className="rounded-xl border border-[#96896F] overflow-hidden relative h-full flex flex-col shadow-sm">
+                          {item.img ? (
+                            <div className="relative aspect-[16/10]" onClick={() => openLightbox(item.img)}>
+                              <LoadImage
+                                src={item.img.url}
+                                alt={item.img.alt || item.name}
+                                className="w-full h-full object-cover"
+                                width={item.img.width || 400}
+                                height={item.img.height || 300}
+                                loading="lazy"
+                              />
+                              <div className="absolute bottom-1 right-1">
+                                <button className="regular bg-white rounded-full w-4 h-4 flex items-center justify-center shadow-md">
+                                  <SearchIcon className="w-2 h-2" />
+                                </button>
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="w-full aspect-[16/10] bg-[#c0b7a8]"></div>
+                          )}
+                          <div className="p-3 flex-1 flex flex-col">
+                            <h3 className="text-[#274F37] text-md font-bold uppercase mb-1">{item.name}</h3>
+                            {item.description && (
+                              <p className="text-[#274F37]/90 text-sm mb-0 mt-0 line-clamp-2">{item.description}</p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+              </div>
+            )}
 
             <div className='content-box'>
               <div className='animated'>
@@ -134,7 +254,7 @@ function MobileMenu(props) {
                           }}
                           exit={{ height: 0, opacity: 0, overflow: "hidden" }}
                           transition={{ duration: 0.4, ease: "easeInOut" }}
-                          className="max-w-[50rem] mx-auto text-[#274F37] px-3 sm:px-6 bg-[#B7B0A2] pt-3 relative border-b border-[#96896F]"
+                          className="w-full mx-auto text-[#274F37] px-3 sm:px-6 bg-[#B7B0A2] pt-3 relative border-b border-[#96896F]"
                         >
                           {menuIndex === 0 && showHint && !hasInteracted && (
                             <motion.div 
@@ -147,14 +267,14 @@ function MobileMenu(props) {
                             >
                               <h4 className="text-[#274F37] text-center text-[1.25rem] px-6 py-3 flex items-center justify-center gap-2">
                                 Click on category to expand
-																<LoadImage
-																	src={"/caret-down.png"}
-																	alt={"Caret Down"}
-																	className="relative w-2 h-full aspect-[72/63] contain"
-																	width={72}
-																	height={63}
-																	loading="lazy"
-																/>
+                                <LoadImage
+                                  src={"/caret-down.png"}
+                                  alt={"Caret Down"}
+                                  className="relative w-2 h-full aspect-[72/63] contain"
+                                  width={72}
+                                  height={63}
+                                  loading="lazy"
+                                />
                               </h4>
                             </motion.div>
                           )}
