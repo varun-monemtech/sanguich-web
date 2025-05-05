@@ -149,11 +149,10 @@ function CF7Catering(props) {
 		<>
 			<div className={`
 						border-2  border-[#DCBA7B] bg-[#1E3C2A]
-						 flex flex-col items-center z-[1004] 
+						 flex flex-col items-center 
 						 py-3 my-[1.75em] absolute top-0  w-full max-w-md mx-auto 
 						 transition-all duration-1000 delay-100
-						 
-						${isActive ? ' opacity-0' : 'opacity-100'}`}>
+						${isActive ? ' opacity-0 z-[1001] ' : 'opacity-100 z-[1006] '}`}>
 
 				<p className='font1 text-center !m-0 !text-xs uppercase'>
 					For orders of 20 people <br />
