@@ -158,7 +158,7 @@ function CF7Catering(props) {
 					For orders of 20 people <br />
 					or less please order here.
 				</p>
-				<Link href={`#`} className='btn hover:opacity-80 text-xs mt-1'>
+				<Link href={`#`} className='btn hover:opacity-80 text-xs mt-1 order-btn'>
 					<span className='text-[0.75rem]'>ORDER HERE</span>
 				</Link>
 				<div className='absolute z-[1002] c5 w-5 h-5 bottom-[-2px] left-[-2px]  border-2 border-b-0 border-l-0  border-[#DCBA7B] rounded-tr-full'></div>
