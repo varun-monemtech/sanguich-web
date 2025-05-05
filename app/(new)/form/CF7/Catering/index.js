@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import './style.scss'
-
+import Link from 'next/link'
 import { useForm, Controller } from 'react-hook-form'
 import axios from 'axios'
 
@@ -147,12 +147,32 @@ function CF7Catering(props) {
 
 	return (
 		<>
+			<div className={`
+						border-2  border-[#DCBA7B] bg-[#1E3C2A]
+						 flex flex-col items-center z-[1004] 
+						 py-3 my-[1.75em] absolute top-0  w-full max-w-md mx-auto 
+						 transition-all duration-1000 delay-100
+						 
+						${isActive ? ' opacity-0' : 'opacity-100'}`}>
+
+				<p className='font1 text-center !m-0 !text-xs uppercase'>
+					For orders of 20 people <br />
+					or less please order here.
+				</p>
+				<Link href={`#`} className='btn hover:opacity-80 text-xs mt-1'>
+					<span className='text-[0.75rem]'>ORDER HERE</span>
+				</Link>
+				<div className='absolute z-[1002] c5 w-5 h-5 bottom-[-2px] left-[-2px]  border-2 border-b-0 border-l-0  border-[#DCBA7B] rounded-tr-full'></div>
+				<div className='absolute z-[1002] c5 w-5 h-5 bottom-[-2px] right-[-2px]  border-2 border-b-0 border-r-0  border-[#DCBA7B] rounded-tl-full'></div>
+
+			</div>
+
 			<div className="badge">
 				<div className={`hi ${!isActive && !isSent ? 'active' : ''}`}></div>
 				<div className={`thanks ${isSent && !isActive ? 'active' : ''}`}></div>
 			</div>
 
-			<div className="form-cut-off">
+			<div className="form-cut-off w-full z-[1005]">
 				<form
 					name="contact"
 					method="post"
