@@ -28,8 +28,8 @@ function Founders() {
 					<div className="mx-auto max-w-7xl">
 						<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
 							<div className="order-2 lg:order-1">
-								<h2 className="text-5xl  lg:text-7xl font2 !text-[#274F37] mb-5">Our Founders</h2>
-								<div className="text-md md:text-lg prose prose-lg text-[#274F37] relative before:absolute before:h-[2px] before:w-[4em] before:mb-4 before:left-0 before:bottom-full before:bg-[#D7B35E]">
+								<h2 className="text-5xl  lg:text-[4rem] font2 !text-[#274F37] mb-5">Our Founders</h2>
+								<div className="text-md md:text-[1.25rem] prose prose-lg text-[#274F37] relative before:absolute before:h-[2px] before:w-[4em] before:mb-4 before:left-0 before:bottom-full before:bg-[#D7B35E]">
 									<p className="mb-4">
 										Daniel Figueredo and Rosa Romero, lifelong Miami
 										locals and culinary entrepreneurs, founded Sanguich
