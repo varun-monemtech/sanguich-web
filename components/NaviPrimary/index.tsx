@@ -71,6 +71,13 @@ export const NaviPrimary = ({ children, items, className: classes }: { children?
 						Our Story
 					</Link>
 				</li>
+				{/* <li>
+					<Link
+						href={`/#stories`}
+					>
+						Sanguich Stories
+					</Link>
+				</li> */}
 				<li>
 					<Link
 						href={`/#news`}

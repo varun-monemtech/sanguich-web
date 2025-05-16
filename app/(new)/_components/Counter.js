@@ -26,7 +26,7 @@ const NumberDisplay = ({ number, className }) => {
 function CounterItem({ endValue, label, image, imageAlt }) {
 	return (
 		<div className="flex flex-col items-center">
-			<div className="w-32 h-32 md:w-52 md:h-52 border-2 border-[#707070] relative mb-2 md:mb-4 rounded-full overflow-hidden">
+			<div className="w-32 h-32 xl:w-52 xl:h-52 border-2 border-[#707070] relative mb-2 md:mb-4 rounded-full overflow-hidden">
 				<LoadImage
 					src={image}
 					width={256}
@@ -39,7 +39,7 @@ function CounterItem({ endValue, label, image, imageAlt }) {
 			<div className="md:min-h-[3rem]">
 				<NumberDisplay
 					number={endValue}
-					className="text-4xl md:text-7xl font2 text-[#222121] text-center overflow-hidden"
+					className="text-4xl xl:text-7xl font2 text-[#222121] text-center overflow-hidden"
 				/>
 			</div>
 
@@ -54,10 +54,10 @@ function CounterSection() {
 	return (
 		<section
 			id="section-counter"
-			className="frs-grid bg-[#E1B875] py-16 md:py-12 md:px-4 relative in-view"
+			className="frs-grid bg-[#E1B875] py-16 md:py-12 relative in-view"
 		>
 			
-			<div className={` decor-wrap !p-0 !z-[-1] justify-start filter-white border-type-7 max-md:hidden max-md:opacity-0`} style={{ filter: 'brightness(0.65)' }}>
+			<div className={`max-lg:!hidden decor-wrap !p-0 !z-[-1] justify-start filter-white border-type-7 max-md:opacity-0`} style={{ filter: 'brightness(0.65)' }}>
 				<div className="decor-top with-extra top-1/3 ">
 					<div className="decor-top-left"></div>
 					<div className="decor-top-center with-extra">
@@ -69,7 +69,7 @@ function CounterSection() {
 				</div>
 			</div>
 
-			<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12">
+			<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 xl:gap-12">
 				<Intro delay={0} className='
 					[&.not-in-view_.content]:opacity-0
 					[&.not-in-view_.content]:translate-y-[4rem]
