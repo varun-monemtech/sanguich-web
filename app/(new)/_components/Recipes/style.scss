@@ -39,7 +39,7 @@
 
 
 			&::-webkit-scrollbar {
-				width: 25px;
+				width: 16px;
 				padding: 2em;
 
 				@media screen and (max-width: 1024px) {
@@ -60,13 +60,6 @@
 		}
 	}
 
-
-	p {
-		font-size: 0.75em;
-		margin: 0 !important;
-		word-spacing: 2px;
-	}
-
 	.content-container {
 		display: flex;
 		flex-direction: column;
@@ -78,10 +71,6 @@
 			width: 100%;
 			line-height: 1.15;
 		}
-	}
-
-	.heading {
-		margin-bottom: 0 !important;
 	}
 
 

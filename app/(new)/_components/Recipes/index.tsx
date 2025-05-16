@@ -29,7 +29,9 @@ export const recipesMockData = [
 			height: 600,
 			alt: "Pan con Bistec sandwich"
 		},
-		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo"
+		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo",
+		youtubeUrl: "https://youtu.be/OMlj3SBxiyo",
+		subscribeUrl: "https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ"
 	},
 	{
 		id: 2,
@@ -41,7 +43,9 @@ export const recipesMockData = [
 			height: 600,
 			alt: "Arroz con Pollo dish"
 		},
-		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo"
+		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo",
+		youtubeUrl: "https://youtu.be/OMlj3SBxiyo",
+		subscribeUrl: "https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ"
 	},
 	{
 		id: 3,
@@ -53,7 +57,9 @@ export const recipesMockData = [
 			height: 600,
 			alt: "Cuban coffee"
 		},
-		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo"
+		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo",
+		youtubeUrl: "https://youtu.be/OMlj3SBxiyo",
+		subscribeUrl: "https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ"
 	},
 	{
 		id: 4,
@@ -65,7 +71,9 @@ export const recipesMockData = [
 			height: 600,
 			alt: "Cuban Nachos"
 		},
-		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo"
+		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo",
+		youtubeUrl: "https://youtu.be/OMlj3SBxiyo",
+		subscribeUrl: "https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ"
 	},
 	{
 		id: 5,
@@ -77,7 +85,9 @@ export const recipesMockData = [
 			height: 600,
 			alt: "Pan con Croquettes Sanguich"
 		},
-		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo"
+		watchUrl: "https://www.youtube.com/embed/watch?v=OMlj3SBxiyo",
+		youtubeUrl: "https://youtu.be/OMlj3SBxiyo",
+		subscribeUrl: "https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ"
 	}
 ];
 
@@ -141,8 +151,8 @@ function Recipes() {
 				</div>
 				<div className="content-container span-12-tablet span-7 flex justify-between py-[0.15rem]">
 					<div>
-					<h3 className='max-md:!text-sm uppercase font3 heading !text-md !leading-[1]'>{node.name}</h3>
-					<p className='!text-[0.7rem] md:text-sm leading-[1] pt-1'>{node.description}</p>
+					<h3 className='max-md:!text-sm uppercase font3 heading !text-md !leading-[1] !mb-1'>{node.name}</h3>
+					<p className='!text-[0.8rem] md:text-sm leading-[1] pt-1 !mt-1'>{node.description}</p>
 					</div>
 					<div className='span-12 flex pt-2'>
 						<div tabIndex={0} role='button' onClick={() => setShowLightbox(true)} className='group hover:!border-[#3e805f] border cursor-pointer !border-white border-solid rounded-lg  px-3 py-1  text-sm'>
@@ -194,13 +204,20 @@ function Recipes() {
 													/>
 													<div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
 														<div className='flex items-center justify-center'>
-															<CirclePlay className='text-2xl text-white scale-110 group-hover:scale-100  transition-all duration-300' />
+															<CirclePlay className='w-8 h-8 text-2xl text-white scale-110 group-hover:scale-100 transition-all duration-300' />
 														</div>
 													</div>
 												</div>
-												<div className="content-container span-12-tablet span-7 pt-4">
-													<h3 className='uppercase font3 heading'>{recipesMockData[selectedIndex].name}</h3>
-													<p>{recipesMockData[selectedIndex].description}</p>
+												<div className="content-container span-12-tablet span-7 pt-4 gap-1 prose !block [&_p]:my-2">
+													<h3 className='!text-2xl uppercase font3 heading underline mb-3'>{recipesMockData[selectedIndex].name}</h3>
+													<p className='!text-base'>{recipesMockData[selectedIndex].description}</p>
+													<p>Watch on YouTube here: <a href={recipesMockData[selectedIndex].youtubeUrl} target='_blank' rel='noopener noreferrer' className='underline !text-[#E6E3DE] hover:opacity-80 transition'>{recipesMockData[selectedIndex].youtubeUrl}</a></p>
+													<a className='!text-base !text-[#E6E3DE] mt-4 flex hover:opacity-80 transition items-center gap-1 relative' href={recipesMockData[selectedIndex].subscribeUrl} target='_blank' rel='noopener noreferrer'>
+														<span className='leading-[1] mt-1'>Subscribe on</span>
+														<LoadImage src="/youtube.svg" width={400} height={200} alt="Youtube logo"
+															className='w-11 h-auto aspect-[16/8] relative' contain
+														/>
+													</a>
 												</div>
 											</>
 										)}
