@@ -109,7 +109,7 @@ function NaviPrimary(props) {
     }, 
     {
       "id": "story-id",
-      "label": "Our & Story",
+      "label": "Our Story",
       "url": "/#our-story",
       "parentId": null,
     },
@@ -272,7 +272,7 @@ function NaviPrimary(props) {
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
  					onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
 				>
-					<a href="/#our-story" >Our &amp; Story</a>
+					<a href="/#our-story" >Our Story</a>
 				</div>
 				<div className="nav-item" 	onClick={() => { 
 					naviContext.setHamburgerActive(false); naviContext.setActive(false); }}
