@@ -1,5 +1,7 @@
 import './style.scss'
 import Intro from '@/animations/Intro_Framer'
+import Link from 'next/link'
+
 function OurStory(props) {
 
 	const anchor = props.anchor
@@ -47,8 +49,9 @@ function OurStory(props) {
 									</h2>
 								</div>
 
-								<div className="content-container max-md:mx-6  max-w-5xl mx-auto span-12 pt-5">
+								<div className="content-container max-md:mx-6  max-w-5xl mx-auto span-12 pt-5 flex flex-col ">
 									<div className='content-holder text-sm md:text-[1.25em]  leading-[1.4] !text-[#D0C8B9] text-center !font-[100] [&_span]:inline-block [&_span]:py-1' dangerouslySetInnerHTML={{ __html: content }} />
+									<Link className='text-sm md:text-[1.25em] text-center underline  !text-[#DCBA7B] hover:!text-white transition w-fit mx-auto mt-5' href="/about">Read More</Link>
 								</div>
 
 						</div>

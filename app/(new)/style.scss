@@ -209,6 +209,12 @@ html.no-scroll {
 	background-size: contain;
 }
 
+.arrow-bottom-image {
+	width: 3.5em;
+	height: 3.5em;
+	background: url(../../images/arrows/arrow-bottom-new.png) no-repeat scroll center transparent;
+	background-size: contain;
+}
 
 .filter-green {
 	filter: brightness(0) saturate(100%) invert(25%) sepia(6%) saturate(3239%) hue-rotate(91deg) brightness(98%) contrast(92%);

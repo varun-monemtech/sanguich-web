@@ -28,7 +28,7 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 	}
 
 	const addMarker = (google) => {
-		const scaledSize = new google.maps.Size(40, 40)
+		const scaledSize = new google.maps.Size(60, 60)
 
 		const infowindow = new google.maps.InfoWindow()
 		const infotitle = new google.maps.InfoWindow({ disableAutoPan: true })

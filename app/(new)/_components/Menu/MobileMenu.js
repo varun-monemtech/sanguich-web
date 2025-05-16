@@ -175,7 +175,7 @@ function MobileMenu(props) {
                                 loading="lazy"
                               />
                               <div className="absolute bottom-1 right-1">
-                                <button className="regular bg-white rounded-full w-4 h-4 flex items-center justify-center shadow-md">
+                                <button aria-label="Search" className="regular bg-white rounded-full w-4 h-4 flex items-center justify-center shadow-md">
                                   <SearchIcon className="w-2 h-2" />
                                 </button>
                               </div>

@@ -23,13 +23,13 @@ function Franchising() {
 						<div className="decor-bottom-right"></div>
 					</div>
 				</div>
-				<div className='frs-grid'>
+				<div className='frs-grid z-[1002] relative'>
 					<div className="content-wrapper py-12 px-8 md:py-16 md:px-12 lg:py-20 lg:px-16">
 						<div className="mx-auto max-w-7xl">
 							<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12  items-center">
 								<div className="order-2 lg:order-1">
-									<h2 className="text-5xl lg:text-8xl font2 !text-[#274F37] mb-2 md:mb-6">Franchising</h2>
-									<div className="text-md md:text-lg prose prose-lg text-[#274F37]">
+									<h2 className="text-5xl lg:text-[5rem] font2 !text-[#274F37] mb-2 md:mb-6">Franchising</h2>
+									<div className="text-md md:text-[1.25rem] prose prose-lg text-[#274F37]">
 										<p className="mb-4">
 											Franchising Coming Soon <br />
 											We’re getting ready to bring the sabor to more cities. Sanguich will soon be offering exclusive franchising opportunities for those who share our passion for Cuban flavor, culture, and community.

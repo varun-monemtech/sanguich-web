@@ -45,14 +45,12 @@ function PostTemplate({ post, hasNextPage, hasPrevPage, prevLink, nextLink }: { 
 					[&.in-view_.content]:duration-500
 			
 				`}>
-					<h2 className="font3 !mb-1 !mt-2 uppercase h4" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />
-					<div className="max-w-7xl mx-auto [&_img]:relative" dangerouslySetInnerHTML={{ __html: post?.acf?.content }} />
+					<div className='max-w-4xl mx-auto [&_img]:max-w-2xl [&_img]:mx-auto '>
+						<h2 className="font3 !mb-1 !mt-2 uppercase h4" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }} />
+						<div className=" [&_img]:relative" dangerouslySetInnerHTML={{ __html: post?.acf?.content }} />
+					</div>
 					{post?.acf?.video ?
-						<div >
-							<div>
-								<iframe id="i_video" width="1120" height="600" src={post?.acf?.video ? post?.acf.video : null} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-							</div>
-						</div>
+								<iframe id="i_video" className='mx-auto' width="1120" height="600" src={post?.acf?.video ? post?.acf.video : null} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 						: null}
 					{post?.acf?.image ?
 						<div >

@@ -161,7 +161,7 @@ function Recipes() {
 			<section id={`section-recipes-new`} style={{ zIndex: 101 }} className={`frs-grid content c5  border-type-7 is-inview   `}>
 
 					<BorderHeading>
-						<h2 className={`text-[#DCBA7B] m-0 px-[0.1em] py-0 c5 font2 z-[1001]`}>Recipes</h2>
+						<h2 className={`!text-[#DCBA7B] m-0 px-[0.1em] py-0 c5 font2 z-[1001]`}>Recipes</h2>
 					</BorderHeading>
 
 					<div className='grid-12 max-md:gap-y-4 md:gap-10'>

@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { LoadImage } from '@/components/new/LoadImage'
 import HeroTitleAnimated from './HeroTitleAnimated'
 import Intro from '@/animations/Intro_Framer'
+import Link from 'next/link'
 
 function HeroNew() {
 	const containerRef = useRef(null)
@@ -63,6 +64,10 @@ function HeroNew() {
 			className="max-md:mt-13 frs-grid-full relative border-type-1  overflow-x-clip m-[1.5em]"
 			ref={containerRef}
 		>
+			<Link href="#homepage-menu" title="Scroll To Menu" aria-label='Scroll To Menu' className="to-next 
+				absolute bottom-[0] translate-x-[-50%] left-1/2  max-h-[3.5em] z-[1005] 
+				arrow-bottom-image  mb-[-1em]"	
+			/>
 			<Intro delay={50}>
 			<div className="decor-wrap !p-0">
 				<div className="decor-top with-extra">

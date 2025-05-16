@@ -58,7 +58,7 @@ export const Footer = () => {
 
 					<div id="contact" className="contact padd-2 fs-85">
 						<Newsletter />
-						<p>For press or inquires please email us at <a href="mailto:info@sanguich.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" className='!text-[#fff] hover:opacity-60'>info@sanguich.com</a></p>
+						<p>For press or inquires please email us at <a href="mailto:info@sanguich.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" className='!text-[#fff] text-md hover:opacity-60'>info@sanguich.com</a></p>
 					</div>
 
 					<div className="footer-navi uppercase">
