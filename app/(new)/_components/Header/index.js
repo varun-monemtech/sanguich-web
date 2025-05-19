@@ -227,7 +227,7 @@ function Header(props) {
 			>
 				<div ref={nodeRef2} className={`frs-grid-full header-bar-new rounded-b-[37px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.16)] c5 max-md:!bg-[#D0C8B9] md:border-2 md:border-[#DCBA7B] ${naviContext.windowSize?.mobile ? 'onmobile' : ''} ${naviContext.isHamburgerActive ? 'open inview' : ''}`}>
 					<div className='frs-grid  '>
-						<div role='navigation' id='navi-bar' className={`regular  ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
+						<div role='navigation' aria-label='Main Navigation' id='navi-bar' className={`regular  ${naviContext.windowSize?.mobile ? 'onmobile' : ''}`}>
 							{naviContext.windowSize?.mobile ?
 								<Hamburger />
 								: null}
