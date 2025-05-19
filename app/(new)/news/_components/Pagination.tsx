@@ -22,7 +22,7 @@ export default function Pagination({ hasNextPage, hasPrevPage, prevLink, nextLin
 					</span>
 				</Link>
 			) : (
-				<div className="opacity-70 flex flex-row-reverse justify-center items-center gap-1 next-page uppercase font1">
+				<div className="opacity-80 flex flex-row-reverse justify-center items-center gap-1 next-page uppercase font1">
 					<div className="relative">
 						<div
 							className="arrow-prev-image !right-0"
@@ -53,7 +53,7 @@ export default function Pagination({ hasNextPage, hasPrevPage, prevLink, nextLin
 					</span>
 				</Link>
 			) : (
-				<div className="opacity-70 flex justify-center items-center gap-1 next-page uppercase font1">
+				<div className="opacity-80 flex justify-center items-center gap-1 next-page uppercase font1">
 					<div className="relative">
 						<div
 							className="arrow-next-image !left-0"
