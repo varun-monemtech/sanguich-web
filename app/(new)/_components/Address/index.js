@@ -47,7 +47,7 @@ function AddressNew(props) {
 					<h3 className='max-md:!text-sm uppercase font3 heading md:pb-1 !text-md !leading-[1]'>{node.name}</h3>
 					<div className='text-sm pt-1'>
 					<p className={` uppercase ${node.map ? 'underline' : ''} m-top-off`}>
-						{node?.map?.place_id ? <a target='_blank' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className=' block'>{node.address}</span>}
+						{node?.map?.place_id ? <a target='_blank' className='py-3' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className=' block'>{node.address}</span>}
 					</p>
 					<p className='pt-1'>
 						{i === 1 ? "NO DINE-IN | " : null}
