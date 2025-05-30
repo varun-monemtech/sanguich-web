@@ -39,7 +39,7 @@ function Franchising() {
 											Interested in joining la familia?
 										</p>
 										<p className="mb-4">
-											Reach out for more info <a href="mailto:letsgrow@sanguich.com">letsgrow@sanguich.com</a>
+											Reach out for more info <a href="mailto:info@sanguich.com">info@sanguich.com</a>
 										</p>
 									</div>
 								</div>

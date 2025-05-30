@@ -33,11 +33,11 @@ const timelineData = [
 		image: "/images/timeline/3.jpg",
 		alt: "Houses",
 		events: [
-			"Rosa and Daniel designed and begin the process of transforming our name.",
+			"Rosa and Daniel designed and begin the process of trademarking our name.",
 			"We dramatically downsize our lives in preparation to launch a new company.",
-			"We chose to live with her mom, Haydee. I help to rehab Rosa's mom's house so that we could have a comfortable and healthy living environment.",
+			"We chose to live with her mom, Haydee. I help to rebuild Rosa's mom's house so that our family has a comfortable and healthy living environment.",
 			"Their daughter Juliette is born Sept 11.",
-			"Rosa continues to work, Daniel quits an amazing job to make ends meet while we plan our next steps.",
+			"Rosa continues to work. Daniel gets an interim job to make ends meet while we plan our next steps.",
 			"We finalize the brand aesthetic and our Pan Con Lechon recipe.",
 			"We decide to participate in the Coconut Grove Arts Festival."
 		]
@@ -46,10 +46,13 @@ const timelineData = [
 		image: "/images/timeline/4.jpg",
 		alt: "Sanguich Shop",
 		events: [
-			"We launch Sanguich at CGAF, Feb 1. Immediately successful. One of the fastest selling vendors on record.",
-			"We were invited to participate in the Carnival on Alhambra two weeks later. Carnival we even a greater success.",
-			"We were invited to participate in Calle Ocho's Cubano Week. We win.",
-			"Sept 28th we open our custom shipping container on Calle Ocho."
+			"We launch Sanguich at CGAF, Feb 1 Immediately successful. One of the fastest selling vendors on record.",
+			"We were invited to participate in the Carnival on Alhambra two weeks later. Carnvival we even a greater success.",
+			"We were invited to participate in Calle Ocho's Cubano Wars. We won.",
+			"Sept 28th we open our custom shipping container on Calle Ocho.",
+			"Nov 3rd we have a grand opening party. Largest crowds ever seen for a restaurant in Little Havana.",
+			"Nov 28th. Joe Carollo began his attack on our business and family.",
+			"Joe Carrollo is successful in his attempt to close us dowm. He Issued the first injunction to impound a small business. "
 		]
 	},
 	{
@@ -73,11 +76,11 @@ const timelineData = [
 		image: "/images/timeline/3.jpg",
 		alt: "Houses",
 		events: [
-			"Rosa and Daniel designed and begin the process of transforming our name.",
+			"Rosa and Daniel designed and begin the process of trademarking our name.",
 			"We dramatically downsize our lives in preparation to launch a new company.",
-			"We chose to live with her mom, Haydee. I help to rehab Rosa's mom's house so that we could have a comfortable and healthy living environment.",
+			"We chose to live with her mom, Haydee. I help to rebuild Rosa's mom's house so that our family has a comfortable and healthy living environment.",
 			"Their daughter Juliette is born Sept 11.",
-			"Rosa continues to work, Daniel quits an amazing job to make ends meet while we plan our next steps.",
+			"Rosa continues to work. Daniel gets an interim job to make ends meet while we plan our next steps.",
 			"We finalize the brand aesthetic and our Pan Con Lechon recipe.",
 			"We decide to participate in the Coconut Grove Arts Festival."
 		]
@@ -86,10 +89,13 @@ const timelineData = [
 		image: "/images/timeline/4.jpg",
 		alt: "Sanguich Shop",
 		events: [
-			"We launch Sanguich at CGAF, Feb 1. Immediately successful. One of the fastest selling vendors on record.",
-			"We were invited to participate in the Carnival on Alhambra two weeks later. Carnival we even a greater success.",
-			"We were invited to participate in Calle Ocho's Cubano Week. We win.",
-			"Sept 28th we open our custom shipping container on Calle Ocho."
+			"We launch Sanguich at CGAF, Feb 1 Immediately successful. One of the fastest selling vendors on record.",
+			"We were invited to participate in the Carnival on Alhambra two weeks later. Carnvival we even a greater success.",
+			"We were invited to participate in Calle Ocho's Cubano Wars. We won.",
+			"Sept 28th we open our custom shipping container on Calle Ocho.",
+			"Nov 3rd we have a grand opening party. Largest crowds ever seen for a restaurant in Little Havana.",
+			"Nov 28th. Joe Carollo began his attack on our business and family.",
+			"Joe Carrollo is successful in his attempt to close us dowm. He Issued the first injunction to impound a small business. "
 		]
 	},
 ];
