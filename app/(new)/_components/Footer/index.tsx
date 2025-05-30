@@ -87,7 +87,7 @@ export const Footer = () => {
 					<div className='copy'>
 						<p className="uppercase h5 !m-0">SonaÑdo en 2014. Establecido en 2015</p>
 						{/* <p className="uppercase h6">Copyright &copy; {year}. SITE BY <a href="https://www.deepsleepstudio.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" style={{ wordSpacing: '.5em' }} className='h5'>ds/s</a>.</p> */}
-						<p className="!text-[0.75rem] uppercase h5 pb-1 !m-0 !text-[#74A387]">MADE WITH LOVE BY <a href="https://www.deepsleepstudio.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" className='!text-[#fff] hover:opacity-60'>DEEPSLEEP STUDIO</a>.</p>
+						<p className="!text-[0.75rem] uppercase h5 pb-1 !m-0 ">MADE WITH LOVE BY  <a href="https://www.deepsleepstudio.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" className='!text-[#fff] hover:opacity-60 underline'>DEEPSLEEP STUDIO</a>.</p>
 
 					</div>
 				</div>

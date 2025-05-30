@@ -15,6 +15,9 @@ export default async function AboutPage() {
 		<>
 			<section id={`section-about-hero`} className={`frs-grid-ultrawide c5 is-inview`}>
 				<div id={'about-hero'} className="anchor"></div>
+				<div className='absolute bottom-20 right-20 z-[1000] block'>
+					<h1 className='text-white text-4xl font-bold'>About Us</h1>
+				</div>
 				<VideoComponent
 					url={'/static/796867dcdbbddbad0c13d54714d5d9d9/SANGUICH-Interview-1.mp4'}
 					mode="inline"
