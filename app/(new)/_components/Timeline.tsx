@@ -18,7 +18,7 @@ const timelineData = [
 		date: "2014",
 		title: "The Spark",
 		events: [
-			"Rosa and Daniel dreamt up of starting their own sandwich business."
+			"Rosa and Daniel dream of starting their own sandwich business."
 		]
 	},
 	{
@@ -27,14 +27,14 @@ const timelineData = [
 		date: "2015",
 		title: "Foundation & Family",
 		events: [
-			"October 2nd",
-			"Our daughter London is born.",
+			"OCTOBER 2",
+			"Daniel and Rosa welcome their first daughter, London.",
 			"",
-			"November 15th",
+			"NOVEMBER 15",
 			"Sanguich is officially incorporated.",
 			"",
-			"December 11th",
-			"Daniel leaves his corporate job to pursue the dream. Rosa and Daniel begin laying the foundation of their business."
+			"DECEMBER 11",
+			"Daniel leaves his corporate job to pursue the vision of Sanguich. Together, Rosa and Daniel begin laying the foundation for their future business."
 		]
 	},
 	{
@@ -43,9 +43,10 @@ const timelineData = [
 		date: "2016",
 		title: "Risk, Sacrifice, and Growth",
 		events: [
-			"Begin designing and trademarking the Sanguich name. Downsize and move in with Rosa’s mom, Haydee, to save for the business. Daniel rebuilds the family home for a healthier living environment.",
-			"September 11th",
-			"Our second daughter Juliette is born.",
+			"They start designing and trademarking the Sanguich name. To save for their venture, they downsize and move in with Rosa's mother, Haydee. During this time, Daniel renovates the family home to create a healthier living environment.",
+			"",
+			"SEPTEMBER 11",
+			"Their second daughter, Juliette, is born.",
 		]
 	},
 	{
@@ -54,11 +55,10 @@ const timelineData = [
 		date: "2017",
 		title: "The Debut",
 		events: [
-			"Sanguich makes its official debut at the Coconut Grove Arts Festival.",
-			"Two weeks later: Success at Carnaval on the Mile - top-performing vendor!",
-			"We win Calle Ocho's Cubano Wars.",
-			"September 28th",
-			"Open the first permanent location-a custom-built shipping container in Little Havana.",
+			"Sanguich makes its debut at the Coconut Grove Arts Festival. Two weeks later, the brand earns top-performing vendor at Carnaval on the Mile. Shortly after, they win Calle Ocho's Cubano Wars.",
+			"",
+			"SEPTEMBER 28",
+			"Sanguich opens its first permanent location—a custom-built shipping container in Little Havana.",
 		]
 	},
 	{
@@ -67,9 +67,10 @@ const timelineData = [
 		date: "2018",
 		title: "Brick by Brick",
 		events: [
-			"Daniel begins construction on a brick-and-mortar store.",
-			"August 28th",
-			"Grand opening of Sanguich in the heart of Calle Ocho.",
+			"Construction begins on their first brick-and-mortar store.",
+			"",
+			"AUGUST 28",
+			"Grand opening of Sanguich’s flagship on Calle Ocho.",
 		]
 	},
 	{
@@ -78,11 +79,11 @@ const timelineData = [
 		date: "2020",
 		title: "Pivot & Persevere",
 		events: [
-			"March 3rd",
-			"Sign a second lease in Miami Lakes.",
+			"MARCH 3",
+			"Sanguich signs a second lease in Miami Lakes, signaling continued growth.",
 			"",
-			"March 13th",
-			"COVID-19 shuts down the world. Sanguich closes for 6 weeks. Daniel and Rosa take the pause to restructure operations and rebuild smarter.",
+			"MARCH 13",
+			"COVID-19 shuts down the world. Sanguich is forced to close for six weeks. Daniel and Rosa use this time as an opportunity to restructure operations and rebuild the business with greater intention and efficiency.",
 		]
 	},
 	{
@@ -91,17 +92,15 @@ const timelineData = [
 		date: "2021",
 		title: "From Dream to Legacy",
 		events: [
-			"Operations improve; more space is needed.",
+			"As operations improved, the need for additional space became evident. Sanguich initiated a partnership with JBT to help scale production.",
 			"",
-			"Begin partnership with JBT to scale production.",
+			"JUNE 21",
+			"The team purchased their first commercial injector and tumbler—key tools to support growing demand.",
 			"",
-			"June 21st",
-			"Purchase first commercial injector and tumbler.",
+			"OCTOBER 15",
+			"They closed on a new commercial property and began construction immediately.",
 			"",
-			"October 15th",
-			"Close on a new commercial property-construction begins.",
-			"",
-			"Daniel begins engineering a custom sandwich press with his friend, Christian. Heavy investment in system engineering the company.",
+			"Around the same time, Daniel began engineering a custom sandwich press with his friend Christian. The company also made significant investments in system engineering to streamline operations and support long-term scalability.",
 		]
 	},
 	{
@@ -110,11 +109,11 @@ const timelineData = [
 		date: "2022",
 		title: "Breaking Records",
 		events: [
-			"March 5th",
-			"Launch of La Plancha at Carnaval on the Mile. 1,300 sandwiches sold in a day-flawless execution. Game changer.",
+			"MARCH 5",
+			"Sanguich launches La Plancha at Carnaval on the Mile, selling 1,300 sandwiches in a single day with flawless execution—a defining moment for the brand.",
 			"",
-			"June 9th",
-			"Awarded the Michelin Bib Gourmand, the first ceremony in Florida.",
+			"JUNE 9",
+			"Sanguich is awarded its first Michelin Bib Gourmand during Florida’s inaugural ceremony, marking a major milestone in the restaurant’s culinary journey.",
 		]
 	},
 	{
@@ -123,28 +122,26 @@ const timelineData = [
 		date: "2023",
 		title: "Expansion & Evolution",
 		events: [
-			"Move into the new commissary kitchen.",
+			"JANUARY 16",
+			"The commercial injector is activated for the first time.",
 			"",
-			"January 16th",
-			"The injector is turned on for the first time",
+			"FEBRUARY 2",
+			"First batch of house-made ham and lechón is produced—1,500 lbs in 45 minutes.",
 			"",
-			"February 2nd",
-			"First batch of house-made ham and lechon-1,500 lbs in 45 minutes.",
+			"MAY 9",
+			"Launch of Sanguich Café, introducing a new concept under the brand.",
 			"",
-			"May 9th",
-			"Launch of Sanguich Caf",
+			"MAY 11",
+			"Sanguich earns its second Michelin Bib Gourmand.",
 			"",
-			"May 11th",
-			"Receive a second Michelin Bib Gourmand.",
+			"AUGUST 28",
+			"Opens La Ventanita de los Parados in Little River. (Yes, they missed an “A” in Ventanita.)",
 			"",
-			"August 28th",
-			"Open La Ventanita de los Parados in Little River. Yes they missed an “A” in Ventanita.",
-			"",
-			"October 24th",
+			"OCTOBER 24",
 			"Rosa and Daniel marry in Laglio, Italy.",
 			"",
-			"November 16th",
-			"Launch the first clean Cuban-style bread and Media Noche-free from potassium bromate, BHT, mold inhibitors, and more.",
+			"NOVEMBER 16",
+			"Launches the first clean Cuban-style and Media Noche breads—free from potassium bromate, BHT, and other additives.",
 		]
 	},
 	{
@@ -153,23 +150,20 @@ const timelineData = [
 		date: "2024",
 		title: "National Recognition",
 		events: [
-			"April 18th",
-			"Invited to the White House for Cuban Diaspora Day.",
+			"APRIL 18",
+			"Sanguich is invited to the White House for Cuban Diaspora Day and receives its third Michelin Bib Gourmand on the same day.",
 			"",
-			"April 18th",
-			"Receive a third Michelin Bib Gourmand.",
+			"JUNE 7",
+			"The Coral Gables location opens, drawing over 500 people—the city’s largest restaurant opening crowd to date.",
 			"",
-			"June 7th",
-			"Grand opening of Coral Gables location-draws over 500 people, the city's largest restaurant opening crowd.",
+			"AUGUST 24",
+			"A new location opens at Bayside Marketplace.",
 			"",
-			"August 24th",
-			"Open at Bayside Marketplace.",
+			"AUGUST 27",
+			"Named “Best Cuban Sandwich in South Florida” by the Sun Sentinel.",
 			"",
-			"August 27th",
-			"Named “Best Cuban Sandwich in South Florida” by Sun Sentinel.",
-			"",
-			"November",
-			"Become one of the first fast casual restaurants to offer a traceable “prime” pork product-a first in Cuban fast casual dining.",
+			"NOVEMBER",
+			"Sanguich becomes one of the first fast-casual restaurants to offer a fully traceable “prime” pork product—setting a new standard in Cuban fast casual dining.",
 		]
 	},
 	{
@@ -178,10 +172,10 @@ const timelineData = [
 		date: "2025",
 		title: "The Journey Continues",
 		events: [
-			"November",
-			"Aventura store slated to open Nov 2025",
+			"NOVEMBER",
+			"The Aventura location is slated to open in November 2025.",
 			"",
-			"As 2025 unfolds, Sanguich continues to redefine Cuban cuisine-one sandwich at a time. ",
+			"As 2025 unfolds, Sanguich continues to redefine Cuban cuisine—one sandwich at a time.",
 		]
 	},
 ];
