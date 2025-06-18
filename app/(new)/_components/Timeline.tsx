@@ -184,12 +184,12 @@ function Timeline() {
 	const swiperRef = useRef(null);
 
 	return (
-		<section id="section-timeline" className="cursor-grab frs-grid frs-grid-ultrawide  bg-[#274F37] py-2 pb-10 relative border-type-7 ">
+		<section id="section-timeline" className="cursor-grab frs-grid frs-grid-ultrawide  bg-[#274F37] py-2 pb-8 relative border-type-7 ">
 			<Intro delay={50}>
 				<div className="">
 					<div className='frs-grid'>
 						<BorderHeading>
-							<h2 className={` m-0 px-[0.1em] py-0  font2 !bg-[#274F37] z-[1001] text-[#EFE7D3]`}>Our Timeline</h2>
+							<h2 className={`m-0 px-[0.1em] py-0 font2 !bg-[#274F37] z-[1001] text-[#EFE7D3]`}>Our Timeline</h2>
 						</BorderHeading>
 
 					</div>
@@ -198,8 +198,7 @@ function Timeline() {
 						<Swiper
 							ref={swiperRef}
 							modules={[Mousewheel, Scrollbar, FreeMode]}
-							slidesPerView={4}
-							freeMode={true}
+							// slidesPerView={4}
 							mousewheel={
 								{
 									forceToAxis: true,
@@ -213,12 +212,26 @@ function Timeline() {
 							breakpoints={{
 								2: {
 									slidesPerView: 1,
+									freeMode: {
+										enabled: false,
+									},
+									autoHeight: true
 								},
 								768: {
 									slidesPerView: 3,
+									freeMode: {
+										enabled: true,
+										sticky: false,
+									},
+									autoHeight: false
 								},
 								1024: {
 									slidesPerView: 4,
+									freeMode: {
+										enabled: true,
+										sticky: false,
+									},
+									autoHeight: false
 								}
 							}}
 						>
@@ -243,11 +256,11 @@ function Timeline() {
 										</div>
 
 										<div className="text-[#EFE7D3] px-2 text-center">
-											<h3 className="text-6xl mb-0">{slide.date}</h3>
-											<h3 className="text-3xl mt-0 -mb-2 font-bold leading-[1.1]">{slide.title}</h3>
-											<div className="flex flex-col gap-1 py-3">
+											<h3 className="font2 text-6xl -mb-0.5 tracking-[0.02em]">{slide.date}</h3>
+											<h3 className="font2 text-4xl mt-0 -mb-2 font-bold leading-[1] tracking-[0.02em]">{slide.title}</h3>
+											<div className="flex flex-col gap-1 pt-3">
 												{slide.events.map((event, eventIndex) => (
-													<p key={eventIndex} className="text-sm px-3 m-0 block leading-4">{event}</p>
+													<p key={eventIndex} className="text-sm 2xl:text-base m-0 block !leading-[1.2]">{event}</p>
 												))}
 											</div>
 										</div>
@@ -260,11 +273,19 @@ function Timeline() {
 					{/* Custom CSS for Swiper styling */}
 					<style jsx global>{`
 					.swiper-scrollbar-horizontal {
-						height: 25px !important;
+						height: 1rem !important;
 						background: #11341F;
 						width: 50% !important;
 						left: 50% !important;
 						transform: translateX(-50%) !important;
+					}
+
+					@media (max-width: 1024px) {
+						.swiper-scrollbar-horizontal {
+							height: 1.25rem !important;
+							width: 70% !important;
+							left: calc(50% + 1rem) !important;
+						}
 					}
 
 					.swiper-scrollbar-drag {
@@ -272,7 +293,7 @@ function Timeline() {
 					}
 		
 					.swiper-wrapper {
-						padding-bottom: 5rem !important;	
+						padding-bottom: 4rem !important;	
 						overflow: visible !important;
 					}
           
