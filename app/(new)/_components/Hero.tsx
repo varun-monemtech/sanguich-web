@@ -179,7 +179,7 @@ function HeroNew() {
 				</div>
 
 				<motion.div
-					className="absolute py-10 bottom-[0%] left-0 w-[200%] z-[-10]"
+					className="absolute py-10 bottom-[0%] left-0 w-[340%] md:w-[200%] z-[-10]"
 					style={{
 						y: maskParallax,
 						x: maskTranslateX
