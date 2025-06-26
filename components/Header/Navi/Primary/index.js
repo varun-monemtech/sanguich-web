@@ -125,12 +125,12 @@ function NaviPrimary(props) {
       "url": "/#news",
       "parentId": null,
     },
-    {
-      "id": "shop-id",
-      "label": "Shop",
-      "url": "/#shop",
-      "parentId": null,
-    },
+    // {
+    //   "id": "shop-id",
+    //   "label": "Shop",
+    //   "url": "/#shop",
+    //   "parentId": null,
+    // },
     {
       "id": "careers-id",
       "label": "Careers",
