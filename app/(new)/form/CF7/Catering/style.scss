@@ -1,12 +1,19 @@
 .has-datepicker {
-	z-index: 1900 !important;
+	// z-index: 1900 !important;
+	position: relative;
 
 	+.has-datepicker {
-		z-index: 1800 !important;
+		// z-index: 1800 !important;
 
 		+.has-datepicker {
-			z-index: 1700 !important;
+			// z-index: 1700 !important;
 		}
+	}
+
+	// Simple solution - any focused datepicker gets z-index 9999
+	&.datepicker-focused {
+		z-index: 9999 !important;
+		position: relative;
 	}
 }
 
@@ -216,4 +223,9 @@ form.catering {
 .order-btn {
 	background: #D0C8B9 !important;
 	color: #274F37 !important;
+}
+
+// Simple solution - any open datepicker popup gets maximum z-index
+.react-datepicker-popper {
+	z-index: 9999 !important;
 }

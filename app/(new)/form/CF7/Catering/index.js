@@ -83,6 +83,35 @@ function CF7Catering(props) {
 		setActive(status => !status)
 	}
 
+	// Simple approach - boost the focused label to z-index 9999
+	const handleDatePickerOpen = (fieldName) => {
+		// Remove any existing boost classes
+		document.querySelectorAll('.datepicker-focused').forEach(el => {
+			el.classList.remove('datepicker-focused')
+		})
+		
+		// Find the correct label container for this field
+		let activeField = null
+		if (fieldName === 'eventdate') {
+			activeField = document.querySelector('label.has-datepicker.span-12')
+		} else if (fieldName === 'starttime') {
+			activeField = document.querySelector('label.datepicker-starttime')
+		} else if (fieldName === 'endtime') {
+			activeField = document.querySelector('label.datepicker-endtime')
+		}
+		
+		if (activeField) {
+			activeField.classList.add('datepicker-focused')
+		}
+	}
+
+	const handleDatePickerClose = () => {
+		// Remove focused class when datepicker closes
+		document.querySelectorAll('.datepicker-focused').forEach(el => {
+			el.classList.remove('datepicker-focused')
+		})
+	}
+
 	const onSubmit = (form, e) => {
 		e.preventDefault()
 
@@ -204,28 +233,28 @@ function CF7Catering(props) {
 					<div className={`span-12 grid-12 form-fields-wrap ${isActive ? 'active' : ''}`}>
 
 						<label className="span-12 animated delay-500">
-							<input type="text" placeholder="Enter full name" name="name" {...register("name", { required: false })} />
+							<input type="text" placeholder="Enter full name" name="name" {...register("name", { required: false })} onFocus={handleDatePickerClose} />
 							{errors.name && <p className="small margin-off">your name is required.</p>}
 						</label>
 						<label className="span-12 animated delay-500">
-							<input type="text" placeholder="Phone" name="phone" {...register("phone", { required: true })} />
+							<input type="text" placeholder="Phone" name="phone" {...register("phone", { required: true })} onFocus={handleDatePickerClose} />
 							{errors.phone && <p className="small margin-off">your phone number is required.</p>}
 						</label>
 						<label className="span-12 animated delay-500">
-							<input type="text" placeholder="e-mail" name="email" {...register("email", { required: true, minLength: 6, pattern: /^\S+@\S+$/i })} />
+							<input type="text" placeholder="e-mail" name="email" {...register("email", { required: true, minLength: 6, pattern: /^\S+@\S+$/i })} onFocus={handleDatePickerClose} />
 							{errors.email && <p className="small margin-off">a correct email is required.</p>}
 						</label>
 						<label className="span-6 span-12-mobile animated delay-500">
-							<input type="text" placeholder="company" name="company" {...register("company", { required: false })} />
+							<input type="text" placeholder="company" name="company" {...register("company", { required: false })} onFocus={handleDatePickerClose} />
 						</label>
 						<label className="span-6 span-12-mobile animated delay-500">
-							<input type="text" placeholder="address" name="address" {...register("address", { required: false })} />
+							<input type="text" placeholder="address" name="address" {...register("address", { required: false })} onFocus={handleDatePickerClose} />
 						</label>
 						<label className="span-6 span-12-mobile animated delay-500">
-							<input type="text" placeholder="city" name="city" {...register("city", { required: false })} />
+							<input type="text" placeholder="city" name="city" {...register("city", { required: false })} onFocus={handleDatePickerClose} />
 						</label>
 						<label className="span-6 span-12-mobile animated delay-500">
-							<input type="text" placeholder="zip" name="zip" {...register("zip", { required: false })} />
+							<input type="text" placeholder="zip" name="zip" {...register("zip", { required: false })} onFocus={handleDatePickerClose} />
 						</label>
 						<label className="span-12 animated delay-500 has-datepicker">
 							<Controller
@@ -237,6 +266,8 @@ function CF7Catering(props) {
 										selected={field.value}
 										// onSelect={handleDateSelect} //when day is clicked
 										onChange={(date) => field.onChange(date)}
+										onCalendarOpen={() => handleDatePickerOpen('eventdate')}
+										onCalendarClose={handleDatePickerClose}
 										valueName="selected"
 										showTimeSelect={false}
 										dateFormat="MMM d yyyy"
@@ -248,7 +279,7 @@ function CF7Catering(props) {
 								)}
 							/>
 						</label>
-						<label className="span-6 span-12-laptop animated delay-500 has-datepicker">
+						<label className="span-6 span-12-laptop animated delay-500 has-datepicker datepicker-starttime">
 							<Controller
 								name="starttime"
 								control={control}
@@ -258,6 +289,8 @@ function CF7Catering(props) {
 										selected={field.value}
 										// onSelect={handleDateSelect} //when day is clicked
 										onChange={(date) => field.onChange(date)}
+										onCalendarOpen={() => handleDatePickerOpen('starttime')}
+										onCalendarClose={handleDatePickerClose}
 										valueName="selected"
 										showTimeSelect={true}
 										showTimeSelectOnly
@@ -266,11 +299,14 @@ function CF7Catering(props) {
 										placeholderText="Event Start Time"
 										isClearable
 										shouldCloseOnSelect
+										popperProps={{
+											strategy: 'fixed'
+										}}
 									/>
 								)}
 							/>
 						</label>
-						<label className="span-6 span-12-laptop animated delay-500 has-datepicker">
+						<label className="span-6 span-12-laptop animated delay-500 has-datepicker datepicker-endtime">
 							<Controller
 								name="endtime"
 								control={control}
@@ -280,6 +316,8 @@ function CF7Catering(props) {
 										selected={field.value}
 										// onSelect={handleDateSelect} //when day is clicked
 										onChange={(date) => field.onChange(date)}
+										onCalendarOpen={() => handleDatePickerOpen('endtime')}
+										onCalendarClose={handleDatePickerClose}
 										valueName="selected"
 										showTimeSelect={true}
 										showTimeSelectOnly
@@ -288,6 +326,9 @@ function CF7Catering(props) {
 										placeholderText="Event End Time"
 										isClearable
 										shouldCloseOnSelect
+										popperProps={{
+											strategy: 'fixed'
+										}}
 									/>
 								)}
 							/>
@@ -308,6 +349,8 @@ function CF7Catering(props) {
 										// isMulti
 										placeholder="Type of Event..."
 										isClearable
+										onMenuOpen={handleDatePickerClose}
+										onFocus={handleDatePickerClose}
 										styles={customStyles}
 										theme={theme => ({
 											...theme,
@@ -356,6 +399,8 @@ function CF7Catering(props) {
 										// isMulti
 										placeholder="Participants..."
 										isClearable
+										onMenuOpen={handleDatePickerClose}
+										onFocus={handleDatePickerClose}
 										styles={customStyles}
 										theme={theme => ({
 											...theme,
@@ -389,7 +434,7 @@ function CF7Catering(props) {
 							/>
 						</label>
 						<label className="span-12 animated delay-500">
-							<textarea placeholder="message" name="message" {...register("message", { required: false })} />
+							<textarea placeholder="message" name="message" {...register("message", { required: false })} onFocus={handleDatePickerClose} />
 						</label>
 
 						<div className="btn-wrap span-12 text-center font1 animated delay-500">

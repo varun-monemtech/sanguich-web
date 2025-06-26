@@ -3,11 +3,11 @@
 }
 
 .has-datepicker {
-	z-index: 1900 !important;
+	// z-index: 1900 !important;
 	+ .has-datepicker {
-	 z-index: 1800 !important;
+	//  z-index: 1800 !important;
 	 + .has-datepicker {
-		z-index: 1700 !important;
+		// z-index: 1700 !important;
 		}
  	}
 }
