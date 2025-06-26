@@ -887,6 +887,10 @@ $size_y_bp6: 70px;
 		> div > div:before {
 			transition: clip-path 1.5s ease-in-out, opacity 1s ease-in-out;
 		}
+
+		@media screen and (max-width: 1024px) {
+			padding: .25em;
+		}
 	}
 
 	.decor-top {
@@ -1123,6 +1127,10 @@ $size_y_bp6: 20px;
 		> div > div,
 		> div > div:before {
 			transition: clip-path 1.5s ease-in-out, opacity 1s ease-in-out;
+		}
+
+		@media screen and (max-width: 1024px) {
+			padding: .25em;
 		}
 	}
 

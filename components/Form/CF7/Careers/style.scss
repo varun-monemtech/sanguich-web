@@ -164,7 +164,7 @@ form.catering {
 		.has-datepicker,
 		input,
 		textarea {
-			font-size: .9em;
+			font-size: 16px;
 		}
 	}
 }
@@ -195,5 +195,9 @@ form.careers {
 
   input {
     font-size: 1.01em;
+    
+    @media screen and (max-width: 1024px) {
+      font-size: 16px;
+    }
   }
 }

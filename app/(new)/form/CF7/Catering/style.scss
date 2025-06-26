@@ -92,11 +92,16 @@ form.catering {
 
 	@media screen and (max-width: 1024px) {
 		//transform: translate3d(0,0,0);
+		transform: translate3d(0, calc(100% - 11em - 4px), 0);
 		max-height: 50em;
 
 		&.active {
 			max-height: none;
 		}
+	}
+
+	@media screen and (max-width: 768px) {
+		transform: translate3d(0, calc(100% - 10em - 4px), 0);
 	}
 
 	&.border-type-4 .decor-wrap {
@@ -203,7 +208,7 @@ form.catering {
 		.has-datepicker,
 		input,
 		textarea {
-			font-size: .9em;
+			font-size: 16px;
 		}
 	}
 }

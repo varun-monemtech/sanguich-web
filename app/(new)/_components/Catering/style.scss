@@ -15,11 +15,15 @@
     }
 
     @media screen and (max-width: 1024px) {
-      padding: calc(2vw + 4em) calc(2vw + 1.5em) 0;
+      padding: calc(2vw + 4em) calc(.5em) 0;
     }
 
     .catering {
       padding: calc(2vw + 4.5em) calc(2vw + 2em) 3.5em;
+
+      @media screen and (max-width: 1024px) {
+        padding: calc(2vw + 4.5em) calc(1vw + 1em) 3.5em;
+      }
     }
   }
 
