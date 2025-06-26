@@ -1,29 +1,40 @@
 'use client'
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { LoadImage } from '@/components/new/LoadImage'
 import Intro from '@/animations/Intro_Framer'
 import SlotCounter from 'react-slot-counter'
 
 // Number display with slot machine effect
-const NumberDisplay = ({ number, className }) => {
+const NumberDisplay = ({ number, className, shouldAnimate = false }) => {
+	const counterRef = useRef(null)
 	// Convert to string and add commas
 	const formatted = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+	
+	useEffect(() => {
+		if (shouldAnimate && counterRef.current) {
+			// Small delay to ensure DOM is ready
+			setTimeout(() => {
+				counterRef.current?.startAnimation()
+			}, 100)
+		}
+	}, [shouldAnimate])
 	
 	return (
 		<div className={className}>
 			<SlotCounter
+				ref={counterRef}
 				value={formatted}
 				duration={1}
 				startValue="0"
 				useMonospaceWidth
 				charClassName="inline-block"
-				animateOnVisible={true}
+				autoAnimationStart={false}
 			/>
 		</div>
 	)
 }
 
-function CounterItem({ endValue, label, image, imageAlt }) {
+function CounterItem({ endValue, label, image, imageAlt, isInView }) {
 	return (
 		<div className="flex flex-col items-center">
 			<div className="w-32 h-32 xl:w-52 xl:h-52 border-2 border-[#707070] relative mb-2 md:mb-4 rounded-full overflow-hidden">
@@ -40,6 +51,7 @@ function CounterItem({ endValue, label, image, imageAlt }) {
 				<NumberDisplay
 					number={endValue}
 					className="text-4xl xl:text-7xl font2 text-[#222121] text-center overflow-hidden"
+					shouldAnimate={isInView}
 				/>
 			</div>
 
@@ -51,8 +63,33 @@ function CounterItem({ endValue, label, image, imageAlt }) {
 }
 
 function CounterSection() {
+	const [isInView, setIsInView] = React.useState(false)
+	const sectionRef = useRef(null)
+	
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setIsInView(true)
+					observer.disconnect() // Only trigger once
+				}
+			},
+			{
+				threshold: 0.1,
+				rootMargin: '0px 0px -20% 0px' // Trigger when 20% into viewport
+			}
+		)
+		
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current)
+		}
+		
+		return () => observer.disconnect()
+	}, [])
+	
 	return (
 		<section
+			ref={sectionRef}
 			id="section-counter"
 			className="frs-grid bg-[#E1B875] py-16 md:py-12 relative in-view"
 		>
@@ -70,64 +107,84 @@ function CounterSection() {
 			</div>
 
 			<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 xl:gap-12">
-				<Intro delay={0} className='
-					[&.not-in-view_.content]:opacity-0
-					[&.not-in-view_.content]:translate-y-[4rem]
-					[&.in-view_.content]:opacity-100
-					[&.in-view_.content]:translate-y-[0%]
-					[&.in-view_.content]:ease-in-out
-					[&.in-view_.content]:duration-500
-				'>
+				<Intro 
+					delay={0} 
+					visible={isInView}
+					className='
+						[&.not-in-view_.content]:opacity-0
+						[&.not-in-view_.content]:translate-y-[4rem]
+						[&.in-view_.content]:opacity-100
+						[&.in-view_.content]:translate-y-[0%]
+						[&.in-view_.content]:ease-in-out
+						[&.in-view_.content]:duration-500
+					'
+				>
 					<CounterItem
 						endValue={4234882}
 						label={`SANGUICHES \n SERVED`}
 						image="/images/counters/sanguich.jpg"
 						imageAlt="Sandwich served"
+						isInView={isInView}
 					/>
 				</Intro>
-				<Intro delay={250} className='
-					[&.not-in-view_.content]:opacity-0
-					[&.not-in-view_.content]:translate-y-[4rem]
-					[&.in-view_.content]:opacity-100
-					[&.in-view_.content]:translate-y-[0%]
-					[&.in-view_.content]:ease-in-out
-					[&.in-view_.content]:duration-500
-				'>
+				<Intro 
+					delay={250} 
+					visible={isInView}
+					className='
+						[&.not-in-view_.content]:opacity-0
+						[&.not-in-view_.content]:translate-y-[4rem]
+						[&.in-view_.content]:opacity-100
+						[&.in-view_.content]:translate-y-[0%]
+						[&.in-view_.content]:ease-in-out
+						[&.in-view_.content]:duration-500
+					'
+				>
 					<CounterItem
 						endValue={7234882}
 						label={`CAFECITOS \n SERVED`}
 						image="/images/counters/cafecito.jpg"
 						imageAlt="Cafecito being made"
+						isInView={isInView}
 					/>
 				</Intro>
-				<Intro delay={500} className='
-					[&.not-in-view_.content]:opacity-0
-					[&.not-in-view_.content]:translate-y-[4rem]
-					[&.in-view_.content]:opacity-100
-					[&.in-view_.content]:translate-y-[0%]
-					[&.in-view_.content]:ease-in-out
-					[&.in-view_.content]:duration-500
-				'>
+				<Intro 
+					delay={500} 
+					visible={isInView}
+					className='
+						[&.not-in-view_.content]:opacity-0
+						[&.not-in-view_.content]:translate-y-[4rem]
+						[&.in-view_.content]:opacity-100
+						[&.in-view_.content]:translate-y-[0%]
+						[&.in-view_.content]:ease-in-out
+						[&.in-view_.content]:duration-500
+					'
+				>
 					<CounterItem
 						endValue={32234882}
 						label={`SHARED \n LAUGHS`}
 						image="/images/counters/laughs.jpg"
 						imageAlt="People laughing"
+						isInView={isInView}
 					/>
 				</Intro>
-				<Intro delay={750} className='
-					[&.not-in-view_.content]:opacity-0
-					[&.not-in-view_.content]:translate-y-[4rem]
-					[&.in-view_.content]:opacity-100
-					[&.in-view_.content]:translate-y-[0%]
-					[&.in-view_.content]:ease-in-out
-					[&.in-view_.content]:duration-500
-				'>
+				<Intro 
+					delay={750} 
+					visible={isInView}
+					className='
+						[&.not-in-view_.content]:opacity-0
+						[&.not-in-view_.content]:translate-y-[4rem]
+						[&.in-view_.content]:opacity-100
+						[&.in-view_.content]:translate-y-[0%]
+						[&.in-view_.content]:ease-in-out
+						[&.in-view_.content]:duration-500
+					'
+				>
 					<CounterItem
 						endValue={32234882}
 						label={`HUGS \n GIVEN`}
 						image="/images/counters/hugs.jpg"
 						imageAlt="People hugging"
+						isInView={isInView}
 					/>
 				</Intro>
 			</div>
