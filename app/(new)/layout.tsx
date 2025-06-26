@@ -62,7 +62,6 @@ export default async function RootLayout({
 			<head>
 			<meta httpEquiv='x-ua-compatible' content='ie=edge' />
 			<meta name="theme-color" content="#151515" />
-			<link rel="icon" href="/favicon.ico" />
 
 			<style>{`
           html {
