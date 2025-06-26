@@ -43,7 +43,7 @@ function CounterItem({ endValue, label, image, imageAlt }) {
 				/>
 			</div>
 
-			<p className="text-lg font1 max-md:mt-2 uppercase text-[#274F37] whitespace-pre-line text-center">
+			<p className="text-[1.2em] leading-[1.2] md:text-lg font1 max-md:mt-2 uppercase text-[#274F37] whitespace-pre-line text-center">
 				{label}
 			</p>
 		</div>
