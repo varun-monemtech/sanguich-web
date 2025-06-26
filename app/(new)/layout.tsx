@@ -62,6 +62,7 @@ export default async function RootLayout({
 			<head>
 			<meta httpEquiv='x-ua-compatible' content='ie=edge' />
 			<meta name="theme-color" content="#151515" />
+			<meta name="apple-mobile-web-app-title" content="Sanguich" />
 
 			<style>{`
           html {

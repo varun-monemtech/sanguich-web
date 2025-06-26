@@ -15,7 +15,7 @@ function OurStory(props) {
 			{classes ?
 				<section id={`section-${anchor}`} className={`frs-grid-full relative content border-type-11 c5 ${classes}`}>
 					<Intro delay={50}>
-						<div className="decor-wrap filter-invert opacity-[0.35]">
+						<div className="decor-wrap filter-invert opacity-[1] mix-blend-luminosity">
 							<div className="decor-top with-extra">
 								<div className="decor-top-left before:hidden"></div>
 								<div className="decor-top-center with-extra">
