@@ -119,12 +119,12 @@ function NaviPrimary(props) {
 		// 	"url": "/#our-story",
 		// 	"parentId": null,
 		// },
-    {
-      "id": "news-id",
-      "label": "News",
-      "url": "/#news",
-      "parentId": null,
-    },
+    // {
+    //   "id": "news-id",
+    //   "label": "News",
+    //   "url": "/#news",
+    //   "parentId": null,
+    // },
     // {
     //   "id": "shop-id",
     //   "label": "Shop",
