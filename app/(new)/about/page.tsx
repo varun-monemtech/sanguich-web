@@ -13,10 +13,10 @@ export default async function AboutPage() {
 
 	return (
 		<>
-			<section id={`section-about-hero`} className={`frs-grid-ultrawide c5 is-inview`}>
+			<section id={`section-about-hero`} className={`frs-grid-ultrawide c5 is-inview max-md:!pt-[2.125rem]`}>
 				<div id={'about-hero'} className="anchor"></div>
-				<div className='absolute bottom-20 right-20 z-[1000] block'>
-					<h1 className='text-white text-4xl font-bold'>About Us</h1>
+				<div className='absolute bottom-1 md:bottom-20 right-2 md:right-20 z-[1000] block'>
+					<h1 className='text-white text-2xl md:text-4xl font-bold'>About Us</h1>
 				</div>
 				<VideoComponent
 					url={'/static/796867dcdbbddbad0c13d54714d5d9d9/SANGUICH-Interview-1.mp4'}
