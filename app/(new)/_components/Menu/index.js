@@ -119,7 +119,8 @@ function Menu(props) {
 						height={image.height}
 						alt={image.alt}
 						// quality={75}
-						className='lg:[&_img]:relative aspect-[3/3.5] bg-[#c0b7a8] [&_img]:!duration-[300ms]'
+						wrapperClassName='w-full h-full'
+						className='lg:[&_img]:relative aspect-[3/3.5] w-full h-full bg-[#c0b7a8] [&_img]:!duration-[300ms]'
 					/>
 					: null
 			)
@@ -339,7 +340,7 @@ function Menu(props) {
 												onExiting={fadeOutQuick}
 												nodeRef={nodeRef3}
 											>
-												<div ref={nodeRef3} className="">
+												<div ref={nodeRef3} className="w-full h-full">
 													{ImageCurrent}
 												</div>
 											</Transition>
