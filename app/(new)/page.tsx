@@ -1,20 +1,20 @@
 import React from 'react'
-import Menu from '../_components/Menu'
+import Menu from './_components/Menu'
 import ACFOrder from '@/components/ACF/Sanguich/Order'
-import ACFSeenOn from '../_components/SeenOn'
-import ProductGrid from '../_components/ProductGrid'
-import ACFOurStory from '../_components/OurStory'
-import ACFHola from '../_components/Hola'
-import ACFAddress from '../_components/Address'
-import ACFCatering from '../_components/Catering'
+import ACFSeenOn from './_components/SeenOn'
+import ProductGrid from './_components/ProductGrid'
+import ACFOurStory from './_components/OurStory'
+import ACFHola from './_components/Hola'
+import ACFAddress from './_components/Address'
+import ACFCatering from './_components/Catering'
 
-import Counter from '../_components/Counter'
+import Counter from './_components/Counter'
 
 import ContextProvider from '@/provider/ContextProvider'
 
 import { Metadata } from 'next'
-import Hero from '../_components/Hero'
-import Recipes from '../_components/Recipes'
+import Hero from './_components/Hero'
+import Recipes from './_components/Recipes'
 
 async function getPage() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/pages/5',
@@ -95,13 +95,13 @@ export default async function MainPage() {
 		}
 
 
-		if (section.acf_fc_layout === 'shop') {
-			return (
-				<ContextProvider key={i}>
-					<ProductGrid {...section} />
-				</ContextProvider>
-			)
-		}
+		// if (section.acf_fc_layout === 'shop') {
+		// 	return (
+		// 		<ContextProvider key={i}>
+		// 			<ProductGrid {...section} />
+		// 		</ContextProvider>
+		// 	)
+		// }
 
 		if (section.acf_fc_layout === 'counter') {
 			return (
@@ -109,11 +109,11 @@ export default async function MainPage() {
 			)
 		}
 
-		if (section.acf_fc_layout === 'recipes') {
-			return (
-				<Recipes key={i} {...section} />
-			)
-		}
+		// if (section.acf_fc_layout === 'recipes') {
+		// 	return (
+		// 		<Recipes key={i} {...section} />
+		// 	)
+		// }
 
 	})
 
