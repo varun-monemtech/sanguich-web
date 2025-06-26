@@ -120,7 +120,7 @@ function CounterSection() {
 					'
 				>
 					<CounterItem
-						endValue={4234882}
+						endValue={1534323}
 						label={`SANGUICHES \n SERVED`}
 						image="/images/counters/sanguich.jpg"
 						imageAlt="Sandwich served"
@@ -140,7 +140,7 @@ function CounterSection() {
 					'
 				>
 					<CounterItem
-						endValue={7234882}
+						endValue={322974}
 						label={`CAFECITOS \n SERVED`}
 						image="/images/counters/cafecito.jpg"
 						imageAlt="Cafecito being made"
@@ -160,7 +160,7 @@ function CounterSection() {
 					'
 				>
 					<CounterItem
-						endValue={32234882}
+						endValue={3068646}
 						label={`SHARED \n LAUGHS`}
 						image="/images/counters/laughs.jpg"
 						imageAlt="People laughing"
@@ -180,7 +180,7 @@ function CounterSection() {
 					'
 				>
 					<CounterItem
-						endValue={32234882}
+						endValue={1150742}
 						label={`HUGS \n GIVEN`}
 						image="/images/counters/hugs.jpg"
 						imageAlt="People hugging"
