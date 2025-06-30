@@ -94,7 +94,7 @@ function CounterSection() {
 			className="frs-grid bg-[#E1B875] py-16 md:py-12 relative in-view"
 		>
 			
-			<div className={`max-lg:!hidden decor-wrap !p-0 !z-[-1] justify-start filter-white border-type-7 max-md:opacity-0`} style={{ filter: 'brightness(0.65)' }}>
+			{/* <div className={`max-lg:!hidden decor-wrap !p-0 !z-[-1] justify-start filter-white border-type-7 max-md:opacity-0`} style={{ filter: 'brightness(0.65)' }}>
 				<div className="decor-top with-extra top-1/3 ">
 					<div className="decor-top-left"></div>
 					<div className="decor-top-center with-extra">
@@ -104,7 +104,7 @@ function CounterSection() {
 					</div>
 					<div className="decor-top-right"></div>
 				</div>
-			</div>
+			</div> */}
 
 			<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 xl:gap-12">
 				<Intro 
