@@ -13,12 +13,10 @@ export default async function AboutPage() {
 
 	return (
 		<>
-			<section id={`section-about-hero`} className={`frs-grid-ultrawide c5 is-inview max-md:!pt-[2.125rem]`}>
+			<section id={`section-about-hero`} className={`frs-grid-ultrawide c5 is-inview max-md:!pt-[2.125rem] bg-[#EFE7D3]`}>
 				<div id={'about-hero'} className="anchor"></div>
-				<div className='absolute bottom-1 md:bottom-20 right-2 md:right-20 z-[1000] block'>
-					<h1 className='text-white text-2xl md:text-4xl font-bold'>About Us</h1>
-				</div>
-				<VideoComponent
+			
+				{/* <VideoComponent
 					url={'/static/796867dcdbbddbad0c13d54714d5d9d9/SANGUICH-Interview-1.mp4'}
 					mode="inline"
 					wrapperClasses="light [&_button>div]:hidden"
@@ -28,7 +26,10 @@ export default async function AboutPage() {
 							content: "<span class='hola'></span>",
 						}
 					}
-				/>
+				/> */}
+				<div className='frs-grid pt-15 z-[1000] block bg-[#EFE7D3]'>
+					<h1 className='text-2xl text-right md:text-3xl font-bold !text-[#274F37]'>About Us</h1>
+				</div>
 			</section>
 			<Founders />
 			<Timeline />
