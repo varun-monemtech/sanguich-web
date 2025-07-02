@@ -113,6 +113,12 @@ function NaviPrimary(props) {
       "url": "/#our-story",
       "parentId": null,
     },
+		{
+      "id": "about-id",
+      "label": "About Us",
+      "url": "/about",
+      "parentId": "story-id",
+    },
 		// {
 		// 	"id": "stories-id",
 		// 	"label": "Sanguich Stories",
