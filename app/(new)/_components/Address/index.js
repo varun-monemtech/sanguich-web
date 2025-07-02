@@ -108,13 +108,13 @@ function AddressNew(props) {
 						</div> */}
 
 						<div className='grid-12 max-md:gap-y-4 md:gap-10'>
-							<div className={`main-grid md:bg-[#000]  max-md:!p-0  span-12-tablet span-5 rounded-lg padd `}>
-								<div className='scroll-container grid-12 '>
+							<div className={`main-grid md:bg-[#000] lg:aspect-[3/4] max-md:!p-0  span-12-tablet span-5 rounded-lg padd `}>
+								<div className='scroll-container grid-12 lg:h-full lg:overflow-y-auto'>
 									{itemsMap}
 								</div>
 							</div>
 							<div className={`max-md:-order-1 span-7 span-12-tablet`}>
-								<div className='aspect-square overflow-hidden rounded-lg gold-border'>
+								<div className='max-lg:aspect-square lg:w-full lg:h-full  overflow-hidden rounded-lg gold-border'>
 									<GMap 
                   allVenues={props.items} 
                   hoveredIndex={hoveredIndex} 
