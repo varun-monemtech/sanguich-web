@@ -175,9 +175,9 @@ function Menu(props) {
 					<div className={`menu-specific flex flex-col items-center cursor-pointer padd-1 ${currentTab === i ? 'current' : null}`}>
 						
 						<h3 className=" text-center !p-0 !m-0 !text-[#274F37] font2 !text-[4.5em]">{menu.title}</h3>
-						<Link href={`#${menu.title}`} className='btn  hover:opacity-80'>
+						{/* <Link href={`/#address`} className='btn  hover:opacity-80'>
 							<span>ORDER NOW</span>
-							</Link>
+						</Link> */}
 					</div>
 					
 					<div className="menu-specific-items max-w-[50rem] mx-auto text-[#274F37]">
