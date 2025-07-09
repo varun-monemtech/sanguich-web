@@ -27,7 +27,10 @@ function AddressNew(props) {
 				className={`span-12  cursor-pointer flex gap-2 md:gap-3 p-[0.5em] md:py-[1.5em] md:px-[1em] tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 				onMouseEnter={() => setHoveredIndex(i)}
 				onMouseLeave={() => setHoveredIndex(null)}
-				onClick={() => setSelectedIndex(i)}
+				onClick={() => {
+					setSelectedIndex(i)
+					setHoveredIndex(null)
+				}}
 			>
 
 				<div className="span-12-tablet span-5 relative overflow-hidden">
