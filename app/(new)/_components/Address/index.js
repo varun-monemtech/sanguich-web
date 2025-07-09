@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import MultiButton from './MultiButton'
 import GMap from '@/components/GMap'
 import { LoadImage } from '@/components/new/LoadImage'
@@ -7,9 +7,30 @@ import Intro from '@/animations/Intro_Framer'
 import './style.scss'
 import BorderHeading from '../BorderHeading'
 
+const useIsMobile = () => {
+	const [isMobile, setIsMobile] = useState(false)
+
+	useEffect(() => {
+		const updateDeviceType = () => {
+			const mobile = window.innerWidth < 768 || (window.innerWidth <= 1368 && window.innerHeight < 768)
+			setIsMobile(mobile)
+		}
+
+		updateDeviceType()
+		window.addEventListener('resize', updateDeviceType)
+
+		return () => {
+			window.removeEventListener('resize', updateDeviceType)
+		}
+	}, [])
+
+	return isMobile
+}
+
 function AddressNew(props) {
 	const [hoveredIndex, setHoveredIndex] = useState(null)
 	const [selectedIndex, setSelectedIndex] = useState(null)
+	const isMobile = useIsMobile()
 	// const [mobileView, setMobileView] = useState('list') // 'list' or 'map'
 
 	const anchor = props.anchor
@@ -25,20 +46,9 @@ function AddressNew(props) {
 			<div
 				key={i}
 				className={`span-12  cursor-pointer flex gap-2 md:gap-3 p-[0.5em] md:py-[1.5em] md:px-[1em] tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
-				onMouseEnter={() => {
-					if (window.matchMedia('(hover: hover)').matches) {
-						setHoveredIndex(i)
-					}
-				}}
-				onMouseLeave={() => {
-					if (window.matchMedia('(hover: hover)').matches) {
-						setHoveredIndex(null)
-					}
-				}}
-				onClick={() => {
-					setSelectedIndex(selectedIndex === i ? null : i)
-					setHoveredIndex(null)
-				}}
+				onMouseEnter={() => !isMobile && setHoveredIndex(i)}
+				onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+				onClick={() => setSelectedIndex(i)}
 			>
 
 				<div className="span-12-tablet span-5 relative overflow-hidden">

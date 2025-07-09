@@ -1,10 +1,14 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import GoogleMapReact from 'google-map-react'
 import { GMapOptions } from './options'
 import { usePathname } from 'next/navigation'
 
 export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selectedIndex, setSelectedIndex }) {
+	const selectedIndexRef = useRef(selectedIndex);
+	useEffect(() => {
+		selectedIndexRef.current = selectedIndex;
+	}, [selectedIndex]);
 
 	const gMapKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY
 	const path = usePathname()
@@ -33,6 +37,7 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 		const infowindow = new google.maps.InfoWindow()
 		const infotitle = new google.maps.InfoWindow({ disableAutoPan: true })
 		const bounds = new google.maps.LatLngBounds()
+		const markers = []
 
 		allVenues?.forEach((item, i) => {
 			if(!item.map) return
@@ -87,36 +92,59 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 				title: item.name
 			})
 
+			markers.push(marker)
+
 			// When clicking item boxes
 			gridItems[i]?.addEventListener('click', function () {
-				if (selectedIndex === i) {
-					// If clicking the same item again, clear selection
-					infowindow.close()
-					infowindow.currentlyOpen = null
-					infotitle.close()
-					marker.setIcon(icon)
-					setSelectedIndex(null)
+				const isMobile = window.innerWidth < 768
+
+				if (isMobile) {
+					if (selectedIndexRef.current !== i) {
+						// Reset all markers
+						markers.forEach(m => m.setIcon(icon))
+						
+						infowindow.currentlyOpen = i
+						infotitle.close()
+						infowindow.close()
+						infowindow.setContent(markupString)
+						infowindow.open(marker.getMap(), marker)
+						marker.setIcon(iconFilled)
+						setSelectedIndex(i)
+						google.map.setZoom(13)
+						google.map.panTo(position)
+					}
 				} else {
-					// If clicking a different item
-					infowindow.currentlyOpen = i
-					infotitle.close()
-					infowindow.close()
-					infowindow.setContent(markupString)
-					infowindow.open(marker.getMap(), marker)
-					marker.setIcon(iconFilled)
-					setSelectedIndex(i)
-					// google.map.panTo(position)
-					google.map.setZoom(13)
-					google.map.panTo(position, {
-						animate: true,
-						duration: 1000
-					})
+					if (selectedIndexRef.current === i) {
+						// If clicking the same item again, clear selection
+						infowindow.close()
+						infowindow.currentlyOpen = null
+						infotitle.close()
+						marker.setIcon(icon)
+						setSelectedIndex(null)
+					} else {
+						// If clicking a different item
+						// Reset all markers
+						markers.forEach(m => m.setIcon(icon))
+						
+						infowindow.currentlyOpen = i
+						infotitle.close()
+						infowindow.close()
+						infowindow.setContent(markupString)
+						infowindow.open(marker.getMap(), marker)
+						marker.setIcon(iconFilled)
+						setSelectedIndex(i)
+						google.map.setZoom(13)
+						google.map.panTo(position)
+					}
 				}
 			})
 
 			// When hovering item boxes
 			gridItems[i]?.addEventListener('mouseover', function () {
-				if (selectedIndex !== i) {
+				const isMobile = window.innerWidth < 768
+				if(isMobile) return
+
+				if (selectedIndexRef.current !== i) {
 					infotitle.close() // Close previously opened infotitle
 					if (infowindow.currentlyOpen !== i) {
 						infotitle.setContent(titleString)
@@ -129,7 +157,10 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 
 			// When hovering item boxes
 			gridItems[i]?.addEventListener('mouseout', function () {
-				if (selectedIndex !== i) {
+				const isMobile = window.innerWidth < 768
+				if(isMobile) return
+
+				if (selectedIndexRef.current !== i) {
 					infotitle.close() // Close previously opened infotitle
 					setHoveredIndex(null)
 					marker.setIcon(icon)
@@ -138,7 +169,7 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 
 			// When clicking markers
 			marker.addListener("click", () => {
-				if (selectedIndex === i) {
+				if (selectedIndexRef.current === i) {
 					// If clicking the same marker again, clear selection
 					infowindow.close()
 					infowindow.currentlyOpen = null
@@ -147,6 +178,9 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 					setSelectedIndex(null)
 				} else {
 					// If clicking a different marker
+					// Reset all markers
+					markers.forEach(m => m.setIcon(icon))
+					
 					infowindow.currentlyOpen = i
 					infotitle.close()
 					infowindow.close()
@@ -155,10 +189,7 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 					marker.setIcon(iconFilled)
 					setSelectedIndex(i)
 					google.map.setZoom(13)
-					google.map.panTo(position, {
-						animate: true,
-						duration: 1000
-					})
+					google.map.panTo(position)
 					
 					// Scroll the restaurant into view within the scroll container
 					if (scrollContainer && gridItems[i]) {
@@ -177,7 +208,10 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 
 			// When hovering markers
 			marker.addListener("mouseover", () => {
-				if (selectedIndex !== i) {
+				const isMobile = window.innerWidth < 768
+				if(isMobile) return
+
+				if (selectedIndexRef.current !== i) {
 					infotitle.close()
 					if (infowindow.currentlyOpen !== i) {
 						infotitle.setContent(titleString)
@@ -190,7 +224,10 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 
 			// When hovering markers
 			marker.addListener('mouseout', () => {
-				if (selectedIndex !== i) {
+				const isMobile = window.innerWidth < 768
+				if(isMobile) return
+
+				if (selectedIndexRef.current !== i) {
 					infotitle.close()
 					setHoveredIndex(null)
 					marker.setIcon(icon)
@@ -202,6 +239,13 @@ export default function GMap({ allVenues, hoveredIndex, setHoveredIndex, selecte
 				infowindow.close() // Close previously opened infowindow
 				infowindow.currentlyOpen = null
 				infotitle.close() // Close previously opened infotitle
+				if (allVenues) {
+					allVenues.forEach((_, i) => {
+						if (gridItems && gridItems[i] && gridItems[i].marker) {
+							gridItems[i].marker.setIcon(icon)
+						}
+					})
+				}
 				marker.setIcon(icon)
 				setSelectedIndex(null)
 				setHoveredIndex(null)
