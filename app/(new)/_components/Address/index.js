@@ -25,10 +25,18 @@ function AddressNew(props) {
 			<div
 				key={i}
 				className={`span-12  cursor-pointer flex gap-2 md:gap-3 p-[0.5em] md:py-[1.5em] md:px-[1em] tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
-				onMouseEnter={() => setHoveredIndex(i)}
-				onMouseLeave={() => setHoveredIndex(null)}
+				onMouseEnter={() => {
+					if (window.matchMedia('(hover: hover)').matches) {
+						setHoveredIndex(i)
+					}
+				}}
+				onMouseLeave={() => {
+					if (window.matchMedia('(hover: hover)').matches) {
+						setHoveredIndex(null)
+					}
+				}}
 				onClick={() => {
-					setSelectedIndex(i)
+					setSelectedIndex(selectedIndex === i ? null : i)
 					setHoveredIndex(null)
 				}}
 			>
