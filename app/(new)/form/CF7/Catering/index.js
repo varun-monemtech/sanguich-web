@@ -10,6 +10,8 @@ import { faBaby } from '@fortawesome/free-solid-svg-icons'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import dynamic from "next/dynamic";
+import CateringBadgeAnimated from '@/app/(new)/_components/CateringBadgeAnimated'
+
 const CreatableSelect = dynamic(() => import("react-select/creatable"), { ssr: false });
 
 function CF7Catering(props) {
@@ -176,28 +178,10 @@ function CF7Catering(props) {
 
 	return (
 		<>
-			<div className={`
-						border-2  border-[#DCBA7B] bg-[#1E3C2A]
-						 flex flex-col items-center 
-						 py-3 my-[1.75em] max-lg:mt-[.26em] max-lg:border-t-0 max-lg:max-w-[18rem] absolute top-0  w-full max-w-xs lg:max-w-md mx-auto 
-						 transition-all duration-1000 delay-100
-						${isActive ? ' opacity-0 z-[1001] ' : 'opacity-100 z-[1006] '}`}>
-
-				<p className='font1 text-center !m-0 !text-xs uppercase'>
-					For orders of 20 people <br />
-					or less please order here.
-				</p>
-				<button  onClick={(e) => onClickFillThisForm(e)} className='btn hover:opacity-80 text-xs mt-1 order-btn'>
-					<span className='text-[0.75rem]'>ORDER HERE</span>
-				</button>
-				<div className='absolute z-[1002] c5 w-5 h-5 bottom-[-2px] left-[-2px]  border-2 border-b-0 border-l-0  border-[#DCBA7B] rounded-tr-full'></div>
-				<div className='absolute z-[1002] c5 w-5 h-5 bottom-[-2px] right-[-2px]  border-2 border-b-0 border-r-0  border-[#DCBA7B] rounded-tl-full'></div>
-
-			</div>
-
 			<div className="badge">
-				<div className={`hi ${!isActive && !isSent ? 'active' : ''}`}></div>
-				<div className={`thanks ${isSent && !isActive ? 'active' : ''}`}></div>
+				{/* <div className={`hi ${!isActive && !isSent ? 'active' : ''}`}></div>
+				<div className={`thanks ${isSent && !isActive ? 'active' : ''}`}></div> */}
+				<CateringBadgeAnimated className="w-full h-auto" />
 			</div>
 
 			<div className="form-cut-off w-full z-[1005]">

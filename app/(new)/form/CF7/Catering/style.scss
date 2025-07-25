@@ -34,8 +34,8 @@
 	z-index: 400;
 	top: 50%;
 	left: 50%;
-	width: 60%;
-	height: 60%;
+	width: 40%;
+	height: 50%;
 	display: block;
 	transform: translate3d(-50%, -50%, 0);
 
@@ -225,7 +225,24 @@ form.catering {
 	color: #274F37 !important;
 }
 
+.order-btn-light {
+	background: #274F37 !important;
+	color: #D1C8BA !important;
+}
+
 // Simple solution - any open datepicker popup gets maximum z-index
 .react-datepicker-popper {
 	z-index: 9999 !important;
+}
+.react-datepicker {
+	width: 100% !important;
+}
+.react-datepicker__time-container  {
+	width: 100% !important;
+}
+.react-datepicker__time {
+	width: 100% !important;
+}
+.react-datepicker__time-box {
+	width: 100% !important;
 }
