@@ -226,8 +226,8 @@ html.no-scroll {
 ========================================================================== */
 
 .frs-grid {
-	--gap: clamp(1rem, 6vw, 3rem);
-	--tighter: min(86rem, 100% - var(--gap) * 2);
+	--gap: clamp(1rem, 7vw, 9rem);
+	--tighter: min(90rem, 100% - var(--gap) * 2);
 	--tight: minmax(0, 2rem);
 	--content: minmax(0, 2rem);
 	--wide: minmax(0, 2rem);
