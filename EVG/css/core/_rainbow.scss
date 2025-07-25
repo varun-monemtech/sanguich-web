@@ -380,6 +380,28 @@
 		background-color: transparent;
 	}
 
+	input,
+	textarea {
+		color: #DDBA7B;
+		background-color: $x1;
+		border-color: #DDBA7B;
+		border-top-color: transparent;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		padding-left: 0;
+		padding-right: 0;
+		text-transform: uppercase;
+
+		&::placeholder {
+			color: #DDBA7B;
+			opacity: 0.61;
+		}
+
+		&[type="submit"] {
+			background-color: $clead;
+		}
+	}
+
 	.border {
 		border-color: lighten($x1, 4%);
 	}

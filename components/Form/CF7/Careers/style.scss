@@ -1,173 +1,4 @@
-.elevate-z > div {
-	//z-index: 999;
-}
-.inputfilelabel {
-	&:hover {
-		span {
-			color: #fff;
-		}
-	}
-}
 
-.has-datepicker {
-	z-index: 700;
-	+ .has-datepicker {
-	 z-index: 600;
- 	}
-}
-
-.badge {
-	position: absolute;
-	z-index: 400;
-	top: 50%;
-	left: 50%;
-	width: 60%;
-	height: 60%;
-	display: block;
-	transform: translate3d(-50%,-50%,0);
-
-	@media screen and (max-width: 1024px) {
-		transform: translate3d(-50%,-75%,0);
-	}
-
-
-
-}
-
-.form-cut-off {
-	position: relative;
-	z-index: 1200;
-	overflow: hidden;
-	margin: 0 0 calc(1.75em + 6px);
-
-	@media screen and (max-width: 1600px) {
-		margin: 0 0 calc(1.75em + 4px);
-	}
-}
-
-form.catering {
-	padding: 4em;
-	margin-bottom: calc(-1.25em - 4px);
-	transform: translate3d(0,calc(100% - 12em - 4px),0);
-	transition: all 1s ease-in-out;
-
-	&.active {
-		transform: translate3d(0,0,0);
-	}
-	@media screen and (max-width: 1024px) {
-		//transform: translate3d(0,0,0);
-		max-height: 30em;
-
-		&.active {
-			max-height: none;
-		}
-	}
-
-	&.border-type-4 .decor-wrap {
-		padding-top: 2em;
-	}
-	
-	.bg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: calc(100% - 2.5em);
-		height: 100%;
-		margin: 0 1.25em;
-	}
-
-	.decor-wrap {
-		z-index: -1;
-		background-color: transparent;
-	}
-
-	.react-datepicker-ignore-onclickoutside {
-		&::selection {
-			background: transparent;
-		}
-	}
-
-	.form-fields-wrap {
-		position: relative;
-		z-index: 300;
-		opacity: 0;
-		transition: opacity 1s ease-in-out;
-
-		&.active {
-			opacity: 1;
-		}
-		@media screen and (max-width: 1024px) {
-			opacity: 1;
-		}
-	}
-
-	button[type="submit"] {
-		background: url(btn.png) no-repeat scroll center center transparent;
-		background-size: 100% 100%;
-		background-color: transparent !important;
-		color: #2A4B2E;
-
-		&:hover {
-			color: #fff;
-		}
-
-		&:active {
-			color: #2A4B2E;
-			transition: none;
-		}
-	}
-
-	.arrow-up {
-		position: absolute;
-		z-index: 500;
-		top: 0;
-		left: 50%;
-		transform: translate3d(-50%,0,0);
-		width: 4.5em;
-		height: 4.5em;
-		background: url(../../../../images/arrows/arrow-top.png) no-repeat scroll center center transparent;
-		background-size: 100% 100%;
-		cursor: pointer;
-
-		transition: all .4s ease-in-out 0s, opacity 1s ease-in-out 1s;
-
-		&.active {
-			transform: translate3d(-50%, 0, 0) rotate(180deg);
-			transform-origin: center center;
-
-			&:hover {
-				transform: translate3d(-50%, 0, 0) rotate(180deg) scale(.95);
-				transform-origin: center center;
-			}
-		}
-
-		&:hover {
-			transform: translate3d(-50%, 0, 0) rotate(0deg) scale(.95);
-			transform-origin: center center;
-		}
-	}
-
-	.fill-this-form {
-		cursor: pointer;
-		h3 {
-			margin-top: -.5em;
-			margin-bottom: .25em;
-
-			@media screen and (max-width: 1024px) {
-				margin-top: 0;
-				font-size: 1.5em;
-			}
-		}
-	}
-
-	@media screen and (max-width: 1024px) {
-		.has-datepicker,
-		input,
-		textarea {
-			font-size: 16px;
-		}
-	}
-}
 
 .inputfile {
   input {
@@ -184,20 +15,19 @@ form.catering {
   }
 }
 
-form.careers {
-  .inputselect {
-    margin: 0.4em 0;
-  } 
-  .inputfilelabel {
-    padding: 0.75em 1.5em;
-    margin: 0.3em 0;
-  }
+.careers-form {
+	padding: 4rem calc(3vw + 2.5em) 4rem;
 
-  input {
-    font-size: 1.01em;
-    
-    @media screen and (max-width: 1024px) {
-      font-size: 16px;
-    }
-  }
+}
+
+.btn-image-light {
+	width: auto !important;
+	margin: 0 auto !important;
+	border: none !important;
+	color: #212121 !important;
+	background: url(./btn.png) center / 100% 100% no-repeat !important;
+	transition: all 0.2s ease-in-out !important;
+	&:hover {
+		opacity: 0.5 !important;
+	}
 }
