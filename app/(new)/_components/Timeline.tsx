@@ -252,7 +252,7 @@ function Timeline() {
 										</div>
 
 										<div className='relative w-[101%] h-[1px] bg-white mx-auto my-7'>
-											<div className='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[1px] h-[3rem] bg-white mx-auto ' />
+											<div className='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[2px] h-[3rem] bg-white mx-auto ' />
 										</div>
 
 										<div className="text-[#EFE7D3] px-2 text-center">
