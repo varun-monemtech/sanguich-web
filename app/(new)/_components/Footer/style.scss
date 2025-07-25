@@ -1,6 +1,6 @@
 footer#master-footer {
 	position: relative;
-	padding: 6vw 2em 6vw;
+	padding: 6vw 2em 4vw;
 	margin-top: -1px;
 	overflow: hidden;
 	align-items: center;
@@ -28,14 +28,13 @@ footer#master-footer {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 1em 0;
 
 		@media screen and (max-width: 1024px) {
 			flex-wrap: wrap;
 		}
 
 		h6, .h6 {
-			margin: 0 .5em;
+			margin: 0 1.25em;
 			font-size: 1em;
 			font-weight: 600;
 
@@ -49,7 +48,7 @@ footer#master-footer {
 		position: relative;
 		z-index: 1000;
 
-		padding: 3em 5.23em 2em;
+		padding: 0.15rem 1rem 1rem;
 		font-size: 0.65em;
 		text-align: center;
 		align-items: center;

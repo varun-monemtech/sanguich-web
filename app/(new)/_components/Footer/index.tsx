@@ -58,22 +58,27 @@ export const Footer = () => {
 
 					<div id="contact" className="contact padd-2 fs-85">
 						<Newsletter />
-						<p>For press or inquires please email us at <a href="mailto:info@sanguich.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" className='!text-[#fff] text-md hover:opacity-60'>info@sanguich.com</a></p>
 					</div>
-
 					<div className="footer-navi uppercase">
 						<p className="font3 h6"><a href="https://www.facebook.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">FaceBook</a></p>
 						<p className="font3 h6"><a href="https://www.instagram.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">Instagram</a></p>
-						<p className="font3 h6"><a href="https://www.tripadvisor.com/Restaurant_Review-g34438-d13076164-Reviews-Sanguich_De_Miami-Miami_Florida.html" target="_blank" rel="noreferrer noopener">TripAdvisor</a></p>
 						<p className="font3 h6">
 							<Link href="/careers">Careers</Link>
 						</p>
-						<p className="font3 h6">
-							<Link href="/press">Press</Link>
+					</div>
+					<p className='my-[0.75rem]'>Show us some love on:</p>
+					
+					<div className="footer-navi uppercase">
+					<p className="font3 h6">
+							<a href="https://www.google.com/maps/search/Sanguich/@25.7909184,-80.2627823,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer noopener">Google</a>
 						</p>
 						<p className="font3 h6">
-							<Link href="/contact">Contact</Link>
+							<a href="https://www.tripadvisor.com/Restaurant_Review-g34438-d13076164-Reviews-Sanguich_De_Miami-Miami_Florida.html" target="_blank" rel="noreferrer noopener">Trip Advisor</a>
 						</p>
+						<p className="font3 h6">
+							<a href="https://www.yelp.com/biz/sanguich-miami" target="_blank" rel="noreferrer noopener">Yelp</a>
+						</p>
+
 					</div>
 					<LoadImage
 						width={500}
