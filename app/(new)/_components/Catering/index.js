@@ -72,7 +72,7 @@ function Catering(props) {
 									<p className='font1 text-center !m-0  uppercase'>
 										For parties less than 20 people
 									</p>
-									<a href='https://order.sanguich.com/' target='_blank' className='btn hover:opacity-80 text-xs order-btn-light mt-1 '>
+									<a href='https://order.sanguich.com/' target='_blank' className='regular font1 px-4  btn-image mt-2 '>
 										<span className='text-[0.75rem]'>ORDER HERE</span>
 									</a>
 

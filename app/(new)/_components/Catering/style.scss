@@ -47,4 +47,17 @@
   .elevate-z {
     z-index: 500;
   }
+
+	.btn-image {
+		width: auto !important;
+		margin: 0 auto !important;
+		border: none !important;
+		color: #D1C8BA !important;
+		background: url(./btn.png) center / 100% 100% no-repeat !important;
+		transition: all 0.2s ease-in-out !important;
+		&:hover {
+			opacity: 0.8 !important;
+		}
+	}
+	
 }
