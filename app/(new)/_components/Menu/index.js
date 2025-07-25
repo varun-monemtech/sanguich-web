@@ -105,6 +105,49 @@ function Menu(props) {
 	const [currentTabTab, setCurrentTabTab] = useState(0)
 	const [currentImage, setCurrentImage] = useState(0)
 
+	// Wheel scroll state
+	const [wheelDelta, setWheelDelta] = useState(0);
+	const [isNavigating, setIsNavigating] = useState(false);
+
+	// Wheel scroll handler
+	const onWheel = (e) => {
+		e.preventDefault();
+		
+		// Don't navigate if already navigating
+		if (isNavigating) return;
+		
+		// Accumulate delta
+		const newDelta = wheelDelta + e.deltaX;
+		setWheelDelta(newDelta);
+		
+		// Check immediately if we have enough scroll
+		const threshold = 50;
+		
+		if (Math.abs(newDelta) >= threshold) {
+			setIsNavigating(true);
+			
+			if (newDelta > 0 && currentTabTab < menus.length - 1) {
+				// Scroll right - go to next slide
+				console.log('Scrolling right - going to next slide');
+				onTabTabChange(currentTabTab + 1);
+				setCurrentImage(0);
+			} else if (newDelta < 0 && currentTabTab > 0) {
+				// Scroll left - go to previous slide
+				console.log('Scrolling left - going to previous slide');
+				onTabTabChange(currentTabTab - 1);
+				setCurrentImage(0);
+			}
+			
+			// Reset immediately after navigation
+			setWheelDelta(0);
+			
+			// Allow navigation again after a short delay
+			setTimeout(() => {
+				setIsNavigating(false);
+			}, 300);
+		}
+	};
+
 
 	// Images
 	const ImageCurrent = menus.map((menu, i) => {
@@ -239,7 +282,10 @@ function Menu(props) {
 						<div className='content-box'>
 							<div className='flex max-lg:flex-col animated'>
 
-								<div className="menu-general flex flex-wrap justify-center content-between">
+								<div 
+									className="menu-general flex flex-wrap justify-center content-between"
+									onWheel={onWheel}
+								>
 									{/* <h2 className="menu-title text-[4.5em] !text-[#274F37] text-center m-0 lg:pt-8 font2"><span className="capitalize">M</span>enu</h2> */}
 									<div
 										className={`arrow-prev cursor-pointer ${currentTabTab === 0 ? 'opacity-0 cursor-auto' : null}`}
