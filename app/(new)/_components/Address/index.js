@@ -67,16 +67,18 @@ function AddressNew(props) {
 				<div className="content-container span-12-tablet  span-7">
 					<h3 className='max-md:!text-sm uppercase font3 heading md:pb-1 !text-md !leading-[1]'>{node.name}</h3>
 					<div className='text-sm pt-1'>
-					<p className={` uppercase ${node.map ? 'underline' : ''} m-top-off`}>
-						{node?.map?.place_id ? <a target='_blank' className='py-3' href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`}>{node.address}</a> : <span className=' block'>{node.address}</span>}
+					<p className={` uppercase  pb-1`}>
+						{node?.map?.place_id ? <a target='_blank' className={`leading-[1.4] ${node.map ? 'border-b border-current' : ''}`} href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`} dangerouslySetInnerHTML={{__html: node.address}}></a> : <span className=' block leading-[1.4]' dangerouslySetInnerHTML={{__html: node.address}}></span>}
 					</p>
 					<p className='pt-1'>
-						{i === 1 ? "NO DINE-IN | " : null}
+				
 						{node.phone ? <a className="lighten-green" href={`tel:${node.phone}`}>{`${ph1} ${ph2} ${ph3} `}</a> : null}
 						|
 						<a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a>
 					</p>
 					<p className="pt-1 uppercase marg-bottom-off">{node.hours}</p>
+					{node.name === "Little Haiti - La Ventanita" ? <p className='text-md pt-1 font-bold'>TAKEOUT ONLY</p> : null}
+
 					</div>
 					<div className='span-12 flex pt-2'>
 						{/* <MultiButton links={node.links} /> */}
