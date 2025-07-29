@@ -118,14 +118,14 @@ function HeroNew() {
 						}}
 						ref={bigSandwichRef}
 					>
-						<Intro delay={50}
+						<Intro
 						className='
-						[&.not-in-view_.content]:opacity-0
-						[&.not-in-view_.content]:translate-y-[4rem]
+						[&.not-in-view_.content]:opacity-20
+						[&.not-in-view_.content]:translate-y-[2rem]
 						[&.in-view_.content]:opacity-100
 						[&.in-view_.content]:translate-y-[0%]
 						[&.in-view_.content]:ease-in-out
-						[&.in-view_.content]:duration-500
+						[&.in-view_.content]:duration-200
 						'
 						>
 
@@ -135,6 +135,7 @@ function HeroNew() {
 								width={500}
 								height={500}
 								priority
+								quality={50}
 								fetchpriority='high'
 								animation='none'
 								className='[&_img]:relative rounded-[58px] md:rounded-[281px] aspect-[21/9] md:aspect-[21/7] border-2 border-[#DCBA7B]'
