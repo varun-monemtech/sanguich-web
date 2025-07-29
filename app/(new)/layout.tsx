@@ -35,16 +35,16 @@ export const viewport = {
 }
 
 
-async function getOptions() {
-	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/options/options/',
-		{
-			next: {
-				revalidate: 3600
-			}
-		}
-	)
-	return res.json()
-}
+// async function getOptions() {
+// 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/options/options/',
+// 		{
+// 			next: {
+// 				revalidate: 3600
+// 			}
+// 		}
+// 	)
+// 	return res.json()
+// }
 
 
 export default async function RootLayout({
@@ -54,7 +54,7 @@ export default async function RootLayout({
 }) {
 
 
-	const options = await getOptions()
+	// const options = await getOptions()
 
 
 	return (
