@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import localFont from 'next/font/local'
 import Header from './_components/Header'
 import ContextProvider from '@/provider/ContextProvider'
 import { Analytics } from '@vercel/analytics/react'
@@ -8,6 +9,85 @@ import './global.css'
 import '@/EVG/css/_core.scss'
 import { Footer } from './_components/Footer'
 import { NaviContextProvider } from '@/context/NaviContext'
+
+// Local font loading
+const intensa = localFont({
+  src: [
+    {
+      path: '../../EVG/css/fonts/intensa/Intensa-College.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../EVG/css/fonts/intensa/Intensa-College.woff',
+      weight: '600',
+      style: 'normal',
+    }
+  ],
+  variable: '--font-intensa',
+  display: 'swap',
+})
+
+const lhfDesirePro = localFont({
+  src: [
+    {
+      path: '../../EVG/css/fonts/lhfdesirepro/LHFDesirePRO.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../EVG/css/fonts/lhfdesirepro/LHFDesirePRO.woff',
+      weight: '400',
+      style: 'normal',
+    }
+  ],
+  variable: '--font-lhf-desire-pro',
+  display: 'swap',
+})
+
+const lhfDesireUppercase = localFont({
+  src: [
+    {
+      path: '../../EVG/css/fonts/lhfdesirepro/LHFDesireUppercase1.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../EVG/css/fonts/lhfdesirepro/LHFDesireUppercase1.woff',
+      weight: '400',
+      style: 'normal',
+    }
+  ],
+  variable: '--font-lhf-desire-uppercase',
+  display: 'swap',
+})
+
+const josefinSans = localFont({
+  src: [
+    {
+      path: '../../EVG/css/fonts/josefinsans/JosefinSans-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../EVG/css/fonts/josefinsans/JosefinSans-Regular.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../EVG/css/fonts/josefinsans/JosefinSans-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../EVG/css/fonts/josefinsans/JosefinSans-SemiBold.woff',
+      weight: '600',
+      style: 'normal',
+    }
+  ],
+  variable: '--font-josefin-sans',
+  display: 'swap',
+})
 
 // Meta Things for SEO
 export const metadata: Metadata = {
@@ -72,7 +152,7 @@ export default async function RootLayout({
 			</head>
 
 
-			<body className={`frs-grid`}>
+			<body className={`frs-grid ${intensa.variable} ${lhfDesirePro.variable} ${lhfDesireUppercase.variable} ${josefinSans.variable}`}>
 
 				<div id="portal-dialog"></div>
 

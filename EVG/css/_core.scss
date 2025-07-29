@@ -56,10 +56,10 @@ $x1a: #fbfdff; // Links
 $x1ah: $clead; // Links Hover
 
 // Don't forget to delete unused styles! Font imports at components/layout.js
-$font1: 'Intensa', Helvetica, Arial, sans-serif; // Headers
-$font2: 'LHF Desire PRO', Helvetica, Arial, sans-serif; // SubHeaders
-$font2b: 'LHF Desire Uppercase 1', Helvetica, Arial, sans-serif; // SubHeaders
-$font3: 'Josefin Sans', Helvetica, Arial, sans-serif; // Body
+$font1: var(--font-intensa), 'Intensa', Helvetica, Arial, sans-serif; // Headers
+$font2: var(--font-lhf-desire-pro), 'LHF Desire PRO', Helvetica, Arial, sans-serif; // SubHeaders
+$font2b: var(--font-lhf-desire-uppercase), 'LHF Desire Uppercase 1', Helvetica, Arial, sans-serif; // SubHeaders
+$font3: var(--font-josefin-sans), 'Josefin Sans', Helvetica, Arial, sans-serif; // Body
 
 .font1 {
 	font-family: $font1;
@@ -97,9 +97,10 @@ $fwbs: 600; // Font Weight (Strong Body)
 @import 'core/forms/_form.scss';
 @import 'core/forms/_input.scss';
 @import 'core/_decor.scss';
-@import 'fonts/intensa/stylesheet.scss';
-@import 'fonts/lhfdesirepro/stylesheet.scss';
-@import 'fonts/josefinsans/stylesheet.scss';
+// Font imports removed - now using Next.js local fonts
+// @import 'fonts/intensa/stylesheet.scss';
+// @import 'fonts/lhfdesirepro/stylesheet.scss';
+// @import 'fonts/josefinsans/stylesheet.scss';
 // @import 'core/forms/_textarea.scss';
 // @import 'core/forms/_checkbox.scss';
 // @import 'core/forms/_radio.scss';
