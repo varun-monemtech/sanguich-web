@@ -152,7 +152,7 @@ export default async function RootLayout({
 			</head>
 
 
-			<body className={`frs-grid ${intensa.variable} ${lhfDesirePro.variable} ${lhfDesireUppercase.variable} ${josefinSans.variable}`}>
+			<body className={`frs-grid font3 ${intensa.variable} ${lhfDesirePro.variable} ${lhfDesireUppercase.variable} ${josefinSans.variable}`}>
 
 				<div id="portal-dialog"></div>
 
