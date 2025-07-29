@@ -28,7 +28,7 @@ const pathVariants = {
       fill: { delay: 2, duration: 2, ease: 'easeInOut' } // Double fill delay and duration
     },
   },
-}
+} as const
 
 // Separate variant for text elements - simple fade in
 const textVariants = {
