@@ -63,17 +63,17 @@ function Catering(props) {
 									bg-[#DCBA7B]
 									flex flex-col items-center 
 									  w-full  
-									transition-all duration-1000 delay-100 text-[#274F37]
+									transition duration-1000 delay-100 text-[#274F37]
 									
-									pt-4 pb-5
+									pt-7 pb-8
 									`}
 									style={{ boxShadow: '0 7px 6px 0 rgba(0, 0, 0, 0.16) inset' }}
 								>
-									<p className='font1 text-center !m-0  uppercase'>
+									<p className='font1 text-center  text-[1.25rem] lg:text-lg uppercase !mb-3'>
 										For parties less than 20 people
 									</p>
-									<a href='https://order.sanguich.com/' target='_blank' className='regular font1 px-4  btn-image mt-2 '>
-										<span className='text-[0.75rem]'>ORDER HERE</span>
+									<a href='https://order.sanguich.com/' target='_blank' className='regular font1 px-5 py-1 btn-image  '>
+										<span className='text-[1.5rem]'>ORDER HERE</span>
 									</a>
 
 								</div>

@@ -56,7 +56,7 @@ export const Footer = () => {
 						/>
 						: null}
 
-					<div id="contact" className="contact padd-2 fs-85">
+					<div id="contact" className="contact padd-2 ">
 						<Newsletter />
 					</div>
 					<div className="footer-navi uppercase">
@@ -66,7 +66,7 @@ export const Footer = () => {
 							<Link href="/careers">Careers</Link>
 						</p>
 					</div>
-					<p className='my-[0.75rem]'>Show us some love on:</p>
+					<p className='my-[1.25rem]'>Show us some love on:</p>
 					
 					<div className="footer-navi uppercase">
 					<p className="font3 h6">
@@ -86,7 +86,7 @@ export const Footer = () => {
 						alt={"Crafted con Amor"}
 						src={'/crafted.png'}
 						contain
-						className="max-w-[6rem] w-full h-auto [&_img]:!relative my-5"
+						className="max-w-[9rem] w-full h-auto [&_img]:!relative my-5"
 					/>
 
 					<div className='copy'>

@@ -59,7 +59,7 @@ function CF7Newsletter(props) {
       action="/thanks/"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <p>Add some flavor to your inbox. Join our list for the latest.</p>
+      <p className="text-[1.35rem]">Add some flavor to your inbox. Join our list for the latest.</p>
 
       <div className="grid-12">
         <label className="span-9">
