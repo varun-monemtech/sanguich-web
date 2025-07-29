@@ -350,7 +350,7 @@ function CF7Catering(props) {
 												danger: '#DE350B',
 												dangerLight: '#FFBDAD',
 
-												neutral0: '#2A4B2E',
+												neutral0: '#274F37',
 												neutral5: '#EAC582',
 												neutral10: 'hsl(0, 0%, 90%)',
 												neutral20: '#EAC582',
@@ -400,7 +400,7 @@ function CF7Catering(props) {
 												danger: '#DE350B',
 												dangerLight: '#FFBDAD',
 
-												neutral0: '#2A4B2E',
+												neutral0: '#274F37',
 												neutral5: '#EAC582',
 												neutral10: 'hsl(0, 0%, 90%)',
 												neutral20: '#EAC582',

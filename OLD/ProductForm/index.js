@@ -162,7 +162,7 @@ const ProductForm = ({ product }) => {
 		}),
 		option: (base, state) => ({
 			...base,
-			color: state.isDisabled ? '#888' : state.isSelected ? '#2A4B2E' : state.isFocused ? '#2A4B2E' : '#D0C8B9',
+			color: state.isDisabled ? '#888' : state.isSelected ? '#274F37' : state.isFocused ? '#274F37' : '#D0C8B9',
 			cursor: state.isDisabled ? 'not-allowed' : 'default',
 		}),
 		valueContainer: (base) => ({
