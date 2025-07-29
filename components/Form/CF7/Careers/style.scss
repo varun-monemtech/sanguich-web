@@ -16,7 +16,15 @@
 }
 
 .careers-form {
-	padding: 4rem calc(3vw + 2.5em) 4rem;
+	padding: 4rem calc(2vw + 1.5em) 3rem;
+
+	input {
+		background: url(./bar.png) no-repeat scroll left bottom transparent;
+		background-size: 100% 10%;
+		border: none !important;
+		padding-left: 0.75rem !important;
+		padding-right: 0.75rem !important;
+	}
 
 }
 

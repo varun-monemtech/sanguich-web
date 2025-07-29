@@ -152,12 +152,12 @@ function CF7Careers() {
 						className={`grid-12 careers  careers-form border-type-4 active`}
 					>
 						<div className="span-12 text-center fill-this-form animated delay-500">
-							<h1 className="text-7xl !text-[#DCBA7B] font2 capitalize"
+							<h1 className="text-8xl !text-[#DCBA7B] font2 capitalize pb-6"
 							>Careers
 							</h1>
 						</div>
 
-						<div className={`span-12 grid-12 gap-1 form-fields-wrap active`}>
+						<div className={`span-12 grid-12 gap-y-2 gap-x-3 form-fields-wrap active text-[1.15rem]/[1]`}>
 							<label className="span-6 animated delay-500">
 								<input
 									type="text"
@@ -215,7 +215,7 @@ function CF7Careers() {
 							</label>
 
 							<label className="elevate-z col-start-2 col-span-10 animated delay-500">
-								<div className="inputselect font1 [&>div>div]:py-1 uppercase">
+								<div className="inputselect font1 [&>div>div]:py-2 [&>div>div]:px-3 uppercase">
 									<Controller
 										name="what"
 										control={control}
@@ -269,7 +269,7 @@ function CF7Careers() {
 								)}
 							</label>
 							<label className="col-start-2 col-span-10 animated delay-500 inputfile group">
-								<span className="uppercase 0 font1 px-2 py-2 border !border-[#DDBA7B] group-hover:!border-white cursor-pointer">
+								<span className="uppercase 0 font1 px-3 py-3 border !border-[#DDBA7B] group-hover:!border-white cursor-pointer">
 									<p className="!text-[#D0C8B9] leading-[1]">
 										{/* @ts-ignore */}
 										{/* <FontAwesomeIcon icon={faUpload} />  */}

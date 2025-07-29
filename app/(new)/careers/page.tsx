@@ -27,7 +27,7 @@ export default async function MainPage() {
     <PageTransition>
       <main id="mainframe" className={`main-cart page-cart x1`}>
 				<div className='grid grid-cols-12 pt-2'>
-					<div className='lg:col-span-6 col-span-12 relative'>
+					<div className='lg:col-span-5 col-span-12 relative'>
 						<LoadImage
 							src={'/careers.jpg'}
 							width={1000}
@@ -36,7 +36,7 @@ export default async function MainPage() {
 							className='max-lg:aspect-[16/9] max-lg:object-cover'
 						/>
 					</div>
-					<div className='lg:col-span-6 col-span-12'>
+					<div className='lg:col-span-7 col-span-12'>
 						<CF7Careers />
 					</div>
 				</div>
