@@ -25,6 +25,7 @@ type TButtonProps = {
   theme?: "light" | "dark" | undefined,
   fixed?: boolean,
   animation?: "reveal-up" | "reveal-down" | "reveal-left" | "reveal-right" | "fade" | "fade-fast" | "none" | undefined,
+	fetchpriority?: "auto" | "high" | "low" | undefined
 }
 
 export const LoadImage = ({
@@ -46,7 +47,8 @@ export const LoadImage = ({
   contain = false,
   theme = "dark",
   animation = "fade",
-  fixed = false
+  fixed = false,
+	fetchpriority = "auto"
 }: TButtonProps) => {
   const [isLoading, setLoading] = useState(true)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -86,6 +88,7 @@ export const LoadImage = ({
         blurDataURL={placeholder && blurDataURL ? blurDataURL : 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA+Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBkZWZhdWx0IHF1YWxpdHkK/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8AAEQgACAAIAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A5GS4g0OK1ayRpGAPnSN0PtRRRUxpxkryHKpKLtFn/9k='}
         priority={priority}
         loading={!priority ? loading : 'eager'}
+        fetchPriority={fetchpriority}
         className={`
           w-full h-full max-h-[calc(100svh_+_50vw)]
           ${animation === "fade" ? 'transition duration-1000 opacity-0' : ''}

@@ -134,6 +134,9 @@ function HeroNew() {
 								alt='sandwich'
 								width={500}
 								height={500}
+								priority
+								fetchpriority='high'
+								animation='none'
 								className='[&_img]:relative rounded-[58px] md:rounded-[281px] aspect-[21/9] md:aspect-[21/7] border-2 border-[#DCBA7B]'
 							/>
 						</Intro>
