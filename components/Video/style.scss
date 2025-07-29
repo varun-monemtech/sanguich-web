@@ -102,7 +102,7 @@
 		background-position: center center; 
 		background-color: transparent;
 		z-index: 1000;
-		transition: all .1s ease-in-out;
+		transition: opacity .1s ease-in-out;
 		@media screen and (max-width: 768px) {
 				background-size: 30% auto;
 		}
@@ -117,7 +117,7 @@
 	}
 	&:active .video-overlay-play {
 		transform: scale(0.9);
-		transition: all 0s ease-in-out;
+		transition: transform 0s ease-in-out;
 	}
 }
 

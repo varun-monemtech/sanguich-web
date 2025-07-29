@@ -14,7 +14,7 @@ dialog.frs-dialog {
 	visibility: hidden;
 
 	transform: translateY(2em);
-	transition: all .3s ease-in-out;
+	transition: transform .3s ease-in-out;
 
 	&[open] {
 		opacity: 1;
@@ -43,7 +43,7 @@ dialog.frs-dialog {
 		height: 100%;
 		-webkit-backdrop-filter: blur(4px);
 		backdrop-filter: blur(4px);
-		transition: all 1s ease-in-out;
+		transition: background-color 1s ease-in-out, backdrop-filter 1s ease-in-out;
 		background: rgba(0,0,0,0.35)
 	}
 

@@ -4,26 +4,26 @@
 
 // Animated general class for reveals of content
 .animated {
-	transition: all .8s cubic-bezier(.5,.08,.54,.9) .1s;
+	transition: transform .8s cubic-bezier(.5,.08,.54,.9) .1s, opacity .8s cubic-bezier(.5,.08,.54,.9) .1s;
 	opacity: 0;
 
 	&.from-left {
-		transition: all 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
+		transition: transform 2.8s cubic-bezier(.5,.08,.54,.9) .1s, opacity 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
 		transform: translate3d(-100%,0,0);
 	}
 
 	&.from-right {
-		transition: all 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
+		transition: transform 2.8s cubic-bezier(.5,.08,.54,.9) .1s, opacity 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
 		transform: translate3d(100%,0,0);
 	}
 
 	&.from-top {
-		transition: all 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
+		transition: transform 2.8s cubic-bezier(.5,.08,.54,.9) .1s, opacity 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
 		transform: translate3d(0,100%,0);
 	}
 
 	&.from-bottom {
-		transition: all 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
+		transition: transform 2.8s cubic-bezier(.5,.08,.54,.9) .1s, opacity 2.8s cubic-bezier(.5,.08,.54,.9) .1s;
 		transform: translate3d(0,-100%,0);
 	}
 }

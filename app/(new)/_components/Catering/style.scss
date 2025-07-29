@@ -54,7 +54,7 @@
 		border: none !important;
 		color: #D1C8BA !important;
 		background: url(./btn.png) center / 100% 100% no-repeat !important;
-		transition: all 0.2s ease-in-out !important;
+		transition: opacity 0.2s ease-in-out !important;
 		&:hover {
 			opacity: 0.8 !important;
 		}

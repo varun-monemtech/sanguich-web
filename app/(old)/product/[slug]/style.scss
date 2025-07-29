@@ -13,13 +13,13 @@
 		background: url(../../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
 		background-size: contain !important;
 
-		transition: all .1s ease-in-out;
+		transition: transform .1s ease-in-out;
 
 		&:hover {
 			transform: translate3d(-50%,0,0) scale(1.05);
 		}
 		&:active {
-			transition: all 0s ease-in-out;
+			transition: transform 0s ease-in-out;
 			transform: translate3d(-50%,0,0) scale(.95);
 		}
 	}
@@ -36,13 +36,13 @@
 		background: url(../../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
 		background-size: contain !important;
 
-		transition: all .1s ease-in-out;
+		transition: transform .1s ease-in-out;
 
 		&:hover {
 			transform: translate3d(0,-50%,0) rotate(90deg) scale(1.05);
 		}
 		&:active {
-			transition: all 0s ease-in-out;
+			transition: transform 0s ease-in-out;
 			transform: translate3d(0,-50%,0) rotate(90deg) scale(.95);
 		}
 	}
@@ -59,13 +59,13 @@
 		background: url(../../../../images/arrows/arrow-bottom.png) no-repeat scroll center center transparent !important;
 		background-size: contain !important;
 
-		transition: all .1s ease-in-out;
+		transition: transform .1s ease-in-out;
 
 		&:hover {
 			transform: translate3d(0,-50%,0) rotate(-90deg) scale(1.05);
 		}
 		&:active {
-			transition: all 0s ease-in-out;
+			transition: transform 0s ease-in-out;
 			transform: translate3d(0,-50%,0) rotate(-90deg) scale(.95);
 		}
 	}
@@ -209,9 +209,7 @@
 			}
 		}
 
-		.gatsby-image-wrapper {
-			transition: all 1s ease;
-		}
+
 	}
 
 	.bar {
@@ -240,7 +238,7 @@
 			flex: 0 0 33.33%;
 			position: relative;
 			height: 100%;
-			transition: all 0.7s ease-in-out;
+			transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
 			@media only screen and (max-width: 768px) {
 				flex: 0 0 100%;
 			}
@@ -313,7 +311,7 @@
 			transform: translateY(-50%);
 			width: 3.5em;
 			height: 3.5em;
-			transition: all 0.15s ease-in-out;
+			transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
 			cursor: pointer;
 			opacity: 1;
 			

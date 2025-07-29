@@ -15,7 +15,7 @@ section#section-homepage-menu {
 		width: 3.5em;
 		height: 3.5em;
 		transform: translate3d(0,-50%,0);
-		transition: all .15s ease-in-out;
+		transition: transform .15s ease-in-out;
 		background: url(../../../../images/arrows/arrow-left.png) no-repeat scroll center transparent;
 		background-size: contain;
 
@@ -42,7 +42,7 @@ section#section-homepage-menu {
 		width: 3.5em;
 		height: 3.5em;
 		transform: translate3d(0,-50%,0);
-		transition: all .15s ease-in-out;
+		transition: transform .15s ease-in-out;
 
 		background: url(../../../../images/arrows/arrow-right.png) no-repeat scroll center transparent;
 		background-size: contain;
@@ -203,15 +203,13 @@ section#section-homepage-menu {
 
 				.description {
 					flex: 0 1 70%;
-					transition: all .15s ease-in-out;
-					will-change: transform;
+					transition: transform .15s ease-in-out;
 				}
 
 				.price {
 					flex: 1 1 30%;
 					text-align: right;
-					transition: all .15s ease-in-out;
-					will-change: transform;
+					transition: transform .15s ease-in-out;
 				}
 
 				&:hover, &.current {

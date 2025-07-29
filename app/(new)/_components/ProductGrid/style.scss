@@ -197,12 +197,12 @@
 			cursor: pointer;
 
 			.img-cover {
-				transition: all .3s ease-in-out;
+				transition: opacity .3s ease-in-out;
 			}
 
 			.shop-now-basic {
 				opacity: 0;
-				transition: all .3s ease-in-out;
+				transition: opacity .3s ease-in-out;
 			}
 
 			&:hover {
@@ -276,10 +276,10 @@
 
 	.shop-now-basic {
 		opacity: 0;
-		transition: all .3s ease-in-out;
+		transition: opacity .3s ease-in-out;
 	}
 	.image {
-		transition: all .3s ease-in-out;
+		transition: opacity .3s ease-in-out;
 	}
 	&:hover {
 		.image {
@@ -309,7 +309,7 @@
 		}
 
 		a {
-			transition: all 0.3s ease-in-out;
+			transition: opacity 0.3s ease-in-out;
 		}
 		a:hover {
 			opacity: 0.6;

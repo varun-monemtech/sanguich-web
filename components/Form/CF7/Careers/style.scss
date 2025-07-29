@@ -26,7 +26,7 @@
 	border: none !important;
 	color: #212121 !important;
 	background: url(./btn.png) center / 100% 100% no-repeat !important;
-	transition: all 0.2s ease-in-out !important;
+	transition: opacity 0.2s ease-in-out !important;
 	&:hover {
 		opacity: 0.5 !important;
 	}
