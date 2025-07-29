@@ -204,6 +204,8 @@ function HeroNew() {
 							y: maskParallax,
 							x: maskTranslateX
 						}}
+						initial={{ visibility: "hidden" }}
+						animate={{ visibility: "visible" }}
 						transition={{ type: 'spring', stiffness: 50 }}
 						ref={maskRef}
 					>
