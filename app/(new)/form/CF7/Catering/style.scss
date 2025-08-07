@@ -80,7 +80,7 @@
 
 .form-cut-off {
 	overflow: hidden;
-	margin: 0 0 calc(1.75em + 6px);
+	margin: 0 0 calc(1.75em + 3px);
 
 	@media screen and (max-width: 1600px) {
 		margin: 0 0 calc(1.75em + 4px);
@@ -99,7 +99,7 @@ form.catering {
 
 	@media screen and (max-width: 1024px) {
 		//transform: translate3d(0,0,0);
-		transform: translate3d(0, calc(100% - 11em - 4px), 0);
+		transform: translate3d(0, calc(100% - 10em - 4px), 0);
 		max-height: 50em;
 
 		&.active {
@@ -108,7 +108,7 @@ form.catering {
 	}
 
 	@media screen and (max-width: 768px) {
-		transform: translate3d(0, calc(100% - 10em - 4px), 0);
+		transform: translate3d(0, calc(100% - 9em - 4px), 0);
 	}
 
 	&.border-type-4 .decor-wrap {
