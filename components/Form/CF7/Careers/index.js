@@ -158,7 +158,7 @@ function CF7Careers() {
 						</div>
 
 						<div className={`span-12 grid-12 gap-y-2 gap-x-3 form-fields-wrap active text-[1.15rem]/[1]`}>
-							<label className="span-6 animated delay-500">
+							<label className="col-start-2 col-span-10 animated delay-500">
 								<input
 									type="text"
 									placeholder="First name"
@@ -172,7 +172,7 @@ function CF7Careers() {
 								)}
 							</label>
 
-							<label className="span-6 animated delay-500">
+							<label className="col-start-2 col-span-10 animated delay-500">
 								<input
 									type="text"
 									placeholder="Last name"
