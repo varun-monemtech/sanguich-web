@@ -66,7 +66,7 @@ export const Footer = () => {
 							<Link href="/careers">Careers</Link>
 						</p>
 					</div>
-					<p className='my-[1.25rem] font1 uppercase text-xl md:text-2xl text-[#e0b981]'>Show us some love on:</p>
+					<p className='my-[1.25rem] font1 uppercase text-[1.2em] md:text-2xl text-[#e0b981]'>Show us some love on:</p>
 					
 					<div className="footer-navi uppercase">
 					<p className="font3 h6 !font-light">
