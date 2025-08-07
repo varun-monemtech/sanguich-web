@@ -60,22 +60,22 @@ export const Footer = () => {
 						<Newsletter />
 					</div>
 					<div className="footer-navi uppercase">
-						<p className="font3 h6"><a href="https://www.facebook.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">FaceBook</a></p>
-						<p className="font3 h6"><a href="https://www.instagram.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">Instagram</a></p>
-						<p className="font3 h6">
+						<p className="font3 h6 font-thin"><a href="https://www.facebook.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">FaceBook</a></p>
+						<p className="font3 h6 font-thin"><a href="https://www.instagram.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">Instagram</a></p>
+						<p className="font3 h6 font-thin">
 							<Link href="/careers">Careers</Link>
 						</p>
 					</div>
-					<p className='my-[1.25rem]'>Show us some love on:</p>
+					<p className='my-[1.25rem] font1 uppercase text-xl md:text-2xl text-[#e0b981]'>Show us some love on:</p>
 					
 					<div className="footer-navi uppercase">
-					<p className="font3 h6">
+					<p className="font3 h6 font-thin">
 							<a href="https://www.google.com/maps/search/Sanguich/@25.7909184,-80.2627823,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer noopener">Google</a>
 						</p>
-						<p className="font3 h6">
+						<p className="font3 h6 font-thin">
 							<a href="https://www.tripadvisor.com/Restaurant_Review-g34438-d13076164-Reviews-Sanguich_De_Miami-Miami_Florida.html" target="_blank" rel="noreferrer noopener">Trip Advisor</a>
 						</p>
-						<p className="font3 h6">
+						<p className="font3 h6 font-thin">
 							<a href="https://www.yelp.com/biz/sanguich-miami" target="_blank" rel="noreferrer noopener">Yelp</a>
 						</p>
 
@@ -92,7 +92,7 @@ export const Footer = () => {
 					<div className='copy'>
 						<p className="uppercase h5 !m-0">SonaÑdo en 2014. Establecido en 2015</p>
 						{/* <p className="uppercase h6">Copyright &copy; {year}. SITE BY <a href="https://www.deepsleepstudio.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" style={{ wordSpacing: '.5em' }} className='h5'>ds/s</a>.</p> */}
-						<p className="!text-[0.75rem] uppercase h5 pb-1 !m-0 ">MADE WITH LOVE BY  <a href="https://www.deepsleepstudio.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" className='!text-[#fff] hover:opacity-60 underline'>DEEPSLEEP STUDIO</a>.</p>
+						<p className="!text-[0.75rem] uppercase h5 pb-1 !m-0 text-[#70b994]">MADE WITH LOVE BY  <a href="https://www.deepsleepstudio.com" title="DeepSleep Studio, a Design and Public Relations agency." target="_blank" className='!text-[#fff] hover:opacity-60 underline'>DEEPSLEEP STUDIO</a>.</p>
 
 					</div>
 				</div>
