@@ -60,22 +60,22 @@ export const Footer = () => {
 						<Newsletter />
 					</div>
 					<div className="footer-navi uppercase">
-						<p className="font3 h6 font-thin"><a href="https://www.facebook.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">FaceBook</a></p>
-						<p className="font3 h6 font-thin"><a href="https://www.instagram.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">Instagram</a></p>
-						<p className="font3 h6 font-thin">
+						<p className="font3 h6 !font-light"><a href="https://www.facebook.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">FaceBook</a></p>
+						<p className="font3 h6 !font-light"><a href="https://www.instagram.com/sanguichdemiami/" target="_blank" rel="noreferrer noopener">Instagram</a></p>
+						<p className="font3 h6 !font-light">
 							<Link href="/careers">Careers</Link>
 						</p>
 					</div>
 					<p className='my-[1.25rem] font1 uppercase text-xl md:text-2xl text-[#e0b981]'>Show us some love on:</p>
 					
 					<div className="footer-navi uppercase">
-					<p className="font3 h6 font-thin">
+					<p className="font3 h6 !font-light">
 							<a href="https://www.google.com/maps/search/Sanguich/@25.7909184,-80.2627823,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer noopener">Google</a>
 						</p>
-						<p className="font3 h6 font-thin">
+						<p className="font3 h6 !font-light">
 							<a href="https://www.tripadvisor.com/Restaurant_Review-g34438-d13076164-Reviews-Sanguich_De_Miami-Miami_Florida.html" target="_blank" rel="noreferrer noopener">Trip Advisor</a>
 						</p>
-						<p className="font3 h6 font-thin">
+						<p className="font3 h6 !font-light">
 							<a href="https://www.yelp.com/biz/sanguich-miami" target="_blank" rel="noreferrer noopener">Yelp</a>
 						</p>
 
