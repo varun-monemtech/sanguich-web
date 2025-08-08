@@ -184,7 +184,9 @@ function CF7Catering(props) {
 				<CateringBadgeAnimated className="w-full h-auto" />
 			</div>
 
-			<div className="form-cut-off w-full z-[1005]">
+			<div className="form-cut-off w-full z-[1005]
+				lg:after:hidden after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[calc(100%-1.5em)] after:h-[1.75rem] after:bg-[#1e3c2a] after:z-[1000]
+			">
 				<form
 					name="contact"
 					method="post"
@@ -197,15 +199,15 @@ function CF7Catering(props) {
 						<div className="bg c5 animated"></div>
 						<div className={`arrow-up animated delay-1000 ${isActive ? 'active' : ''}`} onClick={(e) => onClickFillThisForm(e)}></div>
 						<div className="decor-top">
-							<div className="decor-top-left"></div>
-							<div className="decor-top-center"></div>
-							<div className="decor-top-right"></div>
+							<div className="decor-top-left special"></div>
+							<div className="decor-top-center !bg-[#1e3c2a]"></div>
+							<div className="decor-top-right special"></div>
 						</div>
-						<div className="decor-center">
+						<div className="decor-center bg-[#1e3c2a]">
 							<div className="decor-center-left"></div>
 							<div className="decor-center-right"></div>
 						</div>
-						<div className="decor-bottom">
+						<div className="decor-bottom bg-[#1e3c2a]">
 							<div className="decor-bottom-left"></div>
 							<div className="decor-bottom-center"></div>
 							<div className="decor-bottom-right"></div>
@@ -214,7 +216,11 @@ function CF7Catering(props) {
 
 					<div className="span-12 text-center fill-this-form animated delay-500" onClick={(e) => onClickFillThisForm(e)}><h3>Fill this form</h3></div>
 
-					<div className={`span-12 grid-12 form-fields-wrap ${isActive ? 'active' : ''}`}>
+					<div className={`span-12 grid-12 form-fields-wrap ${isActive ? 'active' : ''}
+						[&_label>input]:!bg-[#1e3c2a]
+						[&_textarea]:!bg-[#1e3c2a]
+						[&_.react-datepicker-wrapper_input]:!bg-[#1e3c2a]
+					`}>
 
 						<label className="span-12 animated delay-500">
 							<input type="text" placeholder="Enter full name" name="name" {...register("name", { required: false })} onFocus={handleDatePickerClose} />
@@ -350,7 +356,7 @@ function CF7Catering(props) {
 												danger: '#DE350B',
 												dangerLight: '#FFBDAD',
 
-												neutral0: '#274F37',
+												neutral0: '#1e3c2a',
 												neutral5: '#EAC582',
 												neutral10: 'hsl(0, 0%, 90%)',
 												neutral20: '#EAC582',
@@ -400,7 +406,7 @@ function CF7Catering(props) {
 												danger: '#DE350B',
 												dangerLight: '#FFBDAD',
 
-												neutral0: '#274F37',
+												neutral0: '#1e3c2a',
 												neutral5: '#EAC582',
 												neutral10: 'hsl(0, 0%, 90%)',
 												neutral20: '#EAC582',
@@ -422,7 +428,7 @@ function CF7Catering(props) {
 						</label>
 
 						<div className="btn-wrap span-12 text-center font1 animated delay-500">
-							<button type="submit" className="regular">SUBMIT {isLoading ? <div className="loader-spinner"><FontAwesomeIcon icon={faBaby} /></div> : null}</button>
+							<button type="submit" className="regular !border-[#1e3c2a]">SUBMIT {isLoading ? <div className="loader-spinner"><FontAwesomeIcon icon={faBaby} /></div> : null}</button>
 						</div>
 
 						<div className="response-wrap text-center span-12 animated delay-500">

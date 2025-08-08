@@ -1179,6 +1179,10 @@ $size_y_bp6: 20px;
 			@media screen and (max-width: $bp6) {
 				width: $size_x_bp6;
 			}
+
+			&.special {
+				background-image: url(../../../images/new_b_ret/top-l.png);
+			}
 		}
 
 		.decor-top-center {
@@ -1208,6 +1212,10 @@ $size_y_bp6: 20px;
 			}
 			@media screen and (max-width: $bp6) {
 				width: $size_x_bp6;
+			}
+
+			&.special {
+				background-image: url(../../../images/new_b_ret/top-r.png);
 			}
 		}
 	}
