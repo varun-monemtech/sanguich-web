@@ -36,7 +36,7 @@ function Catering(props) {
 							<div className="catering span-5 span-12-tablet border-type-9 fs-85 relative flex justify-center">
 
 
-								<div className="decor-wrap z-[2000] pointer-events-none">
+								<div className="decor-wrap !z-[2000] pointer-events-none">
 
 									<div className="decor-top">
 
