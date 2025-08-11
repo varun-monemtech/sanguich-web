@@ -73,8 +73,8 @@ function AddressNew(props) {
 					<p className='pt-1'>
 				
 						{node.phone ? <a className="lighten-green" href={`tel:${node.phone}`}>{`${ph1} ${ph2} ${ph3} `}</a> : null}
-						|
-						<a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a>
+						{/* |
+						<a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a> */}
 					</p>
 					<p className="pt-1 uppercase marg-bottom-off">{node.hours}</p>
 					{node.name === "Little Haiti - La Ventanita" ? <p className='text-md pt-1 font-bold'>TAKEOUT ONLY</p> : null}
