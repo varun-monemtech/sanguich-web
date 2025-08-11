@@ -51,7 +51,8 @@ function AddressNew(props) {
 				onClick={() => setSelectedIndex(i)}
 			>
 
-				<div className="span-12-tablet span-5 relative overflow-hidden">
+				<div className="span-12-tablet span-5 relative overflow-hidden [&>h3]:!leading-[1.1]">
+					<h3 className='max-md:!text-base uppercase font3 heading pb-1 !text-md md:hidden'>{node.name}</h3>
 					{image?.url &&
 						<LoadImage
 							src={image.url}
@@ -64,8 +65,8 @@ function AddressNew(props) {
 					}
 					{/* {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null} */}
 				</div>
-				<div className="content-container span-12-tablet  span-7">
-					<h3 className='max-md:!text-sm uppercase font3 heading md:pb-1 !text-md !leading-[1]'>{node.name}</h3>
+				<div className="content-container span-12-tablet span-7">
+					<h3 className='max-md:!text-sm uppercase font3 heading md:pb-1 !text-md !leading-[1] max-md:opacity-0 max-md:pt-1'>{node.name}</h3>
 					<div className='text-sm pt-1'>
 					<p className={` uppercase  pb-1`}>
 						{node?.map?.place_id ? <a target='_blank' className={`leading-[1.4] ${node.map ? 'border-b border-current' : ''}`} href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`} dangerouslySetInnerHTML={{__html: node.address}}></a> : <span className=' block leading-[1.4]' dangerouslySetInnerHTML={{__html: node.address}}></span>}
@@ -131,8 +132,8 @@ function AddressNew(props) {
 						</div> */}
 
 						<div className='grid-12 max-md:gap-y-4 md:gap-10'>
-							<div className={`main-grid md:bg-[#000] lg:aspect-[3/4] max-md:!p-0  span-12-tablet span-5 rounded-lg padd `}>
-								<div className='scroll-container grid-12 lg:h-full lg:overflow-y-auto'>
+							<div className={`main-grid !w-[calc(100%+2rem)] -ml-[1rem] md:bg-[#000] lg:aspect-[3/4] max-md:!p-0  span-12-tablet span-5 rounded-lg padd `}>
+								<div className='scroll-container grid-12 lg:h-full lg:overflow-y-auto max-md:!pl-0'>
 									{itemsMap}
 								</div>
 							</div>
