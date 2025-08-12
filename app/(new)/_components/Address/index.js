@@ -78,7 +78,7 @@ function AddressNew(props) {
 						<a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a> */}
 					</p>
 					<p className="pt-1 uppercase marg-bottom-off" dangerouslySetInnerHTML={{__html: node.hours}}></p>
-					{node.name === "Little Haiti - La Ventanita" ? <p className='text-md pt-1 font-bold'>TAKEOUT ONLY</p> : null}
+					{/* {node.name === "Little Haiti - La Ventanita" ? <p className='text-md pt-1 font-bold'>TAKEOUT ONLY</p> : null} */}
 
 					</div>
 					<div className='span-12 flex pt-2'>
