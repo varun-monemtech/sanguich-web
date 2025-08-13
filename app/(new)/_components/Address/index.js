@@ -45,14 +45,14 @@ function AddressNew(props) {
 		return (
 			<div
 				key={i}
-				className={`span-12  cursor-pointer flex gap-2 md:gap-3 p-[0.5em] md:py-[1.5em] md:px-[1em] tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
+				className={`span-12 max-md:flex-wrap max-md:text-center cursor-pointer flex gap-1 md:gap-3 p-[0.5em] md:py-[1.5em] md:px-[1em] tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 				onMouseEnter={() => !isMobile && setHoveredIndex(i)}
 				onMouseLeave={() => !isMobile && setHoveredIndex(null)}
 				onClick={() => setSelectedIndex(i)}
 			>
 
+				<h3 className='max-md:!text-[1.25rem] mx-auto uppercase font3 heading pb-1 md:hidden'>{node.name}</h3>
 				<div className="span-12-tablet span-5 relative overflow-hidden [&>h3]:!leading-[1.1]">
-					<h3 className='max-md:!text-base uppercase font3 heading pb-1 !text-md md:hidden'>{node.name}</h3>
 					{image?.url &&
 						<LoadImage
 							src={image.url}
@@ -66,26 +66,26 @@ function AddressNew(props) {
 					{/* {i >= 3 ? <div className='coming-soon'><h2>COMING SOON</h2></div> : null} */}
 				</div>
 				<div className="content-container span-12-tablet span-7">
-					<h3 className='max-md:!text-sm uppercase font3 heading md:pb-1 !text-md !leading-[1] max-md:opacity-0 max-md:pt-1'>{node.name}</h3>
-					<div className='text-sm pt-1'>
-					<p className={` uppercase  pb-1`}>
-						{node?.map?.place_id ? <a target='_blank' className={`leading-[1.4] ${node.map ? 'border-b border-current' : ''}`} href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`} dangerouslySetInnerHTML={{__html: node.address}}></a> : <span className=' block leading-[1.4]' dangerouslySetInnerHTML={{__html: node.address}}></span>}
-					</p>
-					<p className='pt-1'>
-				
-						{node.phone ? <a className="lighten-green" href={`tel:${node.phone}`}>{`${ph1} ${ph2} ${ph3} `}</a> : null}
-						{/* |
-						<a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a> */}
-					</p>
-					<p className="pt-1 uppercase marg-bottom-off" dangerouslySetInnerHTML={{__html: node.hours}}></p>
-					{/* {node.name === "Little Haiti - La Ventanita" ? <p className='text-md pt-1 font-bold'>TAKEOUT ONLY</p> : null} */}
+					<h3 className='max-md:!text-sm uppercase font3 heading md:pb-1 !text-md !leading-[1] max-md:hidden max-md:pt-1'>{node.name}</h3>
+					<div className='text-base max-md:leading-[1.2] md:text-sm pt-2 md:pt-1'>
+						<p className={` uppercase  pb-1`}>
+							{node?.map?.place_id ? <a target='_blank' className={`leading-[1.4] ${node.map ? 'border-b border-current' : ''}`} href={`https://www.google.com/maps/place/?q=place_id:${node?.map?.place_id}`} dangerouslySetInnerHTML={{__html: node.address}}></a> : <span className=' block leading-[1.4]' dangerouslySetInnerHTML={{__html: node.address}}></span>}
+						</p>
+						<p className='pt-1'>
+					
+							{node.phone ? <a className="lighten-green" href={`tel:${node.phone}`}>{`${ph1} ${ph2} ${ph3} `}</a> : null}
+							{/* |
+							<a className="green uppercase" href={`mailto:${node.mail}`}>{` ${node.mail}`}</a> */}
+						</p>
+						<p className="pt-1 uppercase marg-bottom-off" dangerouslySetInnerHTML={{__html: node.hours}}></p>
+						{/* {node.name === "Little Haiti - La Ventanita" ? <p className='text-md pt-1 font-bold'>TAKEOUT ONLY</p> : null} */}
 
 					</div>
 					<div className='span-12 flex pt-2'>
 						{/* <MultiButton links={node.links} /> */}
 						{node.links?.[1] && 
-							<a href={node.links?.[1].url} target='_blank' className='hover:!border-[#3e805f] hover:!bg-[#3e805f] hover:!text-white border !border-white border-solid rounded-md  px-3 py-1  text-sm'>
-								<span className='translate-y-[0.1em] relative block uppercase  text-xs leading-[1] vertical-bottom'>{node.links?.[1].title}</span>
+							<a href={node.links?.[1].url} target='_blank' className='max-md:mx-auto hover:!border-[#3e805f] hover:!bg-[#3e805f] hover:!text-white border !border-white border-solid rounded-md px-3 py-1 text-sm'>
+								<span className='translate-y-[0.1em] relative block uppercase text-base md:text-xs leading-[1] vertical-bottom'>{node.links?.[1].title}</span>
 							</a>
 						}
 						
