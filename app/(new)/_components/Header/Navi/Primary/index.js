@@ -56,9 +56,10 @@ function NaviPrimary(props) {
     {
       "id": "order-id",
       "label": "Order Online",
-      "url": "/#address",
+      "url": "https://order.sanguich.com/",
       "parentId": null,
-      "itHasChildren": "little-haiti-id"
+      "itHasChildren": "little-haiti-id",
+			"target": "__blank"
     },
     {
       "id": "little-haiti-id",
