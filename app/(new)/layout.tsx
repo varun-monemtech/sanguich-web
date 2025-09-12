@@ -153,7 +153,6 @@ export default async function RootLayout({
 }) {
 
 
-	const options = await getOptions()
 
 
 	return (
@@ -172,7 +171,6 @@ export default async function RootLayout({
 
 
 			<body className={`frs-grid font3 ${intensa.variable} ${lhfDesirePro.variable} ${lhfDesireUppercase.variable} ${josefinSans.variable}`}>
-{JSON.stringify(options.acf.site_name)}
 				<div id="portal-dialog"></div>
 
 				<ContextProvider>
