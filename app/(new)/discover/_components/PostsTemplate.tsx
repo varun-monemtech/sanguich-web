@@ -19,7 +19,7 @@ export default function PostsTemplate({ posts, hasNextPage, hasPrevPage, prevLin
 	const postsMap = posts?.map((post: any, i: number) => {
 
 		const image = post.yoast_head_json.og_image?.[0].url ?
-			<Link href={`/news/${post?.slug}`} className="basis-full md:basis-1/2">
+			<Link href={`/discover/${post?.slug}`} className="basis-full md:basis-1/2">
 				<LoadImage
 					src={post.yoast_head_json.og_image?.[0].url}
 					width="2560"
@@ -31,7 +31,7 @@ export default function PostsTemplate({ posts, hasNextPage, hasPrevPage, prevLin
 
 		const title = post?.title?.rendered ?
 			<div className="">
-				<Link href={`/news/${post.slug}`} className="">
+				<Link href={`/discover/${post.slug}`} className="">
 					<h2 className="text-lg pt-4 pb-3 font3  uppercase text-[#274F37]">{unEscape(post.title.rendered)}</h2>
 				</Link>
 			</div>
@@ -62,7 +62,7 @@ export default function PostsTemplate({ posts, hasNextPage, hasPrevPage, prevLin
 						<div className="md:basis-1/2 flex flex-wrap content-center">
 							{title}
 							{excerpt}
-							<Link href={`/news/${post.slug}`} className="md:basis-1/2 pt-3 uppercase font3 text-[#274F37]">Read More</Link>
+							<Link href={`/discover/${post.slug}`} className="md:basis-1/2 pt-3 uppercase font3 text-[#274F37]">Read More</Link>
 
 						</div>
 					</div>

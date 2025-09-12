@@ -21,7 +21,7 @@ function Header(props) {
 	const nodeRef4 = useRef(null); // Ref for Order Now button
 
 	const pathname = usePathname()
-	const showHeaderBarBasedOnPath = pathname.startsWith('/news') || pathname === '/about'
+	const showHeaderBarBasedOnPath = pathname.startsWith('/discover') || pathname === '/about'
 
 	// Use Framer Motion's useScroll hook to track scroll position
 	const { scrollY } = useScroll();

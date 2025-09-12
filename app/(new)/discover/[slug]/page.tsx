@@ -93,8 +93,8 @@ export default async function MainPage(props: any) {
 			<PostTemplate post={post}
 				hasNextPage={!!nextPost}
 				hasPrevPage={!!prevPost}
-				prevLink={`/news/${prevPost?.slug}`}
-				nextLink={`/news/${nextPost?.slug}`}
+				prevLink={`/discover/${prevPost?.slug}`}
+				nextLink={`/discover/${nextPost?.slug}`}
 			/>
 		</>
 	)

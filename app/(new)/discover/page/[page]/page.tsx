@@ -83,8 +83,8 @@ export default async function PaginatedPage(props: { params: Promise<{ page: str
 				posts={paginatedPosts}
 				hasNextPage={hasNextPage}
 				hasPrevPage={hasPrevPage}
-				prevLink={`/news/page/${page - 1}`}
-				nextLink={`/news/page/${page + 1}`}
+				prevLink={`/discover/page/${page - 1}`}
+				nextLink={`/discover/page/${page + 1}`}
 			/>
 		</>
 	)

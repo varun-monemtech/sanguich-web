@@ -46,8 +46,8 @@ export default async function MainPage() {
 				posts={paginatedPosts}
 				hasNextPage={hasNextPage}
 				hasPrevPage={false}
-				nextLink={`/news/page/2`}
-				prevLink={`/news`}
+				nextLink={`/discover/page/2`}
+				prevLink={`/discover`}
 			/>
 		</>
 	)
