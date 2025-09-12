@@ -47,67 +47,63 @@ function NaviPrimary(props) {
 	// Menu feed
 	// const menuNodes = props.wpgraphql?.wpNaviPrimary?.nodes[0]?.menuItems.nodes
   const menuNodes = [
+		{
+      "id": "order-id",
+      "label": "Order Now",
+      "url": "https://order.sanguich.com/",
+      "parentId": null,
+			"target": "_blank"
+    },
     {
       "id": "menu-id",
-      "label": "Menu",
+      "label": "Our Menu",
       "url": "/#homepage-menu",
       "parentId": null,
     },
     {
-      "id": "order-id",
-      "label": "Order Online",
-      "url": "https://order.sanguich.com/",
-      "parentId": null,
-      "itHasChildren": "little-haiti-id",
-			"target": "__blank"
-    },
-    {
-      "id": "little-haiti-id",
-      "label": "Little Haiti",
-      "url": "https://www.toasttab.com/sanguich-little-haiti",
-      "parentId": "order-id",
-      "target": "__blank"
-    },
-    {
-      "id": "calle-ocho-id",
-      "label": "Calle Ocho",
-      "url": "https://order.toasttab.com/online/sanguich",
-      "parentId": "order-id",
-      "target": "__blank"
-    },
-    // {
-    //   "id": "gold-belly-id",
-    //   "label": "Gold Belly",
-    //   "url": "https://www.goldbelly.com/sanguich-de-miami",
-    //   "parentId": "order-id",
-    //   "target": "__blank"
-    // },
-    {
-      "id": "coral-gables-id",
-      "label": "Coral Gables",
-      "url": "https://www.toasttab.com/sanguich-coral-gables",
-      "parentId": "order-id",
-      "target": "__blank"
-    },
-		{
-      "id": "bayside-id",
-      "label": "Bayside",
-      "url": "https://www.toasttab.com/sanguich-bayside",
-      "parentId": "order-id",
-      "target": "__blank"
-    },
-    {
       "id": "catering-id",
-      "label": "Catering",
+      "label": "Catering Menu",
       "url": "/#catering",
       "parentId": null,
     },
     {
       "id": "hours-id",
-      "label": "Hours & Locations",
+      "label": "Locations",
       "url": "#address",
       "parentId": null,
+      "itHasChildren": "little-haiti-id",
     }, 
+
+		{
+      "id": "little-haiti-id",
+      "label": "Little Haiti",
+      "url": "#address",
+      "parentId": "hours-id",
+    },
+    {
+      "id": "calle-ocho-id",
+      "label": "Calle Ocho",
+      "url": "#address",
+      "parentId": "hours-id",
+    },
+    {
+      "id": "coral-gables-id",
+      "label": "Coral Gables",
+      "url": "#address",
+      "parentId": "hours-id",
+    },
+		{
+      "id": "bayside-id",
+      "label": "Bayside",
+      "url": "#address",
+      "parentId": "hours-id",
+    },
+		{
+      "id": "careers-id",
+      "label": "Careers",
+      "url": "/careers",
+      "parentId": null,
+    },
     {
       "id": "story-id",
       "label": "Our Story",
@@ -138,12 +134,7 @@ function NaviPrimary(props) {
     //   "url": "/#shop",
     //   "parentId": null,
     // },
-    {
-      "id": "careers-id",
-      "label": "Careers",
-      "url": "/careers",
-      "parentId": null,
-    },
+
     {
       "id": "contact-id",
       "label": "Contact",
