@@ -1,6 +1,7 @@
 
 import { ToTopOnLoad } from "../_components/ToTopOnLoad"
 import PostsTemplate from "./_components/PostsTemplate"
+import { Metadata, ResolvingMetadata } from 'next'
 
 async function getPosts() {
 	const res = await fetch(`https://cms.sanguich.com/wp-json/wp/v2/posts`,
@@ -14,21 +15,32 @@ async function getPosts() {
 	return data
 }
 
-// Get Metadata
-export async function generateMetadata() {
-	return {
-		title: 'Blog',
-		description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
-		siteName: process.env.NEXT_PUBLIC_SITENAME,
-		images: [
-			{
-				url: 'urltoimg',
-				width: 800,
-				height: 600
+async function getPage() {
+	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/pages?slug=discover',
+		{
+			// cache: 'no-store',
+			next: {
+				revalidate: 3600
 			}
-		],
-		locale: 'en-US',
-	}
+		}
+	)
+	return res.json().then((data) => data[0])
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }>}, parent: ResolvingMetadata): Promise<Metadata>  {
+  const resolvedParams = await params;
+  const { yoast_head_json } = await getPage()
+  const previousOpenGraphData = (await parent).openGraph || {}
+
+  return {
+    ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+    ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    openGraph: {
+      ...previousOpenGraphData,
+      ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+      ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    }
+  }
 }
 
 export default async function MainPage() {

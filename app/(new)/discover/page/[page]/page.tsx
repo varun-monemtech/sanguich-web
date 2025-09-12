@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import PostsTemplate from "../../_components/PostsTemplate"
 import { ToTopOnLoad } from "@/app/(new)/_components/ToTopOnLoad"
+import { Metadata, ResolvingMetadata } from "next"
 
 
 async function getPosts() {
@@ -17,24 +18,51 @@ async function getPosts() {
 
 // Get Metadata
 
-export async function generateMetadata(props: { params: Promise<{ page: string }> }) {
-	const params = await props.params;
-	return {
-		title: `Blog - Page ${params.page}`,
-		description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
-		siteName: process.env.NEXT_PUBLIC_SITENAME,
-		images: [
-			{
-				url: 'urltoimg',
-				width: 800,
-				height: 600
+// export async function generateMetadata(props: { params: Promise<{ page: string }> }) {
+// 	const params = await props.params;
+// 	return {
+// 		title: `Blog - Page ${params.page}`,
+// 		description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
+// 		siteName: process.env.NEXT_PUBLIC_SITENAME,
+// 		images: [
+// 			{
+// 				url: 'urltoimg',
+// 				width: 800,
+// 				height: 600
+// 			}
+// 		],
+// 		locale: 'en-US',
+// 	}
+// }
+
+async function getPage() {
+	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/pages?slug=discover',
+		{
+			// cache: 'no-store',
+			next: {
+				revalidate: 3600
 			}
-		],
-		locale: 'en-US',
-	}
+		}
+	)
+	return res.json().then((data) => data[0])
 }
 
-// Generuję statycznie 10 stron
+export async function generateMetadata({ params }: { params: Promise<{ page: string }>}, parent: ResolvingMetadata): Promise<Metadata>  {
+  const resolvedParams = await params;
+  const { yoast_head_json } = await getPage()
+  const previousOpenGraphData = (await parent).openGraph || {}
+
+  return {
+    ...(yoast_head_json?.title && { title: yoast_head_json?.title + ' - Page ' + resolvedParams.page }),
+    ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    openGraph: {
+      ...previousOpenGraphData,
+      ...(yoast_head_json?.title && { title: yoast_head_json?.title + ' - Page ' + resolvedParams.page }),
+      ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    }
+  }
+}
+
 export function generateStaticParams() {
 	return [
 		{ page: '2' },

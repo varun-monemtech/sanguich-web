@@ -2,25 +2,35 @@ import PageTransition from '@/animations/PageTransition'
 import CF7Careers from '@/components/Form/CF7/Careers'
 import { LoadImage } from '@/components/new/LoadImage'
 import './style.scss'
+import { Metadata, ResolvingMetadata } from 'next'
 
-// Get Metadata
-export async function generateMetadata() {
-  return {
-    title: 'Careers',
-    description: process.env.NEXT_PUBLIC_SITEDESCRIPTION,
-    // url: 'theurl',
-    siteName: process.env.NEXT_PUBLIC_SITENAME,
-    images: [
-      {
-        url: 'urltoimg',
-        width: 800,
-        height: 600
-      }
-    ],
-    locale: 'en-US',
-  }
+async function getPage() {
+	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/pages?slug=careers',
+		{
+			// cache: 'no-store',
+			next: {
+				revalidate: 3600
+			}
+		}
+	)
+	return res.json().then((data) => data[0])
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }>}, parent: ResolvingMetadata): Promise<Metadata>  {
+  const resolvedParams = await params;
+  const { yoast_head_json } = await getPage()
+  const previousOpenGraphData = (await parent).openGraph || {}
+
+  return {
+    ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+    ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    openGraph: {
+      ...previousOpenGraphData,
+      ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+      ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    }
+  }
+}
 export default async function MainPage() {
 
   return (

@@ -1,16 +1,7 @@
+import { Metadata, ResolvingMetadata } from 'next';
 import { ToTopOnLoad } from '../../_components/ToTopOnLoad';
 import PostTemplate from '../_components/PostTemplate'
 
-function unEscape(htmlStr: String) {
-	htmlStr = htmlStr?.replace(/&lt;/g, "<");
-	htmlStr = htmlStr?.replace(/&gt;/g, ">");
-	htmlStr = htmlStr?.replace(/&quot;/g, "\"");
-	htmlStr = htmlStr?.replace(/&#39;/g, "\'");
-	htmlStr = htmlStr?.replace(/&amp;/g, "&");
-	htmlStr = htmlStr?.replace(/&#038;/g, "&");
-
-	return htmlStr;
-}
 
 export async function generateStaticParams() {
 	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/posts',
@@ -53,26 +44,20 @@ async function getPost(slug: string) {
 	return data[0] // API returns array of one, so return first
 }
 
-// Get Metadata
-export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
-	const params = await props.params;
-	const post = await getPost(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }>}, parent: ResolvingMetadata): Promise<Metadata>  {
+  const resolvedParams = await params;
+	const {yoast_head_json} = await getPost(resolvedParams.slug)
+  const previousOpenGraphData = (await parent).openGraph || {}
 
-	return {
-		title: `${unEscape(post?.title?.rendered)}`,
-		description: post?.yoast_head_json?.description,
-		url: `${process.env.NEXT_PUBLIC_SITEURL}/discover/${params?.slug}`,
-		siteName: process.env.NEXT_PUBLIC_SITENAME,
-		openGraph: {
-			title: post?.yoast_head_json?.title,
-			description: post?.yoast_head_json?.description,
-			url: `${process.env.NEXT_PUBLIC_SITEURL}/discover/${params?.slug}`,
-			locale: 'en_US',
-			type: 'website',
-		},
-		locale: 'en-US',
-		type: 'website'
-	}
+  return {
+    ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+    ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    openGraph: {
+      ...previousOpenGraphData,
+      ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+      ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    }
+  }
 }
 
 export default async function MainPage(props: any) {

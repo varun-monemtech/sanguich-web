@@ -1,11 +1,37 @@
-import VideoComponent from '@/components/new/Video'
-import { Metadata } from 'next'
+// import VideoComponent from '@/components/new/Video'
+import { Metadata, ResolvingMetadata } from 'next'
 import Founders from '@/app/(new)/_components/Founders'
 import Franchising from '@/app/(new)/_components/Franchising'
 import Timeline from '@/app/(new)/_components/Timeline'
 import Purpose from '@/app/(new)/_components/Purpose'
-export const metadata: Metadata = {
-	title: `About Us`,
+
+
+async function getPage() {
+	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/pages?slug=about',
+		{
+			// cache: 'no-store',
+			next: {
+				revalidate: 3600
+			}
+		}
+	)
+	return res.json().then((data) => data[0])
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }>}, parent: ResolvingMetadata): Promise<Metadata>  {
+  const resolvedParams = await params;
+  const { yoast_head_json } = await getPage()
+  const previousOpenGraphData = (await parent).openGraph || {}
+
+  return {
+    ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+    ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    openGraph: {
+      ...previousOpenGraphData,
+      ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+      ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    }
+  }
 }
 
 

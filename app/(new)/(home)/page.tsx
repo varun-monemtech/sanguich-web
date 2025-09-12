@@ -12,12 +12,12 @@ import Counter from '../_components/Counter'
 
 // import ContextProvider from '@/provider/ContextProvider'
 
-import { Metadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 import Hero from '../_components/Hero'
 // import Recipes from './_components/Recipes'
 
 async function getPage() {
-	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/pages/5',
+	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/pages?slug=home',
 		{
 			// cache: 'no-store',
 			next: {
@@ -25,7 +25,7 @@ async function getPage() {
 			}
 		}
 	)
-	return res.json()
+	return res.json().then((data) => data[0])
 }
 
 // async function getPosts() {
@@ -40,10 +40,21 @@ async function getPage() {
 // 	return res.json()
 // }
 
-export const metadata: Metadata = {
-	title: `Home`,
-}
+export async function generateMetadata({ params }: { params: Promise<any>}, parent: ResolvingMetadata): Promise<Metadata>  {
+  const resolvedParams = await params;
+  const { yoast_head_json } = await getPage()
+  const previousOpenGraphData = (await parent).openGraph || {}
 
+  return {
+    ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+    ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    openGraph: {
+      ...previousOpenGraphData,
+      ...(yoast_head_json?.title && { title: yoast_head_json?.title }),
+      ...(yoast_head_json?.description && { description: yoast_head_json?.description }),
+    }
+  }
+}
 
 export default async function MainPage() {
 	const page = await getPage()
