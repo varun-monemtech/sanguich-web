@@ -5,7 +5,7 @@ import Franchising from '@/app/(new)/_components/Franchising'
 import Timeline from '@/app/(new)/_components/Timeline'
 import Purpose from '@/app/(new)/_components/Purpose'
 export const metadata: Metadata = {
-	title: `About Us | ${process.env.NEXT_PUBLIC_SITENAME}`,
+	title: `About Us`,
 }
 
 
