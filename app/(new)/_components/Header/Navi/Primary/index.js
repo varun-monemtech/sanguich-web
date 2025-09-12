@@ -112,7 +112,7 @@ function NaviPrimary(props) {
     },
     {
       "id": "story-id",
-      "label": "Our Story",
+      "label": "Our Ingredients",
       "url": "/#our-story",
       "parentId": null,
     },
