@@ -73,29 +73,35 @@ function NaviPrimary(props) {
       "parentId": null,
       "itHasChildren": "little-haiti-id",
     }, 
-
-		{
-      "id": "little-haiti-id",
-      "label": "Little Haiti",
-      "url": "#address",
-      "parentId": "hours-id",
-    },
     {
       "id": "calle-ocho-id",
       "label": "Calle Ocho",
-      "url": "#address",
+      "url": "#location-1",
       "parentId": "hours-id",
     },
+		{
+      "id": "little-haiti-id",
+      "label": "Little Haiti",
+      "url": "#location-2",
+      "parentId": "hours-id",
+    },
+
     {
       "id": "coral-gables-id",
       "label": "Coral Gables",
-      "url": "#address",
+      "url": "#location-3",
       "parentId": "hours-id",
     },
 		{
       "id": "bayside-id",
       "label": "Bayside",
-      "url": "#address",
+      "url": "#location-4",
+      "parentId": "hours-id",
+    },
+		{
+      "id": "aventura-id",
+      "label": "Aventura",
+      "url": "#location-5",
       "parentId": "hours-id",
     },
 		{

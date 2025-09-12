@@ -74,6 +74,7 @@ function NaviItem(props) {
 		>
 			{enabled ?
         <div className='wrapper'>
+					{!path.startsWith('#location-') ? (
           <Link
             href={path}
             target={target}
@@ -85,6 +86,11 @@ function NaviItem(props) {
           >
             {label}
           </Link>
+					) : (
+						<a href={path} target={target} rel={target === '_blank' ? 'noopener noreferrer' : null} onMouseEnter={props.itHasChildren ?  dropDownClickHandle : null } onClick={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }} onKeyDown={() => { naviContext.setHamburgerActive(false); naviContext.setActive(false); }} className="linking-ext font-outline-custom">
+							{label}
+						</a>
+					)}
 					{/* @ts-ignore */}
           {props.itHasChildren ? <FontAwesomeIcon  onClick={props.itHasChildren ? dropDownClickHandle : null} icon={faAngleDown} className={`caret  ${props.isOpen ? 'open' : ""}`} /> : null}
         </div>

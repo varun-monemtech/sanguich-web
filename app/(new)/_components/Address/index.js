@@ -36,6 +36,36 @@ function AddressNew(props) {
 	const anchor = props.anchor
 	const classes = props.classes
 
+	useEffect(() => {
+		const handleHashChange = () => {
+			const hash = window.location.hash
+			if (hash && hash.startsWith('#location-')) {
+
+				const locationIndex = parseInt(hash.replace('#location-', '')) - 1
+				if (locationIndex >= 0 && locationIndex < props.items?.length) {
+					setSelectedIndex(locationIndex)
+					setTimeout(() => {
+						const element = document.querySelector(`[data-location-index="${locationIndex}"]`)
+						if (element) {
+							element.scrollIntoView({ 
+								behavior: 'smooth', 
+								block: 'center' 
+							})
+						}
+					}, 0)
+				}
+			}
+		}
+
+		handleHashChange()
+
+		window.addEventListener('hashchange',  handleHashChange)
+
+		return () => {
+			window.removeEventListener('hashchange', handleHashChange)
+		}
+	}, [props.items?.length])
+
 	const itemsMap = props.items?.map((node, i) => {
 		let image = node.img
 
@@ -45,6 +75,7 @@ function AddressNew(props) {
 		return (
 			<div
 				key={i}
+				data-location-index={i}
 				className={`span-12 max-md:flex-wrap max-md:text-center cursor-pointer flex gap-1 md:gap-3 p-[0.5em] md:py-[1.5em] md:px-[1em] tile grid-item rounded-lg ${(hoveredIndex === i || selectedIndex === i) ? 'hovered' : ''}`}
 				onMouseEnter={() => !isMobile && setHoveredIndex(i)}
 				onMouseLeave={() => !isMobile && setHoveredIndex(null)}
