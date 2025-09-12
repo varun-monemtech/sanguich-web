@@ -61,7 +61,7 @@ function HeroNew() {
 	return (
 		<section
 			id="section-hero-new"
-			className="max-md:mt-13 frs-grid-full relative border-type-1  overflow-x-clip m-[1.5em]"
+			className="max-md:mt-32 frs-grid-full relative border-type-1  overflow-x-clip m-[1.5em]"
 			ref={containerRef}
 		>
 			<Link href="#homepage-menu" title="Scroll To Menu" aria-label='Scroll To Menu' className="to-next 

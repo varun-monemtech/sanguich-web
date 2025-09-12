@@ -145,7 +145,9 @@ function Header(props) {
 
 			{/* Order Now button for mobile with animation */}
 			<Transition
-				in={naviContext.windowSize?.mobile && showHeaderBar}
+				in={naviContext.windowSize?.mobile 
+					// && showHeaderBar
+				}
 				timeout={baseDuration / 2}
 				appear={true}
 				onEntering={slideInOrderBtn}
