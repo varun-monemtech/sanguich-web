@@ -59,7 +59,7 @@ export default async function AboutPage() {
 			</section>
 			<Founders />
 			<Timeline />
-			<Franchising />
+			{/* <Franchising /> */}
 			<Purpose />
 
 		</>
