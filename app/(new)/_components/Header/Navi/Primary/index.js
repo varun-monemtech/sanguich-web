@@ -69,39 +69,39 @@ function NaviPrimary(props) {
     {
       "id": "hours-id",
       "label": "Locations",
-      "url": "#address",
+      "url": "/#address",
       "parentId": null,
       "itHasChildren": "little-haiti-id",
     }, 
     {
       "id": "calle-ocho-id",
       "label": "Calle Ocho",
-      "url": "#location-1",
+      "url": "/#location-1",
       "parentId": "hours-id",
     },
 		{
       "id": "little-haiti-id",
       "label": "Little Haiti",
-      "url": "#location-2",
+      "url": "/#location-2",
       "parentId": "hours-id",
     },
 
     {
       "id": "coral-gables-id",
       "label": "Coral Gables",
-      "url": "#location-3",
+      "url": "/#location-3",
       "parentId": "hours-id",
     },
 		{
       "id": "bayside-id",
       "label": "Bayside",
-      "url": "#location-4",
+      "url": "/#location-4",
       "parentId": "hours-id",
     },
 		{
       "id": "aventura-id",
       "label": "Aventura",
-      "url": "#location-5",
+      "url": "/#location-5",
       "parentId": "hours-id",
     },
 		{
@@ -110,17 +110,11 @@ function NaviPrimary(props) {
       "url": "/careers",
       "parentId": null,
     },
-    {
-      "id": "story-id",
-      "label": "Our Ingredients",
-      "url": "/#our-story",
-      "parentId": null,
-    },
 		{
       "id": "about-id",
       "label": "About Us",
       "url": "/about",
-      "parentId": "story-id",
+      "parentId": null,
     },
 		// {
 		// 	"id": "stories-id",
