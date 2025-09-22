@@ -6,7 +6,7 @@ function OurStory(props) {
 
 	const anchor = props.anchor
 	const classes = props.classes
-	// const header = props.header
+	const header = props.header
 	const content = props.content
 
 
@@ -45,7 +45,7 @@ function OurStory(props) {
 
 								<div className="header">
 									<h2 className="font2 !m-0  text-[4em] md:text-[5em] !p-0 !text-[#DCBA7B] text-center leading-[1]">
-										Our Story
+										{{header}}
 									</h2>
 								</div>
 
