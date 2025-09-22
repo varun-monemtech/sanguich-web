@@ -7,7 +7,7 @@ import Purpose from '@/app/(new)/_components/Purpose'
 
 
 async function getPage() {
-	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/pages?slug=about',
+	const res = await fetch('https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/pages?slug=about',
 		{
 			// cache: 'no-store',
 			next: {

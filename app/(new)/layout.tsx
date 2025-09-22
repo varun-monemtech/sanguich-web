@@ -90,7 +90,7 @@ const josefinSans = localFont({
 })
 
 async function getOptions() {
-	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/options/options/',
+	const res = await fetch('https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/acf/v3/options/options/',
 		{
 			cache: 'no-store',
 			// next: {
@@ -135,7 +135,7 @@ export const viewport = {
 
 
 // async function getOptions() {
-// 	const res = await fetch('https://cms.sanguich.com/wp-json/acf/v3/options/options/',
+// 	const res = await fetch('https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/acf/v3/options/options/',
 // 		{
 // 			next: {
 // 				revalidate: 3600

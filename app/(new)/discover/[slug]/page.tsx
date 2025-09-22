@@ -4,7 +4,7 @@ import PostTemplate from '../_components/PostTemplate'
 
 
 export async function generateStaticParams() {
-	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/posts',
+	const res = await fetch('https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/posts',
 		{
 			// cache: 'no-store',
 			next: {
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 
 // Getting all posts
 async function getAllPosts() {
-	const res = await fetch(`https://cms.sanguich.com/wp-json/wp/v2/posts`,
+	const res = await fetch(`https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/posts`,
 		{
 			next: {
 				revalidate: 3600
@@ -32,7 +32,7 @@ async function getAllPosts() {
 
 // Getting content here
 async function getPost(slug: string) {
-	const res = await fetch(`https://cms.sanguich.com/wp-json/wp/v2/posts?slug=${slug}`,
+	const res = await fetch(`https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/posts?slug=${slug}`,
 		{
 			// cache: 'no-store',
 			next: {

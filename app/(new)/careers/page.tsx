@@ -5,7 +5,7 @@ import './style.scss'
 import { Metadata, ResolvingMetadata } from 'next'
 
 async function getPage() {
-	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/pages?slug=careers',
+	const res = await fetch('https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/pages?slug=careers',
 		{
 			// cache: 'no-store',
 			next: {

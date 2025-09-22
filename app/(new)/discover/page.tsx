@@ -4,7 +4,7 @@ import PostsTemplate from "./_components/PostsTemplate"
 import { Metadata, ResolvingMetadata } from 'next'
 
 async function getPosts() {
-	const res = await fetch(`https://cms.sanguich.com/wp-json/wp/v2/posts`,
+	const res = await fetch(`https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/posts`,
 		{
 			next: {
 				revalidate: 3600
@@ -16,7 +16,7 @@ async function getPosts() {
 }
 
 async function getPage() {
-	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/pages?slug=discover',
+	const res = await fetch('https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/pages?slug=discover',
 		{
 			// cache: 'no-store',
 			next: {

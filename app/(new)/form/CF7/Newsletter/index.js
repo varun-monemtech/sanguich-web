@@ -30,7 +30,7 @@ function CF7Newsletter(props) {
     data.append("_wpcf7_unit_tag", "unit-tag-random-string");
 
     const url =
-      "https://cms.sanguich.com/wp-json/contact-form-7/v1/contact-forms/239/feedback";
+      "https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/contact-form-7/v1/contact-forms/239/feedback";
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     axios

@@ -17,7 +17,7 @@ import Hero from '../_components/Hero'
 // import Recipes from './_components/Recipes'
 
 async function getPage() {
-	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/pages?slug=home',
+	const res = await fetch('https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/pages?slug=home',
 		{
 			// cache: 'no-store',
 			next: {
@@ -29,7 +29,7 @@ async function getPage() {
 }
 
 // async function getPosts() {
-// 	const res = await fetch('https://cms.sanguich.com/wp-json/wp/v2/posts',
+// 	const res = await fetch('https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/posts',
 // 		{
 // 			// cache: 'no-store',
 // 			next: {
