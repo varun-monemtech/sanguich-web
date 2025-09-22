@@ -19,7 +19,7 @@ import Hero from '../_components/Hero'
 async function getPage() {
 	const res = await fetch('https://wordpress-797258-5874632.cloudwaysapps.com/wp-json/wp/v2/pages?slug=home',
 		{
-			// cache: 'no-store',
+			cache: 'no-store',
 			next: {
 				revalidate: 3600
 			}
