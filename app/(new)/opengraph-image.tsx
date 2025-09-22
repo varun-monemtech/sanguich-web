@@ -22,7 +22,8 @@ const getTheFont = async () => {
 
 const getTheOgBG = async () => {
   const response = await fetch(
-     new URL('../../public/og-sang.jpeg', import.meta.url)
+    // new URL('../../public/og-sang.jpeg', import.meta.url)
+     new URL('/og-sang.jpeg', import.meta.url)
    )
    const res = await response.arrayBuffer()
    return res
