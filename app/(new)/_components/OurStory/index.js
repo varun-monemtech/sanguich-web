@@ -44,7 +44,7 @@ function OurStory(props) {
 								: null}
 
 								<div className="header">
-									<h2 className="font2 !m-0  text-[4em] md:text-[5em] !p-0 !text-[#DCBA7B] text-center leading-[1]" dangerouslySetInnerHTML={{ __html: content }} />
+									<h2 className="font2 !m-0  text-[4em] md:text-[5em] !p-0 !text-[#DCBA7B] text-center leading-[1]" dangerouslySetInnerHTML={{ __html: header }} />
 									
 								</div>
 
