@@ -8,7 +8,7 @@ function OurStory(props) {
   const [io, ioInView] = useInView({ triggerOnce: true })
   const anchor = props.anchor
   const classes = props.classes
-  // const header = props.header
+  const header = props.header
   const content = props.content
 
 
