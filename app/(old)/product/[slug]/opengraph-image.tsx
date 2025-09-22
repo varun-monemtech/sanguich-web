@@ -34,6 +34,7 @@ const getTheFont = async () => {
  }
 
 async function getPost(slug: string) {
+  console.log("Generating image for slug:", slug);
 	const res = await fetch(`https://evgreen.unixstorm.org/FRS-3/wp-json/wp/v2/posts?slug=${slug}`,
 		{
 			// cache: 'no-store',

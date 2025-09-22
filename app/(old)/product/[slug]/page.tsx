@@ -37,6 +37,7 @@ export async function generateStaticParams() {
 
 // Getting content here
 async function getProduct(slug: string) {
+	console.log("Fetching product for slug:", slug);
 	const res = await client.product.fetchByHandle(slug).then((product: any) => {
 		// Do something with the product
 		return product

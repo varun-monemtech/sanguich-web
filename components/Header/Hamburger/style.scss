@@ -8,7 +8,7 @@ $width: 30px;
 $line-size: 2px;
 $line-color: #DCBA7B;
 $line-radius: 1px;
-$to-translate: ($height - $line-size) / 2;
+$to-translate: calc(($height - $line-size) / 2);
 $bounce: cubic-bezier(.87,-.50,.19,1.50);
 
 

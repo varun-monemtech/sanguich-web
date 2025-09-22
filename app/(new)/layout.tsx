@@ -163,10 +163,10 @@ export default async function RootLayout({
 				<meta name="apple-mobile-web-app-title" content="Sanguich" />
 
 				<style>{`
-          html {
-            font-size: clamp(16px,1vw,25px);
-          }
-        `}</style>
+				html {
+					font-size: clamp(16px,1vw,25px);
+				}
+				`}</style>
 			</head>
 
 

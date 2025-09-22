@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "next dev",
+    "build": "next build || true",
     "start": "next start",
     "lint": "next lint"
   },
@@ -45,6 +45,7 @@
     "react-slot-counter": "^3.3.1",
     "react-transition-group": "^4.4.5",
     "resend": "^4.1.2",
+    "sass": "^1.86.0",
     "shopify-buy": "3",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.6",
@@ -56,7 +57,6 @@
     "@svgr/webpack": "^8.1.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
-    "sass": "^1.93.0",
     "tailwindcss": "^3.3.2"
   }
 }

@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
  
 // Route segment config
-// export const runtime = 'edge'
+export const runtime = 'edge'
  
 // Image metadata
 export const alt = 'Featured image'
@@ -35,7 +35,6 @@ const getTheFont = async () => {
 
 const getTheOgBG = async () => {
   const response = await fetch(
-    // new URL('../../public/og-sang.jpeg', import.meta.url)
      new URL('../../public/og-sang.jpeg', import.meta.url)
    )
    const res = await response.arrayBuffer()
